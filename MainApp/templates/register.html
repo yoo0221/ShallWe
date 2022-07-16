@@ -150,10 +150,12 @@
                     autofocus
                   />
                 </div>
+
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
                 </div>
+
                 <div class="mb-3 form-password-toggle">
                   <label class="form-label" for="password">Password</label>
                   <div class="input-group input-group-merge">
@@ -169,29 +171,81 @@
                   </div>
                 </div>
 
-                <label class="form-label" for="password">Age</label>
-                <input
+                <div class="mb-3">
+                  <label class="form-label" for="age">Age</label>
+                  <input
                     type="number"
                     class="form-control"
-                    id="username"
-                    name="username"
+                    id="age"
+                    name="age"
                     placeholder="Enter Your Age"
                     autofocus
                   />
+                </div>
 
-                  <label class="form-label" for="password"></label>
+              <!-- 
+                <div class="mb-3">
+                  <label class="form-label" for="birth"></label>
                   <input
-                      type="datetime-local"
+                    type="datetime-local"
+                    class="form-control"
+                    id="birth"
+                    name="birth"
+                    placeholder="Enter Your Age"
+                    autofocus
+                  /> 
+                </div>
+              -->
+
+                </form>
+  
+                <div class="mb-3">
+                  <label class="form-label" for="residence">residence</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="residence"
+                    name="residence"
+                    placeholder="Enter Your Address"
+                    autofocus
+                  />
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label" for="sex">Sex</label>
+                  <input
+                  type="radio"
+                  class="form-control"
+                  id="sex-female"
+                  name="sex"
+                    checked
+                    />
+                    <label for="sex-female">female</label>
+                    
+                    <input
+                    type="radio"
+                    class="form-control"
+                    id="sex-male"
+                    name="sex"
+                    />
+                    <label for="sex-male">male</label>
+                  </div>
+  
+                  <div class="mb-3">
+                    <label class="form-label" for="nationality">nationality</label>
+                    <input
+                      type="text"
                       class="form-control"
-                      id="username"
-                      name="username"
-                      placeholder="Enter Your Age"
+                      id="nationality"
+                      name="nationality"
+                      placeholder="Enter Your nationality"
                       autofocus
                     />
-  
+                  </div>
 
-                <div class="mb-3">
-                  <div class="form-check">
+                  
+                  <div class="mb-3">
+                    <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
                     <label class="form-check-label" for="terms-conditions">
                       I agree to
