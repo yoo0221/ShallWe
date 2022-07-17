@@ -18,7 +18,7 @@
   class="light-style customizer-hide"
   dir="ltr"
   data-theme="theme-default"
-  data-assets-path="../assets/"
+  data-assets-path="{% static 'assets/' %}"
   data-template="vertical-menu-template-free"
 >
   <head>
@@ -47,8 +47,8 @@
     <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css" class="template-customizer-core-css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css" class="template-customizer-theme-css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
 
     <!-- Vendors CSS -->
@@ -216,7 +216,7 @@
                   <label class="form-label" for="sex">Sex</label>
                   <input
                   type="radio"
-                  class="form-control"
+                  class=""
                   id="sex-female"
                   name="sex"
                     checked
@@ -225,7 +225,7 @@
                     
                     <input
                     type="radio"
-                    class="form-control"
+                    class=""
                     id="sex-male"
                     name="sex"
                     />
