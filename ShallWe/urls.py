@@ -25,4 +25,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('search/', views.search, name='search'),
     path('setprofile/', views.setprofile, name='setprofile'),    
+    path('themaselect/', views.themaselect, name='themaselect'),   
 ]
