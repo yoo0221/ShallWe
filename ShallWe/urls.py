@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from MainApp import views
+from AccountApp import views as accviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', views.register, name='register'),
-    path('login/', views.login, name='login'),
+    path('register/', accviews.register, name='register'),
+    path('login/', accviews.login, name='login'),
     path('', views.home, name='home'),
     path('search/', views.search, name='search'),
     path('setprofile/', views.setprofile, name='setprofile'),    
