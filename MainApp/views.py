@@ -26,4 +26,6 @@ def search(request):
 
 def setprofile(request):
     return render(request, 'setprofile.html')
+def setprofile(request):
+    return render(request, 'themaselect.html')
 
