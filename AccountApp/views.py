@@ -1,11 +1,14 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import User 
 from django.contrib import auth
 # Create your views here.
 def register(request):
+    overlapped = None
     if (request.method == 'POST'):
         username = request.POST['username']
-        if (User.objects.get(username=username) == None) and (request.POST['password'] == request.POST['repeat']):
+        overlapped = User.objects.filter(username=username)
+        # if (overlapped == None) and (request.POST['password'] == request.POST['repeat']):
+        if (request.POST['password'] == request.POST['repeat']):    
             new_user = User.objects.create_user(username=username,
                                                 password=request.POST['password'],
                                                 email=request.POST['email'],
