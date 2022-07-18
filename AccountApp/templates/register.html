@@ -139,8 +139,9 @@
               <!-- /Logo -->
               <!-- <h4 class="mb-2">Adventure starts here 🚀</h4>
               <p class="mb-4">Make your app management easy and fun!</p> -->
-              
+              {{ overlapped }}
               <form id="formAuthentication" class="mb-3" action="" method="POST">
+                {% csrf_token %}
                 <div class="mb-3">
                   <label for="name" class="form-label">이름</label>
                   <input
@@ -189,7 +190,7 @@
                   <label class="form-label" for="password">비밀번호 재입력</label>
                   <div class="input-group input-group-merge">
                     <input
-                      type="repeat"
+                      type="password"
                       id="repeat"
                       class="form-control"
                       name="repeat"
@@ -203,7 +204,7 @@
                 <div class="mb-3">
                   <label class="form-label" for="age">생년월일</label>
                   <input
-                    type="datetime-local"
+                    type="date"
                     class="form-control"
                     id="birth"
                     name="birth"
@@ -231,6 +232,7 @@
                     class=""
                     id="sex-male"
                     name="sex"
+                    value="남"
                   />
                   <label for="sex-male">남</label>
 
@@ -239,6 +241,7 @@
                     class=""
                     id="sex-female"
                     name="sex"
+                    value="여"
                     checked
                   />
                   <label for="sex-female">여</label>
