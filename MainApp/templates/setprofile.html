@@ -57,7 +57,7 @@
     <!-- Page CSS -->
 
     <!-- Helpers -->
-    <script src="{% static'assets/vendor/js/helpers.js'%}"></script>
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
@@ -601,7 +601,7 @@
                     <div class="card-body">
                       <div class="d-flex align-items-start align-items-sm-center gap-4">
                         <img
-                          src="{static 'assets/img/avatars/1.png'%}"
+                          src="{%static 'assets/img/avatars/1.png'%}"
                           alt="user-avatar"
                           class="d-block rounded"
                           height="100"
@@ -870,10 +870,10 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="{% static 'assets/vendor/libs/jquery/jquery.js'%}"></script>
-    <script src="{% static 'assets/vendor/libs/popper/popper.js'%}"></script>
-    <script src="{% static 'assets/vendor/js/bootstrap.js'%}"></script>
-    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'%}"></script>
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
 
     <script src="{% static 'assets/vendor/js/menu.js'%}"></script>
     <!-- endbuild -->
@@ -881,10 +881,10 @@
     <!-- Vendors JS -->
 
     <!-- Main JS -->
-    <script src="{% static 'assets/js/main.js'%}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
 
     <!-- Page JS -->
-    <script src="{%static 'assets/js/pages-account-settings-account.js'%}"></script>
+    <script src="{% static 'assets/js/pages-account-settings-account.js' %}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

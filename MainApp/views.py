@@ -21,3 +21,9 @@ def login(request):
 def home(request):
     return render(request, 'index.html')
 
+def search(request):
+    return render(request, 'search.html')
+
+def setprofile(request):
+    return render(request, 'setprofile.html')
+
