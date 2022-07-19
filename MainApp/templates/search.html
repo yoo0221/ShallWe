@@ -16,22 +16,37 @@
   <div class="col-md mb-3 filter-card">
   <div class="card filter-card container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme">
     <div class="card-header">필터 설정</div>
-    
+
     <div class="card-body">
     <div class="filter-age">
       <h5 class="card-title">연령대</h5>
-      <button type="button" class="btn rounded-pill btn-outline-primary btn-age-20">20대</button>
-      <button type="button" class="btn rounded-pill btn-outline-primary btn-age-30">30대</button>
-      <button type="button" class="btn rounded-pill btn-outline-primary btn-age-40">40대 이상</button>
+      <label class="filtering-radio-btn">
+        <input type="radio" name="filter-age" value="20">
+        <span>20대</span>
+      </label>
+      <label class="filtering-radio-btn">
+        <input type="radio" name="filter-age" value="30">
+        <span>30대</span>
+      </label>
+      <label class="filtering-radio-btn">
+        <input type="radio" name="filter-age" value="40">
+        <span>40대 이상</span>
+      </label>
     </div>
     </div>
-
+            
     <div class="card-body">
     <div class="filter-sex">
       <h5 class="card-title">성별</h5>
-      <button type="button" class="btn rounded-pill btn-outline-primary btn-sex-male">남</button>
-      <button type="button" class="btn rounded-pill btn-outline-primary btn-sex-female">여</button>
-      <button type="button" class="btn rounded-pill btn-outline-primary btn-sex-both">남/여</button>
+      <label class="filtering-radio-btn">
+        <input type="radio" name="filter-sex" value="male">
+        <span>남</span>
+      </label>
+    
+      <label class="filtering-radio-btn">
+        <input type="radio" name="filter-sex" value="female">
+        <span>여</span>
+      </label>
     </div>
     </div>
 
