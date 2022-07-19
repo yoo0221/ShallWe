@@ -1,3 +1,9 @@
+/* thema-table */
+.thema-table > tbody > tr > td:hover {
+    color: #1C3BD5;
+}
+
+/* radio button */
 .filtering-radio-btn input[type="radio"] {
     display: none;
 }
