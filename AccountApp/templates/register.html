@@ -82,132 +82,13 @@
                   <span class="app-brand-text demo text-body fw-bolder">Shall We?</span>
                 </a>
               </div>
-              <div class="card py-2 my-2">
-                <div class="card-body">
-                <h5 class="mb-4"> 개인정보입력 </h5>
-              <hr>
+
+              
+            
               <form id="formAuthentication" class="mb-3" action="" method="POST">
                 {% csrf_token %}
-                <div class="mb-3">
-                  <label for="name" class="form-label font-weight-bold">이름</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="이름을 입력하세요"
-                    autofocus
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label font-weight-bold font-weight-bold" for="age">생년월일</label>
-                  <div class="container">
-                    <div class="row">
-                      <input
-                        type="text"
-                        class="form-control col"
-                        id="birth-year"
-                        name="birth-year"
-                        placeholder="년(4자)"
-                        autofocus
-                        maxlength='4'
-                      />
-                      <select id="birth-month" class="form-select col">
-                        <option>월</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                      </select>
-                      <input
-                        type="text"
-                        class="form-control col"
-                        id="birth-day"
-                        name="birth-day"
-                        autofocus
-                        placeholder="일"
-                        maxlength='2'
-                      />
-                    </div>
-                  </div>
-                </div>
-  
-                <div class="mb-3">
-                  <label class="form-label font-weight-bold" for="residence">주소</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="residence"
-                    name="residence"
-                    placeholder="주소를 입력하세요"
-                    autofocus
-                    autocomplete="off"
-                  />
-                  <div>
-                  <<select name="addressDo" id="addressRegion1"></select>
-                  <select name="addressSiGunGu" id="addressDo1"></select>
-                  <select name="addressEMD" id="addressSiGunGu1"></select>
-                  </div>
-                </div>
                 
-                <div class="mb-3">
-                  <label class="form-label font-weight-bold" for="sex">성별 </label>
-                  <div>
-                  <input
-                    type="radio"
-                    class=""
-                    id="sex-male"
-                    name="sex"
-                    value="남"
-                  />
-                  <label for="form-label font-weight-bold">남</label>
-
-                  <input
-                    type="radio"
-                    class=""
-                    id="sex-female"
-                    name="sex"
-                    value="여"
-                    checked
-                  />
-                  <label for="form-label font-weight-bold">여</label>
-                </div>
-                </div>
-  
-                  <div class="mb-3">
-                    <label class="form-label font-weight-bold" for="nationality">국적</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="nationality"
-                      name="nationality"
-                      placeholder="국적을 입력하세요"
-                      autofocus
-                    />
-                  </div>
-
-                  <div class="mb-3">
-                    <label class="form-label font-weight-bold" for="nationality">모국어</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="mother_tongue"
-                      name="mother_tongue"
-                      placeholder="모국어를 입력하세요"
-                      autofocus
-                    />
-                  </div>
-              </div>
-
-              <div class="card py-2 my-2">
+                <div class="card py-2 my-2">
                 <div class="card-body">
                 <h5 class="mb-4"> 기본정보입력 </h5>
                 <hr>
@@ -259,10 +140,144 @@
                 </div>
                   </div>
                   </div>
+
+                <div class="card py-2 my-2">
+              <div class="card-body">
+                <h5 class="mb-4"> 개인정보입력 </h5>
+              <hr>
+                <div class="mb-3">
+                  <label for="name" class="form-label font-weight-bold">이름</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="이름을 입력하세요"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label font-weight-bold font-weight-bold" for="age">생년월일</label>
+                  <div class="container">
+                    <div class="row">
+                      <input
+                        type="text"
+                        class="form-control col mx-1"
+                        id="birth-year"
+                        name="birth-year"
+                        placeholder="년(4자)"
+                        autofocus
+                        maxlength='4'
+                      />
+                      <select name="birth-month" id="birth-month" class="form-select smaller col mx-1">
+                        <option>월</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                      </select>
+                      <input
+                        type="text"
+                        class="form-control col mx-1"
+                        id="birth-day"
+                        name="birth-day"
+                        autofocus
+                        placeholder="일"
+                        maxlength='2'
+                      />
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="mb-3">
+                  <label class="form-label font-weight-bold" for="residence">주소</label>
+                  <div class="container">
+                    <div class="row">
+                      <select class="form-select smaller col mx-1" name="addressDo" id="addressDo"></select>
+                      <select class="form-select smaller col mx-1" name="addressSiGunGu" id="addressSiGunGu"></select>
+                      <select class="form-select smaller col mx-1" name="addressEMD" id="addressEMD"></select>
+                    </div>
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="form-label font-weight-bold" for="sex">성별 </label>
+                  <!-- Radio -->
+                  <div>
+                  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    <input
+                      type="radio"
+                      class="btn-check"
+                      name="sex"
+                      id="sex-male"
+                      checked
+                      autocomplete="off"
+                    />
+                    <label class="btn btn-outline-primary" for="sex-male">남</label>
+                    <input type="radio" class="btn-check" name="sex" id="sex-female" autocomplete="off" />
+                    <label class="btn btn-outline-primary" for="sex-female">여</label>
+                  </div>
+                  </div>
+                  <!-- <div>
+                  <input
+                    type="radio"
+                    class=""
+                    id="sex-male"
+                    name="sex"
+                    value="남"
+                  />
+                  <label for="form-label font-weight-bold">남</label>
+
+                  <input
+                    type="radio"
+                    class=""
+                    id="sex-female"
+                    name="sex"
+                    value="여"
+                    checked
+                  />
+                  <label for="form-label font-weight-bold">여</label> -->
+                </div>
+                <div class="mb-3">
+                    <label class="form-label font-weight-bold" for="nationality">국적</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="nationality"
+                      name="nationality"
+                      placeholder="국적을 입력하세요"
+                      autofocus
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label font-weight-bold" for="nationality">모국어</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="mother_tongue"
+                      name="mother_tongue"
+                      placeholder="모국어를 입력하세요"
+                      autofocus
+                    />
+                  </div>
+                </div>
+  
+                  
+              </div>
+              </div>
                 <button class="btn btn-primary d-grid w-100">회원가입</button>
               </form>
 
-              <p class="text-center">
+              <p class="text-center my-3">
                 <span>이미 계정이 있으신가요?</span>
                 <a href="auth-login-basic.html">
                   <span>로그인하기</span>
