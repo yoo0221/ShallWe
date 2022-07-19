@@ -2356,6 +2356,10 @@ textarea.form-control-lg {
   border-radius: 0.375rem;
 }
 
+.smaller{
+  width: 33% !important;
+}
+
 .form-select {
   display: block;
   width: 100%;

@@ -1,20 +1,30 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import User 
 from django.contrib import auth
+from datetime import datetime
 # Create your views here.
 def register(request):
     overlapped = None
     if (request.method == 'POST'):
         username = request.POST['username']
+        list1 = []
+        list1.append(request.POST['birth-year'])
+        list1.append(request.POST['birth-month'])
+        list1.append(request.POST['birth-day'])
+        birth_join='-'.join(list1)
+        birth=datetime.strptime(birth_join, "%Y-%m-%d")
         overlapped = User.objects.filter(username=username)
         # if (overlapped == None) and (request.POST['password'] == request.POST['repeat']):
+
         if (request.POST['password'] == request.POST['repeat']):    
             user = User.objects.create_user(username=username,
                                             password=request.POST['password'],
                                             email=request.POST['email'],
                                             name=request.POST['name'],
-                                            birth='-'.join([request.POST['birth-year'], request.POST['birth-month'], request.POST['birth-day']]),
-                                            residence=request.POST['residence'],
+                                            birth=birth,
+                                            address_do=request.POST['addressDo'],
+                                            address_sgg=request.POST['addressSiGunGu'],
+                                            address_emd=request.POST['addressEMD'],
                                             sex=request.POST['sex'],
                                             nationality=request.POST['nationality'],
                                             mother_tongue=request.POST['mother_tongue'])
