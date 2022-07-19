@@ -9,7 +9,7 @@ def register(request):
         overlapped = User.objects.filter(username=username)
         # if (overlapped == None) and (request.POST['password'] == request.POST['repeat']):
         if (request.POST['password'] == request.POST['repeat']):    
-            new_user = User.objects.create_user(username=username,
+            user = User.objects.create_user(username=username,
                                                 password=request.POST['password'],
                                                 email=request.POST['email'],
                                                 name=request.POST['name'],
@@ -18,7 +18,7 @@ def register(request):
                                                 sex=request.POST['sex'],
                                                 nationality=request.POST['nationality'],
                                                 mother_tongue=request.POST['mother_tongue'])
-            auth.login(request, new_user)
+            auth.login(request, user)
             return redirect('home')
         else:
             pass
@@ -37,3 +37,7 @@ def login(request):
             bad_login = True
             return render(request, 'login.html', {'bad_login':bad_login})
     return render(request, 'login.html', {'bad_login':bad_login})
+
+def logout(request):
+    auth.logout(request)
+    return redirect('home')
