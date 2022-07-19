@@ -28,12 +28,16 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title> Shall We? - Register </title>
+    <title>Shall We? - Register</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon/favicon.ico' %}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'assets/img/favicon/favicon.ico' %}"
+    />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,26 +48,47 @@
     />
 
     <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/fonts/boxicons.css' %}"
+    />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/css/core.css' %}"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/css/theme-default.css' %}"
+      class="template-customizer-theme-css"
+    />
     <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
 
     <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"
+    />
 
     <!-- Page CSS -->
     <!-- Page -->
-    <link rel="stylesheet" href="{% static 'assets/vendor/css/pages/page-auth.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/css/pages/page-auth.css' %}"
+    />
     <!-- Helpers -->
     <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
 
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{% static 'assets/js/config.js' %}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -78,155 +103,226 @@
               <!-- Logo -->
               <div class="app-brand justify-content-center">
                 <a href="{% url 'home' %}" class="app-brand-link gap-2">
-                  <img src="{% static 'assets/img/logo.png' %}" alt="" class="app-brand-logo demo" width="30px" height="30px">
-                  <span class="app-brand-text demo text-body fw-bolder">Shall We?</span>
+                  <img
+                    src="{% static 'assets/img/logo.png' %}"
+                    alt=""
+                    class="app-brand-logo demo"
+                    width="30px"
+                    height="30px"
+                  />
+                  <span class="app-brand-text demo text-body fw-bolder"
+                    >Shall We?</span
+                  >
                 </a>
               </div>
 
-              
-            
-              <form id="formAuthentication" class="mb-3" action="" method="POST">
+              <form
+                id="formAuthentication"
+                class="mb-3"
+                action=""
+                method="POST"
+              >
                 {% csrf_token %}
-                
-                <div class="card py-2 my-2">
-                <div class="card-body">
-                <h5 class="mb-4"> 기본정보입력 </h5>
-                <hr>
-                
-                <div class="mb-3">
-                  <label for="username" class="form-label font-weight-bold">아이디</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="username"
-                    name="username"
-                    placeholder="이름을 입력하세요"
-                    autofocus
-                  />
-                </div>
 
-                <div class="mb-3 form-password-toggle">
-                  <label class="form-label font-weight-bold" for="password">비밀번호</label>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="password"
-                      class="form-control"
-                      name="password"
-                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="password"
-                    />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                  </div>
-                </div>
+                <div class="card py-2 mb-4">
+                  <div class="card-body">
+                    <h5 class="mb-4">기본정보입력</h5>
+                    <hr />
 
-                <div class="mb-3 form-password-toggle">
-                  <label class="form-label font-weight-bold" for="password">비밀번호 확인</label>
-                  <div class="input-group input-group-merge">
-                    <input
-                      type="password"
-                      id="repeat"
-                      class="form-control"
-                      name="repeat"
-                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
-                      aria-describedby="repeat"
-                    />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
-                  </div>
-                </div>
-                <div class="mb-3"> 
-                  <label for="email" class="form-label font-weight-bold">이메일</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="이메일을 입력하세요" />
-                </div>
-                  </div>
-                  </div>
-
-                <div class="card py-2 my-2">
-              <div class="card-body">
-                <h5 class="mb-4"> 개인정보입력 </h5>
-              <hr>
-                <div class="mb-3">
-                  <label for="name" class="form-label font-weight-bold">이름</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="이름을 입력하세요"
-                    autofocus
-                  />
-                </div>
-                <div class="mb-3">
-                  <label class="form-label font-weight-bold font-weight-bold" for="age">생년월일</label>
-                  <div class="container">
-                    <div class="row">
+                    <div class="mb-3">
+                      <label for="username" class="form-label font-weight-bold"
+                        >아이디</label
+                      >
                       <input
                         type="text"
-                        class="form-control col mx-1"
-                        id="birth-year"
-                        name="birth-year"
-                        placeholder="년(4자)"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        placeholder="이름을 입력하세요"
                         autofocus
-                        maxlength='4'
                       />
-                      <select name="birth-month" id="birth-month" class="form-select smaller col mx-1">
-                        <option>월</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                      </select>
+                    </div>
+
+                    <div class="mb-3 form-password-toggle">
+                      <label class="form-label font-weight-bold" for="password"
+                        >비밀번호</label
+                      >
+                      <div class="input-group input-group-merge">
+                        <input
+                          type="password"
+                          id="password"
+                          class="form-control"
+                          name="password"
+                          placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                          aria-describedby="password"
+                        />
+                        <span class="input-group-text cursor-pointer"
+                          ><i class="bx bx-hide"></i
+                        ></span>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 form-password-toggle">
+                      <label class="form-label font-weight-bold" for="password"
+                        >비밀번호 확인</label
+                      >
+                      <div class="input-group input-group-merge">
+                        <input
+                          type="password"
+                          id="repeat"
+                          class="form-control"
+                          name="repeat"
+                          placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                          aria-describedby="repeat"
+                        />
+                        <span class="input-group-text cursor-pointer"
+                          ><i class="bx bx-hide"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label font-weight-bold"
+                        >이메일</label
+                      >
                       <input
-                        type="text"
-                        class="form-control col mx-1"
-                        id="birth-day"
-                        name="birth-day"
-                        autofocus
-                        placeholder="일"
-                        maxlength='2'
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="이메일을 입력하세요"
                       />
                     </div>
                   </div>
                 </div>
-  
-                <div class="mb-3">
-                  <label class="form-label font-weight-bold" for="residence">주소</label>
-                  <div class="container">
-                    <div class="row">
-                      <select class="form-select smaller col mx-1" name="addressDo" id="addressDo"></select>
-                      <select class="form-select smaller col mx-1" name="addressSiGunGu" id="addressSiGunGu"></select>
-                      <select class="form-select smaller col mx-1" name="addressEMD" id="addressEMD"></select>
+
+                <div class="card py-2">
+                  <div class="card-body">
+                    <h5 class="mb-4">개인정보입력</h5>
+                    <hr />
+                    <div class="mb-3">
+                      <label for="name" class="form-label font-weight-bold"
+                        >이름</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        placeholder="이름을 입력하세요"
+                        autofocus
+                      />
                     </div>
-                  </div>
-                </div>
-                
-                <div>
-                  <label class="form-label font-weight-bold" for="sex">성별 </label>
-                  <!-- Radio -->
-                  <div>
-                  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                    <input
-                      type="radio"
-                      class="btn-check"
-                      name="sex"
-                      id="sex-male"
-                      checked
-                      autocomplete="off"
-                    />
-                    <label class="btn btn-outline-primary" for="sex-male">남</label>
-                    <input type="radio" class="btn-check" name="sex" id="sex-female" autocomplete="off" />
-                    <label class="btn btn-outline-primary" for="sex-female">여</label>
-                  </div>
-                  </div>
-                  <!-- <div>
+                    <div class="mb-3">
+                      <label
+                        class="form-label font-weight-bold font-weight-bold"
+                        for="age"
+                        >생년월일</label
+                      >
+                      <div class="container">
+                        <div class="row">
+                          <input
+                            type="text"
+                            class="form-control col mx-1"
+                            id="birth-year"
+                            name="birth-year"
+                            placeholder="년(4자)"
+                            autofocus
+                            maxlength="4"
+                          />
+                          <select
+                            name="birth-month"
+                            id="birth-month"
+                            class="form-select smaller col mx-1"
+                          >
+                            <option>월</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                          </select>
+                          <input
+                            type="text"
+                            class="form-control col mx-1"
+                            id="birth-day"
+                            name="birth-day"
+                            autofocus
+                            placeholder="일"
+                            maxlength="2"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label font-weight-bold" for="residence"
+                        >주소</label
+                      >
+                      <div class="container">
+                        <div class="row">
+                          <select
+                            class="form-select smaller col mx-1"
+                            name="addressDo"
+                            id="addressDo"
+                          ></select>
+                          <select
+                            class="form-select smaller col mx-1"
+                            name="addressSiGunGu"
+                            id="addressSiGunGu"
+                          ></select>
+                          <select
+                            class="form-select smaller col mx-1"
+                            name="addressEMD"
+                            id="addressEMD"
+                          ></select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label class="form-label font-weight-bold" for="sex"
+                        >성별
+                      </label>
+                      <!-- Radio -->
+                      <div>
+                        <div
+                          class="btn-group"
+                          role="group"
+                          aria-label="Basic radio toggle button group"
+                        >
+                          <input
+                            type="radio"
+                            class="btn-check"
+                            name="sex"
+                            id="sex-male"
+                            checked
+                            autocomplete="off"
+                          />
+                          <label class="btn btn-outline-primary" for="sex-male"
+                            >남</label
+                          >
+                          <input
+                            type="radio"
+                            class="btn-check"
+                            name="sex"
+                            id="sex-female"
+                            autocomplete="off"
+                          />
+                          <label
+                            class="btn btn-outline-primary"
+                            for="sex-female"
+                            >여</label
+                          >
+                        </div>
+                      </div>
+                      <!-- <div>
                   <input
                     type="radio"
                     class=""
@@ -245,48 +341,54 @@
                     checked
                   />
                   <label for="form-label font-weight-bold">여</label> -->
-                </div>
-                <div class="mb-3">
-                    <label class="form-label font-weight-bold" for="nationality">국적</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="nationality"
-                      name="nationality"
-                      placeholder="국적을 입력하세요"
-                      autofocus
-                    />
-                  </div>
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        class="form-label font-weight-bold"
+                        for="nationality"
+                        >국적</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nationality"
+                        name="nationality"
+                        placeholder="국적을 입력하세요"
+                        autofocus
+                      />
+                    </div>
 
-                  <div class="mb-3">
-                    <label class="form-label font-weight-bold" for="nationality">모국어</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="mother_tongue"
-                      name="mother_tongue"
-                      placeholder="모국어를 입력하세요"
-                      autofocus
-                    />
+                    <div class="mb-3">
+                      <label
+                        class="form-label font-weight-bold"
+                        for="nationality"
+                        >모국어</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="mother_tongue"
+                        name="mother_tongue"
+                        placeholder="모국어를 입력하세요"
+                        autofocus
+                      />
+                    </div>
                   </div>
                 </div>
-  
-                  
-              </div>
-              </div>
-                <button class="btn btn-primary d-grid w-100">회원가입</button>
+                <button class="btn btn-primary d-grid w-100 mt-3">
+                  회원가입
+                </button>
+                <p class="text-center my-3">
+                  <span>이미 계정이 있으신가요?</span>
+                  <a href="auth-login-basic.html">
+                    <span>로그인하기</span>
+                  </a>
+                </p>
               </form>
-
-              <p class="text-center my-3">
-                <span>이미 계정이 있으신가요?</span>
-                <a href="auth-login-basic.html">
-                  <span>로그인하기</span>
-                </a>
-              </p>
             </div>
           </div>
-          <!-- Register Card -->
         </div>
+        <!-- Register Card -->
       </div>
     </div>
 
