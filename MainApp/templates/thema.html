@@ -1,158 +1,233 @@
-{% load static %}
+{% extends 'base.html' %} {% load static %} {% block mainbody %}
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="row">
-    <div class="container">
-      <div class="row">
-        <h4 class="fw-bold py-1 mb-3">
-          <span class="fw-light">약속 정하기</span>
-        </h4>
-      </div>
-    </div>
-    </div>
-    <!-- Content wrapper -->
-    <div class="content-wrapper">
-        <!-- Content -->
-
-        <div class="container-xxl flex-grow-1 container-p-y">
-          <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">UI elements /</span> Collapse</h4>
-
-          <!-- Collapse -->
-          <h5>Collapse</h5>
-          <div class="row">
-            <div class="col-12">
-              <div class="card mb-4">
-                <h5 class="card-header">Basic</h5>
-                <div class="card-body">
-                  <p class="card-text">
-                    Toggle the visibility of content across your project with a few classes and our JavaScript
-                    plugins.
-                  </p>
-                  <p class="demo-inline-spacing">
-                    <a
-                      class="btn btn-primary me-1"
-                      data-bs-toggle="collapse"
-                      href="#collapseExample"
-                      role="button"
-                      aria-expanded="false"
-                      aria-controls="collapseExample"
-                    >
-                      Link with href
-                    </a>
-                    <button
-                      class="btn btn-primary me-1"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseExample"
-                      aria-expanded="false"
-                      aria-controls="collapseExample"
-                    >
-                      Button with data-bs-target
-                    </button>
-                  </p>
-                  <div class="collapse" id="collapseExample">
-                    <div class="d-grid d-sm-flex p-3 border">
-                      <img
-                        src="../assets/img/elements/1.jpg"
-                        alt="collapse-image"
-                        height="125"
-                        class="me-4 mb-sm-0 mb-2"
-                      />
-                      <span>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled it to make a type specimen book. It has survived not only five
-                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including
-                        versions of Lorem Ipsum.It is a long established fact that a reader will be distracted by
-                        the readable content of a page when looking at its layout. The point of using Lorem Ipsum is
-                        that it has a more-or-less normal distribution of letters.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="container">
+            <div class="row">
+                <h4 class="fw-bold py-1 mb-3">
+                    <span class="fw-light">오늘의 테마 선택</span>
+                </h4>
             </div>
-            <div class="col-12">
-              <div class="card">
-                <h5 class="card-header">Multiple targets</h5>
-                <div class="card-body">
-                  <p class="card-text">Show and hide multiple elements by referencing them with a selector.</p>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="card-text">
+                                오늘의 테마를 선택해보아요!
+                            </p>
+                            <p class="demo-inline-spacing">
+                            <a
+                                class="btn btn-primary me-1"
+                                data-bs-toggle="collapse"
+                                href="#일반"
+                                role="button"
+                                aria-expanded="false"
+                            >
+                                일반
+                            </a>
+                            <a
+                                class="btn btn-primary me-1"
+                                data-bs-toggle="collapse"
+                                href="#특별"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="collapseExample"
+                            >
+                                특별
+                            </a>
+                        </button>
+                            </p>
+                    <div class="collapse" id="일반">
+                        <div class="d-grid d-sm-flex p-3 border">
+                            <div class="col-xl-12">
+                                <h6 class="text-muted">테마를 선택하세요</h6>
+                                <div class="nav-align-top mb-4">
+                                    <ul class="nav nav-pills mb-3 nav-fill" role="tablist">
+                                        <li class="nav-item">
+                                            <button
+                                            type="button"
+                                            class="nav-link active"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#감정"
+                                            aria-controls="감정"
+                                            aria-selected="true"
+                                            >
+                                            감정
+                                            </button>
+                                        </li>
+                                    <li class="nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#추억"
+                                            aria-controls="추억"
+                                            aria-selected="false"
+                                        >
+                                        추억
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#연애"
+                                            aria-controls="연애"
+                                            aria-selected="false"
+                                        >
+                                        연애
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#일상"
+                                            aria-controls="일상"
+                                            aria-selected="false"
+                                        >
+                                        일상
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#유행"
+                                            aria-controls="유행"
+                                            aria-selected="false"
+                                        >
+                                        유행
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#문화"
+                                            aria-controls="문화"
+                                            aria-selected="false"
+                                        >
+                                        문화
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#배움"
+                                            aria-controls="배움"
+                                            aria-selected="false"
+                                        >
+                                        배움
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button
+                                            type="button"
+                                            class="nav-link"
+                                            role="tab"
+                                            data-bs-toggle="tab"
+                                            data-bs-target="#영화"
+                                            aria-controls="영화"
+                                            aria-selected="false"
+                                        >
+                                        영화
+                                        </button>
+                                    </li>
+                                
+                                    </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="감정" role="tabpanel">
+                                        <p>
+                                        내 생애 가장 부끄러었던 일은?<br>
+                                        나를 행복하게 만드는 작은 습관이 있다면?<br>
+                                        슬픈 감정은 어떻게 해소하나요?<br>
+                                        웃다가 울어본 적 있나요?
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="추억" role="tabpanel">
+                                        <p>
+                                            추억추억
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="연애" role="tabpanel">
+                                        <p>
+                                            연애연애
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="일상" role="tabpanel">
+                                        <p>
+                                            일상일상
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="유행" role="tabpanel">
+                                        <p>
+                                            깻잎 논쟁을 아시나요?<br>
+                                            나의 최애 유튜버 소개하기<br>
+                                            최근 가장 킹받았던 순간은?<br>
+                                            세계관 이해에만 100시간이 걸리는 K-POP 걸그룹<br>
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="문화" role="tabpanel">
+                                        <p>
+                                            문화문화
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="문화" role="tabpanel">
+                                        <p>
+                                            문화문화
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="배움" role="tabpanel">
+                                        <p>
+                                            배움배움
+                                        </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="영화" role="tabpanel">
+                                        <p>
+                                            영화영화
+                                        </p>
+                                    </div>
 
-                  <p class="demo-inline-spacing">
-                    <a
-                      class="btn btn-primary me-1"
-                      data-bs-toggle="collapse"
-                      href="#multiCollapseExample1"
-                      role="button"
-                      aria-expanded="false"
-                      aria-controls="multiCollapseExample1"
-                      >Toggle first element</a
-                    >
-                    <button
-                      class="btn btn-primary me-1"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#multiCollapseExample2"
-                      aria-expanded="false"
-                      aria-controls="multiCollapseExample2"
-                    >
-                      Toggle second element
-                    </button>
-                    <button
-                      class="btn btn-primary me-1"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target=".multi-collapse"
-                      aria-expanded="false"
-                      aria-controls="multiCollapseExample1 multiCollapseExample2"
-                    >
-                      Toggle both elements
-                    </button>
-                  </p>
-                  <div class="row">
-                    <div class="col-12 col-md-6 mb-2 mb-md-0">
-                      <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                      <div class="collapse" id="특별">
                         <div class="d-grid d-sm-flex p-3 border">
-                          <img
-                            src="../assets/img/elements/2.jpg"
-                            alt="collapse-image"
-                            height="125"
-                            class="me-4 mb-sm-0 mb-2"
-                          />
                           <span>
-                            All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as
-                            necessary, making this the first true generator on the Internet. It uses a dictionary of
-                            over 200 Latin words, combined with a handful of model sentence structures, to generate
-                            Lorem Ipsum which looks reasonable.
+                            Lorem Ipsum is simply dummy text of the printing and
+                            typesetting industry. Lorem Ipsum has been the industry's
+                            standard dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type and scrambled it to make a
+                            type specimen book. It has survived not only five centuries,
                           </span>
                         </div>
                       </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                      <div class="collapse multi-collapse" id="multiCollapseExample2">
-                        <div class="d-grid d-sm-flex p-3 border">
-                          <img
-                            src="../assets/img/elements/3.jpg"
-                            alt="collapse-image"
-                            height="125"
-                            class="me-4 mb-sm-0 mb-2"
-                          />
-                          <span>
-                            There are many variations of passages of Lorem Ipsum available, but the majority have
-                            suffered alteration in some form, by injected humour, or randomised words which don't
-                            look even slightly believable. If you are going to use a passage of Lorem Ipsum.
-                          </span>
-                        </div>
+                      <div class="d-grid gap-2 col-lg-6 mx-auto mt-3">
+                        <button class="btn btn-primary btn-lg " onclick="location.href='themaselect.html' " type="button">
+                            다음
+                        </button>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        <!-- / Content -->
-    
-    
-  {% endblock%}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>

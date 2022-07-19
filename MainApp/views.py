@@ -14,3 +14,6 @@ def setprofile(request):
 def themaselect(request):
     return render(request, 'themaselect.html')
 
+def thema(request):
+    return render(request, 'thema.html')
+
