@@ -10,14 +10,14 @@ def register(request):
         # if (overlapped == None) and (request.POST['password'] == request.POST['repeat']):
         if (request.POST['password'] == request.POST['repeat']):    
             user = User.objects.create_user(username=username,
-                                                password=request.POST['password'],
-                                                email=request.POST['email'],
-                                                name=request.POST['name'],
-                                                birth=request.POST['birth'],
-                                                residence=request.POST['residence'],
-                                                sex=request.POST['sex'],
-                                                nationality=request.POST['nationality'],
-                                                mother_tongue=request.POST['mother_tongue'])
+                                            password=request.POST['password'],
+                                            email=request.POST['email'],
+                                            name=request.POST['name'],
+                                            birth='-'.join([request.POST['birth-year'], request.POST['birth-month'], request.POST['birth-day']]),
+                                            residence=request.POST['residence'],
+                                            sex=request.POST['sex'],
+                                            nationality=request.POST['nationality'],
+                                            mother_tongue=request.POST['mother_tongue'])
             auth.login(request, user)
             return redirect('home')
         else:

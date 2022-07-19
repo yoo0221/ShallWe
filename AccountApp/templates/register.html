@@ -63,6 +63,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{% static 'assets/js/config.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -109,6 +110,7 @@
                         name="birth-year"
                         placeholder="년(4자)"
                         autofocus
+                        maxlength='4'
                       />
                       <select id="birth-month" class="form-select col">
                         <option>월</option>
@@ -132,6 +134,7 @@
                         name="birth-day"
                         autofocus
                         placeholder="일"
+                        maxlength='2'
                       />
                     </div>
                   </div>
@@ -148,6 +151,11 @@
                     autofocus
                     autocomplete="off"
                   />
+                  <div>
+                  <<select name="addressDo" id="addressRegion1"></select>
+                  <select name="addressSiGunGu" id="addressDo1"></select>
+                  <select name="addressEMD" id="addressSiGunGu1"></select>
+                  </div>
                 </div>
                 
                 <div class="mb-3">
@@ -294,7 +302,7 @@
     <script src="{% static 'assets/js/main.js' %}"></script>
 
     <!-- Page JS -->
-
+    <script src="{% static 'js/location_select.js' %}"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
