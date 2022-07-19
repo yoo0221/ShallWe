@@ -27,4 +27,5 @@ urlpatterns = [
     path('setprofile/', views.setprofile, name='setprofile'),    
     path('themaselect/', views.themaselect, name='themaselect'),   
     path('logout/',accviews.logout, name='logout'),
+    path('thema/', views.thema, name='thema'),   
 ]
