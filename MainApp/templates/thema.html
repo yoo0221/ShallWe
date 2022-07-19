@@ -15,18 +15,10 @@
                                 오늘의 테마를 선택해보아요!
                             </p>
                             <p class="demo-inline-spacing">
+                                <button type="button" class="col my-3 btn btn-outline-primary">일반</button>
                             <a
-                                class="btn btn-primary me-1"
-                                data-bs-toggle="collapse"
-                                href="#일반"
-                                role="button"
-                                aria-expanded="false"
-                            >
-                                일반
-                            </a>
-                            <a
-                                class="btn btn-primary me-1"
-                                data-bs-toggle="collapse"
+                                class="col my-3 btn btn-outline-primary"
+                                data-bs-toggle="tab"
                                 href="#특별"
                                 role="button"
                                 aria-expanded="false"
@@ -36,7 +28,7 @@
                             </a>
                         </button>
                             </p>
-                    <div class="collapse" id="일반">
+                    
                         <div class="d-grid d-sm-flex p-3 border">
                             <div class="col-xl-12">
                                 <h6 class="text-muted">테마를 선택하세요</h6>
@@ -205,22 +197,10 @@
                                 </div>
                               </div>
                         </div>
-                      </div>
-                      <div class="collapse" id="특별">
-                        <div class="d-grid d-sm-flex p-3 border">
-                          <span>
-                            Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the 1500s, when an unknown
-                            printer took a galley of type and scrambled it to make a
-                            type specimen book. It has survived not only five centuries,
-                          </span>
-                        </div>
-                      </div>
+                      
+                      
                       <div class="d-grid gap-2 col-lg-6 mx-auto mt-3">
-                        <button class="btn btn-primary btn-lg " onclick="location.href='themaselect.html' " type="button">
-                            다음
-                        </button>
+                        <a href="{% url 'themaselect' %}" button class="btn btn-primary btn-lg " type="button" >다음</a>
                       </div>
             </div>
           </div>
