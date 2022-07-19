@@ -7,11 +7,123 @@
 <!-- 
  1. 연령이랑 성별을 같은 줄에 두고 싶어요,,,, 인터넷 창 가로 폭이 좁아지면 밑으로 내려오게,, 하고싶어요,, 공간낭비가 너무 심해요,,,
  2. 필터링에 관심 해시 태그를 추가해서 검색하는 기능을 넣어햐할 것 같ㄴ아요,,,,
- 3. 기본 정렬이 새로 추가된 친구 순이라서 필터 설정 아이콘을 누르면 설정 창이 열리게 작업해야할 것 같아요
- 4. 필터링에서 지역 설정 나도 알바몬처럼 바꾸고 싶ㅇ요 ,,,,,
 -->
 
-<div class="container mt-3">
+<div class="content-wrapper">
+  <div class="container-xxl flex-grow-1 container-p-y">
+  <div class="card accordion-item active">
+  <h2 class="accordion-header" id="headingOne">
+    <button
+      type="button"
+      class="accordion-button"
+      data-bs-toggle="collapse"
+      data-bs-target="#accordionOne"
+      aria-expanded="true"
+      aria-controls="accordionOne"
+    >
+    <strong>필터 설정</strong>
+    </button>
+  </h2>
+
+  <div
+    id="accordionOne"
+    class="accordion-collapse collapse show"
+    data-bs-parent="#accordionExample"
+  >
+    <div class="accordion-body">
+      <div class="card-body filter-age">
+        <h5 class="card-title">연령대</h5>
+        <label class="filtering-radio-btn">
+          <input type="radio" name="filter-age" value="20">
+          <span>20대</span>
+        </label>
+        <label class="filtering-radio-btn">
+          <input type="radio" name="filter-age" value="30">
+          <span>30대</span>
+        </label>
+        <label class="filtering-radio-btn">
+          <input type="radio" name="filter-age" value="40">
+          <span>40대 이상</span>
+        </label>
+      </div>
+                
+      <div class="card-body filter-sex">
+        <h5 class="card-title">성별</h5>
+        <label class="filtering-radio-btn">
+          <input type="radio" name="filter-sex" value="male">
+          <span>남</span>
+        </label>
+        <label class="filtering-radio-btn">
+          <input type="radio" name="filter-sex" value="female">
+          <span>여</span>
+        </label>
+      </div>
+    
+      <div class="card-body">
+        <h5 class="card-title">거주 지역</h5>
+        <div class="btn-group dropdwon-residence-city">
+          <button
+          type="button"
+          class="btn btn-outline-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            시/도
+          </button>
+          
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="javascript:void(0);">서울</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">경기</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">인천</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">대전</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">대구</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">부산</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">울산</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">광주</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">강원</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">세종</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">충북</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">충남</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">경북</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">경남</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">전북</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">전남</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);">제주</a></li>
+          </ul>
+        </div>
+    
+        <div class="btn-group dropdwon-residence-town">
+          <button
+            type="button"
+            class="btn btn-outline-primary dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            시/군/구
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="javascript:void(0);">ㅏㅏㅏㅏㅏ</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <div class="card-body filter-selected">
+        <button type="button" class="btn rounded-pill btn-primary">선택 완료</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+<!-- 
+  <div class="content-wrapper">
+  <div class="container-xxl flex-grow-1 container-p-y">
+  <div class="card"> 
+  <h5 class="card-header"><strong>필터 설정</strong></h5>
+  <div class="text-nowrap"> table-responsive 
+
+  <div class="container mt-3">
   <div class="row">
   <div class="col-md mb-3 filter-card">
   <div class="card filter-card container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme">
@@ -105,6 +217,7 @@
   </div>
   </div>
 </div>
+-->
 <!-- /filter -->
 
 <!-- mate list -->
