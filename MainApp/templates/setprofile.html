@@ -3,18 +3,18 @@
 {% block mainbody %}
 <!-- Content -->
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> SET PROFILE</h4>
+  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> 프로필 설정</h4>
 
   <div class="row">
     <div class="col-md-12">
       <ul class="nav nav-pills flex-column flex-md-row mb-3">
         <li class="nav-item">
-          <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a>
+          <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> 계정</a>
         </li>
         
       </ul>
       <div class="card mb-4">
-        <h5 class="card-header">Profile Details</h5>
+        <h5 class="card-header">프로필 세부사항</h5>
         <!-- Account -->
         <div class="card-body">
           <div class="d-flex align-items-start align-items-sm-center gap-4">
@@ -28,7 +28,7 @@
             />
             <div class="button-wrapper">
               <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                <span class="d-none d-sm-block">Upload new photo</span>
+                <span class="d-none d-sm-block">사진업로드</span>
                 <i class="bx bx-upload d-block d-sm-none"></i>
                 <input
                   type="file"
@@ -40,10 +40,10 @@
               </label>
               <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
                 <i class="bx bx-reset d-block d-sm-none"></i>
-                <span class="d-none d-sm-block">Reset</span>
+                <span class="d-none d-sm-block">리셋</span>
               </button>
 
-              <p class="text-muted mb-0">Allowed JPG, GIF or PNG. Max size of 800K</p>
+              <p class="text-muted mb-0">파일 형식 JPG, GIF 또는 PNG. 최대크기 800K</p>
             </div>
           </div>
         </div>
@@ -58,16 +58,16 @@
                   type="text"
                   id="firstName"
                   name="firstName"
-                  placeholder="John"
+                  placeholder="홍"
                   autofocus
                 />
               </div>
               <div class="mb-3 col-md-6">
                 <label for="lastName" class="form-label">Last Name</label>
-                <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Doe" />
+                <input class="form-control" type="text" name="lastName" id="lastName" placeholder="길동" />
               </div>
               <div class="mb-3 col-md-6">
-                <label for="email" class="form-label">E-mail</label>
+                <label for="email" class="form-label"></label>
                 <input
                   class="form-control"
                   type="text"
@@ -170,20 +170,20 @@
               </div>
             </div>
             <div class="mt-2">
-              <button type="submit" class="btn btn-primary me-2">Save changes</button>
-              <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+              <button type="submit" class="btn btn-primary me-2">변경사항 저장</button>
+              <button type="reset" class="btn btn-outline-secondary">취소</button>
             </div>
           </form>
         </div>
         <!-- /Account -->
       </div>
       <div class="card">
-        <h5 class="card-header">Delete Account</h5>
+        <h5 class="card-header">계정 삭제</h5>
         <div class="card-body">
           <div class="mb-3 col-12 mb-0">
             <div class="alert alert-warning">
-              <h6 class="alert-heading fw-bold mb-1">Are you sure you want to delete your account?</h6>
-              <p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
+              <h6 class="alert-heading fw-bold mb-1">정말로 계정을 삭제하시겠습니까?</h6>
+              <p class="mb-0">한번 삭제하게 되면 되돌릴 수 없습니다. 그래도 진행하겠습니까?</p>
             </div>
           </div>
           <form id="formAccountDeactivation" onsubmit="return false">
@@ -195,10 +195,10 @@
                 id="accountActivation"
               />
               <label class="form-check-label" for="accountActivation"
-                >I confirm my account deactivation</label
+                >위의 사항을 확인하였습니다.</label
               >
             </div>
-            <button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>
+            <button type="submit" class="btn btn-danger deactivate-account">계정 삭제</button>
           </form>
         </div>
       </div>
