@@ -24,7 +24,8 @@
           </button>
         </h2>
         <div class="card-body accordion-body">
-          <form action="{ url 'search_users' }" method="post">
+          <form action="" method="post">
+            {% csrf_token %}
             <div
               id="accordionOne"
               class="accordion-collapse collapse show"
@@ -33,27 +34,31 @@
               <div class="card-body filter-age">
                 <h5 class="card-title">연령대</h5>
                 <label class="radio-btn">
-                  <input type="radio" name="filter-age" value="20" />
+                  <input type="hidden" name="filter-age20" value="0" />
+                  <input type="checkbox" name="filter-age20" value="20" />
                   <span>20대</span>
                 </label>
                 <label class="radio-btn">
-                  <input type="radio" name="filter-age" value="30" />
+                  <input type="hidden" name="filter-age30" value="0" />
+                  <input type="checkbox" name="filter-age30" value="30" />
                   <span>30대</span>
                 </label>
                 <label class="radio-btn">
-                  <input type="radio" name="filter-age" value="40" />
+                  <input type="hidden" name="filter-age40" value="0" />
+                  <input type="checkbox" name="filter-age40" value="40" />
                   <span>40대 이상</span>
                 </label>
               </div>
 
               <div class="card-body filter-sex">
                 <h5 class="card-title">성별</h5>
+                <input type="hidden" name="filter-sex" value="x" />
                 <label class="radio-btn">
-                  <input type="radio" name="filter-sex" value="male" />
+                  <input type="radio" name="filter-sex" value="남" />
                   <span>남</span>
                 </label>
                 <label class="radio-btn">
-                  <input type="radio" name="filter-sex" value="female" />
+                  <input type="radio" name="filter-sex" value="여" />
                   <span>여</span>
                 </label>
               </div>
@@ -163,9 +168,7 @@
               </div>
 
               <div class="card-body filter-selected">
-                <button type="submit" class="btn btn-primary">
-                  선택 완료
-                </button>
+                <button type="submit" class="btn btn-primary">선택 완료</button>
               </div>
             </div>
           </form>
@@ -202,22 +205,7 @@
       <div class="card col">
         <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5>
         <div class="table-responsive text-nowrap">
-          <table class="table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>이름</th>
-                <th>나이</th>
-                <th>국적</th>
-                <th>성별</th>
-                <th>거주지</th>
-                <th>좋아하는 장소</th>
-              </tr>
-            </thead>
-
-            <tbody class="table-border-bottom-0">
-              <tr>
-                <!--
+          <!--
             <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
             <td>
               <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
@@ -249,6 +237,50 @@
               </div>
             </td>
           -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>국적</th>
+                <th>성별</th>
+                <th>거주지</th>
+                <th>좋아하는 장소</th>
+              </tr>
+            </thead>
+
+            <tbody class="table-border-bottom-0">
+              {% for user in result %}
+              <tr>
+                <td>
+                  {% if user.photo.url %}
+                  <img
+                    src="{{ user.photo.url }}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'assets/img/ordinary_profile_photo.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                  {% endif %}
+                </td>
+                <td>{{user.name}}</td>
+                <td>{{user.birth}}</td>
+                <td>{{user.nationality}}</td>
+                <td>{{user.sex}}</td>
+                <td>
+                  {{user.address_do}} {{user.address_sgg}} {{user.address_emd}}
+                </td>
+                <td>{{user.like_place}}</td>
+              </tr>
+              {% endfor %}
+              <!-- <tr>
                 <td>
                   <img
                     src="{% static 'assets/img/avatars/5.png' %}"
@@ -315,6 +347,54 @@
                 <td>대구 북구</td>
                 <td>카페</td>
               </tr>
+              <tr>
+                <td>
+                  <img
+                    src="{% static 'assets/img/avatars/5.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                </td>
+                <td>Albert Cook</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>여</td>
+                <td>대구 북구</td>
+                <td>카페</td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="{% static 'assets/img/avatars/5.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                </td>
+                <td>Albert Cook</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>여</td>
+                <td>대구 북구</td>
+                <td>카페</td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="{% static 'assets/img/avatars/5.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                </td>
+                <td>Albert Cook</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>여</td>
+                <td>대구 북구</td>
+                <td>카페</td>
+              </tr> -->
             </tbody>
           </table>
         </div>
