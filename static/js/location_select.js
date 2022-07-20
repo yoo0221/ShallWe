@@ -4105,7 +4105,7 @@ var areaSelectMaker = function(target){
             });
 
             $(a2).on("change", function(){
-                a3.empty().append("<option value=''>선택</option>");
+                a3.empty().append("<option value='none'>선택</option>");
                 var Do = a1.val();
                 var SiGunGu = $(this).val();
                 var keys = Object.keys(area[Do][SiGunGu]);
@@ -4116,9 +4116,9 @@ var areaSelectMaker = function(target){
         })(i);        
 
         function init(t, first){
-            first ? t.empty().append("<option value=''>시/도</option>") : "";
-            t.next().empty().append("<option value=''>시/군/구</option>");
-            t.next().next().empty().append("<option value=''>읍/면/동</option>");
+            first ? t.empty().append("<option value='none'>시/도</option>") : "";
+            t.next().empty().append("<option value='none'>시/군/구</option>");
+            t.next().next().empty().append("<option value='none'>읍/면/동</option>");
         }
     }
 }
