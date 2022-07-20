@@ -7,7 +7,7 @@ def home(request):
     return render(request, 'index.html')
 
 def search(request):
-    result = User.objects.filter().order_by("-date_joined")    
+    result = User.objects.filter(is_superuser=False).order_by("-date_joined")
     return render(request, 'search.html', {"result":result})
 
 def filtered(request):
@@ -20,6 +20,7 @@ def filtered(request):
         f_sgg = request.POST['addressSiGunGu']
         f_emd = request.POST['addressEMD']
         # 연령 필터
+        result = User.objects.filter(is_superuser=False)
         age = User.objects.filter(sex='none')
         tempage = age
         if f_age20 == "20":
@@ -44,7 +45,7 @@ def filtered(request):
             sex = User.objects.filter()
         # 거주 지역 필터
         # 시/도
-        result = age & sex
+        result &= age & sex
 
         if f_do != "none":
             do = User.objects.filter(address_do=f_do)
@@ -52,11 +53,11 @@ def filtered(request):
                 sgg = User.objects.filter(address_sgg=f_sgg)
                 if f_emd != "none":
                     emd = User.objects.filter(address_emd=f_emd)
-                    result = age & sex & do & sgg & emd
+                    result &= do & sgg & emd
                 else:
-                    result = age & sex & do & sgg
+                    result &=do & sgg
             else:
-                result = age & sex & do
+                result &= do
         print(result)
         return render(request, 'search.html', {"result":result.order_by('-date_joined')})
 
