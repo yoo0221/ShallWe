@@ -14,21 +14,35 @@
                             <p class="card-text">
                                 오늘의 테마를 선택해보아요!
                             </p>
-                            <p class="demo-inline-spacing">
-                                <button type="button" class="col my-3 btn btn-outline-primary">일반</button>
-                            <a
-                                class="col my-3 btn btn-outline-primary"
-                                data-bs-toggle="tab"
-                                href="#특별"
-                                role="button"
-                                aria-expanded="false"
-                                aria-controls="collapseExample"
-                            >
-                                특별
-                            </a>
-                        </button>
-                            </p>
-                    
+                            <form>
+                                <p class="demo-inline-spacing">
+                                <div class="thema-select-group"> 
+                                    <input type="hidden" name="thema-select" value="x" />
+                                    <label class="radio-btn">
+                                        <input type="radio" name="thema-select" value="일반" />
+                                        <span>일반</span>
+                                    </label>
+                                    <label class="radio-btn">
+                                        <input type="radio" name="thema-select" value="특별" />
+                                        <span>특별</span>
+                                    </label>
+                                </div>
+                                </p>
+                                <!-- <p class="demo-inline-spacing">
+                                    <button type="button" class="col my-3 btn btn-outline-primary">일반</button>
+                                    <a
+                                        class="col my-3 btn btn-outline-primary"
+                                        data-bs-toggle="tab"
+                                        href="#특별"
+                                        role="button"
+                                        aria-expanded="false"
+                                        aria-controls="collapseExample"
+                                    >
+                                        특별
+                                    </a>
+                                    </button>
+                                </p> -->
+                            </form>
                         <div class="d-grid d-sm-flex p-3 border">
                             <div class="col-xl-12">
                                 <h6 class="text-muted">테마를 선택하세요</h6>
