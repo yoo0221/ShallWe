@@ -24,7 +24,7 @@
           </button>
         </h2>
         <div class="card-body accordion-body">
-          <form action="" method="post">
+          <form action="{% url 'filtered' %}" method="post">
             {% csrf_token %}
             <div
               id="accordionOne"

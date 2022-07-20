@@ -24,6 +24,7 @@ urlpatterns = [
     path('login/', accviews.login, name='login'),
     path('', views.home, name='home'),
     path('search/', views.search, name='search'),
+    path('search/filtered', views.filtered, name='filtered'),
     path('setprofile/', views.setprofile, name='setprofile'),    
     path('themaselect/', views.themaselect, name='themaselect'),   
     path('logout/',accviews.logout, name='logout'),
