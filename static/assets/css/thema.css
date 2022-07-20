@@ -34,14 +34,9 @@
 }
 
 .thema-select-place-group > .radio-btn input[type="radio"] + span {
-    width: 5rem;
-    margin: 0.5rem;
+    width: 4.5rem;
+    margin-right: 0.5rem !important;
 }
-
-/* .thema-select-place-group {
-    display: inline;
-    text-align: center;
-} */
 
 .thema-select-group > .radio-btn input[type="radio"] + span {
     width: 4.5rem;
@@ -50,4 +45,12 @@
 
 .card-body > select {
     border-radius: 0.45rem;
+}
+
+input[type="text"] {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 20rem;
+    outline: none;
 }
