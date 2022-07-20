@@ -11,7 +11,7 @@
 .radio-btn input[type="radio"] + span {
     display: inline-block;
     padding: 7px;
-    width: 10rem;
+    width: 7.5rem;
     border: 1px solid #5f61e6;
     background-color: #ffffff;
     text-align: center;
@@ -33,12 +33,16 @@
     box-shadow: 0 0.125rem 0.25rem 0 rgba(105, 108, 255, 0.4);
 }
 
-.thema-radio-group > .radio-btn input[type="radio"] + span {
-    width: 20rem;
+.thema-select-place-group > .radio-btn input[type="radio"] + span {
+    width: 5rem;
     margin: 0.5rem;
 }
 
-.thema-radio-group {
+/* .thema-select-place-group {
     display: inline;
     text-align: center;
+} */
+
+.thema-select-group > .radio-btn input[type="radio"] + span {
+    width: 5rem;
 }
