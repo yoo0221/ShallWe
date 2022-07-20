@@ -17,3 +17,5 @@ def themaselect(request):
 def thema(request):
     return render(request, 'thema.html')
 
+def promise(request):
+    return render(request, 'promise.html')
