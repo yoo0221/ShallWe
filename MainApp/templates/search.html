@@ -1,6 +1,4 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block mainbody %}
+{% extends 'base.html' %} {% load static %} {% block mainbody %}
 
 <!-- filter -->
 
@@ -9,238 +7,217 @@
  2. 필터링에 관심 해시 태그를 추가해서 검색하는 기능을 넣어햐할 것 같ㄴ아요,,,,
 -->
 
-<div class="content-wrapper">
-  <div class="container-xxl flex-grow-1 container-p-y">
-  <div class="card accordion-item active">
-  <h2 class="accordion-header" id="headingOne">
-    <button
-      type="button"
-      class="accordion-button"
-      data-bs-toggle="collapse"
-      data-bs-target="#accordionOne"
-      aria-expanded="true"
-      aria-controls="accordionOne"
-    >
-    <strong>필터 설정</strong>
-    </button>
-  </h2>
-
-  <div
-    id="accordionOne"
-    class="accordion-collapse collapse show"
-    data-bs-parent="#accordionExample"
-  >
-    <div class="accordion-body">
-      <div class="card-body filter-age">
-        <h5 class="card-title">연령대</h5>
-        <label class="filtering-radio-btn">
-          <input type="radio" name="filter-age" value="20">
-          <span>20대</span>
-        </label>
-        <label class="filtering-radio-btn">
-          <input type="radio" name="filter-age" value="30">
-          <span>30대</span>
-        </label>
-        <label class="filtering-radio-btn">
-          <input type="radio" name="filter-age" value="40">
-          <span>40대 이상</span>
-        </label>
-      </div>
-                
-      <div class="card-body filter-sex">
-        <h5 class="card-title">성별</h5>
-        <label class="filtering-radio-btn">
-          <input type="radio" name="filter-sex" value="male">
-          <span>남</span>
-        </label>
-        <label class="filtering-radio-btn">
-          <input type="radio" name="filter-sex" value="female">
-          <span>여</span>
-        </label>
-      </div>
-    
-      <div class="card-body">
-        <h5 class="card-title">거주 지역</h5>
-        <div class="btn-group dropdwon-residence-city">
-          <button
-          type="button"
-          class="btn btn-outline-primary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            시/도
-          </button>
-          
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="javascript:void(0);">서울</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">경기</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">인천</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">대전</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">대구</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">부산</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">울산</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">광주</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">강원</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">세종</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">충북</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">충남</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">경북</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">경남</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">전북</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">전남</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);">제주</a></li>
-          </ul>
-        </div>
-    
-        <div class="btn-group dropdwon-residence-town">
+<div class="container-xxl flex-grow-1 container-p-y">
+  <div class="row">
+    <div class="col-lg-6 mb-4 order-0">
+      <div class="card accordion-item">
+        <h2 class="accordion-header p-2" id="headingOne">
           <button
             type="button"
-            class="btn btn-outline-primary dropdown-toggle"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+            class="accordion-button"
+            data-bs-toggle="collapse"
+            data-bs-target="#accordionOne"
+            aria-expanded="true"
+            aria-controls="accordionOne"
           >
-            시/군/구
+            <strong>필터 설정</strong>
           </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="javascript:void(0);">ㅏㅏㅏㅏㅏ</a></li>
-          </ul>
+        </h2>
+        <div class="card-body accordion-body">
+          <form action="{ url 'search_users' }" method="post">
+            <div
+              id="accordionOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="card-body filter-age">
+                <h5 class="card-title">연령대</h5>
+                <label class="filtering-radio-btn">
+                  <input type="radio" name="filter-age" value="20" />
+                  <span>20대</span>
+                </label>
+                <label class="filtering-radio-btn">
+                  <input type="radio" name="filter-age" value="30" />
+                  <span>30대</span>
+                </label>
+                <label class="filtering-radio-btn">
+                  <input type="radio" name="filter-age" value="40" />
+                  <span>40대 이상</span>
+                </label>
+              </div>
+
+              <div class="card-body filter-sex">
+                <h5 class="card-title">성별</h5>
+                <label class="filtering-radio-btn">
+                  <input type="radio" name="filter-sex" value="male" />
+                  <span>남</span>
+                </label>
+                <label class="filtering-radio-btn">
+                  <input type="radio" name="filter-sex" value="female" />
+                  <span>여</span>
+                </label>
+              </div>
+
+              <div class="card-body">
+                <h5 class="card-title">거주 지역</h5>
+                <select
+                  class="p-2 mx-1"
+                  name="addressDo"
+                  id="addressDo"
+                  style="border-color: #1c3bd5; color: #1c3bd5"
+                ></select>
+                <select
+                  class="selectpicker p-2 mx-1"
+                  name="addressSiGunGu"
+                  id="addressSiGunGu"
+                  style="border-color: #1c3bd5; color: #1c3bd5"
+                ></select>
+                <select
+                  class="selectpicker p-2 mx-1"
+                  name="addressEMD"
+                  id="addressEMD"
+                  style="border-color: #1c3bd5; color: #1c3bd5"
+                ></select>
+                <!-- <div class="btn-group dropdwon-residence-city">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  시/도
+                </button>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">서울</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">경기</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">인천</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">대전</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">대구</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">부산</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">울산</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">광주</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">강원</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">세종</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">충북</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">충남</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">경북</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">경남</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">전북</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">전남</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);">제주</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="btn-group dropdwon-residence-town">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  시/군/구
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="javascript:void(0);"
+                      >ㅏㅏㅏㅏㅏ</a
+                    >
+                  </li>
+                </ul>
+              </div> -->
+              </div>
+
+              <div class="card-body filter-selected">
+                <button type="submit" class="btn rounded-pill btn-primary">
+                  선택 완료
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-      </div>
-    
-      <div class="card-body filter-selected">
-        <button type="button" class="btn rounded-pill btn-primary">선택 완료</button>
-      </div>
-    </div>
-  </div>
-  </div>
-  </div>
-</div>
+        <!-- <div class="d-flex align-items-end row">
+          <div class="col-sm-7">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+              <p class="mb-4">
+                You have done <span class="fw-bold">72%</span> more sales today.
+                Check your new badge in your profile.
+              </p>
 
-<!-- 
-  <div class="content-wrapper">
-  <div class="container-xxl flex-grow-1 container-p-y">
-  <div class="card"> 
-  <h5 class="card-header"><strong>필터 설정</strong></h5>
-  <div class="text-nowrap"> table-responsive 
-
-  <div class="container mt-3">
-  <div class="row">
-  <div class="col-md mb-3 filter-card">
-  <div class="card filter-card container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme">
-    <div class="card-header">필터 설정</div>
-
-    <div class="card-body">
-    <div class="filter-age">
-      <h5 class="card-title">연령대</h5>
-      <label class="filtering-radio-btn">
-        <input type="radio" name="filter-age" value="20">
-        <span>20대</span>
-      </label>
-      <label class="filtering-radio-btn">
-        <input type="radio" name="filter-age" value="30">
-        <span>30대</span>
-      </label>
-      <label class="filtering-radio-btn">
-        <input type="radio" name="filter-age" value="40">
-        <span>40대 이상</span>
-      </label>
-    </div>
-    </div>
-            
-    <div class="card-body">
-    <div class="filter-sex">
-      <h5 class="card-title">성별</h5>
-      <label class="filtering-radio-btn">
-        <input type="radio" name="filter-sex" value="male">
-        <span>남</span>
-      </label>
-    
-      <label class="filtering-radio-btn">
-        <input type="radio" name="filter-sex" value="female">
-        <span>여</span>
-      </label>
-    </div>
-    </div>
-
-    <div class="card-body">
-      <h5 class="card-title">거주 지역</h5>
-      <div class="btn-group dropdwon-residence-city">
-        <button
-        type="button"
-        class="btn btn-outline-primary dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          시/도
-        </button>
-          
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="javascript:void(0);">서울</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">경기</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">인천</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">대전</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">대구</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">부산</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">울산</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">광주</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">강원</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">세종</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">충북</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">충남</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">경북</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">경남</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">전북</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">전남</a></li>
-          <li><a class="dropdown-item" href="javascript:void(0);">제주</a></li>
-        </ul>
-      </div>
-
-      <div class="btn-group dropdwon-residence-town">
-        <button
-          type="button"
-          class="btn btn-outline-primary dropdown-toggle"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          시/군/구
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="javascript:void(0);">ㅏㅏㅏㅏㅏ</a></li>
-        </ul>
+              <a href="javascript:;" class="btn btn-sm btn-outline-primary"
+                >View Badges</a
+              >
+            </div>
+          </div>
+          <div class="col-sm-5 text-center text-sm-left">
+            <div class="card-body pb-0 px-0 px-md-4">
+              <img
+                src="../assets/img/illustrations/man-with-laptop-light.png"
+                height="140"
+                alt="View Badge User"
+                data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                data-app-light-img="illustrations/man-with-laptop-light.png"
+              />
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
+    <div class="col-lg-6 order-1">
+      <div class="card col">
+        <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5>
+        <div class="table-responsive text-nowrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>국적</th>
+                <th>성별</th>
+                <th>거주지</th>
+                <th>좋아하는 장소</th>
+              </tr>
+            </thead>
 
-    <div class="card-body filter-selected">
-      <button type="button" class="btn rounded-pill btn-primary">선택 완료</button>
-    </div>
-  </div>
-  </div>
-  </div>
-</div>
--->
-<!-- /filter -->
-
-<!-- mate list -->
-<div class="container-xxl flex-grow-1 container-p-y">
-  <div class="card">
-  <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5>
-  <div class="table-responsive text-nowrap">
-    <table class="table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>이름</th>
-          <th>나이</th>
-          <th>국적</th>
-          <th>성별</th>
-          <th>거주지</th>
-          <th>좋아하는 장소</th>
-        </tr>
-      </thead>
-
-      <tbody class="table-border-bottom-0">
-        <tr>
-          <!--
+            <tbody class="table-border-bottom-0">
+              <tr>
+                <!--
             <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>Angular Project</strong></td>
             <td>
               <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
@@ -272,47 +249,77 @@
               </div>
             </td>
           -->
-          <td><img src="{% static 'assets/img/avatars/5.png' %}" alt="Avatar" class="rounded-circle" width="50px"/></td>
-          <td>Albert Cook</td>
-          <td>20</td>     
-          <td>대한민국</td>
-          <td>여</td>
-          <td>대구 북구</td>
-          <td>카페</td>
-        </tr>
+                <td>
+                  <img
+                    src="{% static 'assets/img/avatars/5.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                </td>
+                <td>Albert Cook</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>여</td>
+                <td>대구 북구</td>
+                <td>카페</td>
+              </tr>
 
-        <tr>
-          <td><img src="{% static 'assets/img/avatars/5.png' %}" alt="Avatar" class="rounded-circle" width="50px"/></td>
-          <td>Albert Cook</td>
-          <td>20</td>     
-          <td>대한민국</td>
-          <td>여</td>
-          <td>대구 북구</td>
-          <td>카페</td>
-        </tr>
-        
-        <tr>
-          <td><img src="{% static 'assets/img/avatars/5.png' %}" alt="Avatar" class="rounded-circle" width="50px"/></td>
-          <td>Albert Cook</td>
-          <td>20</td>     
-          <td>대한민국</td>
-          <td>여</td>
-          <td>대구 북구</td>
-          <td>카페</td>
-        </tr>
-        
-        <tr>
-          <td><img src="{% static 'assets/img/avatars/5.png' %}" alt="Avatar" class="rounded-circle" width="50px"/></td>
-          <td>Albert Cook</td>
-          <td>20</td>     
-          <td>대한민국</td>
-          <td>여</td>
-          <td>대구 북구</td>
-          <td>카페</td>
-        </tr>              
-      </tbody>
-    </table>
-  </div>
+              <tr>
+                <td>
+                  <img
+                    src="{% static 'assets/img/avatars/5.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                </td>
+                <td>Albert Cook</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>여</td>
+                <td>대구 북구</td>
+                <td>카페</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img
+                    src="{% static 'assets/img/avatars/5.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                </td>
+                <td>Albert Cook</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>여</td>
+                <td>대구 북구</td>
+                <td>카페</td>
+              </tr>
+
+              <tr>
+                <td>
+                  <img
+                    src="{% static 'assets/img/avatars/5.png' %}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+                </td>
+                <td>Albert Cook</td>
+                <td>20</td>
+                <td>대한민국</td>
+                <td>여</td>
+                <td>대구 북구</td>
+                <td>카페</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
