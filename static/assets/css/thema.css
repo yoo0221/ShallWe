@@ -46,3 +46,7 @@
 .thema-select-group > .radio-btn input[type="radio"] + span {
     width: 5rem;
 }
+
+.card-body > select {
+    border-radius: 0.45rem;
+}
