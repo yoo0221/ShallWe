@@ -1,7 +1,9 @@
+from django.utils import timezone
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import User 
 from django.contrib import auth
 from datetime import datetime
+
 # Create your views here.
 def register(request):
     overlapped = None
@@ -13,6 +15,9 @@ def register(request):
         list1.append(request.POST['birth-day'])
         birth_join='-'.join(list1)
         birth=datetime.strptime(birth_join, "%Y-%m-%d")
+
+        age = (int(timezone.now().strftime("%Y%m%d"))-int(birth.strftime("%Y%m%d"))) / 10000
+        
         overlapped = User.objects.filter(username=username)
         # if (overlapped == None) and (request.POST['password'] == request.POST['repeat']):
 
@@ -22,6 +27,7 @@ def register(request):
                                             email=request.POST['email'],
                                             name=request.POST['name'],
                                             birth=birth,
+                                            age=age,
                                             address_do=request.POST['addressDo'],
                                             address_sgg=request.POST['addressSiGunGu'],
                                             address_emd=request.POST['addressEMD'],
