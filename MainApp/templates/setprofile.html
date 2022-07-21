@@ -19,9 +19,9 @@
         <!-- <input type="text" id=user name="user" hidden value="{{user.username}}"> -->
         <div class="card-body align-items-sm-center">
           <div class="d-flex align-items-start align-items-sm-center gap-4">
-            {% if user.profile.profile_photo.url %}
+            {% if user.get_profile.photo.url %}
             <label for="photo_img" class="d-block rounded" tabindex="0">
-                <img src="{{ user.profile_photo.url }}" height="100" width="100" alt="">
+                <img src="{{ user.get_profile.photo.url }}" height="100" width="100" alt="">
                 <!-- <input
                   type="file"
                   id="photo_img"
@@ -142,13 +142,13 @@
               </div>
               {% else %} -->
               <div class="mb-3 col-md-6">
-                <label for="likeplace" class="form-label">이런 장소는 곤란해요</label>
+                <label for="likeplace" class="form-label">이런 장소가 좋아요</label>
                 {{form.like_place}}
               </div>
               <!-- {% endif %} -->
               <!-- {% if user.unlike_place %}
               <div class="mb-3 col-md-6">
-                <label for="unlikeplace" class="form-label">꺼려하는 장소</label>
+                <label for="unlikeplace" class="form-label">이런 장소는 곤란해요</label>
                 <input
                   class="form-control"
                   type="text"
@@ -160,7 +160,7 @@
               </div>
               {% else %} -->
               <div class="mb-3 col-md-6">
-                <label for="unlikeplace" class="form-label">꺼려하는 장소</label>
+                <label for="unlikeplace" class="form-label">이런 장소는 곤란해요</label>
                 {{form.unlike_place}}
               </div>
               <!-- {% endif %} -->

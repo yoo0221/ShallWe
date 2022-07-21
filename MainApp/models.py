@@ -1,7 +1,7 @@
 from django.db import models
 from AccountApp.models import User
 
-class Profile(models.Model):
+class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     
     photo = models.ImageField(null=True, blank=True, upload_to='profile')

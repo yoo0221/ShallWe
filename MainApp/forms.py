@@ -1,9 +1,9 @@
 from django import forms
-from MainApp.models import Profile
+from MainApp.models import UserProfile
 
 class SetProfileForm(forms.ModelForm):
     class Meta:
-        model = Profile
+        model = UserProfile
         fields = (
             'photo',
             'skill',
