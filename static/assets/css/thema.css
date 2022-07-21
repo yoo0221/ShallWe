@@ -68,3 +68,30 @@
 .offcanvas.offcanvas-bottom.thema-offcanvas {
   height: 55vh;
 }
+
+
+/* calendar */
+.cal-btn:hover {
+    color: #ed2a61;
+}
+
+.cal-day > td{
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cal-top > td {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.calendar > td {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    font-size: 1rem;
+}
