@@ -72,3 +72,6 @@ def thema(request):
 
 def promise(request):
     return render(request, 'promise.html')
+
+def meet(request):
+    return render(request, 'meet.html')

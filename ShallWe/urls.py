@@ -29,5 +29,6 @@ urlpatterns = [
     path('themaselect/', views.themaselect, name='themaselect'),   
     path('logout/',accviews.logout, name='logout'),
     path('thema/', views.thema, name='thema'),   
-    path('promise/', views.promise, name='promise'),   
+    path('promise/', views.promise, name='promise'),
+    path('meet/', views.meet, name="meet"), 
 ]
