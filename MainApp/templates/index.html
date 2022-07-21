@@ -2,28 +2,27 @@
 {% load static %}
 {% block mainbody %}
 
-<!-- 열심히 하긴 했는데 글이랑 아이콘이 한 줄에 잇음 좋겟는데
-  창 줄이면 자꾸 밑으로 아이콘이 내려옴 살려주세요 -->
-
 <div class="container-xxl flex-grow-1 container-p-y">
+  <a href="#"> <!-- 광고 배너 외부 링크/이벤트 페이지-->
   <div class="card mb-4" style="background-color: #8486ef;">
     <div class="d-flex align-items-end row">
-      <div class="col-sm-7">
-        <div class="card-body">
-          <h5 class="mb-1" style="color: black;"><span style="color: white;">메이트</span>와 함께 <span style="color: white;" class="fw-bold">미술 전시회</span> 어때요?</h5>
-          <p class="mb-0" style="color: white;">7월 대구 미술관 1+1 동반 할인 행사중</p>
+        <div class="col-sm-7">
+          <div class="card-body">
+            <h5 class="mb-1" style="color: black;"><span style="color: white;">메이트</span>와 함께 <span style="color: white;" class="fw-bold">미술 전시회</span> 어때요?</h5>
+            <p class="mb-0" style="color: white;">7월 대구 미술관 1+1 동반 할인 행사중</p>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-5 text-center text-sm-left">
-        <div class="card-body">
-          <img
-            src="{% static 'assets/img/icon-banner-house.png' %}"
-            height="50"
-            alt="banner-icon"
-          />
+        <div class="col-sm-5 text-center text-sm-left">
+          <div class="card-body">
+            <img
+              src="{% static 'assets/img/icon-banner-house.png' %}"
+              height="50"
+              alt="banner-icon"
+            />
+          </div>
         </div>
-      </div>
     </div>
+    </a>
   </div>
 
   <div class="row">
@@ -41,14 +40,14 @@
             <strong>필터 설정</strong>
           </button>
         </h2>
-        <div class="card-body accordion-body">
-          <form action="{% url 'filtered' %}" method="post">
-            {% csrf_token %}
-            <div
-              id="accordionOne"
-              class="accordion-collapse collapse show"
-              data-bs-parent="#accordionExample"
-            >
+        <div
+          id="accordionOne"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="card-body accordion-body">
+            <form action="{% url 'filtered' %}" method="post">
+              {% csrf_token %}
               <div class="card-body filter-age">
                 <h5 class="card-title">연령대</h5>
                 <input type="hidden" name="filter-age20" value="0" />
@@ -60,9 +59,11 @@
                   id="filter-age20"
                   autocomplete="off"
                 />
+
                 <label class="btn btn-outline-primary" for="filter-age20">
                   20대
                 </label>
+
                 <input type="hidden" name="filter-age30" value="0" />
                 <input
                   type="checkbox"
@@ -75,6 +76,7 @@
                 <label class="btn btn-outline-primary" for="filter-age30">
                   30대
                 </label>
+
                 <input type="hidden" name="filter-age40" value="0" />
                 <input
                   type="checkbox"

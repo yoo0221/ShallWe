@@ -23,14 +23,14 @@
             <strong>필터 설정</strong>
           </button>
         </h2>
-        <div class="card-body accordion-body">
-          <form action="{% url 'filtered' %}" method="post">
-            {% csrf_token %}
-            <div
-              id="accordionOne"
-              class="accordion-collapse collapse show"
-              data-bs-parent="#accordionExample"
-            >
+        <div
+          id="accordionOne"
+          class="accordion-collapse collapse show"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="card-body accordion-body">
+            <form action="{% url 'filtered' %}" method="post">
+              {% csrf_token %}
               <div class="card-body filter-age">
                 <h5 class="card-title">연령대</h5>
                 <div role="group">
