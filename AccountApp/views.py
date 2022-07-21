@@ -35,7 +35,7 @@ def register(request):
                                             nationality=request.POST['nationality'],
                                             mother_tongue=request.POST['mother_tongue'])
             auth.login(request, user)
-            return redirect('home')
+            return redirect('register_complete')
         else:
             pass
     return render(request, 'register.html')
@@ -57,3 +57,6 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('home')
+
+def register_complete(request):
+    return render(request, 'register_complete.html')

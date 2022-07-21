@@ -31,4 +31,5 @@ urlpatterns = [
     path('thema/', views.thema, name='thema'),   
     path('promise/', views.promise, name='promise'),
     path('meet/', views.meet, name="meet"), 
+    path('register/complete', accviews.register_complete, name="register_complete"), 
 ]
