@@ -1,6 +1,8 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from AccountApp.models import User
 from django.db.models import Q
+from MainApp.forms import SetProfileForm
+
 # Create your views here.
 
 def home(request):
@@ -61,8 +63,30 @@ def filtered(request):
         print(result)
         return render(request, 'search.html', {"result":result.order_by('-date_joined')})
 
+# def setprofile(request):
+#     if request.method == 'POST' or request.method == 'FILES':
+#         user = get_object_or_404(User, username=request.POST['user'])
+#         # user.profile_photo = request.FILES['photo_img']
+#         handle_uploaded_file(request.FILES['file'])
+#         user.skill = request.POST['skill']
+#         user.introduction = request.POST['introduction']
+#         user.interesting_keyword = request.POST['interesting_keyword']
+#         user.like_place = request.POST['likeplace']
+#         user.unlike_place = request.POST['unlikeplace']
+#         user.save()
+#     return render(request, 'setprofile.html')
+
 def setprofile(request):
-    return render(request, 'setprofile.html')
+    if request.method == "POST" or request.method == "FILES":
+        filled_form = SetProfileForm(request.POST)
+        if filled_form.is_valid():
+            final_form = filled_form.save(commit=False)
+            final_form.user = request.user
+            final_form.save()
+            return redirect('setprofile')
+    else:
+        form = SetProfileForm()
+        return render(request, 'setprofile.html', {"form":form})
 
 def themaselect(request):
     return render(request, 'themaselect.html')
@@ -75,3 +99,8 @@ def promise(request):
 
 def meet(request):
     return render(request, 'meet.html')
+
+# def handle_uploaded_file(f):
+#     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
+#         for chunk in f.chunks():
+#             destination.write(chunk)

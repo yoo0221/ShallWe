@@ -3,175 +3,172 @@
 {% block mainbody %}
 <!-- Content -->
 <div class="container-xxl flex-grow-1 container-p-y">
-  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span> 프로필 설정</h4>
-
+  <!-- <h4 class="fw-bold py-3 mb-2"> 프로필 등록</h4> -->
   <div class="row">
     <div class="col-md-12">
-      <ul class="nav nav-pills flex-column flex-md-row mb-3">
+      <!-- <ul class="nav nav-pills flex-column flex-md-row mb-3">
         <li class="nav-item">
           <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> 계정</a>
         </li>
-        
-      </ul>
+      </ul> -->
       <div class="card mb-4">
-        <h5 class="card-header">프로필 세부사항</h5>
+        <h5 class="card-header">프로필 등록</h5>
         <!-- Account -->
-        <div class="card-body">
+        <form id="formAccountSettings" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <!-- <input type="text" id=user name="user" hidden value="{{user.username}}"> -->
+        <div class="card-body align-items-sm-center">
           <div class="d-flex align-items-start align-items-sm-center gap-4">
-            <img
-              src="{% static 'assets/img/logo.png' %}"
-              alt="user-avatar"
-              class="d-block rounded"
-              height="100"
-              width="100"
-              id="uploadedAvatar"
-            />
-            <div class="button-wrapper">
-              <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                <span class="d-none d-sm-block">사진업로드</span>
-                <i class="bx bx-upload d-block d-sm-none"></i>
-                <input
+            {% if user.profile.profile_photo.url %}
+            <label for="photo_img" class="d-block rounded" tabindex="0">
+                <img src="{{ user.profile_photo.url }}" height="100" width="100" alt="">
+                <!-- <input
                   type="file"
-                  id="upload"
+                  id="photo_img"
+                  name="photo_img"
                   class="account-file-input"
                   hidden
                   accept="image/png, image/jpeg"
-                />
+                /> -->
+            </label>
+            {{form.photo}}
+              
+            {% else %}
+            <label for="photo_img" class="d-block rounded" tabindex="0">
+                <img src="{% static 'assets/img/photo_add.png' %}" height="100" width="100" alt="">
+                <!-- <input
+                  type="file"
+                  id="photo_img"
+                  name="photo_img"
+                  class="account-file-input"
+                  hidden
+                  accept="image/png, image/jpeg"
+                /> -->
+            </label>
+            {{form.photo}}
+            {% endif %}
+            <div class="button-wrapper">
+              <label for="photo_img" class="btn btn-primary me-2 mb-4" tabindex="0">
+                <span class="d-none d-sm-block">사진업로드</span>
+                <i class="bx bx-upload d-block d-sm-none"></i>
+                <!-- <input
+                  type="file"
+                  id="photo_img"
+                  name="photo_img"
+                  class="account-file-input"
+                  hidden
+                  accept="image/png, image/jpeg"
+                /> -->
               </label>
-              <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
+              {{form.photo}}
+              <!-- <button type="button" class="btn btn-outline-secondary account-image-reset mb-4">
                 <i class="bx bx-reset d-block d-sm-none"></i>
                 <span class="d-none d-sm-block">리셋</span>
-              </button>
+              </button> -->
 
-              <p class="text-muted mb-0">파일 형식 JPG, GIF 또는 PNG. 최대크기 800K</p>
+              <p class="text-muted mb-0">파일 형식 JPG, 또는 PNG</p>
             </div>
+          </div>
+          <div>
+            {{user.name}}
+            <br>
+            {{user.nationality}}
+            <br>
+            {{user.mother_tongue}}
           </div>
         </div>
         <hr class="my-0" />
         <div class="card-body">
-          <form id="formAccountSettings" method="POST" onsubmit="return false">
-            <div class="row">
+              <div class="row">
+              <!-- {% if user.introduction %}
               <div class="mb-3 col-md-6">
-                <label for="firstName" class="form-label">First Name</label>
+                <label for="skill" class="form-label">언어 수준</label>
+                {{form.skill}}
+              </div>
+              {% else %} -->
+              <div class="mb-3 col-md-6">
+                <label for="skill" class="form-label">언어 수준</label>
+                {{form.skill}}
+              </div>
+              <!-- {% endif %} -->
+
+              <!-- {% if user.introduction %}
+              <div class="mb-3 col-md-6">
+                <label for="introduction" class="form-label">본인 소개</label>
                 <input
                   class="form-control"
                   type="text"
-                  id="firstName"
-                  name="firstName"
-                  placeholder="홍"
-                  autofocus
+                  id="introduction"
+                  name="introduction"
+                  value="{{user.introduction}}"
+                  placeholder="나를 소개하는 한 줄"
                 />
               </div>
+              {% else %} -->
               <div class="mb-3 col-md-6">
-                <label for="lastName" class="form-label">Last Name</label>
-                <input class="form-control" type="text" name="lastName" id="lastName" placeholder="길동" />
+                <label for="introduction" class="form-label">본인 소개</label>
+                {{form.introduction}}
               </div>
+              <!-- {% endif %} -->
+              <!-- {% if user.introduction %}
               <div class="mb-3 col-md-6">
-                <label for="email" class="form-label"></label>
+                <label for="introduction" class="form-label">관련 해시태그</label>
                 <input
                   class="form-control"
                   type="text"
-                  id="email"
-                  name="email"
-                  placeholder="john.doe@example.com"
+                  id="interesting_keyword"
+                  name="interesting_keyword"
+                  value="{{user.introduction}}"
+                  placeholder="#MBTI #강아지 #먹방 #여행"
                 />
               </div>
+              {% else %} -->
               <div class="mb-3 col-md-6">
-                <label for="organization" class="form-label">Organization</label>
+                <label for="interesting_keyword" class="form-label">관련 해시태그</label>
+                {{form.interesting_keyword}}
+              </div>
+              <!-- {% endif %} -->
+              <!-- {% if user.like_place %}
+              <div class="mb-3 col-md-6">
+                <label for="likeplace" class="form-label">이런 장소가 좋아요</label>
                 <input
-                  type="text"
                   class="form-control"
-                  id="organization"
-                  name="organization"
-                  placeholder="경북대학교"
+                  type="text"
+                  id="likeplace"
+                  name="likeplace"
+                  value="{{user.like_place}}"
+                  placeholder="카페가 특히 편해요, 딱히 없어요 등등"
                 />
               </div>
+              {% else %} -->
               <div class="mb-3 col-md-6">
-                <label class="form-label" for="phoneNumber">Phone Number</label>
-                <div class="input-group input-group-merge">
-                  <span class="input-group-text">US (+1)</span>
-                  <input
-                    type="text"
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    class="form-control"
-                    placeholder="202 555 0111"
-                  />
-                </div>
+                <label for="likeplace" class="form-label">이런 장소는 곤란해요</label>
+                {{form.like_place}}
               </div>
+              <!-- {% endif %} -->
+              <!-- {% if user.unlike_place %}
               <div class="mb-3 col-md-6">
-                <label for="address" class="form-label">Address</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="Address" />
+                <label for="unlikeplace" class="form-label">꺼려하는 장소</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="unlikeplace"
+                  name="unlikeplace"
+                  value="{{user.unlike_place}}"
+                  placeholder="이런 곳만 아니면 괜찮아요"
+                />
               </div>
-              
+              {% else %} -->
               <div class="mb-3 col-md-6">
-                <label class="form-label" for="country">Country</label>
-                <select id="country" class="select2 form-select">
-                  <option value="">Select</option>
-                  <option value="Australia">Australia</option>
-                  <option value="Bangladesh">Bangladesh</option>
-                  <option value="Belarus">Belarus</option>
-                  <option value="Brazil">Brazil</option>
-                  <option value="Canada">Canada</option>
-                  <option value="China">China</option>
-                  <option value="France">France</option>
-                  <option value="Germany">Germany</option>
-                  <option value="India">India</option>
-                  <option value="Indonesia">Indonesia</option>
-                  <option value="Israel">Israel</option>
-                  <option value="Italy">Italy</option>
-                  <option value="Japan">Japan</option>
-                  <option value="Korea">Korea, Republic of</option>
-                  <option value="Mexico">Mexico</option>
-                  <option value="Philippines">Philippines</option>
-                  <option value="Russia">Russian Federation</option>
-                  <option value="South Africa">South Africa</option>
-                  <option value="Thailand">Thailand</option>
-                  <option value="Turkey">Turkey</option>
-                  <option value="Ukraine">Ukraine</option>
-                  <option value="United Arab Emirates">United Arab Emirates</option>
-                  <option value="United Kingdom">United Kingdom</option>
-                  <option value="United States">United States</option>
-                </select>
+                <label for="unlikeplace" class="form-label">꺼려하는 장소</label>
+                {{form.unlike_place}}
               </div>
-              <div class="mb-3 col-md-6">
-                <label for="language" class="form-label">Language</label>
-                <select id="language" class="select2 form-select">
-                  <option value="">Select Language</option>
-                  <option value="kr">Korean</option>
-                  <option value="en">English</option>
-                  <option value="fr">French</option>
-                  <option value="de">German</option>
-                  <option value="pt">Portuguese</option>
-                </select>
-              </div>
-              
-              <div class="mb-3 col-md-6">
-                <label for="currency" class="form-label">언어 수준</label>
-                <select id="currency" class="select2 form-select">
-                  <option value="">언어 수준</option>
-                  <option value="usd">아예 문법도 몰라요...</option>
-                  <option value="euro">기본적인 문법은 알아요</option>
-                  <option value="pound">기초 회화는 할 줄 알아요</option>
-                  <option value="bitcoin">나름 유창해요</option>
-                </select>
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="interduce" class="form-label">나를 자유롭게 설명해보아요</label>
-                <input class="form-control" type="text" name="interduce" id="interduce" placeholder="나는 카페가는 걸 좋아해" />
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="likeplace" class="form-label">좋아하는 장소</label>
-                <input class="form-control" type="text" name="likeplace" id="likeplace" placeholder="감성카페" />
-              </div>
-              <div class="mb-3 col-md-6">
-                <label for="hateplace" class="form-label">꺼려하는 장소</label>
-                <input class="form-control" type="text" name="hateplace" id="hateplace" placeholder="노래방" />
-              </div>
+              <!-- {% endif %} -->
             </div>
             <div class="mt-2">
               <button type="submit" class="btn btn-primary me-2">변경사항 저장</button>
-              <button type="reset" class="btn btn-outline-secondary">취소</button>
+              <a href="javascript:history.back()"><button type="" class="btn btn-outline-secondary">취소</button></a>
+            </div>
             </div>
           </form>
         </div>
