@@ -81,7 +81,7 @@ def setprofile(request):
         filled_form = SetProfileForm(request.POST)
         if filled_form.is_valid():
             final_form = filled_form.save(commit=False)
-            final_form.user = request.user
+            final_form.user = get_object_or_404(User, username=request.user)
             final_form.save()
             return redirect('setprofile')
     else:
