@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <h4 class="fw-bold py-1 mb-3">
-                    <span class="fw-light">오늘의 테마 선택</span>
+                    <span class="fw-light">약속 잡기</span>
                 </h4>
             </div>
             <div class="row">
@@ -12,22 +12,38 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <p class="card-text">
-                                오늘의 테마를 선택해보아요!
+                                <strong>대화 테마 정하기</strong><br>
+                                <small>나의 메이트와 만나서 대화할 주제를 선정해요.</small>
                             </p>
                             <form>
                                 <p class="demo-inline-spacing">
-                                <div class="thema-select-group"> 
-                                    <input type="hidden" name="thema-select" value="x" />
-                                    <label class="radio-btn">
-                                        <input type="radio" name="thema-select" value="일반" />
-                                        <span>일반</span>
-                                    </label>
-                                    <label class="radio-btn">
-                                        <input type="radio" name="thema-select" value="특별" />
-                                        <span>특별</span>
-                                    </label>
-                                </div>
+                                    <div class="thema-select-group"> 
+                                        <input type="hidden" name="thema-select" value="x" />
+                                        <label class="radio-btn">
+                                            <input type="radio" name="thema-select" value="일반" />
+                                            <span>일반</span>
+                                        </label>
+                                        <label class="radio-btn">
+                                            <input type="radio" name="thema-select" value="특별" />
+                                            <span>특별</span>
+                                        </label>
+                                    </div>
                                 </p>
+                                    <!-- <div class="btn-group mb-4" role="group" aria-label="Basic radio toggle button group">
+                                        <input
+                                        type="radio"
+                                        class="btn-check"
+                                        name="btnradio"
+                                        id="btnradio1"
+                                        checked
+                                        autocomplete="off"
+                                        value="일반"
+                                        />
+                                        <label class="btn btn-outline-primary" for="btnradio1">일반</label>
+                                        <input type="hidden" name="thema-select" value="x" />
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" value="특별"/>
+                                        <label class="btn btn-outline-primary" for="btnradio3">특별</label>
+                                    </div> -->
                                 <!-- <p class="demo-inline-spacing">
                                     <button type="button" class="col my-3 btn btn-outline-primary">일반</button>
                                     <a
@@ -45,7 +61,7 @@
                             </form>
                         <div class="d-grid d-sm-flex p-3 border">
                             <div class="col-xl-12">
-                                <h6 class="text-muted">테마를 선택하세요</h6>
+                                <h6 class="text-muted"></h6>
                                 <div class="nav-align-top mb-4">
                                     <ul class="nav nav-pills mb-3 nav-fill" role="tablist">
                                         <li class="nav-item">
@@ -158,10 +174,10 @@
                                     <div class="tab-pane fade show active" id="감정" role="tabpanel">
                                         <table class="thema-table">
                                             <tbody>
-                                            <tr><td>① 내 생애 가장 부끄러웠던 일은?</td></tr>
-                                            <tr><td>② 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
-                                            <tr><td>③ 슬픈 감정은 어떻게 해소하나요?</td></tr>
-                                            <tr><td>④ 웃다가 울어본 적 있나요?</td></tr>
+                                            <tr onclick="questionSelected(this, '#708090')"><td>Q1. 내 생애 가장 부끄러웠던 일은?</td></tr>
+                                            <tr onclick="questionSelected(this, '#708090')"><td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
+                                            <tr onclick="questionSelected(this, '#708090')"><td>Q3. 슬픈 감정은 어떻게 해소하나요?</td></tr>
+                                            <tr onclick="questionSelected(this, '#708090')"><td>Q4. 웃다가 울어본 적 있나요?</td></tr>
                                             </tbody>
                                         </table>
 
@@ -195,11 +211,12 @@
                                     <div class="tab-pane fade" id="유행" role="tabpanel">
                                         <table class="thema-table">
                                             <tbody>
-                                            <tr><td>① 깻잎 논쟁을 아시나요?</td></tr>
-                                            <tr><td>② 나의 최애 유튜버 소개하기</td></tr>
-                                            <tr><td>③ 최근 가장 킹받았던 순간은?</td></tr>
-                                            <tr><td>④ 세계관 이해에만 100시간이 걸리는 K-POP 걸그룹</td></tr>
-                                            </tbody>
+                                                <tr onclick="questionSelected(this, '#708090')"><td>Q1. 깻잎 논쟁을 아시나요?</td></tr>
+                                                <tr onclick="questionSelected(this, '#708090')"><td>Q2. 나의 최애 유튜버 소개하기</td></tr>
+                                                <tr onclick="questionSelected(this, '#708090')"><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
+                                                <tr onclick="questionSelected(this, '#708090')"><td>Q4. 세계관 이해에만 100시간이 걸리는 K-POP 걸그룹</td></tr>
+                                                </tbody>
+                                            </table>
                                         </table>
                                     </div>
                                     <div class="tab-pane fade" id="문화" role="tabpanel">
@@ -242,16 +259,16 @@
                                 data-bs-target="#offcanvasBottom"
                                 aria-controls="offcanvasBottom"
                             >
-                                테마고르기
+                                테마 정하기
                             </button>
                             <div
-                                class="offcanvas offcanvas-bottom"
+                                class="offcanvas offcanvas-bottom thema-offcanvas"
                                 tabindex="-1"
                                 id="offcanvasBottom"
                                 aria-labelledby="offcanvasBottomLabel"
                             >
                                 <div class="offcanvas-header">
-                                <h5 id="offcanvasBottomLabel" class="offcanvas-title">테마고르기</h5>
+                                <h5 id="offcanvasBottomLabel" class="offcanvas-title">약속 잡기</h5>
                                 <button
                                     type="button"
                                     class="btn-close text-reset"
@@ -265,7 +282,8 @@
                                             <div class="card mb-4">
                                                 <div class="card-body">
                                                     <p class="card-text">
-                                                        오늘의 테마를 선택해보아요!
+                                                        <strong>대화 테마 정하기</strong><br>
+                                                        <small>나의 메이트와 만나서 대화할 주제를 선정해요.</small>
                                                     </p>
                                                     <p class="demo-inline-spacing">
                                                         <button type="button" class="col my-3 btn btn-outline-primary">일반</button>
@@ -395,12 +413,14 @@
                                                             </ul>
                                                         <div class="tab-content">
                                                             <div class="tab-pane fade show active" id="감정" role="tabpanel">
-                                                                <p>
-                                                                내 생애 가장 부끄러었던 일은?<br>
-                                                                나를 행복하게 만드는 작은 습관이 있다면?<br>
-                                                                슬픈 감정은 어떻게 해소하나요?<br>
-                                                                웃다가 울어본 적 있나요?
-                                                                </p>
+                                                                <table class="thema-table">
+                                                                    <tbody>
+                                                                        <tr onclick="questionSelected(this, '#708090')"><td>Q1. 내 생애 가장 부끄러웠던 일은?</td></tr>
+                                                                        <tr onclick="questionSelected(this, '#708090')"><td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
+                                                                        <tr onclick="questionSelected(this, '#708090')"><td>Q3. 슬픈 감정은 어떻게 해소하나요?</td></tr>
+                                                                        <tr onclick="questionSelected(this, '#708090')"><td>Q4. 웃다가 울어본 적 있나요?</td></tr>
+                                                                        </tbody>
+                                                                </table>
                                                             </div>
                                                             <div class="tab-pane fade" id="추억" role="tabpanel">
                                                                 <p>
@@ -418,12 +438,14 @@
                                                                 </p>
                                                             </div>
                                                             <div class="tab-pane fade" id="유행" role="tabpanel">
-                                                                <p>
-                                                                    깻잎 논쟁을 아시나요?<br>
-                                                                    나의 최애 유튜버 소개하기<br>
-                                                                    최근 가장 킹받았던 순간은?<br>
-                                                                    세계관 이해에만 100시간이 걸리는 K-POP 걸그룹<br>
-                                                                </p>
+                                                                <table class="thema-table">
+                                                                    <tbody>
+                                                                    <tr onclick="questionSelected(this, '#708090')"><td>Q1. 깻잎 논쟁을 아시나요?</td></tr>
+                                                                    <tr onclick="questionSelected(this, '#708090')"><td>Q2. 나의 최애 유튜버 소개하기</td></tr>
+                                                                    <tr onclick="questionSelected(this, '#708090')"><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
+                                                                    <tr onclick="questionSelected(this, '#708090')"><td>Q4. 세계관 이해에만 100시간이 걸리는 K-POP 걸그룹</td></tr>
+                                                                    </tbody>
+                                                                </table>
                                                             </div>
                                                             <div class="tab-pane fade" id="문화" role="tabpanel">
                                                                 <p>
@@ -456,7 +478,7 @@
                         </div>
                     <!-- 여기까지 하단 배너로 넣었을 때 -->
                     <div class="d-grid gap-2 col-lg-6 mx-auto mt-3">
-                        <a href="{% url 'themaselect' %}" button class="btn btn-primary btn-lg " type="button" >다음</a>
+                        <a href="{% url 'themaselect' %}" button class="btn btn-primary btn-lg mb-2" type="button" >다음</a>
                     </div>
                 </div>
             </div>
