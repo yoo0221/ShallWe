@@ -47,10 +47,20 @@
     border-radius: 0.45rem;
 }
 
-input[type="text"] {
+.themaselect-textbox {
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
     width: 20rem;
     outline: none;
+}
+
+.sns-img-box {
+    text-align: center;
+}
+
+.sns-img-box > img {
+    /* border-radius: 50%; */
+    overflow: hidden;
+    margin-right: 10px;
 }
