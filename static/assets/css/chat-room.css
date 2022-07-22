@@ -19,14 +19,7 @@ body{
         "  main     main    ";
 }
 
-/* 배경화면 설정 */
-#chat-body, .setting_bar, .main-menu, header{
-    background-image: url(../pic/talk_background.jpg);
-    background-repeat: repeat;
-    background-position: top left;
-    background-attachment: fixed;
-    z-index: 98;
-}
+
 
 /* 설정바 스타일 지정 */
 .setting_bar{
@@ -160,16 +153,16 @@ main{
 .friend-chat-col > .balloon{
     margin-top: 0.3125rem;
     padding: 0.4375rem;
-    border: 1px solid rgb(228, 233, 230);
+    border: 1px solid #595cd9;
     border-radius: 0.1875rem;
-    background-color: rgb(228, 233, 230);
+    background-color: #595cd9;
     font-size: 0.8125rem;
     color: black;
 }
 .friend-chat-col > .balloon::before{
     content: "";
     border-bottom: 0.6875rem solid transparent;
-    border-right: 0.6875rem solid rgb(228, 233, 230);
+    border-right: 0.6875rem solid #595cd9;
     position: absolute;
     top: 1.563rem;
     left: -0.5rem;
@@ -189,16 +182,16 @@ main{
 .me-chat-col > .balloon{
     margin-top: 0.3125rem;
     padding: 0.4375rem;
-    border: 1px solid rgb(94, 122, 100);
+    border: 1px solid #595cd9;
     border-radius: 0.1875rem;
-    background-color: rgb(94, 122, 100);
+    background-color: #595cd9;
     font-size: 0.8125rem;
     color: white;
 }
 .me-chat-col > .balloon::before{
     content: "";
     border-bottom: 0.6875rem solid transparent;
-    border-left: 0.6875rem solid rgb(94, 122, 100);
+    border-left: 0.6875rem solid #595cd9;
     position: absolute;
     top: 0.625rem;
     right: -0.5rem;
