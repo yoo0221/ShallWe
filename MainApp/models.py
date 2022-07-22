@@ -30,7 +30,6 @@ class UserProfile(models.Model):
         else:
             return "/static/assets/img/ordinary_profile_photo.png"
 
-
 class Topic(models.Model):
     topic = models.CharField(max_length=200)
     def __str__(self):

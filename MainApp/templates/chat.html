@@ -1,0 +1,126 @@
+{% extends 'base.html' %} {% load static %} {% block mainbody %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <h4 class="fw-bold py-1 mb-3">
+                    <span class="fw-light">채팅방</span>
+                </h4>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="chat-body">
+                                <!-- 설정바(최소화, 닫기 버튼 등) -->
+                                <div class="setting_bar">
+                                    <i class="icon-window-minimize" alt="최소화버튼" title="최소화"></i>
+                                    <i class="icon-window-maximize" alt="최대화버튼" title="최대화"></i>
+                                    <i class="icon-cancel" alt="닫기버튼" title="닫기"></i>
+                                </div>
+                                <!-- 알림, 메뉴 기능 -->
+                                <div class="main-menu">
+                                    <i class="icon-bell" title="알림"></i>
+                                    <i class="icon-ellipsis" title="메뉴"></i>
+                                </div>
+                                <!-- 프로필 사진, 프로필명 -->
+                                <header>
+                                    <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                    <div class="profile-col">
+                                        <span class="profile-name">Tommy</span>
+                                        <div class="sub-menu">
+                                            <i class="icon-box" title="채팅방 서랍"></i>
+                                            <i class="icon-search" title="검색"></i>
+                                        </div>
+                                    </div>
+                                </header>
+                                <main>
+                                    <!-- 고정된 공지사항 영역 -->
+                                    <div class="notice-bar">
+                                        <i class="icon-bullhorn"></i>
+                                        <span>멘트를 고정해놓는 곳입니다.</span>
+                                        <i class="icon-down-open-big"></i>
+                                    </div>
+                                    <!-- 채팅 내용 시작 -->
+                                    <div class="chat-content">
+                                        <!-- 메시지 시작 날짜 -->
+                                        <div class="date-line">
+                                            <time datetime="2021-03-29">2021년 3월 29일 월요일</time>
+                                        </div>
+                                        <!-- 채팅 내용 -->
+                                        <div class="main-chat">
+                                            <div class="me-chat">
+                                                <div class="me-chat-col">
+                                                    <span class="balloon">Hello! I'm 유준호!</span>
+                                                </div>
+                                                <time datetime="07:32:00+09:00">오전 7:32</time>
+                                            </div>
+                                            <div class="friend-chat">
+                                                <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                                <div class="friend-chat-col">
+                                                    <span class="profile-name">Tommy</span>
+                                                    <span class="balloon">안녕하세요 저는 토미입니다!</span>
+                                                </div>
+                                                <time datetime="07:35:00+09:00">오전 7:35</time>
+                                            </div>
+                                            <div class="me-chat">
+                                                <div class="me-chat-col">
+                                                    <span class="balloon">Nice to meet you!</span>
+                                                    <span class="balloon">I also really like cats</span>
+                                                </div>
+                                                <time datetime="07:36:00+09:00">오전 7:36</time>
+                                            </div>
+                                            <div class="friend-chat">
+                                                <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                                <div class="friend-chat-col">
+                                                    <span class="profile-name">Tommy</span>
+                                                    <span class="balloon">Oh that sounds goood</span>
+                                                    <span class="balloon">then how about going to cafe in Dongseongro and talking about that??</span>
+                                                </div>
+                                                <time datetime="09:00:00+09:00">오전 9:00</time>
+                                            </div>
+                                            <div class="me-chat">        
+                                                <div class="me-chat-col">
+                                                    <span class="balloon">GREAT! How about tomorrow?</span>
+                                                </div>
+                                                <time datetime="09:30:00+09:00">오전 9:30</time>
+                                            </div>
+                                            <div class="friend-chat">
+                                                <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                                <div class="friend-chat-col">
+                                                    <span class="profile-name">Tommy</span>
+                                                    <span class="balloon">Good! And let’s meet at 2:00</span>
+                                                </div>
+                                                <time datetime="10:15:00+09:00">오전 10:15</time>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 채팅 입력창 -->
+                                    <div class="insert-content">
+                                        <form name="chatform" action="#" method="post">
+                                            <textarea name="chat-insert" required></textarea>
+                                            <input type="submit" class="chat-submit" value="전송">
+                                        </form>
+                                        <div class="mt-2" style="border-top: 1px solid black; text-align: center;" >
+                                            <div class="mb-2"></div>
+                                            <a href="{% url 'thema' %}"><span>만남 약속 잡기</span></a>
+                                        </div>
+                                        <!-- 채팅 입력 관련 기능(파일 첨부, 캡쳐 등) -->
+                                        <div class="insert-menu">
+                                            <i class="icon-smile"></i>
+                                            <i class="icon-attach"></i>
+                                            <i class="icon-phone"></i>
+                                            <i class="icon-calendar-empty"></i>
+                                            <i class="icon-camera"></i>
+                                        </div>
+                                    </div>
+                                </main>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -95,16 +95,31 @@ def setprofile(request):
                 final_form.save()
                 return redirect('setprofile')
         
-        photo = filled_form.cleaned_data['photo']
-        skill = filled_form.cleaned_data['skill']
-        introduction = filled_form.cleaned_data['introduction']
-        interesting_keyword = filled_form.cleaned_data['interesting_keyword']
-        like_place = filled_form.cleaned_data['like_place']
-        unlike_place = filled_form.cleaned_data['unlike_place']
-
+       
         if filled_form.is_valid():
+            photo = filled_form.cleaned_data['photo']
+            skill = filled_form.cleaned_data['skill']
+            introduction = filled_form.cleaned_data['introduction']
+            interesting_keyword = filled_form.cleaned_data['interesting_keyword']
+            like_place = filled_form.cleaned_data['like_place']
+            unlike_place = filled_form.cleaned_data['unlike_place']
+
             user = User.objects.get(username=request.user)
             user_profile = UserProfile.objects.get(user=user)
+
+            if photo is None:
+                photo = user_profile.photo
+            if skill is None:
+                skill = user_profile.skill
+            if introduction is None:
+                introduction = user_profile.introduction
+            if interesting_keyword is None:
+                interesting_keyword = user_profile.interesting_keyword
+            if like_place is None:
+                like_place = user_profile.like_place
+            if unlike_place is None:
+                unlike_place = user_profile.unlike_place
+
             user_profile.delete()
             final_form = filled_form.save(commit=False)
             final_form.user = get_object_or_404(User, username=request.user)
@@ -119,7 +134,8 @@ def themaselect(request):
     if request.method == "POST":
         form = SetScheduleForm(request.POST)
         if form.is_valid():
-           form.save()
+            form.save()
+            return render(request, 'promise.html')
     else:
         form = SetScheduleForm()
     return render(request, 'themaselect.html', {"form":form})
@@ -143,6 +159,10 @@ def thema2(request):
 @login_required
 def detail_profile(request):
     return render(request, 'detailProfile.html')
+
+@login_required
+def chat(request):
+    return render(request, 'chat.html')
 
 # def handle_uploaded_file(f):
 #     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
