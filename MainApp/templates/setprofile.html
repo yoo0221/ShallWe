@@ -19,37 +19,13 @@
         <!-- <input type="text" id=user name="user" hidden value="{{user.username}}"> -->
         <div class="card-body align-items-sm-center">
           <div class="d-flex align-items-start align-items-sm-center gap-4">
-            {% if user.get_profile.photo.url %}
             <div>
-            <label for="photo_img" class="d-block rounded" tabindex="0">
-                <img src="{{ user.get_profile.photo.url }}" height="100" width="100" alt="">
-                <!-- <input
-                  type="file"
-                  id="photo_img"
-                  name="photo_img"
-                  class="account-file-input"
-                  hidden
-                  accept="image/png, image/jpeg"
-                /> -->
+            <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                <img src="{{ user.userprofile.get_photo_url }}" class="d-block rounded" height="100" width="100" alt="">
             </label>
             {{form.photo}}
           </div> 
-            {% else %}
-            <div>
-            <label for="photo_img" class="d-block rounded" tabindex="0">
-                <img src="{% static 'assets/img/photo_add.png' %}" height="100" width="100" alt="">
-                <!-- <input
-                  type="file"
-                  id="photo_img"
-                  name="photo_img"
-                  class="account-file-input"
-                  hidden
-                  accept="image/png, image/jpeg"
-                /> -->
-            </label>
-            {{form.photo}}
-          </div>
-            {% endif %}
+           
             <div class="button-wrapper">
               <label for="photo_img" class="btn btn-primary me-2 mb-4" tabindex="0">
                 <span class="d-none d-sm-block">사진업로드</span>
