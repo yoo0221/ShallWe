@@ -127,7 +127,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-3">
-                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                        <label for="photo_img" class="avatar" tabindex="0">
                           <img 
                             src="{{ user.userprofile.get_photo_url }}" 
                             class="d-block rounded" 
@@ -137,6 +137,7 @@
                       <div class="col-sm-9">
                         <div class="row">
                           <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/미국 1.png' %}" alt="">
                             <strong>{{user.name}}</strong>
                           </div>
                           <div class="col-4 col-sm-4">
@@ -161,7 +162,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-3">
-                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                        <label for="photo_img" class="avatar" tabindex="0">
                           <img 
                             src="{% static 'assets/img/ordinary_profile_photo.png' %}" 
                             class="d-block rounded" 
@@ -171,6 +172,7 @@
                       <div class="col-sm-9">
                         <div class="row">
                           <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/미국 1.png' %}" alt="">
                             <strong>{{user.name}}</strong>
                           </div>
                           <div class="col-4 col-sm-4">
