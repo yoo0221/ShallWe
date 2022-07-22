@@ -116,7 +116,7 @@
         <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5>
         <div class="table-responsive text-nowrap">
           <table class="table">
-            <thead>
+            <!-- <thead>
               <tr>
                 <th></th>
                 <th>이름</th>
@@ -124,32 +124,51 @@
                 <th>사용 언어</th>
                 <th>거주지</th>
               </tr>
-            </thead>
+            </thead> -->
 
             <tbody class="table-border-bottom-0">
               {% for user in result %}
               <tr>
                 <td>
                   {% if user.userprofile.get_photo_home_url %}
-                  <img
-                    src="{{ user.userprofile.get_photo_home_url }}"
-                    alt="Avatar"
-                    class="rounded-circle"
-                    width="50px"
-                  />
+                  <div class="d-flex align-items-start align-items-sm-center gap-4">
+                    <div>
+                      <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                        <img 
+                          src="{{ user.userprofile.get_photo_url }}" 
+                          class="d-block rounded" 
+                          width="200px"
+                          alt="">
+                      </label>
+                    </div> 
+                    <div><span>{{user.name}}</div>
+                    <div><img src="{% static 'assets/img/mothertongue.png'%}">{{user.mother_tongue}}</span></div>
+                    <div><img src="{% static 'assets/img/location.png'%}">{{user.address_emd}}</span></div>
+                  </div>
+                  <div>
+                    한줄소개~~~~~~~~~~~^^**
+                  </div>
+
                   {% else %}
-                  <img      
-                    src="{% static 'assets/img/ordinary_profile_photo.png' %}"
-                    alt="Avatar"
-                    class="rounded-circle"
-                    width="50px"
-                  />
+                  <div class="d-flex align-items-start align-items-sm-center gap-4">
+                    <div>
+                      <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                        <img 
+                          src="{% static 'assets/img/ordinary_profile_photo' %}" 
+                          class="d-block rounded" 
+                          width="200px"
+                          alt="">
+                      </label>
+                    </div> 
+                    <div><span>{{user.name}}</div>
+                    <div><img src="{% static 'assets/img/mothertongue.png'%}">{{user.mother_tongue}}</span></div>
+                    <div><img src="{% static 'assets/img/location.png'%}">{{user.address_emd}}</span></div>
+                  </div>
+                  <div>
+                    한줄소개~~~~~~~~~~~^^**
+                  </div>
                   {% endif %}
                 </td>
-                <td>{{user.name}}</td>
-                <td>{{user.nationality}}</td>
-                <td>{{user.mother_tongue}}</td>
-                <td>{{user.address_emd}}</td>
               </tr>
               {% endfor %}
             </tbody>
