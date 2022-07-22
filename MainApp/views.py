@@ -113,6 +113,7 @@ def meet(request):
 def thema2(request):
     return render(request, 'thema2.html')
 
+@login_required
 def detail_profile(request):
     return render(request, 'detailProfile.html')
 
