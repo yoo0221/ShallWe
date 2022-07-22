@@ -113,6 +113,9 @@ def meet(request):
 def thema2(request):
     return render(request, 'thema2.html')
 
+def detail_profile(request):
+    return render(request, 'detailProfile.html')
+
 # def handle_uploaded_file(f):
 #     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
 #         for chunk in f.chunks():
