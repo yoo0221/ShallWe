@@ -82,7 +82,7 @@
               </div>
 
               <div class="card-body">
-                <h5 class="card-title">거주 지역</h5>
+                <h5 class="card-title">동네 범위</h5>
                 <select
                   class="p-2 mx-1"
                   name="addressDo"
@@ -104,7 +104,7 @@
               </div>
 
               <div class="card-body filter-selected">
-                <button type="submit" class="btn btn-primary">선택 완료</button>
+                <button type="submit" class="btn btn-primary">검색</button>
               </div>
             </div>
           </form>
@@ -113,7 +113,7 @@
     </div>
     <div class="col-lg-6 order-1">
       <div class="card col">
-        <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5>
+        <!-- <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5> -->
         {% if count %}
         <h4 class="card-header"> 총 {{ count }}명의 친구를 찾았어요! </h4>
         {% endif %}
@@ -127,7 +127,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-3">
-                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                        <label for="photo_img" class="avatar" tabindex="0">
                           <img 
                             src="{{ user.userprofile.get_photo_url }}" 
                             class="d-block rounded" 
@@ -137,6 +137,7 @@
                       <div class="col-sm-9">
                         <div class="row">
                           <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/미국 1.png' %}" alt="">
                             <strong>{{user.name}}</strong>
                           </div>
                           <div class="col-4 col-sm-4">
@@ -161,7 +162,7 @@
                   <div class="container">
                     <div class="row">
                       <div class="col-sm-3">
-                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                        <label for="photo_img" class="avatar" tabindex="0">
                           <img 
                             src="{% static 'assets/img/ordinary_profile_photo.png' %}" 
                             class="d-block rounded" 
@@ -171,6 +172,7 @@
                       <div class="col-sm-9">
                         <div class="row">
                           <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/미국 1.png' %}" alt="">
                             <strong>{{user.name}}</strong>
                           </div>
                           <div class="col-4 col-sm-4">
