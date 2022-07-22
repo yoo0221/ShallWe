@@ -65,7 +65,7 @@ def filtered(request):
             else:
                 result &= do
         print(result)
-        return render(request, 'search.html', {"result":result.order_by('-date_joined')})
+        return render(request, 'search.html', {"result":result.order_by('-date_joined'),"count":len(result)})
 
 # def setprofile(request):
 #     if request.method == 'POST' or request.method == 'FILES':
