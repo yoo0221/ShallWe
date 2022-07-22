@@ -134,7 +134,39 @@
               <tr>
                 <td>
                   {% if user.userprofile.get_photo_home_url %}
-                  <div class="d-flex align-items-start align-items-sm-center gap-4">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                          <img 
+                            src="{{ user.userprofile.get_photo_url }}" 
+                            class="d-block rounded" 
+                            alt="">
+                        </label>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="col-4 col-sm-4">
+                            <strong>{{user.name}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/mothertongue.png'%}"><strong>{{user.mother_tongue}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/location.png'%}"><strong>{{user.address_emd}}</strong>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-4 col-sm-12">
+                            {% if user.userprofile.introduction %}
+                              {{user.userprofile.introduction}}
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="d-flex align-items-start align-items-sm-center gap-4">
                     <div>
                       <label for="photo_img" class="avatar avatar-online" tabindex="0">
                         <img 
@@ -152,10 +184,42 @@
                     {% if user.userprofile.introduction %}
                       {{user.userprofile.introduction}}
                     {% endif %}
-                  </div>
+                  </div> -->
 
                   {% else %}
-                  <div class="d-flex align-items-start align-items-sm-center gap-4">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                          <img 
+                            src="{% static 'assets/img/ordinary_profile_photo.png' %}" 
+                            class="d-block rounded" 
+                            alt="">
+                        </label>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="col-4 col-sm-4">
+                            <strong>{{user.name}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/mothertongue.png'%}"><strong>{{user.mother_tongue}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/location.png'%}"><strong>{{user.address_emd}}</strong>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-4 col-sm-12">
+                            {% if user.userprofile.introduction %}
+                              {{user.userprofile.introduction}}
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="d-flex align-items-start align-items-sm-center gap-4">
                     <div>
                       <label for="photo_img" class="avatar avatar-online" tabindex="0">
                         <img 
@@ -173,7 +237,7 @@
                     {% if user.userprofile.introduction %}
                       {{user.userprofile.introduction}}
                     {% endif %}
-                  </div>
+                  </div> -->
                   {% endif %}
                 </td>
               </tr>
