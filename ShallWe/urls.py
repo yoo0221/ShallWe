@@ -38,7 +38,6 @@ urlpatterns = [
     path('chat/', include('chat.urls')),
     path('thema2/', views.thema2, name="thema2"), 
     path('detailProfile/', views.detail_profile, name="detail_profile"), 
-
 ]
 
 if settings.DEBUG:

@@ -1,4 +1,4 @@
-from attr import attr
+from datetime import date
 from django.db import models
 from AccountApp.models import User
 
@@ -29,3 +29,14 @@ class UserProfile(models.Model):
             return self.photo.url
         else:
             return "/static/assets/img/ordinary_profile_photo.png"
+
+class Schedule(models.Model):
+    user1 = models.ForeignKey(User, on_delete=models.CASCADE)
+    day = models.DateTimeField()
+    place = models.CharField(null=True, blank=True, max_length=100)
+    topic_list = models.CharField(null=True, blank=True, max_length=300)
+
+    # user1 user2 day place topic_list
+
+    def __str__(self):
+        return self.day, self.place, self.topic_list
