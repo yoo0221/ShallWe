@@ -1,3 +1,6 @@
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
 
 /* thema-table */
 .thema-table > tbody > tr > td:hover {
