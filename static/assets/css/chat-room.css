@@ -153,16 +153,16 @@ main{
 .friend-chat-col > .balloon{
     margin-top: 0.3125rem;
     padding: 0.4375rem;
-    border: 1px solid #595cd9;
+    border: 1px solid #c6c7ef;
     border-radius: 0.1875rem;
-    background-color: #595cd9;
+    background-color: #c6c7ef;
     font-size: 0.8125rem;
     color: black;
 }
 .friend-chat-col > .balloon::before{
     content: "";
     border-bottom: 0.6875rem solid transparent;
-    border-right: 0.6875rem solid #595cd9;
+    border-right: 0.6875rem solid #c6c7ef;
     position: absolute;
     top: 1.563rem;
     left: -0.5rem;
@@ -240,10 +240,11 @@ main{
     position: sticky;
     bottom: 0;
 }
+
 textarea{
     resize: none;
-    border: none;
-    height: 4.375rem;
+    border: 1px solid #595cd9;
+    height: 2rem;
 }
 
 /* 채팅 입력창 flex로 정렬 */
@@ -256,6 +257,7 @@ form[name="chatform"]{
 form[name="chatform"] > textarea{
     flex-basis: 100%;
     flex-grow: 1;
+    
 }
 .chat-submit{
     margin-left: 10px;
