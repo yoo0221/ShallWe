@@ -31,18 +31,10 @@ class UserProfile(models.Model):
             return "/static/assets/img/ordinary_profile_photo.png"
 
 class Schedule(models.Model):
-<<<<<<< HEAD
-    user1 = models.OneToOneField(User, on_delete=models.CASCADE)
-    user2 = models.OneToOneField(User, on_delete=models.CASCADE)
-    day = models.DateTimeField()
-    place = models.CharField(null=True, blank=True)
-    topic_list = models.CharField(null=True, blank=True)
-=======
     user1 = models.ForeignKey(User, on_delete=models.CASCADE)
     day = models.DateTimeField()
     place = models.CharField(null=True, blank=True, max_length=100)
     topic_list = models.CharField(null=True, blank=True, max_length=300)
->>>>>>> 641f3a190a4be592e98ca603519d7caf19349c43
 
     # user1 user2 day place topic_list
 
