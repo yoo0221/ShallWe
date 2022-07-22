@@ -54,14 +54,14 @@
 
     <div class="col-lg-6 order-1">
       <div class="card col">
-        <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5>
-        {% if count %}
+        <!-- <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5> -->
+        <!-- {% if count %}
         <h4 class="card-header"> 총 {{ count }}명의 친구를 찾았어요! </h4>
-        {% endif %}
+        {% endif %} -->
         <div class="table-responsive text-nowrap">
           <table class="table">
             <tbody class="table-border-bottom-0">
-              {% for user in result %}
+              {% for user in users %}
               <tr>
                 <td>
                   {% if user.userprofile.get_photo_home_url %}
