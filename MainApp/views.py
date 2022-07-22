@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from AccountApp.models import User
+from MainApp.models import UserProfile
 from django.db.models import Q
 from MainApp.forms import SetProfileForm
 from django.contrib.auth.decorators import login_required
@@ -84,7 +85,26 @@ def filtered(request):
 def setprofile(request):
     if request.method == "POST" or request.method == "FILES":
         filled_form = SetProfileForm(request.POST, request.FILES)
+        try:
+            user_profile = get_object_or_404(UserProfile, user=get_object_or_404(User, username=request.user))
+        except:
+            if filled_form.is_valid():
+                final_form = filled_form.save(commit=False)
+                final_form.user = get_object_or_404(User, username=request.user)
+                final_form.save()
+                return redirect('setprofile')
+        
+        photo = filled_form.cleaned_data['photo']
+        skill = filled_form.cleaned_data['skill']
+        introduction = filled_form.cleaned_data['introduction']
+        interesting_keyword = filled_form.cleaned_data['interesting_keyword']
+        like_place = filled_form.cleaned_data['like_place']
+        unlike_place = filled_form.cleaned_data['unlike_place']
+
         if filled_form.is_valid():
+            user = User.objects.get(username=request.user)
+            user_profile = UserProfile.objects.get(user=user)
+            user_profile.delete()
             final_form = filled_form.save(commit=False)
             final_form.user = get_object_or_404(User, username=request.user)
             final_form.save()

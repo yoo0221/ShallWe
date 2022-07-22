@@ -1,5 +1,6 @@
 from django import forms
 from MainApp.models import UserProfile
+from MainApp.models import Schedule
 
 class SetProfileForm(forms.ModelForm):
     class Meta:
@@ -88,3 +89,27 @@ class SetProfileForm(forms.ModelForm):
 #             'placeholder': 'ex) 홍길동',
 #             'id':'name',
 #         }
+
+
+class SetScheduleForm(forms.ModelForm):
+    class Meta:
+        model = Schedule
+        fields = (
+            'day',
+            'place',
+            'topic_list'
+        )
+        labels = {
+            'day' : '약속 날짜와 시간',
+            'place' : '약속 장소',
+            'topic_list' : '질문 주제'
+        }
+                
+    def __init__(self, *args, **kwargs):
+        super(SetScheduleForm, self).__init__(*args, **kwargs)
+
+        self.fields['day'].widget.attrs = {
+            'id' : ''
+        }
+
+        
