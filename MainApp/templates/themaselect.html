@@ -17,16 +17,135 @@
       <div class="card-body">
         <h6 class="card-title"><img src="{% static 'assets/img/profile_order.png' %}" alt=""><strong>장소</strong></h6>
         <div class="thema-select-place-group">
+          <!-- <button
+              class="btn btn-primary me-1"
+              data-bs-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              카페
+            </button> -->
           <label class="radio-btn col">
-            <input type="radio" name="thema-select-place" value="카페" />
+            <input type="radio" 
+              name="thema-select-place" 
+              class="btn btn-primary me-1"
+              data-bs-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+              value="카페" />
             <span>카페</span>
           </label>
           <label class="radio-btn col">
             <input type="radio" name="thema-select-place" value="음식점" />
             <span>음식점</span>
           </label>
+          <div class="collapse" id="collapseExample">
+            <div class="table-responsive text-nowrap">
+              <table class="table">
+                <tbody class="table-border-bottom-0">
+                  <tr>
+                    <td>
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <label for="photo_img" class="avatar" tabindex="0">
+                              <img 
+                                src="{% static 'assets/img/cafe1.png' %}" 
+                                class="d-block rounded" 
+                                alt="">
+                            </label>
+                          </div>
+                          <div class="col-sm-9">
+                            <div class="row">
+                              <div class="col-4 col-sm-4">
+                                <strong>그린빈 카페 복현점</strong>
+                              </div>
+                              <div class="col-4 col-sm-4">
+                                <img src="{% static 'assets/img/location.png'%}"><strong>복현동</strong>
+                              </div>
+                              <div class="col-4 col-sm-4">
+                                <strong>09:00 ~ 22:00</strong>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-4 col-sm-12 mt-1 mb-2">
+                                음료 한 잔 가격에 두 잔 구매 가능
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+    
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <label for="photo_img" class="avatar" tabindex="0">
+                              <img 
+                                src="{% static 'assets/img/cafe2.jpg' %}" 
+                                class="d-block rounded" 
+                                alt="">
+                            </label>
+                          </div>
+                          <div class="col-sm-9">
+                            <div class="row">
+                              <div class="col-4 col-sm-4">
+                                <strong>아라비카 카페</strong>
+                              </div>
+                              <div class="col-4 col-sm-4">
+                                <img src="{% static 'assets/img/location.png'%}"><strong>대현동</strong>
+                              </div>
+                              <div class="col-4 col-sm-4">
+                                <strong>10:00 ~ 21:00</strong>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-4 col-sm-12 mt-1 mb-2">
+                                다양하고 맛있는 디저트
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+    
+                        <div class="row">
+                          <div class="col-sm-3">
+                            <label for="photo_img" class="avatar" tabindex="0">
+                              <img 
+                                src="{% static 'assets/img/cafe3.jpg' %}" 
+                                class="d-block rounded" 
+                                alt="">
+                            </label>
+                          </div>
+                          <div class="col-sm-9">
+                            <div class="row">
+                              <div class="col-4 col-sm-4">
+                                <strong>커피빈 동성로점</strong>
+                              </div>
+                              <div class="col-4 col-sm-4">
+                                <img src="{% static 'assets/img/location.png'%}"><strong>신천동</strong>
+                              </div>
+                              <div class="col-4 col-sm-4">
+                                <strong>10:00 ~ 21:00</strong>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-4 col-sm-12 mt-1 mb-2">
+                                딸기라떼가 맛있는 집
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
+
       <div class="card-body">
         <h6 class="card-title"><strong>직접 입력할게요!</strong></h6>
         <label>
@@ -88,3 +207,33 @@
 </div>
 {% endblock%}
 
+
+
+<div class="row">
+  <div class="col-sm-3">
+    <label for="photo_img" class="avatar" tabindex="0">
+      <img 
+        src="{% static 'assets/img/cafe2.jpg' %}" 
+        class="d-block rounded" 
+        alt="">
+    </label>
+  </div>
+  <div class="col-sm-9">
+    <div class="row">
+      <div class="col-4 col-sm-4">
+        <strong>아라비카 카페</strong>
+      </div>
+      <div class="col-4 col-sm-4">
+        <img src="{% static 'assets/img/location.png'%}"><strong>대현동</strong>
+      </div>
+      <div class="col-4 col-sm-4">
+        <strong>10:00 ~ 21:00</strong>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4 col-sm-12 mt-1 mb-2">
+        다양하고 맛있는 디저트
+      </div>
+    </div>
+  </div>
+</div>
