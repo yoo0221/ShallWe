@@ -138,6 +138,10 @@ def thema2(request):
 def detail_profile(request):
     return render(request, 'detailProfile.html')
 
+@login_required
+def chat(request):
+    return render(request, 'chat.html')
+
 # def handle_uploaded_file(f):
 #     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
 #         for chunk in f.chunks():
