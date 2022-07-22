@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-!abpge-d+2tqcb3rtkq0+nwr28&kw1(m2#&!ll1*8y()&#wjca
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'niceyoo0221.pythonanywhere.com'
+    'niceyoo0221.pythonanywhere.com',
+    '127.0.0.1'
 ]
 
 
