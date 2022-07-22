@@ -76,6 +76,7 @@ def filtered(request):
 #         user.save()
 #     return render(request, 'setprofile.html')
 
+'''
 def setprofile(request):
     if request.method == "POST" or request.method == "FILES":
         filled_form = SetProfileForm(request.POST)
@@ -87,6 +88,19 @@ def setprofile(request):
     else:
         form = SetProfileForm()
         return render(request, 'setprofile.html', {"form":form})
+'''
+
+def setprofile(request):
+    if request.method == "POST" or request.method == "FILES":
+        filled_form = SetProfileForm(request.POST, request.FILES)
+        if filled_form.is_valid():
+            final_form = filled_form.save(commit=False)
+            final_form.user = get_object_or_404(User, username=request.user)
+            final_form.save()
+            return redirect('setprofile')
+    else:
+        form = SetProfileForm()
+    return render(request, 'setprofile.html', {"form":form})
 
 def themaselect(request):
     return render(request, 'themaselect.html')
