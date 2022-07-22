@@ -83,7 +83,7 @@ def filtered(request):
 @login_required
 def setprofile(request):
     if request.method == "POST" or request.method == "FILES":
-        filled_form = SetProfileForm(request.POST)
+        filled_form = SetProfileForm(request.POST, request.FILES)
         if filled_form.is_valid():
             final_form = filled_form.save(commit=False)
             final_form.user = get_object_or_404(User, username=request.user)
@@ -91,7 +91,7 @@ def setprofile(request):
             return redirect('setprofile')
     else:
         form = SetProfileForm()
-        return render(request, 'setprofile.html', {"form":form})
+    return render(request, 'setprofile.html', {"form":form})
 
 @login_required
 def themaselect(request):
