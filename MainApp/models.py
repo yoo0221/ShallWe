@@ -1,6 +1,4 @@
-from calendar import day_abbr
 from datetime import date
-from tkinter import Place
 from django.db import models
 from AccountApp.models import User
 
@@ -19,18 +17,18 @@ class UserProfile(models.Model):
 
     @property
     def get_photo_url(self):
-        if self.photo and hasattr(self.photo,'url'):
+        # if self.photo and hasattr(self.photo,'url'):
+        if self.photo:
             return self.photo.url
         else:
             return "/static/assets/img/photo_add.png"
 
     @property
     def get_photo_home_url(self):
-        if self.photo and hasattr(self.photo,'url'):
+        if self.photo:
             return self.photo.url
         else:
             return "/static/assets/img/ordinary_profile_photo.png"
-
 
 class Schedule(models.Model):
     user1 = models.OneToOneField(User, on_delete=models.CASCADE)

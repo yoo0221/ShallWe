@@ -28,7 +28,7 @@ from AccountApp.models import User
 #         return Message.objects.filter(room_id=room_id).order_by('created_at')[:30]
     
 # class ChatRoom(models.Model):
-#     user1_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="roomJoin", db_column="user1_id")
-#     user2_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="roomJoin", db_column="user2_id")
+    # user1_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="roomJoin", db_column="username")
+    # user2_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name="roomJoin", db_column="username")
 
     # room_id = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="roomJoin", db_column="room_id")
