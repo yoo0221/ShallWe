@@ -100,6 +100,9 @@ def promise(request):
 def meet(request):
     return render(request, 'meet.html')
 
+def thema2(request):
+    return render(request, 'thema2.html')
+
 # def handle_uploaded_file(f):
 #     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
 #         for chunk in f.chunks():
