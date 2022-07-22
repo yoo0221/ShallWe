@@ -13,7 +13,9 @@
   </div> -->
   <div class="row">
     <div class="card mb-4">
-      <form>
+      <!-- <h5 class="card-header pb-0 mb-0">약속 정하기</h5> -->
+      <form action="" method="post">
+      {% csrf_token %}
       <div class="card-body">
         <h6 class="card-title"><img src="{% static 'assets/img/profile_order.png' %}" alt=""><strong>장소</strong></h6>
         <div class="thema-select-place-group">
@@ -27,20 +29,21 @@
             >
               카페
             </button> -->
-          <label class="radio-btn col">
+          <label for="place" class="radio-btn col">
             <input type="radio" 
-              name="thema-select-place" 
+              name="place" 
               class="btn btn-primary me-1"
               data-bs-toggle="collapse"
               href="#collapseExample"
               role="button"
               aria-expanded="false"
               aria-controls="collapseExample"
+              id="place"
               value="카페" />
             <span>카페</span>
           </label>
-          <label class="radio-btn col">
-            <input type="radio" name="thema-select-place" value="음식점" />
+          <label for="place" class="radio-btn col">
+            <input type="radio" name="place" value="음식점" />
             <span>음식점</span>
           </label>
           <div class="collapse" id="collapseExample">
@@ -144,16 +147,60 @@
             </div>
           </div>
         </div>
+        {{form}}
       </div>
-
-      <div class="card-body">
+      <!-- <div class="card-body">
+>>>>>>> 17cf892c2fde650786d24db38971cc126a88eef7
         <h6 class="card-title"><strong>직접 입력할게요!</strong></h6>
         <label>
           <input type="text" class="themaselect-textbox" placeholder="나와 메이트가 이번에 갈 장소는?">
         </label>
-      </div>
-      <div class="card-body">
-        <h6 class="card-title"><img src="{% static 'assets/img/profile_order.png' %}" alt=""><strong>날짜/시간</strong></h6>
+      </div> -->
+      
+      
+      <!-- <label class="radio-btn col">
+        <input type="radio" name="thema-select-place" value="theater" />
+        <span>영화관</span>
+      </label>
+      <label class="radio-btn col">
+        <input type="radio" name="thema-select-place" value="singing room" />
+        <span>노래방</span>
+      </label>
+      <label class="radio-btn col">
+        <input type="radio" name="thema-select-place" value="park" />
+        <span>공원</span>
+      </label>
+      <label class="radio-btn col">
+        <input type="radio" name="thema-select-place" value="traditional market" />
+        <span>전통 시장</span>
+      </label>
+      <label class="radio-btn col">
+        <input type="radio" name="thema-select-place" value="exhibition" />
+        <span>전시회</span>
+      </label>
+      <label class="radio-btn col">
+        <input type="radio" name="thema-select-place" value="other" />
+        <span>직접 결정</span>
+      </label>
+      <div class="col">
+      <button type="button" class="col my-3 btn btn-outline-primary">식당</button>
+              
+      <button type="button" class="col my-3 btn btn-outline-primary">카페</button>
+      
+      <button type="button" class="col my-3 btn btn-outline-primary">영화관</button>
+      
+      <button type="button" class="col my-3 btn btn-outline-primary">노래방</button>
+      
+      <button type="button" class="col my-3 btn btn-outline-primary">공원</button>
+      
+      <button type="button" class="col my-3 btn btn-outline-primary">전통시장</button>
+      
+      <button type="button" class="col my-3 btn btn-outline-primary">전시회</button>
+      
+      <button type="button" class="btn my-3 btn-outline-primary">직접결정</button> -->
+        
+      <!-- <div class="card-body">
+        <h6 class="card-title"><strong>날짜/시간</strong></h6>
         <div class="row justify-content-md-center py-4">
           <input
             type="datetime-local"
@@ -163,19 +210,15 @@
             autofocus
         />
         </div>
-      </div>
+      </div> -->
           <!-- <p><input type="date" value="2019-09-22" min="2019-09-10" max="2019-09-25"></p>
           <p><input type="time" value="13:10:20" min="13:00:00" max="15:00:00"></p> -->
           <div class="card-body">
           <div class="d-grid gap-2 col-lg-6 mx-auto">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#smallModal"
-            >
-              약속 확정
-            </button>
+
+            <input type="button" class="btn btn-primary btn-lg" value="약속 확정" 
+            data-bs-toggle="modal"
+            data-bs-target="#smallModal"/>
             <div class="modal fade" id="smallModal" tabindex="-1" aria-hidden="true">
               <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
@@ -192,7 +235,8 @@
                     <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                       아니요
                     </button>
-                    <button type="button" class="btn btn-primary" onclick="location.href='{% url 'promise' %}'">예</button>
+                    <input type="submit" class="btn btn-primary" value="예"/> 
+                    <!-- <button type="button" class="btn btn-primary" onclick="location.href='{% url 'promise' %}'">예</button> -->
                   </div>
                 </div>
               </div>

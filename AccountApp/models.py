@@ -13,5 +13,7 @@ class User(AbstractUser):
     address_emd = models.CharField(max_length=20, null=True)
     nationality = models.CharField(max_length=30, null=True)
 
+
+
     def __str__(self):
         return self.username

@@ -30,13 +30,18 @@ class UserProfile(models.Model):
         else:
             return "/static/assets/img/ordinary_profile_photo.png"
 
-class Schedule(models.Model):
-    user1 = models.ForeignKey(User, on_delete=models.CASCADE)
-    day = models.DateTimeField()
-    place = models.CharField(null=True, blank=True, max_length=100)
-    topic_list = models.CharField(null=True, blank=True, max_length=300)
+class Topic(models.Model):
+    topic = models.CharField(max_length=200)
+    def __str__(self):
+        return self.topic
 
-    # user1 user2 day place topic_list
+class Schedule(models.Model):
+    schedule_mate = models.CharField(max_length=200, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    my_date_field = models.DateField()
+    my_time_field = models.TimeField()
+    place = models.CharField(null=True, blank=True, max_length=100)
+    topic_list = models.ForeignKey(Topic, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.day, self.place, self.topic_list
+        return self.place

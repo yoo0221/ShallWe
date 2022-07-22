@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from AccountApp.models import User
 from MainApp.models import UserProfile
 from django.db.models import Q
-from MainApp.forms import SetProfileForm
+from MainApp.forms import SetProfileForm, SetScheduleForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -131,7 +131,14 @@ def setprofile(request):
 
 @login_required
 def themaselect(request):
-    return render(request, 'themaselect.html')
+    if request.method == "POST":
+        form = SetScheduleForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'promise.html')
+    else:
+        form = SetScheduleForm()
+    return render(request, 'themaselect.html', {"form":form})
 
 @login_required
 def thema(request):
