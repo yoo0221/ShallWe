@@ -119,60 +119,76 @@
         {% endif %}
         <div class="table-responsive text-nowrap">
           <table class="table">
-            <!-- <thead>
-              <tr>
-                <th></th>
-                <th>이름</th>
-                <th>국적</th>
-                <th>사용 언어</th>
-                <th>거주지</th>
-              </tr>
-            </thead> -->
-
             <tbody class="table-border-bottom-0">
               {% for user in result %}
               <tr>
                 <td>
                   {% if user.userprofile.get_photo_home_url %}
-                  <div class="d-flex align-items-start align-items-sm-center gap-4">
-                    <div>
-                      <label for="photo_img" class="avatar avatar-online" tabindex="0">
-                        <img 
-                          src="{{ user.userprofile.get_photo_url }}" 
-                          class="d-block rounded" 
-                          width="200px"
-                          alt="">
-                      </label>
-                    </div> 
-                    <div class="mx-4"><span>{{user.name}}</div>
-                    <div class="mx-4"><img src="{% static 'assets/img/mothertongue.png'%}">{{user.mother_tongue}}</span></div>
-                    <div class="mx-4"><img src="{% static 'assets/img/location.png'%}">{{user.address_emd}}</span></div>
-                  </div>
-                  <div>
-                    {% if user.userprofile.introduction %}
-                      {{user.userprofile.introduction}}
-                    {% endif %}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                          <img 
+                            src="{{ user.userprofile.get_photo_url }}" 
+                            class="d-block rounded" 
+                            alt="">
+                        </label>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="col-4 col-sm-4">
+                            <strong>{{user.name}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/mothertongue.png'%}"><strong>{{user.mother_tongue}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/location.png'%}"><strong>{{user.address_emd}}</strong>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-4 col-sm-12">
+                            {% if user.userprofile.introduction %}
+                              {{user.userprofile.introduction}}
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   {% else %}
-                  <div class="d-flex align-items-start align-items-sm-center gap-4">
-                    <div>
-                      <label for="photo_img" class="avatar avatar-online" tabindex="0">
-                        <img 
-                          src="{% static 'assets/img/ordinary_profile_photo.png' %}" 
-                          class="d-block rounded" 
-                          width="200px"
-                          alt="">
-                      </label>
-                    </div> 
-                    <div class="mx-4"><span>{{user.name}}</div>
-                    <div class="mx-4"><img src="{% static 'assets/img/mothertongue.png'%}">{{user.mother_tongue}}</span></div>
-                    <div class="mx-4"><img src="{% static 'assets/img/location.png'%}">{{user.address_emd}}</span></div>
-                  </div>
-                  <div>
-                    {% if user.userprofile.introduction %}
-                      {{user.userprofile.introduction}}
-                    {% endif %}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <label for="photo_img" class="avatar avatar-online" tabindex="0">
+                          <img 
+                            src="{% static 'assets/img/ordinary_profile_photo.png' %}" 
+                            class="d-block rounded" 
+                            alt="">
+                        </label>
+                      </div>
+                      <div class="col-sm-9">
+                        <div class="row">
+                          <div class="col-4 col-sm-4">
+                            <strong>{{user.name}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/mothertongue.png'%}"><strong>{{user.mother_tongue}}</strong>
+                          </div>
+                          <div class="col-4 col-sm-4">
+                            <img src="{% static 'assets/img/location.png'%}"><strong>{{user.address_emd}}</strong>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-4 col-sm-12">
+                            {% if user.userprofile.introduction %}
+                              {{user.userprofile.introduction}}
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   {% endif %}
                 </td>
