@@ -60,10 +60,13 @@
                     <div class="row">
                       <div class="col-sm-3">
                         <label for="photo_img" class="avatar" tabindex="0">
-                          <img 
-                            src="{{ user.userprofile.get_photo_url }}" 
-                            class="d-block rounded" 
-                            alt="">
+                          <div class="avatar">
+                            <img
+                              src="{{ user.userprofile.get_photo_home_url }}"
+                              alt
+                              class="w-px-40 h-auto rounded-circle"
+                            />
+                          </div>
                         </label>
                       </div>
                       <div class="col-sm-9">
@@ -97,10 +100,13 @@
                     <div class="row">
                       <div class="col-sm-3">
                         <label for="photo_img" class="avatar" tabindex="0">
-                          <img 
-                            src="{% static 'assets/img/ordinary_profile_photo.png' %}" 
-                            class="d-block rounded" 
-                            alt="">
+                          <div class="avatar">
+                            <img
+                              src="{% static 'assets/img/ordinary_profile_photo.png' %}"
+                              alt
+                              class="w-px-40 h-auto rounded-circle"
+                            />
+                          </div>
                         </label>
                       </div>
                       <div class="col-sm-9">
