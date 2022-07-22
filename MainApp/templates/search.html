@@ -130,6 +130,7 @@
               {% for user in result %}
               <tr>
                 <td>
+<<<<<<< HEAD
                   <div class="d-flex align-items-start align-items-sm-center gap-4">
                     <div>
                       <label for="photo_img" class="avatar avatar-online" tabindex="0">
@@ -149,6 +150,14 @@
                     한줄소개~~~~~~~~~~~^^**
                   </div>
                 </div>
+=======
+                  <img
+                    src="{{ user.userprofile.get_photo_home_url }}"
+                    alt="Avatar"
+                    class="rounded-circle"
+                    width="50px"
+                  />
+>>>>>>> 32f315e4fd1ed5e454a52865cfccde786e76bad6
                 </td>
               </tr>
               {% endfor %}
