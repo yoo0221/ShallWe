@@ -29,3 +29,27 @@ class UserProfile(models.Model):
             return self.photo.url
         else:
             return "/static/assets/img/ordinary_profile_photo.png"
+
+    @property
+    def get_skill(self):
+        return self.skill
+
+    @property
+    def get_introduction(self):
+        return self.introduction
+
+    @property
+    def get_interesting_keyword(self):
+        return self.interesting_keyword
+
+    @property
+    def get_like_place(self):
+        return self.like_place
+
+    @property
+    def get_unlike_place(self):
+        return self.unlike_place
+
+    @property
+    def get_skill(self):
+        return self.skill
