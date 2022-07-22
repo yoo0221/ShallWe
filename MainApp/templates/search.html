@@ -279,21 +279,12 @@
               {% for user in result %}
               <tr>
                 <td>
-                  {% if user.photo.url %}
                   <img
-                    src="{{ user.photo.url }}"
+                    src="{{ user.userprofile.get_photo_home_url }}"
                     alt="Avatar"
                     class="rounded-circle"
                     width="50px"
                   />
-                  {% else %}
-                  <img
-                    src="{% static 'assets/img/ordinary_profile_photo.png' %}"
-                    alt="Avatar"
-                    class="rounded-circle"
-                    width="50px"
-                  />
-                  {% endif %}
                 </td>
                 <td>{{user.name}}</td>
                 <td>{{user.birth}}</td>
