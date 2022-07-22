@@ -250,59 +250,80 @@
 
 
                         <!-- 하단 배너로 등장  -->
-                        <div class="container">
-                            <div class="row">
-                            <h4 class="fw-bold py-1 mb-3">
-                                <span class="fw-light">약속 정하기</span>
-                            </h4>
-                            </div>
-                            <div class="row">
-                                <div class="card mb-4">
-                                <form>
-                                    <div class="card-body">
-                                    <h6 class="card-title"><strong>장소</strong></h6>
-                                        <div class="thema-select-place-group">
-                                        <label class="radio-btn col">
-                                            <input type="radio" name="thema-select-place" value="식당" />
-                                            <span>식당</span>
-                                        </label>
-                                        <label class="radio-btn col">
-                                            <input type="radio" name="thema-select-place" value="카페" />
-                                            <span>카페</span>
-                                        </label>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="mt-3">
+                            <!-- <button
+                                class="btn btn-primary"
+                                type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasBottom"
+                                aria-controls="offcanvasBottom"
+                            >
+                                테마 정하기
+                            </button> -->
+                            <div
+                                class="offcanvas offcanvas-bottom thema-offcanvas nav-link active"
+                                tabindex="-1"
+                                id="offcanvasBottom"
+                                aria-labelledby="offcanvasBottomLabel"
+                            >
+                                <div class="offcanvas-header">
+                                <h5 id="offcanvasBottomLabel" class="offcanvas-title">약속 잡기</h5>
+                                <button
+                                    type="button"
+                                    class="btn-close text-reset"
+                                    data-bs-dismiss="offcanvas"
+                                    aria-label="Close"
+                                ></button>
+                                </div>
+                                <div class="offcanvas-body">
+                                    <div class="row">
+                                        <div class="card mb-4">
+                                            <form>
+                                            <div class="card-body">
+                                            <h6 class="card-title"><strong>장소</strong></h6>
+                                                <div class="thema-select-place-group">
+                                                    <label class="radio-btn col">
+                                                        <input type="radio" name="thema-select-place" value="식당" />
+                                                        <span>식당</span>
+                                                    </label>
+                                                    <label class="radio-btn col">
+                                                        <input type="radio" name="thema-select-place" value="카페" />
+                                                        <span>카페</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                            <h6 class="card-title"><strong>직접 입력할게요!</strong></h6>
+                                                <label>
+                                                    <input type="text" class="themaselect-textbox" placeholder="나와 메이트가 이번에 갈 장소는?">
+                                                </label>
+                                            </div>
+                                            <div class="card-body">
+                                            <h6 class="card-title"><strong>날짜/시간</strong></h6>
+                                                <div class="row justify-content-md-center py-4">
+                                                <input
+                                                    type="datetime-local"
+                                                    class="col-md-auto"
+                                                    id="birth"
+                                                    name="birth"
+                                                    autofocus
+                                                />
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="d-grid gap-2 col-lg-6 mx-auto">
+                                                    <button class="btn btn-primary btn-lg" type="button">약속 확정</button>
+                                                </div>
+                                            </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <h6 class="card-title"><strong>직접 입력할게요!</strong></h6>
-                                        <label>
-                                            <input type="text" class="themaselect-textbox" placeholder="나와 메이트가 이번에 갈 장소는?">
-                                        </label>
-                                    </div>
-                                    
-                                    <div class="card-body">
-                                    <h6 class="card-title"><strong>날짜/시간</strong></h6>
-                                        <div class="row justify-content-md-center py-4">
-                                            <input
-                                                type="datetime-local"
-                                                class="col-md-auto"
-                                                id="birth"
-                                                name="birth"
-                                                autofocus
-                                            />
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="d-grid gap-2 col-lg-6 mx-auto">
-                                            <button class="btn btn-primary btn-lg" type="button">약속 확정</button>
-                                        </div>
-                                    </div>
-                                </form>
                                 </div>
                             </div>
+                        </div>
                     <!-- 여기까지 하단 배너로 넣었을 때 -->
-                    <div class="d-grid gap-2 col-lg-6 mx-auto mt-3">
-                        <a href="{% url 'themaselect' %}" button class="btn btn-primary btn-lg mb-2" type="button" >다음</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
