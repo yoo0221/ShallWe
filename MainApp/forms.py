@@ -1,6 +1,8 @@
+from calendar import day_abbr
 from django import forms
 from MainApp.models import UserProfile
 from MainApp.models import Schedule
+from MainApp.widget import DatePickerInput, TimePickerInput, DateTimePickerInput
 
 class SetProfileForm(forms.ModelForm):
     class Meta:
@@ -91,25 +93,41 @@ class SetProfileForm(forms.ModelForm):
 #         }
 
 
-class SetScheduleForm(forms.ModelForm):
+class SetScheduleForm(forms.ModelForm):        
     class Meta:
         model = Schedule
         fields = (
-            'day',
             'place',
-            'topic_list'
+            'my_date_field',
+            'my_time_field',
+            # 'my_date_time_field',
         )
+        widgets = {
+            'my_date_field' : DatePickerInput(),
+            'my_time_field' : TimePickerInput(),
+            # 'my_date_time_field' : DateTimePickerInput(),
+        }
         labels = {
-            'day' : '약속 날짜와 시간',
-            'place' : '약속 장소',
-            'topic_list' : '질문 주제'
+            'place' : '직접 입력해보세요!',
+            'my_date_field':"날짜",
+            'my_time_field':"시간",
+            # 'my_date_time_field':"날짜 및 시간",
         }
                 
     def __init__(self, *args, **kwargs):
         super(SetScheduleForm, self).__init__(*args, **kwargs)
-
-        self.fields['day'].widget.attrs = {
-            'id' : ''
+        self.fields['my_date_field'].widget.attrs = {
+            'id' : 'date',
+            'class' : 'form-control'
+        }
+        self.fields['my_time_field'].widget.attrs = {
+            'id' : 'time',
+            'class' : 'form-control'
         }
 
+        self.fields['place'].widget.attrs = {
+            'id' : 'place',
+            'class' : 'form-control',
+            'placeholder' : '나와 메이트가 이번에 갈 장소는?'
+        }
         

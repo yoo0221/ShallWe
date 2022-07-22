@@ -14,29 +14,33 @@
   <div class="row">
     <div class="card mb-4">
       <!-- <h5 class="card-header pb-0 mb-0">약속 정하기</h5> -->
-      <form>
+      <form action="" method="post">
+      {% csrf_token %}
       <div class="card-body">
         <h6 class="card-title"><strong>장소</strong></h6>
         <!-- <div class="demo-inline-spacing"> -->
           <!-- <div class="container">
             <div class="row justify-content-md-center"> -->
-        <div class="thema-select-place-group">
-          <label class="radio-btn col">
-            <input type="radio" name="thema-select-place" value="식당" />
+        <div class="thema-select-place-group my-3">
+          <label for="place" class="radio-btn col">
+            <input type="radio" id="place" name="place" value="식당" />
             <span>식당</span>
           </label>
-          <label class="radio-btn col">
-            <input type="radio" name="thema-select-place" value="카페" />
+          <label for="place" class="radio-btn col">
+            <input type="radio" id="place" name="place" value="카페" />
             <span>카페</span>
           </label>
         </div>
+        {{form}}
       </div>
-      <div class="card-body">
+      <!-- <div class="card-body">
         <h6 class="card-title"><strong>직접 입력할게요!</strong></h6>
         <label>
           <input type="text" class="themaselect-textbox" placeholder="나와 메이트가 이번에 갈 장소는?">
         </label>
-      </div>
+      </div> -->
+      
+      
       <!-- <label class="radio-btn col">
         <input type="radio" name="thema-select-place" value="theater" />
         <span>영화관</span>
@@ -78,7 +82,7 @@
       
       <button type="button" class="btn my-3 btn-outline-primary">직접결정</button> -->
         
-      <div class="card-body">
+      <!-- <div class="card-body">
         <h6 class="card-title"><strong>날짜/시간</strong></h6>
         <div class="row justify-content-md-center py-4">
           <input
@@ -89,12 +93,12 @@
             autofocus
         />
         </div>
-      </div>
+      </div> -->
           <!-- <p><input type="date" value="2019-09-22" min="2019-09-10" max="2019-09-25"></p>
           <p><input type="time" value="13:10:20" min="13:00:00" max="15:00:00"></p> -->
           <div class="card-body">
           <div class="d-grid gap-2 col-lg-6 mx-auto">
-            <button class="btn btn-primary btn-lg" type="button">약속 확정</button>
+            <input type="submit" class="btn btn-primary btn-lg" value="약속 확정"/>
             <!-- <button class="btn btn-secondary btn-lg" type="button">Button</button> -->
           </div>
           </div>
