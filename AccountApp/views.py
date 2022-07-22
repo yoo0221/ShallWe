@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from .models import User 
 from django.contrib import auth
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def register(request):
@@ -54,6 +55,7 @@ def login(request):
             return render(request, 'login.html', {'bad_login':bad_login})
     return render(request, 'login.html', {'bad_login':bad_login})
 
+@login_required
 def logout(request):
     auth.logout(request)
     return redirect('home')

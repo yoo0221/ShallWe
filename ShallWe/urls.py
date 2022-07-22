@@ -35,7 +35,10 @@ urlpatterns = [
     path('promise/', views.promise, name='promise'),
     path('meet/', views.meet, name="meet"), 
     path('register/complete', accviews.register_complete, name="register_complete"),
-    path('chat/', include('chat.urls')), 
+    path('chat/', include('chat.urls')),
+    path('thema2/', views.thema2, name="thema2"), 
+    path('detailProfile/', views.detail_profile, name="detail_profile"), 
+
 ]
 
 if settings.DEBUG:
