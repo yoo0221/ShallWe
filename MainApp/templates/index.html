@@ -6,200 +6,55 @@
   <a href="#"> <!-- 광고 배너 외부 링크/이벤트 페이지-->
   <div class="card mb-4" style="background-color: #8486ef;">
     <div class="d-flex align-items-end row">
-        <div class="col-sm-7">
-          <div class="card-body">
-            <h5 class="mb-1" style="color: black;"><span style="color: white;">메이트</span>와 함께 <span style="color: white;" class="fw-bold">미술 전시회</span> 어때요?</h5>
-            <p class="mb-0" style="color: white;">7월 대구 미술관 1+1 동반 할인 행사중</p>
-          </div>
+      <div class="col-sm-7">
+        <div class="card-body">
+          <h5 class="mb-1" style="color: black;"><span style="color: white;">메이트</span>와 함께 <span style="color: white;" class="fw-bold">미술 전시회</span> 어때요?</h5>
+          <p class="mb-0" style="color: white;">7월 대구 미술관 1+1 동반 할인 행사중</p>
         </div>
-        <div class="col-sm-5 text-center text-sm-left">
-          <div class="card-body">
-            <img
-              src="{% static 'assets/img/icon-banner-house.png' %}"
-              height="50"
-              alt="banner-icon"
-            />
-          </div>
+      </div>
+      <div class="col-sm-5 text-center text-sm-left">
+        <div class="card-body">
+          <img
+            src="{% static 'assets/img/icon-banner-house.png' %}"
+            height="50"
+            alt="banner-icon"
+          />
         </div>
+      </div>
     </div>
     </a>
   </div>
 
   <!-- <div class="col-lg-4 col-md-4 order-1"> -->
-    <div class="row">
-      <!-- <div class="col-lg-6 col-md-12 col-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between">
-              <div class="avatar flex-shrink-0">
-                <img
-                  src="{% static 'assets/img/icons/unicons/chart-success.png' %}"
-                  alt="chart success"
-                  class="rounded"
-                />
-              </div>
-              <div class="dropdown">
-                <button
-                  class="btn p-0"
-                  type="button"
-                  id="cardOpt3"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="bx bx-dots-vertical-rounded"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
-                  <a class="dropdown-item" href="javascript:void(0);">View More</a>
-                  <a class="dropdown-item" href="javascript:void(0);">Delete</a>
-                </div>
-              </div>
-            </div>
-            <span class="fw-semibold d-block mb-1">Profit</span>
-            <h3 class="card-title mb-2">$12,628</h3>
-            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +72.80%</small>
-          </div>
-        </div>
-      </div> -->
-      <div class="col-lg-6 mb-4 order-0">
-        <div class="card">
-          <h6 class="card-header"><strong>약속 캘린더</strong></h6>
-          <div class="card-body">
-            <table id="calendar" class="calendar">
-              <tr>
-                <td><label class="cal-btn" onclick="prevCalendar()"><</label></td>
-                <td align="center" id="tbCalendarYM" colspan="5">YYYY.MM</td>
-                <td><label class="cal-btn" onclick="nextCalendar()">></label></td>
-              </tr>
-              <tr>
-                <td><font color ="#ed2a61">SUN</td>
-                <td>MON</td>
-                <td>TUE</td>
-                <td>WED</td>
-                <td>THU</td>
-                <td>FRI</td>
-                <td><font color ="#3c6ffa">SAT</td>
-              </tr> 
-            </table>
-            <script>buildCalendar();</script>
-          </div>
-        </div>
-      </div>
-    </div>
-  <!-- </div> -->
-
   <div class="row">
     <div class="col-lg-6 mb-4 order-0">
-      <div class="card accordion-item">
-        <h2 class="accordion-header p-2" id="headingOne">
-          <button
-            type="button"
-            class="accordion-button"
-            data-bs-toggle="collapse"
-            data-bs-target="#accordionOne"
-            aria-expanded="true"
-            aria-controls="accordionOne"
-          >
-            <strong>필터 설정</strong>
-          </button>
-        </h2>
-        <div
-          id="accordionOne"
-          class="accordion-collapse collapse show"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="card-body accordion-body">
-            <form action="{% url 'filtered' %}" method="post">
-              {% csrf_token %}
-              <div class="card-body filter-age">
-                <h5 class="card-title">연령대</h5>
-                <input type="hidden" name="filter-age20" value="0" />
-                <input
-                  type="checkbox"
-                  name="filter-age20"
-                  value="20"
-                  class="btn-check"
-                  id="filter-age20"
-                  autocomplete="off"
-                />
-
-                <label class="btn btn-outline-primary" for="filter-age20">
-                  20대
-                </label>
-
-                <input type="hidden" name="filter-age30" value="0" />
-                <input
-                  type="checkbox"
-                  name="filter-age30"
-                  value="30"
-                  class="btn-check"
-                  id="filter-age30"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-primary" for="filter-age30">
-                  30대
-                </label>
-
-                <input type="hidden" name="filter-age40" value="0" />
-                <input
-                  type="checkbox"
-                  name="filter-age40"
-                  value="40"
-                  class="btn-check"
-                  id="filter-age40"
-                  autocomplete="off"
-                />
-                <label class="btn btn-outline-primary" for="filter-age40">
-                  40대 이상
-                </label>
-              </div>
-
-              <div class="card-body filter-sex">
-                <h5 class="card-title">성별</h5>
-                <input type="hidden" name="filter-sex" value="x" />
-                <label class="radio-btn">
-                  <input type="radio" name="filter-sex" value="남" />
-                  <span>남</span>
-                </label>
-                <label class="radio-btn">
-                  <input type="radio" name="filter-sex" value="여" />
-                  <span>여</span>
-                </label>
-              </div>
-
-              <div class="card-body">
-                <h5 class="card-title">거주 지역</h5>
-                <select
-                  class="p-2 mx-1"
-                  name="addressDo"
-                  id="addressDo"
-                  style="border-color: #1c3bd5; color: #1c3bd5"
-                ></select>
-                <select
-                  class="selectpicker p-2 mx-1"
-                  name="addressSiGunGu"
-                  id="addressSiGunGu"
-                  style="border-color: #1c3bd5; color: #1c3bd5"
-                ></select>
-                <select
-                  class="selectpicker p-2 mx-1"
-                  name="addressEMD"
-                  id="addressEMD"
-                  style="border-color: #1c3bd5; color: #1c3bd5"
-                ></select>
-              </div>
-
-              <div class="card-body filter-selected">
-                <button type="submit" class="btn btn-primary">선택 완료</button>
-              </div>
-            </div>
-          </form>
+      <div class="card">
+        <h6 class="card-header"><strong>약속 캘린더</strong></h6>
+        <div class="card-body">
+          <table id="calendar" class="calendar">
+            <tr>
+              <td><label class="cal-btn" onclick="prevCalendar()"><</label></td>
+              <td align="center" id="tbCalendarYM" colspan="5">YYYY.MM</td>
+              <td><label class="cal-btn" onclick="nextCalendar()">></label></td>
+            </tr>
+            <tr>
+              <td><font color ="#ed2a61">SUN</td>
+              <td>MON</td>
+              <td>TUE</td>
+              <td>WED</td>
+              <td>THU</td>
+              <td>FRI</td>
+              <td><font color ="#3c6ffa">SAT</td>
+            </tr> 
+          </table>
+          <script>buildCalendar();</script>
         </div>
       </div>
     </div>
+
     <div class="col-lg-6 order-1">
       <div class="card col">
-        <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5>
+        <h6 class="card-header"><strong>새 친구를 찾아보세요!</strong></h6>
         <div class="table-responsive text-nowrap">
           <table class="table">
             <thead>
