@@ -9,7 +9,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def home(request):
-    return render(request, 'index.html')
+    users = User.objects.filter(is_superuser=False).order_by('-date_joined')
+    return render(request, 'index.html', {"users":users})
 
 @login_required
 def search(request):
