@@ -2,16 +2,20 @@ from django.shortcuts import get_object_or_404, render, redirect
 from AccountApp.models import User
 from django.db.models import Q
 from MainApp.forms import SetProfileForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def home(request):
     return render(request, 'index.html')
 
+@login_required
 def search(request):
     result = User.objects.filter(is_superuser=False).order_by("-date_joined")
     return render(request, 'search.html', {"result":result})
 
+@login_required
 def filtered(request):
     if request.method=="POST":
         f_age20 = request.POST['filter-age20']
@@ -76,6 +80,7 @@ def filtered(request):
 #         user.save()
 #     return render(request, 'setprofile.html')
 
+@login_required
 def setprofile(request):
     if request.method == "POST" or request.method == "FILES":
         filled_form = SetProfileForm(request.POST)
@@ -88,21 +93,27 @@ def setprofile(request):
         form = SetProfileForm()
         return render(request, 'setprofile.html', {"form":form})
 
+@login_required
 def themaselect(request):
     return render(request, 'themaselect.html')
 
+@login_required
 def thema(request):
     return render(request, 'thema.html')
 
+@login_required
 def promise(request):
     return render(request, 'promise.html')
 
+@login_required
 def meet(request):
     return render(request, 'meet.html')
 
+@login_required
 def thema2(request):
     return render(request, 'thema2.html')
 
+@login_required
 def detail_profile(request):
     return render(request, 'detailProfile.html')
 
