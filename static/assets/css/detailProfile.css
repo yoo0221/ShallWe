@@ -1,0 +1,158 @@
+body {
+    background-color: #1C3BD5;
+}
+
+.header {
+    padding: 1rem;
+    color: #FFF;
+    overflow: hidden;
+    text-align: center;
+}
+
+.profile, .buttonBox {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #FFF;
+    text-align: center;
+}
+
+.profile {
+    padding-bottom: 6rem;
+}
+
+.angleLeft {
+    float: left;
+    font-size: 1.5rem;
+}
+
+.profileImg {
+    width: 7rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    /* border-radius: 50%;
+    box-shadow: 0px 2px 5px #CCC; */
+}
+
+.name {
+    font-weight: bolder;
+    margin-bottom: 0.1rem;
+}
+
+.iconWrapper {
+    color: #1C3BD5;
+    overflow: hidden;
+    padding-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iconWrapper-left {
+    text-align: left;
+    float: left;
+    font-size: 0.8rem;
+}
+
+.iconWrapper-left > span {
+    padding-left: 0.25rem;
+}
+
+.iconWrapper-right {
+    text-align: right;
+    float: right;
+    font-size: 1rem;
+}
+
+.iconWrapper-inform {
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iconWrapper-inform > span {
+    padding-left: 0.25rem;
+    padding-right: 0.5rem;
+}
+
+.infromIcon {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.orderBox {
+    color: #666;
+    border-bottom: 2px solid #CCC;
+    text-align: left;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+.orderTitle, .orderDes {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.orderTitle {
+    padding-top: 0.5rem;
+    padding-bottom: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.orderDes {
+    padding-bottom: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.profileOrder {
+    width: 0.75rem;
+}
+
+.buttonBox {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0px -2px 8px #CCC;
+    position: fixed;
+    bottom: 0;
+    width: 95%;
+}
+
+.chatButton {
+    background-color: #FFF;
+    color: #1C3BD5;
+    font-weight: bold;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid #1C3BD5;
+    margin-right: 1rem;
+}
+
+.promiseButton {
+    background-color: #1C3BD5;
+    color: #FFF;
+    font-weight: bold;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    border: 3px solid #1C3BD5;
+}
