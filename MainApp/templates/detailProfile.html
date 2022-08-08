@@ -27,7 +27,12 @@
                 <i class="fa-solid fa-temperature-half"></i><span>30°C</span>
             </div>
             <div class='iconWrapper-right'>
-                <i class="fa-solid fa-heart"></i>
+                <img
+                src="{% static 'assets/img/follow.png' %}"
+                class='follow'/>
+                <!-- <img
+                src="{% static 'assets/img/follow-fill.png' %}"
+                class='follow'/> -->
             </div>
         </div>
         <div class='iconWrapper-inform'>
@@ -106,6 +111,7 @@
         <button 
             type='button'
             class='promiseButton'>
+            <!-- onclick="location.href='{% url 'thema2' %}'"> -->
             약속 잡기
         </button>
     </div>
