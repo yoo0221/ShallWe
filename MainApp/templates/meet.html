@@ -2,7 +2,6 @@
 {% load static %}
 {% block mainbody %}
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4">오늘의 테마</h4>
     <div class="col-lg-6 mb-4 order-0">
         <div class="card accordion-item">
             <div class="row row-cols-1">
@@ -59,7 +58,8 @@
                                     Q1.  깻잎 논쟁을 아시나요?<br>
                                     Do you know the Perilla leaf Debate?
                                 </h5>
-                                <span class="badge bg-label-secondary mb-2">참고 표현</span>
+                                <img src="{% static 'assets/img/말하는사람.png' %}">
+                                <span class="badge rounded bg-label-secondary mb-2">참고 표현</span>
                                 <p>
                                     쌈을 싸다   wrap <br>
                                     떼다   pull off, take off   <br>
@@ -76,6 +76,7 @@
                                     If your lover peels shrimp for my best friend,<br>
                                     will you be jealous or not?
                                 </h5>
+                                <img src="{% static 'assets/img/말하는사람.png' %}">
                                 <span class="badge bg-label-secondary mb-2">참고 표현</span>
                                 <p>
                                     절대 안 돼!   No way!<br>
@@ -92,7 +93,8 @@
                                     Q3. 집착하는 연인 VS 무관심한 연인<br>
                                     A lover obsessed with me  VS a lover indifferent to me
                                 </h5>
-                                <span class="badge bg-label-secondary mb-2">참고 표현</span>
+                                <img src="{% static 'assets/img/말하는사람.png' %}">
+                                    <span class="badge bg-label-secondary mb-2 ">참고 표현</span>
                                 <p>
                                     여사친/남사친   female friend/guy friend<br>
                                     연락두절   out of contact<br>
@@ -102,33 +104,26 @@
                         </div>
                     </div>
                     <!-- 하단 버튼들 -->
-                    <div class =" text-center">
-                        <div class="btn-group col-md-12 mb-3" role="group" aria-label="Basic outlined example">
+                    <div class ="container text-center">
+                        <div class="row">
                             <!--  채팅 페이지 없어서 home페이지로 연결  -->
                             <!-- 근데 페이지는 열리는데 빨간줄이 끄이네 -->
-                            <button 
-                                type="button" 
-                                class="btn btn-outline-primary" 
-                                onclick="location.href='{% url 'chat' %}'">
+                            <div class="col" onclick="location.href='{% url 'chat' %}'">
                                 <img  src="{% static 'assets/img/채팅.png' %}">
-                            </button>
-                            <button 
-                                type="button"
-                                class="btn btn-outline-primary"
-                                onclick="location.href= 'https://papago.naver.com'">
+                                <br>채팅방
+                            </div>
+                            <div class="col" onclick="location.href= 'https://papago.naver.com'">
                                 <img  src="{% static 'assets/img/번역.png' %}">
-                            </button>
-                            <button 
-                                type="button"
-                                class="btn btn-outline-primary"
-                                onclick="location.href= 'https://dict.naver.com'">
+                                <br>번역
+                            </div>
+                            <div class="col" onclick="location.href= 'https://dict.naver.com'">
                                 <img  src="{% static 'assets/img/사전.png' %}">
-                            </button>
-                            <button 
-                                type="button"
-                                class="btn btn-outline-primary">
-                                <img  src="{% static 'assets/img/팔로우.png' %}">
-                            </button>
+                                <br>사전
+                            </div>
+                            <div class="col" >
+                                <img  src="{% static 'assets/img/되돌리기.png' %}">
+                                <br> 만남종료
+                            </div>
                         </div>
                     </div>
                     <!-- 하단버튼 끝 -->
