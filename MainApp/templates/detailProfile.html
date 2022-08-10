@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}" />
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
 </head>
 <body>
     <div class='header'>
@@ -23,13 +23,20 @@
         <div class='name'>Tommy</div>
         <div class='iconWrapper'>
             <div class='iconWrapper-left'>
-                <i class="fa-solid fa-mars"></i><span></span>
-                <i class="fa-solid fa-temperature-half"></i><span>30°C</span>
+                <img
+                src="{% static 'assets/img/성별.png' %}"
+                class='sexIcon'/>
+                <!-- <i class="fa-solid fa-mars"></i><span></span> -->
+                <!-- <i class="fa-solid fa-temperature-half"></i><span>30°C</span> -->
+                <img
+                src="{% static 'assets/img/온도계.png' %}"
+                class='sexIcon'/>
+                <span>30°C</span>
             </div>
             <div class='iconWrapper-right'>
                 <img
                 src="{% static 'assets/img/follow.png' %}"
-                class='follow'/>
+                class='followIcon'/>
                 <!-- <img
                 src="{% static 'assets/img/follow-fill.png' %}"
                 class='follow'/> -->
