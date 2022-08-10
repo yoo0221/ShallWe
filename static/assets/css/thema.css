@@ -1,13 +1,13 @@
-*{
+/* {
     font-family: 'Noto Sans', sans-serif;
 }
 
-/* thema-table */
+
 .thema-table > tbody > tr > td:hover {
     color: #1C3BD5;
 }
 
-/* radio button */
+
 .radio-btn input[type="radio"] {
     display: none;
 }
@@ -64,7 +64,6 @@
 }
 
 .sns-img-box > img {
-    /* border-radius: 50%; */
     overflow: hidden;
     margin-right: 10px;
 }
@@ -73,8 +72,6 @@
     height: 55vh;
 }
 
-
-/* calendar */
 .cal-btn:hover {
     color: #ed2a61;
 }
@@ -87,4 +84,23 @@
 
 .calendar {
     margin: auto;
+} */
+
+.thema {
+    text-align: center;
+    background-color: #FFF;
+    width: 100%;
+}
+
+.setThema {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #FFF;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
 }
