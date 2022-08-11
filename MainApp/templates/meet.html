@@ -1,21 +1,26 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html 
-lang="en"
-class="light-style layout-menu-fixed"
-dir="ltr"
-data-theme="theme-default"
-data-assets-path="{% static 'assets/' %}"
-data-template="vertical-menu-template-free"
+
+<html
+    lang="en"
+    class="light-style layout-menu-fixed"
+    dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="{% static 'assets/' %}"
+    data-template="vertical-menu-template-free"
 >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}" />
-    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Shall We?</title>
+
+    <meta name="description" content="" />
+
+    <!--fontAwesome-->
     <link 
         rel="stylesheet" 
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -24,6 +29,10 @@ data-template="vertical-menu-template-free"
         rel="stylesheet"
         href="{% static 'assets/vendor/fonts/boxicons.css' %}"
     />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}" />
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
     <link
         rel="stylesheet"
         href="{% static 'assets/vendor/css/core.css' %}"
@@ -34,6 +43,26 @@ data-template="vertical-menu-template-free"
         href="{% static 'assets/vendor/css/theme-default.css' %}"
         class="template-customizer-theme-css"
     />
+    <!-- Vendors CSS -->
+    <link
+        rel="stylesheet"
+        href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"
+    />
+
+    <link
+        rel="stylesheet"
+        href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"
+    />
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{% static 'assets/js/calendar.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+    <script src="{% static 'assets/js/table.js' %}"></script>
 </head>
 <body style="background-color: #1C3BD5; width: 100%;">
     <div class='header'>
@@ -96,9 +125,9 @@ data-template="vertical-menu-template-free"
                         <img src="{% static 'assets/img/말하는사람.png' %}">
                         <span class="badge rounded bg-label-secondary mb-2">참고 표현</span>
                         <p>
-                            쌈을 싸다   wrap <br>
+                            쌈을 싸다   wrap [ ræp ] <br>
                             떼다   pull off, take off   <br>
-                            연인   couple, lover <br>
+                            연인   couple [ ˈkʌpl ] , lover [ ˈlʌvə(r) ] <br>
                             ~를 미치게 하다   drive somebody crazy <br>
                         </p>
                     </div>
@@ -115,9 +144,9 @@ data-template="vertical-menu-template-free"
                         <span class="badge bg-label-secondary mb-2">참고 표현</span>
                         <p>
                             절대 안 돼!   No way!<br>
-                            오해의 소지가 있는   misleading<br>
+                            오해의 소지가 있는   misleading [ ˌmɪsˈliːdɪŋ ]<br>
                             많은 정성이 들어가다   put so much effort<br>
-                            내 연인 친절하네.  He/She has good manners.<br>
+                            내 연인은 친절해  He/She has good manners <br>
                         </p>
                     </div>
                     <div class="tab-pane fade" id="Q3" role="tabpanel">
@@ -153,13 +182,54 @@ data-template="vertical-menu-template-free"
                         <br>사전
                     </div>
                     <div class="col" >
-                        <img  src="{% static 'assets/img/되돌리기.png' %}">
+                        <img  
+                            src="{% static 'assets/img/되돌리기.png' %}"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalCenter">
                         <br> 만남종료
+                        <div class="modal fade" id="modalCenter"aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="continer">
+                                        <div class="row">
+                                            <div class="row modal-header text-center">
+                                                <h5 class="modal-title mb-3" id="modalCenterTitle">메이트와의 만남이 종료되셨나요?</h5>
+                                            </div>
+                                            <button type="button" class="col nobutton" data-bs-dismiss="modal">
+                                                아니오
+                                            </button>
+                                            <button type="button" class="col yesbutton"data-bs-dismiss="modal">예</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- Page JS -->
+    <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
+    <script src="{% static 'js/location_select.js' %}"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
 
