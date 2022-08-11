@@ -1,135 +1,165 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block mainbody %}
-<div class="container-xxl flex-grow-1 container-p-y">
-    <div class="col-lg-6 mb-4 order-0">
-        <div class="card accordion-item">
-            <div class="row row-cols-1">
-                <div class="col-md-10 mx-auto my-3">
-                    <div class="nav-align-top mb-4 mt-4">
-                        <ul class="nav nav-tabs nav-fill" role="tablist">
-                            <li class="nav-item">
-                            <button
-                                type="button"
-                                class="nav-link active"
-                                role="tab"
-                                data-bs-toggle="tab"
-                                data-bs-target="#Q1"
-                                aria-controls="Q1"
-                                aria-selected="true"
-                            >
-                            Q1.
-                            
-                            </button>
-                            </li>
-                            <li class="nav-item">
-                                <button
-                                    type="button"
-                                    class="nav-link"
-                                    role="tab"
-                                    data-bs-toggle="tab"
-                                    data-bs-target="#Q2"
-                                    aria-controls="Q2"
-                                    aria-selected="false"
-                                >
-                                Q2.
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button
-                                    type="button"
-                                    class="nav-link"
-                                    role="tab"
-                                    data-bs-toggle="tab"
-                                    data-bs-target="#Q3"
-                                    aria-controls="Q3"
-                                    aria-selected="false"
-                                >
-                                Q3.
-                                </button>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="Q1" role="tabpanel">
-                                <div class="text-center">
-                                    <img src="{% static 'assets/img/깻잎.png' %}" class="rounded ">
-                                </div>
-                                <h5 class="card-title text-primary mt-3">
-                                    Q1.  깻잎 논쟁을 아시나요?<br>
-                                    Do you know the Perilla leaf Debate?
-                                </h5>
-                                <img src="{% static 'assets/img/말하는사람.png' %}">
-                                <span class="badge rounded bg-label-secondary mb-2">참고 표현</span>
-                                <p>
-                                    쌈을 싸다   wrap <br>
-                                    떼다   pull off, take off   <br>
-                                    연인   couple, lover <br>
-                                    ~를 미치게 하다   drive somebody crazy <br>
-                                </p>
-                            </div>
-                            <div class="tab-pane fade" id="Q2" role="tabpanel">
-                                <div class="text-center">
-                                    <img src="{% static 'assets/img/새우.png' %}" class="rounded ">
-                                </div>
-                                <h5 class="card-title text-primary mt-3">
-                                    Q2. 내 절친의 새우를 까주는 나의 연인, 이때 나의 반응은?<br>
-                                    If your lover peels shrimp for my best friend,<br>
-                                    will you be jealous or not?
-                                </h5>
-                                <img src="{% static 'assets/img/말하는사람.png' %}">
-                                <span class="badge bg-label-secondary mb-2">참고 표현</span>
-                                <p>
-                                    절대 안 돼!   No way!<br>
-                                    오해의 소지가 있는   misleading<br>
-                                    많은 정성이 들어가다   put so much effort<br>
-                                    내 연인 친절하네.  He/She has good manners.<br>
-                                </p>
-                            </div>
-                            <div class="tab-pane fade" id="Q3" role="tabpanel">
-                                <div class="text-center">
-                                    <img src="{% static 'assets/img/연인.png' %}" class="rounded ">
-                                </div>
-                                <h5 class="card-title text-primary mt-3">
-                                    Q3. 집착하는 연인 VS 무관심한 연인<br>
-                                    A lover obsessed with me  VS a lover indifferent to me
-                                </h5>
-                                <img src="{% static 'assets/img/말하는사람.png' %}">
-                                    <span class="badge bg-label-secondary mb-2 ">참고 표현</span>
-                                <p>
-                                    여사친/남사친   female friend/guy friend<br>
-                                    연락두절   out of contact<br>
-                                    말이 안 된다   It doesn’t make sense<br>
-                                </p>
-                            </div>
+
+<!DOCTYPE html>
+<html 
+lang="en"
+class="light-style layout-menu-fixed"
+dir="ltr"
+data-theme="theme-default"
+data-assets-path="{% static 'assets/' %}"
+data-template="vertical-menu-template-free"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}" />
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+    <link 
+        rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="{% static 'assets/vendor/fonts/boxicons.css' %}"
+    />
+    <link
+        rel="stylesheet"
+        href="{% static 'assets/vendor/css/core.css' %}"
+        class="template-customizer-core-css"
+    />
+    <link
+        rel="stylesheet"
+        href="{% static 'assets/vendor/css/theme-default.css' %}"
+        class="template-customizer-theme-css"
+    />
+</head>
+<body style="background-color: #1C3BD5; width: 100%;">
+    <div class='header'>
+        <i class="fa-solid fa-angle-left angleLeft"></i>
+        <span>오늘의 테마</span>
+    </div>
+    <div class="profile">
+        <div class="card">
+            <div class="nav-align-top mb-4 mt-4">
+                <ul class="nav nav-tabs nav-fill" role="tablist">
+                    <li class="nav-item">
+                        <button
+                            type="button"
+                            class="nav-link active"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#Q1"
+                            aria-controls="Q1"
+                            aria-selected="true"
+                        >   
+                        Q1.
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            type="button"
+                            class="nav-link"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#Q2"
+                            aria-controls="Q2"
+                            aria-selected="false"
+                        >
+                        Q2.
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button
+                            type="button"
+                            class="nav-link"
+                            role="tab"
+                            data-bs-toggle="tab"
+                            data-bs-target="#Q3"
+                            aria-controls="Q3"
+                            aria-selected="false"
+                        >
+                        Q3.
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="Q1" role="tabpanel">
+                        <div class="text-center">
+                            <img src="{% static 'assets/img/깻잎.png' %}" class="rounded ">
                         </div>
+                        <h5 class="card-title text-primary mt-3">
+                            Q1.  깻잎 논쟁을 아시나요?<br>
+                            Do you know the Perilla leaf Debate?
+                        </h5>
+                        <img src="{% static 'assets/img/말하는사람.png' %}">
+                        <span class="badge rounded bg-label-secondary mb-2">참고 표현</span>
+                        <p>
+                            쌈을 싸다   wrap <br>
+                            떼다   pull off, take off   <br>
+                            연인   couple, lover <br>
+                            ~를 미치게 하다   drive somebody crazy <br>
+                        </p>
                     </div>
-                    <!-- 하단 버튼들 -->
-                    <div class ="container text-center">
-                        <div class="row">
-                            <!--  채팅 페이지 없어서 home페이지로 연결  -->
-                            <!-- 근데 페이지는 열리는데 빨간줄이 끄이네 -->
-                            <div class="col" onclick="location.href='{% url 'chat' %}'">
-                                <img  src="{% static 'assets/img/채팅.png' %}">
-                                <br>채팅방
-                            </div>
-                            <div class="col" onclick="location.href= 'https://papago.naver.com'">
-                                <img  src="{% static 'assets/img/번역.png' %}">
-                                <br>번역
-                            </div>
-                            <div class="col" onclick="location.href= 'https://dict.naver.com'">
-                                <img  src="{% static 'assets/img/사전.png' %}">
-                                <br>사전
-                            </div>
-                            <div class="col" >
-                                <img  src="{% static 'assets/img/되돌리기.png' %}">
-                                <br> 만남종료
-                            </div>
+                    <div class="tab-pane fade" id="Q2" role="tabpanel">
+                        <div class="text-center">
+                            <img src="{% static 'assets/img/새우.png' %}" class="rounded ">
                         </div>
+                        <h5 class="card-title text-primary mt-3">
+                            Q2. 내 절친의 새우를 까주는 나의 연인, 이때 나의 반응은?<br>
+                            If your lover peels shrimp for my best friend,<br>
+                            will you be jealous or not?
+                        </h5>
+                        <img src="{% static 'assets/img/말하는사람.png' %}">
+                        <span class="badge bg-label-secondary mb-2">참고 표현</span>
+                        <p>
+                            절대 안 돼!   No way!<br>
+                            오해의 소지가 있는   misleading<br>
+                            많은 정성이 들어가다   put so much effort<br>
+                            내 연인 친절하네.  He/She has good manners.<br>
+                        </p>
                     </div>
-                    <!-- 하단버튼 끝 -->
+                    <div class="tab-pane fade" id="Q3" role="tabpanel">
+                        <div class="text-center">
+                            <img src="{% static 'assets/img/연인.png' %}" class="rounded ">
+                        </div>
+                        <h5 class="card-title text-primary mt-3">
+                            Q3. 집착하는 연인 VS 무관심한 연인<br>
+                            A lover obsessed with me  VS a lover indifferent to me
+                        </h5>
+                        <img src="{% static 'assets/img/말하는사람.png' %}">
+                            <span class="badge bg-label-secondary mb-2 ">참고 표현</span>
+                        <p>
+                            여사친/남사친   female friend/guy friend<br>
+                            연락두절   out of contact<br>
+                            말이 안 된다   It doesn’t make sense<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class ="container text-center">
+                <div class="row">
+                    <div class="col" onclick="location.href='{% url 'chat' %}'">
+                        <img  src="{% static 'assets/img/채팅.png' %}">
+                        <br>채팅방
+                    </div>
+                    <div class="col" onclick="location.href= 'https://papago.naver.com'">
+                        <img  src="{% static 'assets/img/번역.png' %}">
+                        <br>번역
+                    </div>
+                    <div class="col" onclick="location.href= 'https://dict.naver.com'">
+                        <img  src="{% static 'assets/img/사전.png' %}">
+                        <br>사전
+                    </div>
+                    <div class="col" >
+                        <img  src="{% static 'assets/img/되돌리기.png' %}">
+                        <br> 만남종료
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div> 
-{% endblock %}
+</body>
+</html>
+
