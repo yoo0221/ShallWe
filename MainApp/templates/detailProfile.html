@@ -33,12 +33,17 @@
                 class='sexIcon'/><span> 30°C</span>
             </div>
             <div class='iconWrapper-right'>
-                <img
-                src="{% static 'assets/img/follow.png' %}"
-                class='followIcon'/>
+                <a href="#" onclick="fillFollow()">
+                    <img
+                    src="{% static 'assets/img/follow.png' %}"
+                    class='followIcon'
+                    id='followIcon'/>
+                </a>
+                
                 <!-- <img
-                src="{% static 'assets/img/follow-fill.png' %}"
-                class='follow'/> -->
+                    src="{% static 'assets/img/follow-fill.png' %}"
+                    class='followIcon'
+                    id='followIcon'/> -->
             </div>
         </div>
         <div class='iconWrapper-inform'>
@@ -50,7 +55,7 @@
                 src="{% static 'assets/img/말하는사람.png' %}"
                 class='infromIcon'/>
             <span>영어</span>
-            <i class="fa-solid fa-location-crosshairs"></i><span>침산동</span>
+            <i class="fa-solid fa-location-crosshairs"></i><span>일원동</span>
         </div>
         <div class='orderBox'>
             <div class='orderTitle'>
@@ -121,4 +126,18 @@
             약속 잡기
         </button>
     </div>
+    <script>
+        var isFollow=false;
+        function fillFollow() {
+            if(isFollow==false) {
+                document.getElementById("followIcon").src="{% static 'assets/img/follow-fill.png' %}";
+                isFollow=true;
+            }
+            else {
+                document.getElementById("followIcon").src="{% static 'assets/img/follow.png' %}";
+                isFollow=false;
+            }
+        }
+    </script>
+</body>
 </html>
