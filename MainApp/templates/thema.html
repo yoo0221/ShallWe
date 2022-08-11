@@ -1,45 +1,40 @@
-{% extends 'base.html' %} {% load static %} {% block mainbody %}
-<div class="container-xxl flex-grow-1 container-p-y">
-    <div class="row">
-        <div class="container">
-            <div class="row">
-                <h4 class="fw-bold py-1 mb-3">
-                    <span class="fw-light">약속 잡기</span>
-                </h4>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <p class="card-text">
-                                <strong>대화 테마 정하기</strong><br>
-                                <small>나의 메이트와 만나서 대화할 주제를 선정해요.</small>
-                            </p>
-                            <form>
-                                <p class="demo-inline-spacing">
-                                    <div class="thema-select-group"> 
-                                        <input type="hidden" name="thema-select" value="x" />
-                                        <label class="radio-btn">
-                                            <input type="radio" name="thema-select" value="일반" />
-                                            <span>일반</span>
-                                        </label>
-                                        <label class="radio-btn">
-                                            <input type="radio" name="thema-select" value="특별" />
-                                            <span>특별</span>
-                                        </label>
-                                    </div>
-                                </p>
-                            </form>
-                            <div class="mb-5"></div>
-                            <div class="d-grid gap-2 col-lg-6 mx-auto">
-                                <button class="btn btn-primary" type="button" onclick="location.href='{% url 'thema2' %}'">다음</button>
-                            </div> 
-                        </div>
-                    </div>
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}" />
+    </head>
+    <body>
+        <div class='header'>
+            <i class="fa-solid fa-angle-left angleLeft"></i>
+            <span>교류 테마 선택</span>
+        </div>
+        <div class="thema">
+            <ul>
+                <li>
+                    <button></button>
+                    <i>일반</i>
+                </li>
+                <li>
+                    <button></button>
+                    <i>스페셜</i>
+                </li>
+            </ul>
+            <div class="themaContent">
+                <div class="themaContentTab">
+                    <p></p>
+                </div>
+                <div class="themaContentTab">
+                    <p></p>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-{% endblock %}
+    </body>
+</html>

@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}" />
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
 </head>
 <body>
     <div class='header'>
@@ -18,21 +18,32 @@
     
     <div class='profile'>
         <img 
-            src="{% static 'assets/img/Tommy.png' %}"
+            src="{% static 'assets/img/Tommy.jpg' %}"
             class='profileImg'/>
         <div class='name'>Tommy</div>
         <div class='iconWrapper'>
             <div class='iconWrapper-left'>
-                <i class="fa-solid fa-mars"></i><span></span>
-                <i class="fa-solid fa-temperature-half"></i><span>30°C</span>
+                <!-- <i class="fa-solid fa-mars"></i><span></span>
+                <i class="fa-solid fa-temperature-half"></i><span>30°C</span> -->
+                <img
+                src="{% static 'assets/img/성별.png' %}"
+                class='sexIcon'/>
+                <img
+                src="{% static 'assets/img/온도계.png' %}"
+                class='sexIcon'/><span> 30°C</span>
             </div>
             <div class='iconWrapper-right'>
-                <img
-                src="{% static 'assets/img/follow.png' %}"
-                class='follow'/>
+                <a href="#" onclick="fillFollow()">
+                    <img
+                    src="{% static 'assets/img/follow.png' %}"
+                    class='followIcon'
+                    id='followIcon'/>
+                </a>
+                
                 <!-- <img
-                src="{% static 'assets/img/follow-fill.png' %}"
-                class='follow'/> -->
+                    src="{% static 'assets/img/follow-fill.png' %}"
+                    class='followIcon'
+                    id='followIcon'/> -->
             </div>
         </div>
         <div class='iconWrapper-inform'>
@@ -44,7 +55,7 @@
                 src="{% static 'assets/img/말하는사람.png' %}"
                 class='infromIcon'/>
             <span>영어</span>
-            <i class="fa-solid fa-location-crosshairs"></i><span>침산동</span>
+            <i class="fa-solid fa-location-crosshairs"></i><span>일원동</span>
         </div>
         <div class='orderBox'>
             <div class='orderTitle'>
@@ -115,4 +126,18 @@
             약속 잡기
         </button>
     </div>
+    <script>
+        var isFollow=false;
+        function fillFollow() {
+            if(isFollow==false) {
+                document.getElementById("followIcon").src="{% static 'assets/img/follow-fill.png' %}";
+                isFollow=true;
+            }
+            else {
+                document.getElementById("followIcon").src="{% static 'assets/img/follow.png' %}";
+                isFollow=false;
+            }
+        }
+    </script>
+</body>
 </html>

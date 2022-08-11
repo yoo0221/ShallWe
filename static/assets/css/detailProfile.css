@@ -1,5 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body {
     background-color: #1C3BD5;
+    width: 100%;
 }
 
 .header {
@@ -10,12 +17,13 @@ body {
 }
 
 .profile, .buttonBox {
-    border-top-left-radius: 30px;
+    /* border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px; */
     background-color: #FFF;
     text-align: center;
+    width: 100%;
 }
 
 .profile {
@@ -28,14 +36,14 @@ body {
 }
 
 .profileImg {
-    width: 7rem;
-    height: 7rem;
+    width: 9rem;
+    height: 9rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
-    /* border-radius: 50%;
-    box-shadow: 0px 2px 5px #CCC; */
+    border-radius: 50%;
+    box-shadow: 0px 2px 5px #CCC;
 }
 
 .name {
@@ -57,17 +65,12 @@ body {
 .iconWrapper-left {
     text-align: left;
     float: left;
-    font-size: 0.8rem;
-}
-
-.iconWrapper-left > span {
-    padding-left: 0.25rem;
+    font-size: 0.9rem;
 }
 
 .iconWrapper-right {
     text-align: right;
     float: right;
-    font-size: 1rem;
 }
 
 .iconWrapper-inform {
@@ -89,6 +92,14 @@ body {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
+}
+
+.sexIcon {
+    width: 0.5rem;
+}
+
+.followIcon {
+    width: 1.5rem;
 }
 
 .orderBox {
@@ -129,7 +140,7 @@ body {
     box-shadow: 0px -2px 8px #CCC;
     position: fixed;
     bottom: 0;
-    width: 95%;
+    width: 100%;
 }
 
 .chatButton {
