@@ -161,6 +161,10 @@ def detail_profile(request):
     return render(request, 'detailProfile.html')
 
 @login_required
+def special_thema(request):
+    return render(request, 'specialThema.html')
+
+@login_required
 def chat(request):
     return render(request, 'chat.html')
 

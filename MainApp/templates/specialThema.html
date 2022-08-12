@@ -12,12 +12,23 @@
     <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}" />
 </head>
 <body>
-    <div class="header">
+    <div class="header specialThemaHeader">
         <i class="fa-solid fa-angle-left angleLeft"></i>
         <span>스페셜 테마</span>
     </div>
+
+    <img 
+        src="{% static 'assets/img/class1.png' %}" 
+        class="onedayClass"/>
+    <img 
+        src="{% static 'assets/img/class2.png' %}" 
+        class="onedayClass"/>
+    <img 
+        src="{% static 'assets/img/class3.png' %}" 
+        class="onedayClass"/>
+
     <div class="registerButton">
-        예매하러 가기
+        <span>예매하러 가기</span>
         <img
             src="{% static 'assets/img/화살표 (2).png' %}"
             class='next'/>

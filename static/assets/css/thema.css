@@ -69,18 +69,45 @@ p {
     padding-bottom: 1rem;
 }
 
+.onedayClass {
+    width: 100%;
+}
+
+.specialThemaHeader {
+    background-color: #FFF;
+    color: #000;
+    border-bottom: 2px solid #CCC;
+}
+
+.specialThemaHeader i {
+    color: #CCC;
+}
+
 .registerButton {
+    border: 3px solid #1C3BD5;
+    background-color: rgba(220, 233, 255, 0.8);
+    border-radius: 10px;
+    position: fixed;
+    width: 80%;
+    margin: 1rem auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
     text-align: center;
-    border: 2px solid #1C3BD5;
     padding: 1rem;
-    background-color: #1C3BD5;
-    opacity: 0.5;
+}
+
+.registerButton span {
+    font-weight: bold;
     color: #1C3BD5;
+    font-size: 0.9rem;
+    margin-left: 1rem;
 }
 
 .registerButton > .next {
     float: right;
-    width: 1rem;
+    width: 1.5rem;
+    margin-top: 0.25rem
 }
 
 /* 
