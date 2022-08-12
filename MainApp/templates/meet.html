@@ -32,6 +32,7 @@
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/chat-room.css' %}">
     <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
     <link
         rel="stylesheet"
@@ -169,18 +170,240 @@
             </div>
             <div class ="container text-center">
                 <div class="row">
-                    <div class="col" onclick="location.href='{% url 'chat' %}'">
+                    <!-- 채팅방 시작 -->
+                    <div 
+                        class="col"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#chat"
+                        aria-controls="offcanvasBottom"
+                        >
                         <img  src="{% static 'assets/img/채팅.png' %}">
                         <br>채팅방
                     </div>
-                    <div class="col" onclick="location.href= 'https://papago.naver.com'">
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="chat" aria-labelledby="offcanvasBottomLabel" style="height: 80%; overflow:scroll;">
+                        <div class="container offcanvas-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <div id="chat-body">
+                                                <!-- 설정바(최소화, 닫기 버튼 등) -->
+                                                <div class="setting_bar">
+                                                    <i class="icon-window-minimize" alt="최소화버튼" title="최소화"></i>
+                                                    <i class="icon-window-maximize" alt="최대화버튼" title="최대화"></i>
+                                                    <i class="icon-cancel" alt="닫기버튼" title="닫기"></i>
+                                                </div>
+                                                <!-- 알림, 메뉴 기능 -->
+                                                <div class="main-menu">
+                                                    <i class="icon-bell" title="알림"></i>
+                                                    <i class="icon-ellipsis" title="메뉴"></i>
+                                                </div>
+                                                <!-- 프로필 사진, 프로필명 -->
+                                                <header>
+                                                    <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                                    <div class="profile-col">
+                                                        <span class="profile-name">Tommy</span>
+                                                        <div class="sub-menu">
+                                                            <i class="icon-box" title="채팅방 서랍"></i>
+                                                            <i class="icon-search" title="검색"></i>
+                                                        </div>
+                                                    </div>
+                                                </header>
+                                                <main>
+                                                    <!-- 고정된 공지사항 영역 -->
+                                                    <div class="notice-bar">
+                                                        <i class="icon-bullhorn"></i>
+                                                        <span>멘트를 고정해놓는 곳입니다.</span>
+                                                        <i class="icon-down-open-big"></i>
+                                                    </div>
+                                                    <!-- 채팅 내용 시작 -->
+                                                    <div class="chat-content">
+                                                        <!-- 메시지 시작 날짜 -->
+                                                        <div class="date-line">
+                                                            <time datetime="2021-03-29">2021년 3월 29일 월요일</time>
+                                                        </div>
+                                                        <!-- 채팅 내용 -->
+                                                        <div class="main-chat">
+                                                            <div class="me-chat">
+                                                                <div class="me-chat-col">
+                                                                    <span class="balloon">Hello! I'm 유준호!</span>
+                                                                </div>
+                                                                <time datetime="07:32:00+09:00">오전 7:32</time>
+                                                            </div>
+                                                            <div class="friend-chat">
+                                                                <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                                                <div class="friend-chat-col">
+                                                                    <span class="profile-name">Tommy</span>
+                                                                    <span class="balloon">안녕하세요 저는 토미입니다!</span>
+                                                                </div>
+                                                                <time datetime="07:35:00+09:00">오전 7:35</time>
+                                                            </div>
+                                                            <div class="me-chat">
+                                                                <div class="me-chat-col">
+                                                                    <span class="balloon">Nice to meet you!</span>
+                                                                    <span class="balloon">I also really like cats</span>
+                                                                </div>
+                                                                <time datetime="07:36:00+09:00">오전 7:36</time>
+                                                            </div>
+                                                            <div class="friend-chat">
+                                                                <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                                                <div class="friend-chat-col">
+                                                                    <span class="profile-name">Tommy</span>
+                                                                    <span class="balloon">Oh that sounds goood</span>
+                                                                    <span class="balloon">then how about going to cafe in Dongseongro and talking about that??</span>
+                                                                </div>
+                                                                <time datetime="09:00:00+09:00">오전 9:00</time>
+                                                            </div>
+                                                            <div class="me-chat">        
+                                                                <div class="me-chat-col">
+                                                                    <span class="balloon">GREAT! How about tomorrow?</span>
+                                                                </div>
+                                                                <time datetime="09:30:00+09:00">오전 9:30</time>
+                                                            </div>
+                                                            <div class="friend-chat">
+                                                                <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
+                                                                <div class="friend-chat-col">
+                                                                    <span class="profile-name">Tommy</span>
+                                                                    <span class="balloon">Good! And let’s meet at 2:00</span>
+                                                                </div>
+                                                                <time datetime="10:15:00+09:00">오전 10:15</time>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- 채팅 입력창 -->
+                                                    <div class="insert-content">
+                                                        <form name="chatform" action="#" method="post">
+                                                            <textarea name="chat-insert" required></textarea>
+                                                            <input type="submit" class="chat-submit" value="전송">
+                                                        </form>
+                                                        <!-- 채팅 입력 관련 기능(파일 첨부, 캡쳐 등) -->
+                                                        <div class="insert-menu">
+                                                            <i class="icon-smile"></i>
+                                                            <i class="icon-attach"></i>
+                                                            <i class="icon-phone"></i>
+                                                            <i class="icon-calendar-empty"></i>
+                                                            <i class="icon-camera"></i>
+                                                        </div>
+                                                    </div>
+                                                </main>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <!-- 채팅방마무리 -->
+                        <!-- 번역 시작 -->
+                    <div 
+                        class="col"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#translate"
+                        aria-controls="offcanvasBottom"
+                    >
                         <img  src="{% static 'assets/img/번역.png' %}">
                         <br>번역
                     </div>
-                    <div class="col" onclick="location.href= 'https://dict.naver.com'">
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="translate" aria-labelledby="offcanvasBottomLabel" style="height: 80%;">
+                        <div class="continer">
+                            <div class="row mx-auto mt-3">
+                                <p class="col mt-3 mb-3" style="font-size: 20px; font-weight: bold; color: black;">번역</p>
+                                <p class="col-6"></p>
+                                <button class="col" 
+                                    style=
+                                    "background-color: white;
+                                    color: blue;
+                                    border: 0px"
+                                    >전송
+                                </button>
+                            </div>
+                            <div class="row">
+                                <button
+                                    type="button"
+                                    class=" col dropdown-toggle  mb-3"
+                                    style=
+                                        "border: 0px;
+                                        background-color: white;"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    한국어
+                                </button>
+                                <ul class="col dropdown-menu">
+                                    <li><a class="dropdown-item" href="javascript:void(0);">한국어</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">영어</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">중국어</a></li>
+                                </ul>
+                                <p class="col-2">사진</p>
+                                <button
+                                    type="button"
+                                    class=" col dropdown-toggle mb-3"
+                                    style=
+                                        "border: 0px;
+                                        background-color: white;"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false"
+                                >
+                                    영어
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="javascript:void(0);">한국어</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">영어</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">중국어</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <form name="chatform" action="#" method="post">
+                                    <textarea name="chat-insert" required style="height: 300px;" >텍스트를 입력하세요</textarea>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 번역 마무리 -->
+                    <!-- 사전 시작 -->
+                    <div class="col"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#사전"
+                        aria-controls="offcanvasBottom"
+                    >
                         <img  src="{% static 'assets/img/사전.png' %}">
                         <br>사전
                     </div>
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="사전" aria-labelledby="offcanvasBottomLabel" style="height: 80%;">
+                        <div class="container">
+                            <div class="row mt-3 ">
+                                <h1 style="border-bottom: 2px solid gray; padding-bottom: 10px;">NAVER 사전</h1>
+                            </div>
+                            <div class="row mb-3 mx-4">
+                                <form name="chatform" action="#" method="post" style="border: 0px; border-bottom:2px solid gray; padding-bottom: 5px;">
+                                    단어, 문장을 검색하세요.
+                                    <i class="bx bx-search fs-4 lh-0" style="padding-left: 180px;"></i>
+                                </form>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>전체</p>
+                                </div>
+                                <div class="col">
+                                    <p>영어</p>
+                                </div>
+                                <div class="col">
+                                    <p>English</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>한국어</p>
+                                </div>
+                                <div class="col">
+                                    <p>Korean</p>
+                                </div>
+                                <div class="col">
+                                    <p>한자</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
                     <div class="col" >
                         <img  
                             src="{% static 'assets/img/되돌리기.png' %}"
