@@ -1,3 +1,135 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.themaCard {
+    text-align: center;
+    background-color: #FFF;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+.themaTabs {
+    display: flex;
+}
+
+.themaTab {
+    padding-top: 1.25rem;
+    padding-bottom: 0.75rem;
+    font-weight: bold;
+    width: 50%;
+    color: #000;
+    position: relative;
+}
+
+.themaTab.selected {
+    color: #1C3BD5;
+    border-bottom: 2px solid #1C3BD5;
+}
+
+.themaContentTab {
+    display: none;
+    position: relative;
+}
+
+.themaContentTab.active {
+    display: inline-block;
+}
+
+p {
+    padding: 1rem;
+    text-align: left;
+    color: #000;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.randomButton {
+    padding: 0.75rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #1C3BD5;
+    float: left;
+}
+
+.specialThema {
+    border: 7px solid #CCC;
+    margin: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+}
+
+.onedayClass {
+    width: 100%;
+}
+
+.specialThemaHeader {
+    background-color: #FFF;
+    color: #000;
+    border-bottom: 2px solid #CCC;
+}
+
+.specialThemaHeader i {
+    color: #CCC;
+}
+
+.registerButton {
+    border: 3px solid #1C3BD5;
+    background-color: rgba(220, 233, 255, 0.8);
+    border-radius: 10px;
+    position: fixed;
+    width: 80%;
+    margin: 1rem auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+.registerButton span {
+    font-weight: bold;
+    color: #1C3BD5;
+    font-size: 0.9rem;
+    margin-left: 1rem;
+}
+
+.registerButton > .next {
+    float: right;
+    width: 1.5rem;
+    margin-top: 0.25rem
+}
+
+/* 
+.themaDetail > li > div {
+    float: left;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 25%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #ccc;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.themaDetail > li > div {
+    color: #FFF;
+    background-color: #1C3BD5;
+} */
+
+
 /* {
     font-family: 'Noto Sans', sans-serif;
 }
@@ -85,22 +217,3 @@
 .calendar {
     margin: auto;
 } */
-
-.thema {
-    text-align: center;
-    background-color: #FFF;
-    width: 100%;
-}
-
-.setThema {
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    background-color: #FFF;
-    text-align: center;
-}
-
-ul {
-    list-style: none;
-}
