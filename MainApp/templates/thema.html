@@ -20,54 +20,109 @@
         </div>
 
         <div class="themaCard">
-            <div class="themaTabs">
-                <div class="themaTab selected" data-tab-target="#tab1">일반</div>
-                <div class="themaTab" data-tab-target="#tab2">스페셜</div>
-            </div>
-            <div class="themaContent">
-                <div id="tab1" data-tab-content class="themaContentTab active">
-                    <p class="themaDes">다양한 대화 주제 중 하나를 선택하여 
-                        메이트와 만남 시에 이야기를 나눠보세요!</p>
-                    <button class="randomButton chatButton">랜덤</button>
+            <ul class="tabs">
+                <li class="tab current" data-tab="tab1">일반</li>
+                <li class="tab" data-tab="tab2">스페셜</li>
+            </ul>
+            <div id="tab1" class="tabContent">
+                <p class="themaDes">다양한 대화 주제 중 하나를 선택하여 
+                    메이트와 만남 시에 이야기를 나눠보세요!</p>
+                <div class="buttonDiv"><button class="randomButton chatButton">랜덤</button></div>
+
+                <ul class="detailTabs">
+                    <li class="detailTab detailCurrent" data-tab="detailTab1">감정</li>
+                    <li class="detailTab" data-tab="detailTab2">성격</li>
+                    <li class="detailTab" data-tab="detailTab3">연애</li>
+                    <li class="detailTab" data-tab="detailTab4">일상</li>
+                </ul>
+                <div id="detailTab1" class="detailTabContent">
+                    <table>
+                        <tbody>
+                            <tr><td>Q1. 내 생에 가장 부끄러운 일은?</td></tr>
+                            <tr><td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
+                            <tr><td>Q3. 슬픈 감정을 어떻게 해소하나요?</td></tr>
+                            <tr><td>Q4. 웃다가 울어본 적이 있나요?</td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div id="tab2" data-tab-content class="themaContentTab">
-                    <p class="themaDes">전시회, 극장, 원데이클래스, 액티비티 시스템 등 
-                        초특가 활동들을 메이트와 함께!</p>
-                    <a href="{% url 'special_thema' %}">
-                        <div class="specialThema">
-                            <p>수제비누 만들기 클래스 2인 동반 할인<br/>
-                                22.07.30~22.08.30</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="specialThema">
-                            <p>현대미술관 1+1 동반 할인 행사<br/>
-                                22.07.30~22.08.30</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="specialThema">
-                            <p>서울시립미술관 안드리오 전시 할인<br/>
-                                22.08.01~22.08.28</p>
-                        </div>
-                    </a>
+                <div id="detailTab2" class="detailTabContent"></div>
+                <div id="detailTab3" class="detailTabContent"></div>
+                <div id="detailTab4" class="detailTabContent"></div>
+
+                <ul class="detailTabs">
+                    <li class="detailTab detailCurrent" data-tab="detailTab5">유행</li>
+                    <li class="detailTab" data-tab="detailTab6">문화</li>
+                    <li class="detailTab" data-tab="detailTab7">동물</li>
+                    <li class="detailTab" data-tab="detailTab8">추억</li>
+                </ul>
+                <div id="detailTab5" class="detailTabContent">
+                    <table>
+                        <tbody>
+                            <tr><td>Q1. 깻잎 논쟁을 아시나요?</td></tr>
+                            <tr><td>Q2. 토마토맛 토 vs 토맛 토마토</td></tr>
+                            <tr><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
+                            <tr><td>Q4. 세계관 이해에만 100시간이 걸리는 K-걸그룹</td></tr>
+                        </tbody>
+                    </table>
                 </div>
+                <div id="detailTab6" class="detailTabContent"></div>
+                <div id="detailTab7" class="detailTabContent"></div>
+                <div id="detailTab8" class="detailTabContent"></div>
             </div>
+            <div id="tab2" class="tabContent">
+                <p class="themaDes">전시회, 극장, 원데이클래스, 액티비티 시스템 등 
+                    초특가 활동들을 메이트와 함께!</p>
+                <a href="{% url 'special_thema' %}">
+                    <div class="specialThema">
+                        <p>수제비누 만들기 클래스 2인 동반 할인<br/>
+                            22.07.30~22.08.30</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="specialThema">
+                        <p>현대미술관 1+1 동반 할인 행사<br/>
+                            22.07.30~22.08.30</p>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="specialThema">
+                        <p>서울시립미술관 안드리오 전시 할인<br/>
+                            22.08.01~22.08.28</p>
+                    </div>
+                </a>
+            </div>
+            <a href="#미리보기">
+                <div class="completeButton">
+                    <span>완료</span>
+                </div>
+            </a>
+            
         </div>
     </body>
     
     <script>
-        const themaTabs = document.querySelectorAll("[data-tab-target]");
-        const themaContents =  document.querySelectorAll("[data-tab-content]");
-        themaTabs.forEach((themaTab) => {
-            themaTab.addEventListener("click", () => {
-                const target = document.querySelector(themaTab.dataset.tabTarget);
-                themaContents.forEach((themaTabc_all) => {
-                    themaTabc_all.classList.remove("active");
-                })
-                target.classList.add("active");
+        $(document).ready(function(){
+            $('ul.tabs li').click(function(){
+                var tabId = $(this).attr('data-tab');
+        
+                $('ul.tabs li').removeClass('current');
+                $('.tabContent').removeClass('current');		
+        
+                $(this).addClass('current');
+                $("#" + tabId).addClass('current');
             })
         });
 
+        $(document).ready(function(){
+            $('ul.detailTabs li').click(function(){
+                var tabId = $(this).attr('data-tab');
+        
+                $('ul.detailTabs li').removeClass('detailCurrent');
+                $('.detailTabContent').removeClass('detailCurrent');		
+        
+                $(this).addClass('detailCurrent');
+                $("#" + tabId).addClass('detailCurrent');
+            })
+        });
     </script>
 </html>

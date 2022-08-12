@@ -10,7 +10,6 @@ body {
 }
 
 .header {
-    width: 100%;
     padding: 1rem;
     color: #FFF;
     overflow: hidden;
@@ -18,10 +17,6 @@ body {
 }
 
 .profile, .buttonBox {
-    /* border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px; */
     background-color: #FFF;
     text-align: center;
     width: 100%;
