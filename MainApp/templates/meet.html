@@ -186,24 +186,68 @@
                             src="{% static 'assets/img/되돌리기.png' %}"
                             type="button"
                             data-bs-toggle="modal"
-                            data-bs-target="#modalCenter">
+                            data-bs-target="#modalToggle">
                         <br> 만남종료
-                        <div class="modal fade" id="modalCenter"aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
+                        <!-- 첫 모달 -->
+                        <div 
+                        class="modal fade"
+                        id="modalToggle"
+                        aria-labelledby="modalToggleLabel"
+                        tabindex="-1"
+                        style="display: none"
+                        aria-hidden="true"
+                        >
+                            <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="continer">
                                         <div class="row">
                                             <div class="row modal-header text-center">
                                                 <h5 class="modal-title mb-3" id="modalCenterTitle">메이트와의 만남이 종료되셨나요?</h5>
                                             </div>
-                                            <button type="button" class="col nobutton" data-bs-dismiss="modal">
+                                            <button type="button" class="col btn btn-outline-primary mx-4 mb-2" data-bs-dismiss="modal">
                                                 아니오
                                             </button>
-                                            <button type="button" class="col yesbutton"data-bs-dismiss="modal">예</button>
+                                            <button 
+                                                type="button" 
+                                                class="col btn btn-outline-primary mx-4 mb-2"
+                                                
+                                                data-bs-target="#modalToggle2"
+                                                data-bs-toggle="modal"
+                                                data-bs-dismiss="modal">
+                                                예
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <!-- 두번째 모달 -->
+                        <div class="modal fade"
+                        id="modalToggle2"
+                        aria-hidden="true"
+                        aria-labelledby="modalToggleLabel2"
+                        tabindex="-1"
+                        >
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="continer">
+                                        <div class="row">
+                                            <span>온도 이미지</span>
+                                            <div class="text-center">
+                                                <h5 class="modal-title">온도가 1°C 올라갔어요!</h5>
+                                            </div>
+                                            <div class="d-grid gap-2 col-10 mx-auto">
+                                                <button type="button" class="col btn btn-outline-primary mb-2" data-bs-dismiss="modal">
+                                                    오늘 배운 표현 기록하기
+                                                </button>
+                                                <button type="button" class="col btn btn-outline-primary mb-2" data-bs-dismiss="modal">
+                                                    메인페이지로 돌아가기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -223,6 +267,7 @@
 
     <!-- Main JS -->
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/meet.js' %}">
 
     <!-- Page JS -->
     <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
