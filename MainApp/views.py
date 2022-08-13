@@ -168,6 +168,9 @@ def special_thema(request):
 def chat(request):
     return render(request, 'chat.html')
 
+@login_required
+def remind(request):
+    return render(request, 'remind.html')
 # def handle_uploaded_file(f):
 #     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
 #         for chunk in f.chunks():
