@@ -40,6 +40,7 @@ urlpatterns = [
     path('detailProfile/', views.detail_profile, name="detail_profile"), 
     path('specialThema/', views.special_thema, name="special_thema"),
     path('remind/', views.remind, name="remind"), 
+    path('preview/', views.remind, name="preview"), 
 ]
 
 if settings.DEBUG:

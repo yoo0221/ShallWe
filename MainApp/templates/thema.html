@@ -60,7 +60,8 @@
                 <div class="detailTabContent2">
                     <table>
                         <tbody class="detailThema">
-                            <tr><td><input type="radio" class="detailThemaRadio"/>
+                            <a href="{% url 'preview' %}"></a>
+                            <tr><td>
                                 <span>Q1. 깻잎 논쟁을 아시나요?</span>
                                 <span class="detailThemaBadge">+2</span>
                             </td></tr>
@@ -98,7 +99,7 @@
                 </a>
             </div>
 
-            <a href="#미리보기">
+            <a href="{% url 'chat' %}">
                 <div class="completeButton">
                     <span>상세 테마 제안하기</span>
                 </div>
