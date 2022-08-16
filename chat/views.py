@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required
-def chat(request):
-    return render(request, 'chat_index.html')
+from django.shortcuts import render
 
-@login_required
+# Create your views here.
+def index(request):
+    return render(request, 'index.html')
+
 def room(request, room_name):
-    return render(request, 'chat_room.html', {'room_name':room_name})
+    return render(request, 'room.html', {
+        'room_name': room_name
+    })
