@@ -26,11 +26,11 @@
             </ul>
             
             <div id="tab1" class="tabContent">
-                <p class="themaDes">다양한 대화 주제 중 하나를 선택하여 
+                <p class="themaDes">다양한 대화 주제 중 하나를 선택하여</br> 
                     메이트와 만남 시에 이야기를 나눠보세요!</p>
                 <div class="buttonDiv"><button class="randomButton chatButton">랜덤</button></div>
                 
-                <ul class="detailTabs detailTabs1">
+                <ul class="detailTabs">
                     <li class="detailTab detailCurrent">감정</li>
                     <li class="detailTab">성격</li>
                     <li class="detailTab">연애</li>
@@ -47,64 +47,48 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- <div class="detailTabContent"></div>
-                <div class="detailTabContent"></div>
-                <div class="detailTabContent"></div> -->
 
-                <ul class="detailTabs tailTabs2">
+                <ul class="detailTabs">
                     <li class="detailTab detailCurrent">유행</li>
                     <li class="detailTab">문화</li>
                     <li class="detailTab">동물</li>
                     <li class="detailTab">추억</li>
                 </ul>
-                <div class="detailTabContent2">
-                    <table>
-                        <tbody class="detailThema">
-                            <a href="{% url 'preview' %}"></a>
-                            <tr><td>
-                                <span>Q1. 깻잎 논쟁을 아시나요?</span>
-                                <span class="detailThemaBadge">+2</span>
-                            </td></tr>
-                            <tr><td>Q2. 토마토맛 토 vs 토맛 토마토</td></tr>
-                            <tr><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
-                            <tr><td>Q4. 세계관 이해에만 100시간이 걸리는 K-걸그룹</td></tr>
-                        </tbody>
-                    </table>
+
+                <div class="detailTabContent">
+                    <table><tbody class="detailThema">
+                        <tr><td onclick="location.href ='{% url 'preview' %}'">
+                            <span>Q1. 깻잎 논쟁을 아시나요?</span>
+                            <span class="detailThemaBadge">+2</span>
+                        </td></tr>
+                        <tr><td>Q2. 토마토맛 토 vs 토맛 토마토</td></tr>
+                        <tr><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
+                        <tr><td>Q4. 세계관 이해에만 100시간이 걸리는 </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K-걸그룹</td></tr>
+                    </tbody></table>
                 </div>
-                <!-- <div class="detailTabContent"></div>
-                <div class="detailTabContent"></div>
-                <div class="detailTabContent"></div> -->
+                
+                <a href="{% url 'chat' %}">
+                    <div class="completeButton">
+                        <span>상세 테마 제안하기</span>
+                    </div>
+                </a>
             </div>
             
             <div id="tab2" class="tabContent">
-                <p class="themaDes">전시회, 극장, 원데이클래스, 액티비티 시스템 등 
-                    초특가 활동들을 메이트와 함께!</p>
+                <p class="themaDes">전시회, 소극장, 원데이클래스, 액티비티 활동 등 </br>
+                    다양한 야외 활동들을 메이트와 함께 즐겨요!</p>
+                <img src="{% static 'assets/img/advertisement/banner1.png' %}"
+                    class="AdBanner">
+                <img src="{% static 'assets/img/advertisement/banner2.png' %}"
+                    class="AdBanner">
                 <a href="{% url 'special_thema' %}">
-                    <div class="specialThema">
-                        <p>수제비누 만들기 클래스 2인 동반 할인<br/>
-                            22.07.30~22.08.30</p>
-                    </div>
+                    <img src="{% static 'assets/img/advertisement/banner4.png' %}"
+                    class="AdBanner">
                 </a>
-                <a href="#">
-                    <div class="specialThema">
-                        <p>현대미술관 1+1 동반 할인 행사<br/>
-                            22.07.30~22.08.30</p>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="specialThema">
-                        <p>서울시립미술관 안드리오 전시 할인<br/>
-                            22.08.01~22.08.28</p>
-                    </div>
-                </a>
+                <img src="{% static 'assets/img/advertisement/banner3.png' %}"
+                    class="AdBanner">
             </div>
-
-            <a href="{% url 'chat' %}">
-                <div class="completeButton">
-                    <span>상세 테마 제안하기</span>
-                </div>
-            </a>
-            
         </div>
     </body>
     
