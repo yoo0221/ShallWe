@@ -41,7 +41,6 @@ urlpatterns = [
     path('specialThema/', views.special_thema, name="special_thema"),
     path('remind/', views.remind, name="remind"), 
     path('preview/', views.remind, name="preview"), 
-    path('chat/', include('chat.urls')),
 ]
 
 if settings.DEBUG:

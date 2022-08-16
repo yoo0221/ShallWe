@@ -16,13 +16,14 @@ ul {
 }
 
 .tabs li {
-    padding-top: 1.25rem;
+    padding-top: 1.5rem;
     padding-bottom: 0.75rem;
     font-weight: bold;
     width: 49%;
     color: #000;
     display: inline-block;
     cursor: pointer;
+    border-bottom: 2px solid #CCC;
 }
 
 ul.tabs li.current {
@@ -67,9 +68,11 @@ ul.tabs li.current {
 
 .onedayClass {
     width: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0;
+}
+
+.AdBanner {
+    width: 95%;
+    margin: 0.25rem;
 }
 
 .specialThemaHeader {
