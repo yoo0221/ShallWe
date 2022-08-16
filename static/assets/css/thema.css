@@ -15,14 +15,19 @@ ul {
     height: 684px; /* s8+ height(740px) - header(56px)*/
 }
 
+.tabs {
+    overflow: hidden;
+}
+
 .tabs li {
     padding-top: 1.5rem;
     padding-bottom: 0.75rem;
     font-weight: bold;
     width: 49%;
     color: #000;
-    display: inline-block;
+    display: block;
     border-bottom: 2px solid #CCC;
+    float: left;
 }
 
 .tabs li.current {
@@ -177,6 +182,68 @@ ul {
 
 .buttonDiv {
     overflow: hidden;
+}
+
+
+/* preview.html */
+.previewTabs {
+    overflow: hidden;
+    padding-top: 1.5rem;
+}
+
+.previewTabs li {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 1.25rem;
+    width: 33.3%;
+    color: #000;
+    background-color: #CCC;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0px;
+    float: left;
+}
+
+.previewTabs li.current {
+    color: #1C3BD5;
+    background-color: #FFF;
+}
+
+.previewDes, .referTitle, .referDes {
+    padding: 1rem;
+    padding-top: 1.5rem;
+}
+
+.referTitle {
+    color: #1C3BD5;
+    font-weight: bold;
+    text-align: left;
+}
+
+.referDes {
+    text-align: left;
+    padding-top: 0.5rem;
+}
+
+/* .badge {
+    font-size: 0.8rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.1rem;
+    border-radius: 15px;
+    background-color: #FFF;
+    border: 1px solid #1C3BD5;
+    color: #1C3BD5;
+} */
+
+.referIcon {
+    padding-top: 1.25rem;
+    padding-left: 0.75rem;
+}
+
+.referDesBright {
+    color: #8c8c8c;
 }
 
 /* {

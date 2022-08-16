@@ -16,24 +16,31 @@
         <span>미리 보기</span>
     </div>
 
-    <div class="profile">
-        <ul class="tabs">
-            <li class="tab current" data-tab="tab1">일반</li>
-            <li class="tab" data-tab="tab2">스페셜</li>
+    <div class="themaCard">
+        <ul class="previewTabs">
+            <li class="previewTab current">Q1.</li>
+            <li class="previewTab">Q2.</li>
+            <li class="previewTab">Q3.</li>
         </ul>
         <div class="previewQ">
-                <img src="{% static 'assets/img/깻잎.png' %}">
-            <h5 class="card-title text-primary mt-3">
+            <p class="previewDes">다른 질문들은 테마 선택 확정 후에 공개돼요!</p>
+            <img src="{% static 'assets/img/깻잎.png' %}">
+            <p class="referTitle">
                 Q1. 깻잎 논쟁을 아시나요?<br>
                 Do you know the Perilla leaf Debate?
-            </h5>
-            <img src="{% static 'assets/img/말하는사람.png' %}">
-            <span class="badge rounded bg-label-secondary mb-2">참고 표현</span>
-            <p>
+            </p>
+            <img 
+                src="{% static 'assets/img/reference.png' %}"
+                class="referIcon">
+            <!-- <img 
+                src="{% static 'assets/img/말하는사람.png' %}"
+                class="referIcon">
+            <span class="badge">참고 표현</span> -->
+            <p class="referDes">
                 쌈을 싸다   wrap [ ræp ] <br>
                 떼다   pull off, take off   <br>
                 연인   couple [ ˈkʌpl ] , lover [ ˈlʌvə(r) ] <br>
-                ~를 미치게 하다   drive somebody crazy <br>
+                ~를 미치게 하다   drive <span class="referDesBright">somebody</span> crazy <br>
             </p>
         </div>
     </div>

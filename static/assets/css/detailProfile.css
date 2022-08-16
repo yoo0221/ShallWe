@@ -11,6 +11,7 @@ body {
 
 .header {
     padding: 1rem;
+    font-weight: bold;
     color: #FFF;
     overflow: hidden;
     text-align: center;
