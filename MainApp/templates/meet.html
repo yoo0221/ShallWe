@@ -87,8 +87,8 @@
 </head>
 <body style="background-color: #1C3BD5; width: 100%;">
     <div class='header'>
-        <i class="fa-solid fa-angle-left angleLeft"></i>
-        <span>오늘의 테마</span>
+        <i class="fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
+        <span >오늘의 테마</span>
     </div>
     <div class="profile">
         <div class="card">
@@ -139,30 +139,28 @@
                         <div class="text-center">
                             <img src="{% static 'assets/img/깻잎.png' %}" class="rounded ">
                         </div>
-                        <h5 class="card-title text-primary mt-3">
+                        <h5 class="card-title text-primary mt-3" style="font-weight: bold;">
                             Q1.  깻잎 논쟁을 아시나요?<br>
                             Do you know the Perilla leaf Debate?
                         </h5>
-                        <img src="{% static 'assets/img/말하는사람.png' %}">
-                        <span class="badge rounded bg-label-secondary mb-2">참고 표현</span>
+                        <img src="{% static 'assets/img/meet/참고표현1.png' %}">
                         <p>
                             쌈을 싸다   wrap [ ræp ] <br>
                             떼다   pull off, take off   <br>
                             연인   couple [ ˈkʌpl ] , lover [ ˈlʌvə(r) ] <br>
-                            ~를 미치게 하다   drive somebody crazy <br>
+                            ~를 미치게 하다   drive <span style="color: black;">somebody</span> crazy <br>
                         </p>
                     </div>
                     <div class="tab-pane fade" id="Q2" role="tabpanel">
                         <div class="text-center">
                             <img src="{% static 'assets/img/새우.png' %}" class="rounded ">
                         </div>
-                        <h5 class="card-title text-primary mt-3">
+                        <h5 class="card-title text-primary mt-3" style="font-weight: bold;">
                             Q2. 내 절친의 새우를 까주는 나의 연인, 이때 나의 반응은?<br>
                             If your lover peels shrimp for my best friend,<br>
                             will you be jealous or not?
                         </h5>
-                        <img src="{% static 'assets/img/말하는사람.png' %}">
-                        <span class="badge bg-label-secondary mb-2">참고 표현</span>
+                        <img src="{% static 'assets/img/meet/참고표현1.png' %}">
                         <p>
                             절대 안 돼!   No way!<br>
                             오해의 소지가 있는   misleading [ ˌmɪsˈliːdɪŋ ]<br>
@@ -174,12 +172,11 @@
                         <div class="text-center">
                             <img src="{% static 'assets/img/연인.png' %}" class="rounded ">
                         </div>
-                        <h5 class="card-title text-primary mt-3">
+                        <h5 class="card-title text-primary mt-3" style="font-weight: bold;">
                             Q3. 집착하는 연인 VS 무관심한 연인<br>
                             A lover obsessed with me  VS a lover indifferent to me
                         </h5>
-                        <img src="{% static 'assets/img/말하는사람.png' %}">
-                            <span class="badge bg-label-secondary mb-2 ">참고 표현</span>
+                        <img src="{% static 'assets/img/meet/참고표현1.png' %}">
                         <p>
                             여사친/남사친   female friend/guy friend<br>
                             연락두절   out of contact<br>
@@ -200,7 +197,7 @@
                         <img  src="{% static 'assets/img/채팅.png' %}">
                         <br>채팅방
                     </div>
-                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="chat" aria-labelledby="offcanvasBottomLabel" style="height: 80%; overflow:scroll;">
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="chat" aria-labelledby="offcanvasBottomLabel" style="height: 50%; overflow:scroll;">
                         <div class="container offcanvas-header">
                             <div class="row">
                                 <div class="col-12">
@@ -320,7 +317,7 @@
                         <img  src="{% static 'assets/img/번역.png' %}">
                         <br>번역
                     </div>
-                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="translate" aria-labelledby="offcanvasBottomLabel" style="height: 80%;">
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="translate" aria-labelledby="offcanvasBottomLabel" style="height: 50%;">
                         <div class="continer">
                             <div class="row mx-auto mt-3">
                                 <p class="col mt-3 mb-3" style="font-size: 20px; font-weight: bold; color: black;">번역</p>
@@ -350,13 +347,14 @@
                                     <li><a class="dropdown-item" href="javascript:void(0);">영어</a></li>
                                     <li><a class="dropdown-item" href="javascript:void(0);">중국어</a></li>
                                 </ul>
-                                <p class="col-2">사진</p>
+                                <img class="col-2" src="{% static 'assets/img/meet/번역 화살표.png' %}" style="width: 12%; height:12%">
                                 <button
                                     type="button"
                                     class=" col dropdown-toggle mb-3"
                                     style=
                                         "border: 0px;
                                         background-color: white;"
+                                        
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
@@ -370,7 +368,7 @@
                             </div>
                             <div class="row">
                                 <form name="chatform" action="#" method="post">
-                                    <textarea name="chat-insert" required style="height: 300px;" >텍스트를 입력하세요</textarea>
+                                    <textarea name="chat-insert" required style="height: 200px; border: 0px;" >텍스트를 입력하세요</textarea>
                                 </form>
                             </div>
                         </div>
@@ -385,36 +383,91 @@
                         <img  src="{% static 'assets/img/사전.png' %}">
                         <br>사전
                     </div>
-                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="사전" aria-labelledby="offcanvasBottomLabel" style="height: 80%;">
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="사전" aria-labelledby="offcanvasBottomLabel" style="height: 50%;">
                         <div class="container">
                             <div class="row mt-3 ">
                                 <h1 style="border-bottom: 2px solid gray; padding-bottom: 10px;"><span style="color: green; font-weight: bolder;">NAVER</span> 사전</h1>
                             </div>
-                            <div class="row mb-3 mx-4">
-                                <form name="chatform" action="#" method="post" style="border: 0px; border-bottom:2px solid gray; padding-bottom: 5px;">
-                                    단어, 문장을 검색하세요.
-                                    <i class="bx bx-search fs-4 lh-0" style="padding-left: 180px;"></i>
+                            <div class="row mb-3 mx-2">
+                                <form name="chatform" action="#" method="post" style="border: 0px; border-bottom:2px solid gray; padding-bottom: 6px;">
+                                    단어, 문장을 검색하세요.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <i class="bx bx-search fs-4 lh-0" ></i>
                                 </form>
+                                
                             </div>
                             <div class="row">
                                 <div class="col">
+                                    <button 
+                                        style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                                        <img  src="{% static 'assets/img/meet/지구본.png' %}">
+                                    </button>
                                     <p>전체</p>
                                 </div>
                                 <div class="col">
+                                    <button 
+                                        style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                                        <span style="font-size: 30px; ">A</span><span style="font-size: 15px;">가</span>
+                                    </button>
                                     <p>영어</p>
                                 </div>
                                 <div class="col">
+                                    <button 
+                                        style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                                        <span style="font-size: 30px; ">A</span><span style="font-size: 20px;">a</span>
+                                    </button>
                                     <p>English</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
+                                    <button 
+                                        style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                                        <span style="font-size: 30px; ">가</span>
+                                    </button>
                                     <p>한국어</p>
                                 </div>
                                 <div class="col">
+                                    <button 
+                                        style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                                        <span style="font-size: 30px; ">가</span><span style="font-size: 15px;">A</span>
+                                    </button>
                                     <p>Korean</p>
                                 </div>
                                 <div class="col">
+                                    <button 
+                                        style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                                        <span style="font-size: 30px; ">漢</span>
+                                    </button>
                                     <p>한자</p>
                                 </div>
                             </div>
@@ -440,9 +493,8 @@
                                 <div class="modal-content">
                                     <div class="continer">
                                         <div class="row">
-                                            <div class="row modal-header text-center">
-                                                <h5 class="modal-title mb-3" id="modalCenterTitle">메이트와의 만남이 종료되셨나요?</h5>
-                                            </div>
+                                                <h5 class="modal-title mb-3 mt-3" id="modalCenterTitle">메이트와의 만남이<br> 종료되셨나요?</h5>
+                                            
                                             <button type="button" id="kkkk" class="col btn btn-outline-primary mx-4 mb-2" data-bs-dismiss="modal">
                                                 아니오
                                             </button>
@@ -468,15 +520,15 @@
                                 <div class="modal-content">
                                     <div class="continer">
                                         <div class="row">
-                                            <span>온도 이미지</span>
                                             <div class="text-center">
+                                                <img class="mt-3" src="{% static 'assets/img/meet/온도계.png' %}"style="width: 80%; height:80%">
                                                 <h5 class="modal-title">온도가 1°C 올라갔어요!</h5>
                                             </div>
                                             <div class="d-grid gap-2 col-10 mx-auto">
                                                 <button type="button" id="kkkk" class="col btn btn-outline-primary mb-2" data-bs-dismiss="modal">
                                                     오늘 배운 표현 기록하기
                                                 </button>
-                                                <button type="button" id="kkkk" class="col btn btn-outline-primary mb-2" data-bs-dismiss="modal">
+                                                <button type="button" id="kkkk" class="col btn btn-outline-primary mb-3" data-bs-dismiss="modal">
                                                     메인페이지로 돌아가기
                                                 </button>
                                             </div>
@@ -505,11 +557,11 @@
     <script src="{% static 'assets/js/main.js' %}"></script>
     <script src="{% static 'assets/js/meet.js' %}">
 
-    <!-- Page JS -->
+    // Page JS
     <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
     <script src="{% static 'js/location_select.js' %}"></script>
 
-    <!-- Place this tag in your head or just before your close body tag. -->
+    // Place this tag in your head or just before your close body tag.
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
