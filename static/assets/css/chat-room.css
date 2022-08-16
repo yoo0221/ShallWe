@@ -46,6 +46,8 @@ body{
 
 /* 프로필 사진, 프로필명 등 헤더 스타일 지정 */
 header{
+    background-color: #595cd9;
+    color: #595cd9;
     grid-area: header;
     padding-top: 0.9375rem;
     padding-bottom: 0.9375rem;

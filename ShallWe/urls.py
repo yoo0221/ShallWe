@@ -37,10 +37,12 @@ urlpatterns = [
     path('register/complete', accviews.register_complete, name="register_complete"),
     path('chat/', include('chat.urls'), name="chat"),
     path('thema2/', views.thema2, name="thema2"), 
-    path('detailProfile/', views.detail_profile, name="detail_profile"), 
+    path('detailProfile/<int:user_id>/', views.detail_profile, name="detail_profile"), 
     path('specialThema/', views.special_thema, name="special_thema"),
     path('remind/', views.remind, name="remind"), 
     path('preview/', views.remind, name="preview"), 
+    path('chatready/<int:user_id>', views.chat_ready, name='chat_ready'),
+    path('chatfront/', views.chat, name='chat'),
 ]
 
 if settings.DEBUG:

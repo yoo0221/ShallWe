@@ -1,9 +1,11 @@
+from cProfile import Profile
 from django.shortcuts import get_object_or_404, render, redirect
 from AccountApp.models import User
 from MainApp.models import UserProfile
 from django.db.models import Q
 from MainApp.forms import SetProfileForm, SetScheduleForm
 from django.contrib.auth.decorators import login_required
+from chat.models import Room, Message
 
 # Create your views here.
 
@@ -157,8 +159,10 @@ def thema2(request):
     return render(request, 'thema2.html')
 
 @login_required
-def detail_profile(request):
-    return render(request, 'detailProfile.html')
+def detail_profile(request, user_id):
+    user = User.objects.get(pk=user_id)
+    user_profile = get_object_or_404(UserProfile, user=user)
+    return render(request, 'detailProfile.html', {'user':user, 'profile':user_profile})
 
 @login_required
 def special_thema(request):
@@ -176,7 +180,24 @@ def remind(request):
 def preview(request):
     return render(request, 'preview.html')
 
+@login_required
+def chat_ready(request, user_id):
+    def hasRoom(user1, user2):
+        room = Room.objects.filter(user1=User.objects.get(pk=user1))
+        room = room.filter(user2=User.objects.get(pk=user2))
+        return room
+    # print(request.user.id)
+    room = hasRoom(user_id, request.user.id)
+    if room.count() == 0:
+        newroom = Room.objects.create(user1=User.objects.get(pk=user_id), user2=User.objects.get(pk=request.user.id))
+        room_id = newroom.id
+    else:
+        room_id = room[0].id
+    
+    return redirect('room', str(room_id))
 # def handle_uploaded_file(f):
 #     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
 #         for chunk in f.chunks():
 #             destination.write(chunk)
+
+
