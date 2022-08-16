@@ -24,20 +24,22 @@
                 <li class="tab current" data-tab="tab1">일반</li>
                 <li class="tab" data-tab="tab2">스페셜</li>
             </ul>
+            
             <div id="tab1" class="tabContent">
                 <p class="themaDes">다양한 대화 주제 중 하나를 선택하여 
                     메이트와 만남 시에 이야기를 나눠보세요!</p>
                 <div class="buttonDiv"><button class="randomButton chatButton">랜덤</button></div>
-
-                <ul class="detailTabs">
-                    <li class="detailTab detailCurrent" data-tab="detailTab1">감정</li>
-                    <li class="detailTab" data-tab="detailTab2">성격</li>
-                    <li class="detailTab" data-tab="detailTab3">연애</li>
-                    <li class="detailTab" data-tab="detailTab4">일상</li>
+                
+                <ul class="detailTabs detailTabs1">
+                    <li class="detailTab detailCurrent">감정</li>
+                    <li class="detailTab">성격</li>
+                    <li class="detailTab">연애</li>
+                    <li class="detailTab">일상</li>
                 </ul>
-                <div id="detailTab1" class="detailTabContent">
+
+                <div class="detailTabContent">
                     <table>
-                        <tbody>
+                        <tbody class="detailThema">
                             <tr><td>Q1. 내 생에 가장 부끄러운 일은?</td></tr>
                             <tr><td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
                             <tr><td>Q3. 슬픈 감정을 어떻게 해소하나요?</td></tr>
@@ -45,30 +47,35 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="detailTab2" class="detailTabContent"></div>
-                <div id="detailTab3" class="detailTabContent"></div>
-                <div id="detailTab4" class="detailTabContent"></div>
+                <!-- <div class="detailTabContent"></div>
+                <div class="detailTabContent"></div>
+                <div class="detailTabContent"></div> -->
 
-                <ul class="detailTabs">
-                    <li class="detailTab detailCurrent" data-tab="detailTab5">유행</li>
-                    <li class="detailTab" data-tab="detailTab6">문화</li>
-                    <li class="detailTab" data-tab="detailTab7">동물</li>
-                    <li class="detailTab" data-tab="detailTab8">추억</li>
+                <ul class="detailTabs tailTabs2">
+                    <li class="detailTab detailCurrent">유행</li>
+                    <li class="detailTab">문화</li>
+                    <li class="detailTab">동물</li>
+                    <li class="detailTab">추억</li>
                 </ul>
-                <div id="detailTab5" class="detailTabContent">
+                <div class="detailTabContent2">
                     <table>
-                        <tbody>
-                            <tr><td>Q1. 깻잎 논쟁을 아시나요?</td></tr>
+                        <tbody class="detailThema">
+                            <a href="{% url 'preview' %}"></a>
+                            <tr><td>
+                                <span>Q1. 깻잎 논쟁을 아시나요?</span>
+                                <span class="detailThemaBadge">+2</span>
+                            </td></tr>
                             <tr><td>Q2. 토마토맛 토 vs 토맛 토마토</td></tr>
                             <tr><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
                             <tr><td>Q4. 세계관 이해에만 100시간이 걸리는 K-걸그룹</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <div id="detailTab6" class="detailTabContent"></div>
-                <div id="detailTab7" class="detailTabContent"></div>
-                <div id="detailTab8" class="detailTabContent"></div>
+                <!-- <div class="detailTabContent"></div>
+                <div class="detailTabContent"></div>
+                <div class="detailTabContent"></div> -->
             </div>
+            
             <div id="tab2" class="tabContent">
                 <p class="themaDes">전시회, 극장, 원데이클래스, 액티비티 시스템 등 
                     초특가 활동들을 메이트와 함께!</p>
@@ -91,9 +98,10 @@
                     </div>
                 </a>
             </div>
-            <a href="#미리보기">
+
+            <a href="{% url 'chat' %}">
                 <div class="completeButton">
-                    <span>완료</span>
+                    <span>상세 테마 제안하기</span>
                 </div>
             </a>
             
@@ -101,7 +109,7 @@
     </body>
     
     <script>
-        $(document).ready(function(){
+       $(function() {
             $('ul.tabs li').click(function(){
                 var tabId = $(this).attr('data-tab');
         
@@ -110,18 +118,6 @@
         
                 $(this).addClass('current');
                 $("#" + tabId).addClass('current');
-            })
-        });
-
-        $(document).ready(function(){
-            $('ul.detailTabs li').click(function(){
-                var tabId = $(this).attr('data-tab');
-        
-                $('ul.detailTabs li').removeClass('detailCurrent');
-                $('.detailTabContent').removeClass('detailCurrent');		
-        
-                $(this).addClass('detailCurrent');
-                $("#" + tabId).addClass('detailCurrent');
             })
         });
     </script>

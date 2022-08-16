@@ -171,6 +171,11 @@ def chat(request):
 @login_required
 def remind(request):
     return render(request, 'remind.html')
+
+@login_required
+def preview(request):
+    return render(request, 'preview.html')
+
 # def handle_uploaded_file(f):
 #     with open(settings.MEDIA_ROOT+"/profile", 'wb+') as destination:
 #         for chunk in f.chunks():
