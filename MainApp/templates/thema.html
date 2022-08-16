@@ -56,19 +56,16 @@
                 </ul>
 
                 <div class="detailTabContent">
-                    <table>
-                        <tbody class="detailThema">
-                            <a href="{% url 'preview' %}"></a>
-                            <tr><td>
-                                <span>Q1. 깻잎 논쟁을 아시나요?</span>
-                                <span class="detailThemaBadge">+2</span>
-                            </td></tr>
-                            <tr><td>Q2. 토마토맛 토 vs 토맛 토마토</td></tr>
-                            <tr><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
-                            <tr><td>Q4. 세계관 이해에만 100시간이 걸리는 </br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K-걸그룹</td></tr>
-                        </tbody>
-                    </table>
+                    <table><tbody class="detailThema">
+                        <tr><td onclick="location.href ='{% url 'preview' %}'">
+                            <span>Q1. 깻잎 논쟁을 아시나요?</span>
+                            <span class="detailThemaBadge">+2</span>
+                        </td></tr>
+                        <tr><td>Q2. 토마토맛 토 vs 토맛 토마토</td></tr>
+                        <tr><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
+                        <tr><td>Q4. 세계관 이해에만 100시간이 걸리는 </br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K-걸그룹</td></tr>
+                    </tbody></table>
                 </div>
                 
                 <a href="{% url 'chat' %}">
