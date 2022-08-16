@@ -40,9 +40,9 @@ urlpatterns = [
     path('detailProfile/<int:user_id>/', views.detail_profile, name="detail_profile"), 
     path('specialThema/', views.special_thema, name="special_thema"),
     path('remind/', views.remind, name="remind"), 
-    path('preview/', views.remind, name="preview"), 
     path('chatready/<int:user_id>', views.chat_ready, name='chat_ready'),
     path('chatfront/', views.chat, name='chat'),
+    path('preview/', views.preview, name="preview"), 
 ]
 
 if settings.DEBUG:
