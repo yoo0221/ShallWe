@@ -2,143 +2,161 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}" />
-    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
-</head>
-<body>
-    <div class='header'>
-        <i class="fa-solid fa-angle-left angleLeft"></i>
-        <span>교류 메이트</span>
+    <link
+      href="{% static 'assets/fontawesome/css/all.css'%}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <i class="fa-solid fa-angle-left angleLeft"></i>
+      <span>교류 메이트</span>
     </div>
-    
-    <div class='profile'>
-        <img 
+    <!-- <img 
             src="{% static 'assets/img/Tommy.jpg' %}"
-            class='profileImg'/>
-        <div class='name'>Tommy</div>
-        <div class='iconWrapper'>
-            <div class='iconWrapper-left'>
-                <!-- <i class="fa-solid fa-mars"></i><span></span>
+            class='profileImg'/> -->
+    <div class="profile">
+      <img src="{{ user.userprofile.get_photo_home_url }}" class="profileImg" />
+      <!-- <div class='name'>Tommy</div> -->
+      <div class="name">{{ user.userprofile.name }}</div>
+      <div class="iconWrapper">
+        <div class="iconWrapper-left">
+          <!-- <i class="fa-solid fa-mars"></i><span></span>
                 <i class="fa-solid fa-temperature-half"></i><span>30°C</span> -->
-                <img
-                src="{% static 'assets/img/성별.png' %}"
-                class='sexIcon'/>
-                <img
-                src="{% static 'assets/img/온도계.png' %}"
-                class='sexIcon'/><span> 30°C</span>
-            </div>
-            <div class='iconWrapper-right'>
-                <a href="#" onclick="fillFollow()">
-                    <img
-                    src="{% static 'assets/img/follow.png' %}"
-                    class='followIcon'
-                    id='followIcon'/>
-                </a>
-                
-                <!-- <img
+          {% if user.userprofile.sex is "남" %}
+          <img src="{% static 'assets/img/성별.png' %}" class="sexIcon" />
+          {% else %}
+          <img src="{% static 'assets/img/성별.png' %}" class="sexIcon" />
+          {% endif %}
+          <img
+            src="{% static 'assets/img/온도계.png' %}"
+            class="Temparature"
+          /><span> 30°C</span>
+        </div>
+        <div class="iconWrapper-right">
+          <a href="#" onclick="fillFollow()">
+            <img
+              src="{% static 'assets/img/follow.png' %}"
+              class="followIcon"
+              id="followIcon"
+            />
+          </a>
+
+          <!-- <img
                     src="{% static 'assets/img/follow-fill.png' %}"
                     class='followIcon'
                     id='followIcon'/> -->
-            </div>
         </div>
-        <div class='iconWrapper-inform'>
-            <img 
-                src="{% static 'assets/img/USA.jpg' %}"
-                class='infromIcon'/>
-            <span>USA</span>
-            <img 
-                src="{% static 'assets/img/말하는사람.png' %}"
-                class='infromIcon'/>
-            <span>영어</span>
-            <i class="fa-solid fa-location-crosshairs"></i><span>일원동</span>
+      </div>
+      <div class="iconWrapper-inform">
+        <img src="{% static 'assets/img/USA.jpg' %}" class="infromIcon" />
+        <span>USA</span>
+        <img
+          src="{% static 'assets/img/말하는사람.png' %}"
+          class="infromIcon"
+        />
+        <span>영어</span>
+        <i class="fa-solid fa-location-crosshairs"></i><span>일원동</span>
+      </div>
+      <div class="orderBox">
+        <div class="orderTitle">
+          <img
+            src="{% static 'assets/img/profile_order.png' %}"
+            class="profileOrder"
+          />
+          <span> 언어 실력</span>
         </div>
-        <div class='orderBox'>
-            <div class='orderTitle'>
-                <img
-                src="{% static 'assets/img/profile_order.png' %}"
-                class='profileOrder'/>
-                <span> 언어 실력</span>
-            </div>
-            <div class='orderDes'>
-                <span> 한국에 온 지 얼마되지 않았어요ㅠㅠ</span>
-            </div>
+        <div class="orderDes">
+          <span> 한국에 온 지 얼마되지 않았어요ㅠㅠ</span>
         </div>
-        <div class='orderBox'>
-            <div class='orderTitle'>
-                <img
-                src="{% static 'assets/img/profile_order.png' %}"
-                class='profileOrder'/>
-                <span> 본인 소개</span>
-            </div>
-            <div class='orderDes'>
-                <span> Hiiii 저는 토미입니다 I teach English in GnB Hangwon since 2022</span>
-            </div>
+      </div>
+      <div class="orderBox">
+        <div class="orderTitle">
+          <img
+            src="{% static 'assets/img/profile_order.png' %}"
+            class="profileOrder"
+          />
+          <span> 본인 소개</span>
         </div>
-        <div class='orderBox'>
-            <div class='orderTitle'>
-                <img
-                src="{% static 'assets/img/profile_order.png' %}"
-                class='profileOrder'/>
-                <span> 관련 해시태그</span>
-            </div>
-            <div class='orderDes'>
-                <span> #여행 #고양이 #tommy_gnb2022</span>
-            </div>
+        <div class="orderDes">
+          <span>
+            Hiiii 저는 토미입니다 I teach English in GnB Hangwon since
+            2022</span
+          >
         </div>
-        <div class='orderBox'>
-            <div class='orderTitle'>
-                <img
-                src="{% static 'assets/img/profile_order.png' %}"
-                class='profileOrder'/>
-                <span> 이런 장소가 좋아요.</span>
-            </div>
-            <div class='orderDes'>
-                <span> I like place where we can talk freely</span>
-            </div>
+      </div>
+      <div class="orderBox">
+        <div class="orderTitle">
+          <img
+            src="{% static 'assets/img/profile_order.png' %}"
+            class="profileOrder"
+          />
+          <span> 관련 해시태그</span>
         </div>
-        <div class='orderBox'>
-            <div class='orderTitle'>
-                <img
-                src="{% static 'assets/img/profile_order.png' %}"
-                class='profileOrder'/>
-                <span> 이런 장소는 고민돼요.</span>
-            </div>
-            <div class='orderDes'>
-                <span> Anywhere except for karaoke</span>
-            </div>
+        <div class="orderDes">
+          <span> #여행 #고양이 #tommy_gnb2022</span>
         </div>
+      </div>
+      <div class="orderBox">
+        <div class="orderTitle">
+          <img
+            src="{% static 'assets/img/profile_order.png' %}"
+            class="profileOrder"
+          />
+          <span> 이런 장소가 좋아요.</span>
+        </div>
+        <div class="orderDes">
+          <span> I like place where we can talk freely</span>
+        </div>
+      </div>
+      <div class="orderBox">
+        <div class="orderTitle">
+          <img
+            src="{% static 'assets/img/profile_order.png' %}"
+            class="profileOrder"
+          />
+          <span> 이런 장소는 고민돼요.</span>
+        </div>
+        <div class="orderDes">
+          <span> Anywhere except for karaoke</span>
+        </div>
+      </div>
     </div>
-        <div class='buttonBox'>
-        <button 
-            type='button'
-            class='chatButton'
-            onclick="location.href ='{% url 'chat' %}'">
-            채팅
-        </button>
-        <button 
-            type='button'
-            class='promiseButton'
-            onclick="location.href='{% url 'thema' %}'">
-            약속 잡기
-        </button>
+    <div class="buttonBox">
+      <button
+        type="button"
+        class="chatButton"
+        onclick="location.href ='{% url 'chat' %}'"
+      >
+        채팅
+      </button>
+      <button
+        type="button"
+        class="promiseButton"
+        onclick="location.href='{% url 'thema' %}'"
+      >
+        약속 잡기
+      </button>
     </div>
     <script>
-        var isFollow=false;
-        function fillFollow() {
-            if(isFollow==false) {
-                document.getElementById("followIcon").src="{% static 'assets/img/follow-fill.png' %}";
-                isFollow=true;
-            }
-            else {
-                document.getElementById("followIcon").src="{% static 'assets/img/follow.png' %}";
-                isFollow=false;
-            }
+      var isFollow = false;
+      function fillFollow() {
+        if (isFollow == false) {
+          document.getElementById("followIcon").src =
+            "{% static 'assets/img/follow-fill.png' %}";
+          isFollow = true;
+        } else {
+          document.getElementById("followIcon").src =
+            "{% static 'assets/img/follow.png' %}";
+          isFollow = false;
         }
+      }
     </script>
-</body>
+  </body>
 </html>
