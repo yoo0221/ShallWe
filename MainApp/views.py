@@ -12,6 +12,7 @@ from chat.models import Room, Message
 @login_required
 def home(request):
     users = User.objects.filter(is_superuser=False).order_by('-date_joined')
+    users = users.exclude(username=request.user)
     return render(request, 'index.html', {"users":users})
 
 @login_required

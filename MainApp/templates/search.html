@@ -1,217 +1,171 @@
-{% extends 'base.html' %} {% load static %} {% block mainbody %}
+{% extends 'base.html' %}
+{% load static %}
+{% block mainbody %}
 
-<div class="container-xxl flex-grow-1 container-p-y">
-  <div class="row">
-    <div class="col-lg-6 mb-4 order-0">
-      <div class="card accordion-item">
-        <h2 class="accordion-header p-2" id="headingOne">
-          <button
-            type="button"
-            class="accordion-button"
-            data-bs-toggle="collapse"
-            data-bs-target="#accordionOne"
-            aria-expanded="true"
-            aria-controls="accordionOne"
-          >
-            <strong>필터 설정</strong>
-          </button>
-        </h2>
-        <div
-          id="accordionOne"
-          class="accordion-collapse collapse show"
-          data-bs-parent="#accordionExample"
-        >
-          <div class="card-body accordion-body">
-            <form action="{% url 'filtered' %}" method="post">
-              {% csrf_token %}
-              <div class="card-body filter-age">
-                <h5 class="card-title">연령대</h5>
-                <div role="group">
-                  <input type="hidden" name="filter-age20" value="0" />
-                  <input
-                    type="checkbox"
-                    name="filter-age20"
-                    value="20"
-                    class="btn-check"
-                    id="filter-age20"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-outline-primary" for="filter-age20">
-                    20대
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-lg-6 mb-4 order-0">
+        <div class="card accordion-item">
+          <h2 class="accordion-header p-2" id="headingOne">
+            <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="true" aria-controls="accordionOne">
+              <strong>필터 설정</strong>
+            </button>
+          </h2>
+          <div id="accordionOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="card-body accordion-body">
+              <form action="{% url 'filtered' %}" method="post">
+                {% csrf_token %}
+                <div class="card-body filter-age">
+                  <h5 class="card-title">연령대</h5>
+                  <div role="group">
+                    <input type="hidden" name="filter-age20" value="0"/>
+                    <input type="checkbox" name="filter-age20" value="20" class="btn-check" id="filter-age20" autocomplete="off"/>
+                    <label class="btn btn-outline-primary" for="filter-age20">
+                      20대
+                    </label>
+
+                    <input type="hidden" name="filter-age30" value="0"/>
+                    <input type="checkbox" name="filter-age30" value="30" class="btn-check" id="filter-age30" autocomplete="off"/>
+                    <label class="btn btn-outline-primary" for="filter-age30">
+                      30대
+                    </label>
+
+                    <input type="hidden" name="filter-age40" value="0"/>
+                    <input type="checkbox" name="filter-age40" value="40" class="btn-check" id="filter-age40" autocomplete="off"/>
+                    <label class="btn btn-outline-primary" for="filter-age40">
+                      40대 이상
+                    </label>
+                  </div>
+                </div>
+
+                <div class="card-body filter-sex">
+                  <h5 class="card-title">성별</h5>
+                  <input type="hidden" name="filter-sex" value="x"/>
+                  <label class="radio-btn">
+                    <input type="radio" name="filter-sex" value="남"/>
+                    <span>남</span>
                   </label>
-
-                  <input type="hidden" name="filter-age30" value="0" />
-                  <input
-                    type="checkbox"
-                    name="filter-age30"
-                    value="30"
-                    class="btn-check"
-                    id="filter-age30"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-outline-primary" for="filter-age30">
-                    30대
-                  </label>
-
-                  <input type="hidden" name="filter-age40" value="0" />
-                  <input
-                    type="checkbox"
-                    name="filter-age40"
-                    value="40"
-                    class="btn-check"
-                    id="filter-age40"
-                    autocomplete="off"
-                  />
-                  <label class="btn btn-outline-primary" for="filter-age40">
-                    40대 이상
+                  <label class="radio-btn">
+                    <input type="radio" name="filter-sex" value="여"/>
+                    <span>여</span>
                   </label>
                 </div>
-              </div>
 
-              <div class="card-body filter-sex">
-                <h5 class="card-title">성별</h5>
-                <input type="hidden" name="filter-sex" value="x" />
-                <label class="radio-btn">
-                  <input type="radio" name="filter-sex" value="남" />
-                  <span>남</span>
-                </label>
-                <label class="radio-btn">
-                  <input type="radio" name="filter-sex" value="여" />
-                  <span>여</span>
-                </label>
-              </div>
+                <div class="card-body">
+                  <h5 class="card-title">동네 범위</h5>
+                  <select class="p-2 mx-1" name="addressDo" id="addressDo" style="border-color: #1c3bd5; color: #1c3bd5"></select>
+                  <select class="selectpicker p-2 mx-1" name="addressSiGunGu" id="addressSiGunGu" style="border-color: #1c3bd5; color: #1c3bd5"></select>
+                  <select class="selectpicker p-2 mx-1" name="addressEMD" id="addressEMD" style="border-color: #1c3bd5; color: #1c3bd5"></select>
+                </div>
 
-              <div class="card-body">
-                <h5 class="card-title">동네 범위</h5>
-                <select
-                  class="p-2 mx-1"
-                  name="addressDo"
-                  id="addressDo"
-                  style="border-color: #1c3bd5; color: #1c3bd5"
-                ></select>
-                <select
-                  class="selectpicker p-2 mx-1"
-                  name="addressSiGunGu"
-                  id="addressSiGunGu"
-                  style="border-color: #1c3bd5; color: #1c3bd5"
-                ></select>
-                <select
-                  class="selectpicker p-2 mx-1"
-                  name="addressEMD"
-                  id="addressEMD"
-                  style="border-color: #1c3bd5; color: #1c3bd5"
-                ></select>
+                <div class="card-body filter-selected">
+                  <button type="submit" class="btn btn-primary">검색</button>
+                </div>
               </div>
-
-              <div class="card-body filter-selected">
-                <button type="submit" class="btn btn-primary">검색</button>
-              </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-lg-6 order-1">
-      <div class="card col">
-        <!-- <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5> -->
-        {% if count %}
-        <h4 class="card-header"> 총 {{ count }}명의 친구를 찾았어요! </h4>
-        {% endif %}
-        <div class="table-responsive text-nowrap">
-          <table class="table table-hover">
-            <tbody class="table-border-bottom-0">
-              {% for user in result %}
-              <tr>
-                <td>
-                  {% if user.userprofile.get_photo_home_url %}
-                  <div class="container">
-                    <a href="{% url 'detail_profile' %}">
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <label for="photo_img" class="avatar" tabindex="0">
-                          <div class="avatar">
-                            <img
-                              src="{{ user.userprofile.get_photo_home_url }}"
-                              alt
-                              class="w-px-40 h-auto rounded-circle"
-                            />
-                          </div>
-                        </label>
-                      </div>
-                      <div class="col-sm-9">
-                        <div class="row">
-                          <div class="col-4 col-sm-4">
-                            <img src="{% static 'assets/img/미국 1.png' %}" alt="">
-                            <strong>{{user.name}}</strong>
-                          </div>
-                          <div class="col-4 col-sm-4">
-                            <img src="{% static 'assets/img/mothertongue.png'%}"><strong>{{user.mother_tongue}}</strong>
-                          </div>
-                          <div class="col-4 col-sm-4">
-                            <img src="{% static 'assets/img/location.png'%}"><strong>{{user.address_emd}}</strong>
-                          </div>
+      <div class="col-lg-6 order-1">
+        <div class="card col">
+          <!-- <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5> -->
+          {% if count %}
+            <h4 class="card-header">
+              총
+              {{ count }}명의 친구를 찾았어요!
+            </h4>
+          {% endif %}
+          <div class="table-responsive text-nowrap">
+            <table class="table table-hover">
+              <tbody class="table-border-bottom-0">
+                {% for user in result %}
+                  <tr>
+                    <td>
+                      {% if user.userprofile.get_photo_home_url %}
+                        <div class="container">
+                          <a href="{% url 'detail_profile' user.id %}">
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <label for="photo_img" class="avatar" tabindex="0">
+                                  <div class="avatar">
+                                    <img src="{{ user.userprofile.get_photo_home_url }}" alt="alt" class="w-px-40 h-auto rounded-circle"/>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="col-sm-9">
+                                <div class="row">
+                                  <div class="col-4 col-sm-4">
+                                    <img src="{% static 'assets/img/미국 1.png' %}" alt="">
+                                    <strong>{{user.name}}</strong>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <img src="{% static 'assets/img/mothertongue.png'%}">
+                                    <strong>{{user.mother_tongue}}</strong>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <img src="{% static 'assets/img/location.png'%}">
+                                    <strong>{{user.address_emd}}</strong>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-4 col-sm-12">
+                                    {% if user.userprofile.introduction %}
+                                      {{user.userprofile.introduction}}
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
                         </div>
-                        <div class="row">
-                          <div class="col-4 col-sm-12">
-                            {% if user.userprofile.introduction %}
-                              {{user.userprofile.introduction}}
-                            {% endif %}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  </div>
 
-                  {% else %}
-                  <div class="container">
-                    <a href="{% url 'detail_profile' %}">
-                    <div class="row">
-                      <div class="col-sm-3">
-                        <label for="photo_img" class="avatar" tabindex="0">
-                          <div class="avatar">
-                            <img
-                              src="{% static 'assets/img/ordinary_profile_photo.png' %}"
-                              alt
-                              class="w-px-40 h-auto rounded-circle"
-                            />
-                          </div>
-                        </label>
-                      </div>
-                      <div class="col-sm-9">
-                        <div class="row">
-                          <div class="col-4 col-sm-4">
-                            <img src="{% static 'assets/img/미국 1.png' %}" alt="">
-                            <strong>{{user.name}}</strong>
-                          </div>
-                          <div class="col-4 col-sm-4">
-                            <img src="{% static 'assets/img/mothertongue.png'%}"><strong>{{user.mother_tongue}}</strong>
-                          </div>
-                          <div class="col-4 col-sm-4">
-                            <img src="{% static 'assets/img/location.png'%}"><strong>{{user.address_emd}}</strong>
-                          </div>
+                      {% else %}
+                        <div class="container">
+                          <a href="{% url 'detail_profile' user.id %}">
+                            <div class="row">
+                              <div class="col-sm-3">
+                                <label for="photo_img" class="avatar" tabindex="0">
+                                  <div class="avatar">
+                                    <img src="{% static 'assets/img/ordinary_profile_photo.png' %}" alt="alt" class="w-px-40 h-auto rounded-circle"/>
+                                  </div>
+                                </label>
+                              </div>
+                              <div class="col-sm-9">
+                                <div class="row">
+                                  <div class="col-4 col-sm-4">
+                                    <img src="{% static 'assets/img/미국 1.png' %}" alt="">
+                                    <strong>{{user.name}}</strong>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <img src="{% static 'assets/img/mothertongue.png'%}">
+                                    <strong>{{user.mother_tongue}}</strong>
+                                  </div>
+                                  <div class="col-4 col-sm-4">
+                                    <img src="{% static 'assets/img/location.png'%}">
+                                    <strong>{{user.address_emd}}</strong>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-4 col-sm-12">
+                                    {% if user.userprofile.introduction %}
+                                      {{user.userprofile.introduction}}
+                                    {% endif %}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
                         </div>
-                        <div class="row">
-                          <div class="col-4 col-sm-12">
-                            {% if user.userprofile.introduction %}
-                              {{user.userprofile.introduction}}
-                            {% endif %}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  </div>
-                  {% endif %}
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 {% endblock %}
