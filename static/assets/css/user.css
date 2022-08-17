@@ -12,13 +12,20 @@
   height: 60px;
   border-radius: 70%;
   overflow: hidden;
-  position: relative;
 }
 
 .profile-photo {
   width: 60px;
   height: 60px;
   object-fit: contain;
+}
+
+.usernationality-box {
+  float: left;
+  width: 24px;
+  height: 24px;
+  border-radius: 70%;
+  overflow: hidden;
 }
 
 .usernationality {

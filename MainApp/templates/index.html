@@ -57,7 +57,7 @@
   <body>
     <!-- bottom nav -->
     <!-- <div class="upper-bottom-navs"> -->
-    <div class="double-nav p-2">
+    <div class="double-nav">
       <div class="container row d-flex justify-content-center">
         <div class="address col-10" id="">
           <div class="row">
@@ -75,13 +75,13 @@
         </div>
       </div>
       <!-- navbar-->
-      <nav class="layout-navbar container-xxl navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+      <nav class="layout-navbar container-xxl navbar-expand-xl navbar-detached align-items-center bg-navbar-theme px-2" id="layout-navbar" style='height: 40px'>
         <div class="d-flex flex-row align-items-center" id="navbar-collapse">
-          <a href="{% url 'search' %}" class="container align-items-center pt-3" style="color: #6c7d8f">
+          <a href="{% url 'search' %}" class="container align-items-center" style="color: #6c7d8f">
             <!-- <a href="/search" class="container"> -->
-            <div class="nav-item d-flex flex-row-reverse align-items-center row">
-              <i class="bx bx-search fs-2 lh-0 search col-1 ml-4"></i>
-              <input type="text" class="border-0 invisible-color col-11" placeholder="" aria-label="" size="{75}"/>
+            <div class="nav-item d-flex flex-row-reverse align-items-center row pt-2">
+              <i class="bx bx-search fs-2 lh-0 search col-1"></i>
+              <input type="text" class="border-0 invisible-color col-12 mr-2" placeholder="" aria-label="" size="{75}"/>
             </div>
           </a>
         </div>
@@ -123,7 +123,17 @@
                     <div class='profile-photo-box'>
                       <img class='profile-photo' src="{{user.userprofile.get_photo_home_url}}"/>
                     </div>
-                    <img class='usernationality' src="{% static 'assets/img/미국 1.png' %}" alt="">
+                    <div class='usernationality-box'>
+                      {% if user.nationality == "대한민국" %}
+                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                      {% elif user.nationality == "USA" %}
+                        <img class='usernationality' src="{% static 'assets/img/미국.png' %}" alt="">
+                      {% elif user.nationality == "Austrailia" %}
+                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                      {% elif user.nationality == "UK" %}
+                        <img class='usernationality' src="{% static 'assets/img/호주.png' %}" alt="">
+                      {% endif %}
+                    </div>
                   </div>
                 </div>
                 <div class='col-9 col-sm-9'>
