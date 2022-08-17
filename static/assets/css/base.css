@@ -31,21 +31,21 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 90px;
+  height: 70px;
 }
 
 .navs {
   overflow: hidden;
   background: white;
-  border-top: 2px solid gray;
+  padding-top: 5px;
 }
 
 .divs {
   text-align: center;
   float: left;
   width: 20%;
-  height: 45px;
-  line-height: 45px;
+  height: 25px;
+  line-height: 25px;
 }
 
 .nav-links {
@@ -57,7 +57,11 @@ a {
 }
 
 .nav-items-desc {
+  margin-bottom: 0px;
   margin-top: 0px;
   padding-top: 0px;
 }
 
+.body {
+  padding-bottom: 70px;
+}

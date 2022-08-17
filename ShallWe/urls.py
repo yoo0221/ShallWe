@@ -43,6 +43,7 @@ urlpatterns = [
     path('chatready/<int:user_id>', views.chat_ready, name='chat_ready'),
     path('chatfront/', views.chat, name='chat'),
     path('preview/', views.preview, name="preview"), 
+    path('index/', views.index, name="index"),
 ]
 
 if settings.DEBUG:

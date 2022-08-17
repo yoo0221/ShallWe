@@ -1,6 +1,8 @@
+from cProfile import Profile
 from django.utils import timezone
 from django.shortcuts import get_object_or_404, render, redirect
-from .models import User 
+from .models import User
+from MainApp.models import UserProfile 
 from django.contrib import auth
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -36,6 +38,14 @@ def register(request):
                                             nationality=request.POST['nationality'],
                                             mother_tongue=request.POST['mother_tongue'])
             auth.login(request, user)
+            UserProfile.objects.create(
+                user=user,
+                skill="",
+                introduction="",
+                interesting_keyword="",
+                like_place="",
+                unlike_place="",
+            )
             return redirect('register_complete')
         else:
             pass

@@ -200,4 +200,5 @@ def chat_ready(request, user_id):
 #         for chunk in f.chunks():
 #             destination.write(chunk)
 
-
+def index(request):
+    return render(request, 'index_temp.html')
