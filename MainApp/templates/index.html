@@ -57,7 +57,7 @@
   <body>
     <!-- bottom nav -->
     <!-- <div class="upper-bottom-navs"> -->
-    <div class="double-nav">
+    <div class="double-nav p-2">
       <div class="container row d-flex justify-content-center">
         <div class="address col-10" id="">
           <div class="row">
@@ -89,10 +89,9 @@
     </div>
     <!-- <div class="container justify-content-center mb-4"> <div class="row pb-4"> <a href="#"> 광고 배너 외부 링크/이벤트 페이지 <div className="row d-flex justify-content-center"> <div className="col-12"> <img src="{% static 'assets/img/advertisement/banner1.png' %}" height="120px" width="100%" /> </div> </div> </a> </div> <div class="row pb-4"> <a href="#"> 광고 배너 외부 링크/이벤트 페이지 <div className="row d-flex justify-content-center"> <div className="col-12"> <img src="{% static 'assets/img/advertisement/banner2.png' %}" height="120px" width="100%" /> </div> </div> </a> </div> -->
     <div class="body">
-      <div class="container-xxl flex-grow-1 container-p-y justify-content-center">
-        <div class="row pb-4">
+      <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
+        <div class="row pb-3">
           <a href="#">
-            <!-- 광고 배너 외부 링크/이벤트 페이지-->
             <div classname="row d-flex justify-content-center">
               <div classname="col-12">
                 <img src="{% static 'assets/img/advertisement/banner1.png' %}" height="115px" width="100%"/>
@@ -100,28 +99,50 @@
             </div>
           </a>
         </div>
-        <div class="row pb-4">
+        <div class="row pb-3">
           <a href="#">
-            <!-- 광고 배너 외부 링크/이벤트 페이지-->
             <div classname="row d-flex justify-content-center">
               <div classname="col-12">
-                <img src="{% static 'assets/img/advertisement/banner2.png' %}" height="115px" width="100%"/>
+                <img src="{% static 'assets/img/advertisement/banner4.png' %}" height="115px" width="100%"/>
               </div>
             </div>
           </a>
         </div>
         <div class="row">
-          <div class="d-flex mb-3">
-            <div class="me-auto p-2"><img src="{% static 'assets/img/filter.png' %}" alt=""></div>
-            <div class="p-2">동성필터 적용
-              <span><img src="{% static 'assets/img/sex-filter.png' %}" alt=""></span></div>
+          <div class="d-flex mb-1 p-2">
+            <div class="me-auto pt-2"><img src="{% static 'assets/img/filter.png' %}" alt="" style='width: 25px; height: 25px;'></div>
+            <div class="p-2">
+              <strong>동성필터 적용</strong>
+              <span><img src="{% static 'assets/img/sex-filter.png' %}" alt="" style='width: 60px; height: 25px;'></span></div>
           </div>
-          {% for user in users%}
-            <div class='user' style="border-bottom: 1px solid gray;">
-              <div class='profile-photo-box'><img class='profile-photo' src="{{user.userprofile.get_photo_home_url}}"/></div>
-              <p>{{user.name}}</p>
-              <p>{{user.mother_tongue}}</p>
-              <p>{{user.address_emd}}</p>
+          {% for user in users %}
+            <div class='container py-2 px-1' style="border-bottom: 1px solid gray;">
+              <a href="{% url 'detail_profile' user.id %}" class="row">
+                <div class='col-3 px-3'>
+                  <div class='profile-box'>
+                    <div class='profile-photo-box'>
+                      <img class='profile-photo' src="{{user.userprofile.get_photo_home_url}}"/>
+                    </div>
+                    <img class='usernationality' src="{% static 'assets/img/미국 1.png' %}" alt="">
+                  </div>
+                </div>
+                <div class='col-9 col-sm-9'>
+                  <div class='row pb-2'>
+                    <div class='col-3 p-0 username'>
+                      {{user.name}}
+                    </div>
+                    <div class='col-4 p-0 userinfo'><img style='width: 20px; height:18px;' src="{% static 'assets/img/mothertongue.png' %}" alt="">
+                      {{user.mother_tongue}}</div>
+                    <div class='col-5 p-0 userinfo'><img style='width: 22px; height:22px;' src="{% static 'assets/img/location.png' %}" alt="">
+                      {{user.address_emd}}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col p-0'>
+                      {{user.userprofile.introduction}}
+                    </div>
+                  </div>
+                </div>
+              </a>
             </div>
           {% endfor %}
         </div>
