@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class='header specialThemaHeader'>
-        <i class="fa-solid fa-angle-left angleLeft"></i>
+        <a href="{% url 'thema' %}"><i class="fa-solid fa-angle-left angleLeft"></i></a>
         <span>미리 보기</span>
     </div>
 
@@ -32,10 +32,6 @@
             <img 
                 src="{% static 'assets/img/reference.png' %}"
                 class="referIcon">
-            <!-- <img 
-                src="{% static 'assets/img/말하는사람.png' %}"
-                class="referIcon">
-            <span class="badge">참고 표현</span> -->
             <p class="referDes">
                 쌈을 싸다   wrap [ ræp ] <br>
                 떼다   pull off, take off   <br>
@@ -46,4 +42,3 @@
     </div>
 </body>
 </html>
-

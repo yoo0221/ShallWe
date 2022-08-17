@@ -23,9 +23,8 @@ ul {
     padding-top: 1.5rem;
     padding-bottom: 0.75rem;
     font-weight: bold;
-    width: 49%;
+    width: 50%;
     color: #000;
-    display: block;
     border-bottom: 2px solid #CCC;
     float: left;
 }
