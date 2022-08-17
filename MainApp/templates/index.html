@@ -1,175 +1,265 @@
-{% extends 'base.html' %} {% load static %} {% block mainbody %}
+{% load static %}
+<!DOCTYPE html>
 
-<div class="container-xxl flex-grow-1 container-p-y justify-content-center">
-  <div class="row pb-4">
-    <a href="#">
-      <!-- 광고 배너 외부 링크/이벤트 페이지-->
-      <div className="row d-flex justify-content-center">
-        <div className="col-12">
-          <img
-            src="{% static 'assets/img/advertisement/banner1.png' %}"
-            height="140px"
-            width="100%"
-          />
+<!-- ========================================================= * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0 ============================================================== * Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/ * Created by: ThemeSelection * License: You must have a valid license purchased in order to legally use the theme for your project. * Copyright ThemeSelection (https://themeselection.com) ========================================================= -->
+<!-- beautify ignore:start -->
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="{% static 'assets/' %}" data-template="vertical-menu-template-free">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+
+    <title>Shall We?</title>
+
+    <meta name="description" content=""/>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/logo.png' %}"/>
+
+    <!--fontAwesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet"/>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" /> -->
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}"/>
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/chat-room.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/general.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css"/>
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}"/>
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet"/>
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
+    <script src="{% static 'assets/js/calendar.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+    <script src="{% static 'assets/js/table.js' %}"></script>
+  </head>
+
+  <body>
+    <!-- bottom nav -->
+    <!-- <div class="upper-bottom-navs"> -->
+    <div class="double-nav">
+      <div class="container row d-flex justify-content-center">
+        <div class="address col-10" id="">
+          <div class="row">
+            <!-- <div class="address-text col-9 d-flex flex-row-reverse"> {{user.address_do}} {{user.address_sgg}} {{user.address_emd}} </div> -->
+            <div class="address-text col-9 d-flex flex-row-reverse">
+              서울 전체
+            </div>
+            <span class="col-3">∨</span>
+          </div>
+        </div>
+        <div class="col-1">
+          <span id="calendar" ref="{props.carRef}">
+            <img src="{% static 'assets/img/calendar.png' %}"/>
+          </span>
         </div>
       </div>
-    </a>
-  </div>
-  <div class="row pb-4">
-    <a href="#">
-      <!-- 광고 배너 외부 링크/이벤트 페이지-->
-      <div className="row d-flex justify-content-center">
-        <div className="col-12">
-          <img
-            src="{% static 'assets/img/advertisement/banner2.png' %}"
-            height="140px"
-            width="100%"
-          />
+      <!-- navbar-->
+      <nav class="layout-navbar container-xxl navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+        <div class="d-flex flex-row align-items-center" id="navbar-collapse">
+          <a href="{% url 'search' %}" class="container align-items-center pt-3" style="color: #6c7d8f">
+            <!-- <a href="/search" class="container"> -->
+            <div class="nav-item d-flex flex-row-reverse align-items-center row">
+              <i class="bx bx-search fs-2 lh-0 search col-1 ml-4"></i>
+              <input type="text" class="border-0 invisible-color col-11" placeholder="" aria-label="" size="{75}"/>
+            </div>
+          </a>
         </div>
-      </div>
-    </a>
-  </div>
-  <div class="row">
-    <div class="card col">
-      <!-- <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5> -->
-      <!-- {% if count %}
-        <h4 class="card-header"> 총 {{ count }}명의 친구를 찾았어요! </h4>
-        {% endif %} -->
-      <div class="card-header"></div>
-      <div class="card-body">
-        <div class="table-responsive text-nowrap">
-          <table class="table table-hover">
-            <tbody class="table-border-bottom-0">
-              {% for user in users %}
-              <tr>
-                <td>
-                  {% if user.userprofile.get_photo_home_url %}
-                  <div class="container">
-                    <a href="{% url 'detail_profile' user.id %}">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <label for="photo_img" class="avatar" tabindex="0">
-                            <div class="avatar">
-                              <img
-                                src="{{ user.userprofile.get_photo_home_url }}"
-                                alt
-                                class="w-px-40 h-auto rounded-circle"
-                              />
+      </nav>
+    </div>
+    <!-- <div class="container justify-content-center mb-4"> <div class="row pb-4"> <a href="#"> 광고 배너 외부 링크/이벤트 페이지 <div className="row d-flex justify-content-center"> <div className="col-12"> <img src="{% static 'assets/img/advertisement/banner1.png' %}" height="120px" width="100%" /> </div> </div> </a> </div> <div class="row pb-4"> <a href="#"> 광고 배너 외부 링크/이벤트 페이지 <div className="row d-flex justify-content-center"> <div className="col-12"> <img src="{% static 'assets/img/advertisement/banner2.png' %}" height="120px" width="100%" /> </div> </div> </a> </div> -->
+    <div class="body">
+      <div class="container-xxl flex-grow-1 container-p-y justify-content-center">
+        <div class="row pb-4">
+          <a href="#">
+            <!-- 광고 배너 외부 링크/이벤트 페이지-->
+            <div classname="row d-flex justify-content-center">
+              <div classname="col-12">
+                <img src="{% static 'assets/img/advertisement/banner1.png' %}" height="125px" width="100%"/>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="row pb-4">
+          <a href="#">
+            <!-- 광고 배너 외부 링크/이벤트 페이지-->
+            <div classname="row d-flex justify-content-center">
+              <div classname="col-12">
+                <img src="{% static 'assets/img/advertisement/banner2.png' %}" height="125px" width="100%"/>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="row">
+          <div class="card col">
+            <!-- <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5> -->
+            <!-- {% if count %} <h4 class="card-header"> 총 {{ count }}명의 친구를 찾았어요! </h4> {% endif %} -->
+            <div class="card-header"></div>
+            <div class="card-body">
+              <div class="table-responsive text-nowrap">
+                <table class="table table-hover">
+                  <tbody class="table-border-bottom-0">
+                    {% for user in users %}
+                      <tr>
+                        <td>
+                          {% if user.userprofile.get_photo_home_url %}
+                            <div class="container">
+                              <a href="{% url 'detail_profile' user.id %}">
+                                <div class="row">
+                                  <div class="col-sm-3">
+                                    <label for="photo_img" class="avatar" tabindex="0">
+                                      <div class="avatar">
+                                        <img src="{{ user.userprofile.get_photo_home_url }}" alt="alt" class="w-px-40 h-auto rounded-circle"/>
+                                      </div>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-9">
+                                    <div class="row">
+                                      <div class="col-4 col-sm-4">
+                                        <img src="{% static 'assets/img/미국 1.png' %}" alt=""/>
+                                        <strong>{{user.name}}</strong>
+                                      </div>
+                                      <div class="col-4 col-sm-4">
+                                        <img src="{% static 'assets/img/mothertongue.png'%}"/>
+                                        <strong>{{user.mother_tongue}}</strong>
+                                      </div>
+                                      <div class="col-4 col-sm-4">
+                                        <img src="{% static 'assets/img/location.png'%}"/>
+                                        <strong>{{user.address_emd}}</strong>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-4 col-sm-12">
+                                        {% if user.userprofile.introduction %}
+                                          {{user.userprofile.introduction}}
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
                             </div>
-                          </label>
-                        </div>
-                        <div class="col-sm-9">
-                          <div class="row">
-                            <div class="col-4 col-sm-4">
-                              <img
-                                src="{% static 'assets/img/미국 1.png' %}"
-                                alt=""
-                              />
-                              <strong>{{user.name}}</strong>
-                            </div>
-                            <div class="col-4 col-sm-4">
-                              <img
-                                src="{% static 'assets/img/mothertongue.png'%}"
-                              /><strong>{{user.mother_tongue}}</strong>
-                            </div>
-                            <div class="col-4 col-sm-4">
-                              <img
-                                src="{% static 'assets/img/location.png'%}"
-                              /><strong>{{user.address_emd}}</strong>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-4 col-sm-12">
-                              {% if user.userprofile.introduction %}
-                              {{user.userprofile.introduction}} {% endif %}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
 
-                  {% else %}
-                  <div class="container">
-                    <a href="{% url 'detail_profile' %}">
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <label for="photo_img" class="avatar" tabindex="0">
-                            <div class="avatar">
-                              <img
-                                src="{% static 'assets/img/ordinary_profile_photo.png' %}"
-                                alt
-                                class="w-px-40 h-auto rounded-circle"
-                              />
+                          {% else %}
+                            <div class="container">
+                              <a href="{% url 'detail_profile' user.id%}">
+                                <div class="row">
+                                  <div class="col-sm-3">
+                                    <label for="photo_img" class="avatar" tabindex="0">
+                                      <div class="avatar">
+                                        <img src="{% static 'assets/img/ordinary_profile_photo.png' %}" alt="alt" class="w-px-40 h-auto rounded-circle"/>
+                                      </div>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-9">
+                                    <div class="row">
+                                      <div class="col-4 col-sm-4">
+                                        <img src="{% static 'assets/img/미국 1.png' %}" alt=""/>
+                                        <strong>{{user.name}}</strong>
+                                      </div>
+                                      <div class="col-4 col-sm-4">
+                                        <img src="{% static 'assets/img/mothertongue.png'%}"/>
+                                        <strong>{{user.mother_tongue}}</strong>
+                                      </div>
+                                      <div class="col-4 col-sm-4">
+                                        <img src="{% static 'assets/img/location.png'%}"/>
+                                        <strong>{{user.address_emd}}</strong>
+                                      </div>
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-4 col-sm-12">
+                                        {% if user.userprofile.introduction %}
+                                          {{ user.userprofile.introduction }}
+                                        {% endif %}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </a>
                             </div>
-                          </label>
-                        </div>
-                        <div class="col-sm-9">
-                          <div class="row">
-                            <div class="col-4 col-sm-4">
-                              <img
-                                src="{% static 'assets/img/미국 1.png' %}"
-                                alt=""
-                              />
-                              <strong>{{user.name}}</strong>
-                            </div>
-                            <div class="col-4 col-sm-4">
-                              <img
-                                src="{% static 'assets/img/mothertongue.png'%}"
-                              /><strong>{{user.mother_tongue}}</strong>
-                            </div>
-                            <div class="col-4 col-sm-4">
-                              <img
-                                src="{% static 'assets/img/location.png'%}"
-                              /><strong>{{user.address_emd}}</strong>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-4 col-sm-12">
-                              {% if user.userprofile.introduction %}
-                              {{user.userprofile.introduction}} {% endif %}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                  {% endif %}
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+                          {% endif %}
+                        </td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- <div class="col-lg-4 col-md-4 order-1"> -->
-  <!-- <div class="row">
-    <div class="col-lg-6 mb-4 order-0">
-      <div class="card">
-        <h6 class="card-header"><strong>약속 캘린더</strong></h6>
-        <div class="card-body">
-          <table id="calendar" class="calendar">
-            <tr>
-              <td><label class="cal-btn" onclick="prevCalendar()"><</label></td>
-              <td align="center" id="tbCalendarYM" colspan="5">YYYY.MM</td>
-              <td><label class="cal-btn" onclick="nextCalendar()">></label></td>
-            </tr>
-            <tr>
-              <td><font color ="#ed2a61">SUN</td>
-              <td>MON</td>
-              <td>TUE</td>
-              <td>WED</td>
-              <td>THU</td>
-              <td>FRI</td>
-              <td><font color ="#3c6ffa">SAT</td>
-            </tr> 
-          </table>
-          <script>buildCalendar();</script>
-        </div>
+    <nav class="wrapper navs">
+      <div class="divs">
+        <a href="{% url 'setprofile' %}" class="nav-links">
+          <i class="fa-solid fa-circle-user fa-2x nav-items"></i>
+          <p class="nav-items-desc" style="font-size: 12px">마이페이지</p>
+        </a>
       </div>
-    </div> -->
-</div>
+      <div class="divs">
+        <a href="{% url 'home' %}" class="nav-links">
+          <i class="fa-solid fa-face-smile fa-2x nav-items"></i>
+          <p class="nav-items-desc" style="font-size: 12px">교류 테마</p>
+        </a>
+      </div>
+      <div class="divs">
+        <a href="{% url 'home' %}" class="nav-links">
+          <i class="fa fa-home fa-2x nav-items"></i>
+          <p class="nav-items-desc" style="font-size: 12px">HOME</p>
+        </a>
+      </div>
+      <div class="divs">
+        <a href="#" class="nav-links">
+          <i class="fa-solid fa-message fa-2x nav-items"></i>
+          <p class="nav-items-desc" style="font-size: 12px">채팅 목록</p>
+        </a>
+      </div>
+      <div class="divs">
+        <a href="#" class="nav-links">
+          <i class="fa-solid fa-users fa-2x nav-items"></i>
+          <p class="nav-items-desc" style="font-size: 12px">만남 내역</p>
+        </a>
+      </div>
+    </nav>
+    <!-- /bottom nav -->
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
 
-{% endblock %}
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- Page JS -->
+    <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
+    <script src="{% static 'js/location_select.js' %}"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  </body>
+</html>
