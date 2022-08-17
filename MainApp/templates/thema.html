@@ -25,7 +25,7 @@
                 <li class="tab" data-tab="tab2">스페셜</li>
             </ul>
             
-            <div id="tab1" class="tabContent">
+            <div id="tab1" class="tabContent current">
                 <p class="themaDes">다양한 대화 주제 중 하나를 선택하여</br> 
                     메이트와 만남 시에 이야기를 나눠보세요!</p>
                 <div class="buttonDiv"><button class="randomButton chatButton">랜덤</button></div>
@@ -38,14 +38,12 @@
                 </ul>
 
                 <div class="detailTabContent">
-                    <table>
-                        <tbody class="detailThema">
-                            <tr><td>Q1. 내 생에 가장 부끄러운 일은?</td></tr>
-                            <tr><td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
-                            <tr><td>Q3. 슬픈 감정을 어떻게 해소하나요?</td></tr>
-                            <tr><td>Q4. 웃다가 울어본 적이 있나요?</td></tr>
-                        </tbody>
-                    </table>
+                    <table><tbody class="detailThema">
+                        <tr><td>Q1. 내 생에 가장 부끄러운 일은?</td></tr>
+                        <tr><td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
+                        <tr><td>Q3. 슬픈 감정을 어떻게 해소하나요?</td></tr>
+                        <tr><td>Q4. 웃다가 울어본 적이 있나요?</td></tr>
+                    </tbody></table>
                 </div>
 
                 <ul class="detailTabs">
@@ -93,6 +91,13 @@
     </body>
     
     <script>
+        var previewFlag = false;
+        $(function() {
+            $('ul.tabs li').click(function(){
+                
+            })
+        });
+
        $(function() {
             $('ul.tabs li').click(function(){
                 var tabId = $(this).attr('data-tab');

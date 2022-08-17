@@ -1,16 +1,211 @@
 <!-- chat/templates/chat/room.html -->
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Chat Room</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+
+    <title>Shall We?</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'assets/img/logo.png' %}"
+    />
+
+    <!--fontAwesome-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/fonts/boxicons.css' %}"
+    />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/chat-room.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/general.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/css/core.css' %}"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/css/theme-default.css' %}"
+      class="template-customizer-theme-css"
+    />
+    <!-- Vendors CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}" />
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{% static 'assets/js/calendar.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+    <script src="{% static 'assets/js/table.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   </head>
   <body>
-    <textarea id="chat-log" cols="100" rows="20"></textarea><br />
+    <div class="header">
+      <i class="fa-solid fa-angle-left angleLeft"></i>
+      <span>채팅</span>
+    </div>
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <div class="row">
+        <div class="container">
+          <!-- <div class="row">
+            <h4 class="fw-bold py-1 mb-3">
+              <span class="fw-light">채팅방</span>
+            </h4>
+          </div> -->
+          <div class="row">
+            <div class="col-12">
+              <div class="card mb-4">
+                <div
+                  class="card-header"
+                  style="background-color: #595cd9"
+                ></div>
+                <div class="card-body">
+                  <div id="chat-body">
+                    <main>
+                      <!-- 고정된 공지사항 영역 -->
+                      <div class="notice-bar">
+                        <div class="container">
+                          <span class="row">멘트를 고정해놓는 곳입니다.</span>
+                          <button class="row btn btn-lg btn-primary">
+                            교류 테마 선택
+                          </button>
+                        </div>
+                        <!-- <i class="icon-bullhorn"></i>
+                        <span>멘트를 고정해놓는 곳입니다.</span>
+                        <i class="icon-down-open-big"></i> -->
+                      </div>
+                      <!-- 채팅 내용 시작 -->
+                      <div class="chat-content">
+                        <!-- 메시지 시작 날짜 -->
+                        <!-- <div class="date-line">
+                          <time datetime="2021-03-29"
+                            >2021년 3월 29일 월요일</time
+                          >
+                        </div> -->
+                        <!-- 채팅 내용 -->
+                        <div class="main-chat" id="canvas">
+                          <!-- <div class="me-chat">
+                            <div class="me-chat-col">
+                              <span class="balloon">Hello! I'm 유준호!</span>
+                            </div>
+                            <time datetime="07:32:00+09:00">오전 7:32</time>
+                          </div>
+                          <div class="friend-chat">
+                            <img
+                              class="profile-img"
+                              src="{% static 'assets/img/Tommy.png' %}"
+                              alt="쀼프로필사진"
+                            />
+                            <div class="friend-chat-col">
+                              <span class="profile-name">Tommy</span>
+                              <span class="balloon"
+                                >안녕하세요 저는 토미입니다!</span
+                              >
+                            </div>
+                            <time datetime="07:35:00+09:00">오전 7:35</time>
+                          </div> -->
+                        </div>
+                      </div>
+                      <!-- 채팅 입력창 -->
+                      <div class="insert-content row">
+                        <!-- <form name="chatform" action="#" method="post"> -->
+                        <!-- <textarea name="chat-log" required></textarea> -->
+                        <input
+                          id="chat-message-input"
+                          class="form-control col-11"
+                          type="text"
+                          size="100"
+                        /><br />
+                        <input
+                          type="submit"
+                          id="chat-message-submit"
+                          class="btn btn-primary col-1"
+                          value="전송"
+                        />
+                        <!-- </form> -->
+                        <div
+                          class="mt-2"
+                          style="
+                            border-top: 1px solid black;
+                            text-align: center;
+                          "
+                        >
+                          <div class="mb-2"></div>
+                          <a href="{% url 'thema' %}"
+                            ><span>만남 약속 잡기</span></a
+                          >
+                        </div>
+                        <!-- 채팅 입력 관련 기능(파일 첨부, 캡쳐 등) -->
+                        <div class="insert-menu">
+                          <i class="icon-smile"></i>
+                          <i class="icon-attach"></i>
+                          <i class="icon-phone"></i>
+                          <i class="icon-calendar-empty"></i>
+                          <i class="icon-camera"></i>
+                        </div>
+                      </div>
+                    </main>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ user.username|json_script:"cur-user"}}
+    <!-- <textarea id="chat-log" cols="100" rows="20"></textarea><br />
     <input id="chat-message-input" type="text" size="100" /><br />
-    <input id="chat-message-submit" type="button" value="Send" />
-    {{ room_name|json_script:"room-name" }}
+    <input id="chat-message-submit" type="button" value="Send" /> -->
+    {{ room.id|json_script:"room-name" }}
     <script>
+      // let canvas = document.getElementById('chat-body')
       const roomName = JSON.parse(
         document.getElementById("room-name").textContent
       );
@@ -21,7 +216,27 @@
 
       chatSocket.onmessage = function (e) {
         const data = JSON.parse(e.data);
-        document.querySelector("#chat-log").value += data.message + "\n";
+        const cur_user = JSON.parse(
+          document.getElementById("cur-user").textContent
+        );
+        if (data.username == cur_user) {
+          let tag =
+            "<div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" +
+            data.message +
+            "</span></div><time datetime='07:32:00+09:00'>오전 7:32</time></div>";
+          $("#canvas").append(tag);
+        } else {
+          let tag =
+            "<div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" +
+            data.name +
+            "</span> <span class='balloon' >" +
+            data.message +
+            "</span > </div> <time datetime='07:35:00+09:00'>오전 7:35</time> </div>";
+          $("#canvas").append(tag);
+        }
+
+        // document.querySelector("#chat-log").value +=
+        //   data.username + ": " + data.message + "\n";
       };
 
       chatSocket.onclose = function (e) {

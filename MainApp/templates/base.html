@@ -106,91 +106,96 @@
 
   <body>
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar">
-      <div class="layout-container">
-        <div class="content-wrapper">
-          <!-- Navbar -->
-          <div class="double-nav">
-            <div class="container row d-flex justify-content-center">
-              <div class="address col-11" id="">
-                <div class="row">
-                  <div class="address-text col-9 d-flex flex-row-reverse">
+    <div class="body-block">
+      <div class="layout-wrapper layout-content-navbar upper-bottom-nav">
+        <div class="layout-container">
+          <div class="content-wrapper">
+            <!-- Navbar -->
+            <div class="double-nav">
+              <div class="container row d-flex justify-content-center">
+                <div class="address col-10" id="">
+                  <div class="row">
+                    <!-- <div class="address-text col-9 d-flex flex-row-reverse">
                     {{user.address_do}} {{user.address_sgg}}
                     {{user.address_emd}}
+                  </div> -->
+                    <div class="address-text col-9 d-flex flex-row-reverse">
+                      서울 전체
+                    </div>
+                    <span class="col-3">∨</span>
                   </div>
-                  <span class="col-3">∨</span>
+                </div>
+                <div class="col-1">
+                  <span id="calendar" ref="{props.carRef}"> 📅 </span>
                 </div>
               </div>
-              <div class="col-1">
-                <span id="calendar" ref="{props.carRef}"> 📅 </span>
-              </div>
-            </div>
-            <!-- navbar-->
-            <nav
-              class="layout-navbar container-xxl navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
-              id="layout-navbar"
-            >
-              <div
-                class="d-flex flex-row align-items-center"
-                id="navbar-collapse"
+              <!-- navbar-->
+              <nav
+                class="layout-navbar container-xxl navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                id="layout-navbar"
               >
-                <a
-                  href="{% url 'search' %}"
-                  class="container align-items-center pt-3"
-                  style="color: #6c7d8f"
+                <div
+                  class="d-flex flex-row align-items-center"
+                  id="navbar-collapse"
                 >
-                  <!-- <a href="/search" class="container"> -->
-                  <div
-                    class="nav-item d-flex flex-row-reverse align-items-center row"
+                  <a
+                    href="{% url 'search' %}"
+                    class="container align-items-center pt-3"
+                    style="color: #6c7d8f"
                   >
-                    <i class="bx bx-search fs-2 lh-0 search col-1 ml-4"></i>
-                    <input
-                      type="text"
-                      class="border-0 invisible-color col-11"
-                      placeholder=""
-                      aria-label=""
-                      size="{75}"
-                    />
-                  </div>
-                </a>
-              </div>
-            </nav>
+                    <!-- <a href="/search" class="container"> -->
+                    <div
+                      class="nav-item d-flex flex-row-reverse align-items-center row"
+                    >
+                      <i class="bx bx-search fs-2 lh-0 search col-1 ml-4"></i>
+                      <input
+                        type="text"
+                        class="border-0 invisible-color col-11"
+                        placeholder=""
+                        aria-label=""
+                        size="{75}"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            <!-- Layout container -->
+            {% block mainbody %} {% endblock %}
           </div>
-          <!-- Layout container -->
-          {% block mainbody %} {% endblock %}
-          <nav class="wrapper navs">
-            <div class="divs">
-              <a href="{% url 'setprofile' %}" class="nav-links">
-                <i class="fa-solid fa-circle-user fa-2x nav-items"></i>
-                <p class="nav-items-desc">마이페이지</p>
-              </a>
-            </div>
-            <div class="divs">
-              <a href="{% url 'home' %}" class="nav-links">
-                <i class="fa-solid fa-comment-smile fa-2x nav-items"></i>
-                <p class="nav-items-desc">교류 테마</p>
-              </a>
-            </div>
-            <div class="divs">
-              <a href="{% url 'home' %}" class="nav-links">
-                <i class="fa fa-home fa-2x nav-items"></i>
-                <p class="nav-items-desc">HOME</p>
-              </a>
-            </div>
-            <div class="divs">
-              <a href="#" class="nav-links">
-                <i class="fa-solid fa-message fa-2x nav-items"></i>
-                <p class="nav-items-desc">채팅 목록</p>
-              </a>
-            </div>
-            <div class="divs">
-              <a href="#" class="nav-links">
-                <i class="fa-solid fa-users fa-2x nav-items"></i>
-                <p class="nav-items-desc">만남 내역</p>
-              </a>
-            </div>
-          </nav>
         </div>
+        <nav class="wrapper navs">
+          <div class="divs">
+            <a href="{% url 'setprofile' %}" class="nav-links">
+              <i class="fa-solid fa-circle-user fa-2x nav-items"></i>
+              <p class="nav-items-desc">마이페이지</p>
+            </a>
+          </div>
+          <div class="divs">
+            <a href="{% url 'home' %}" class="nav-links">
+              <i class="fa-solid fa-comment-smile fa-2x nav-items"></i>
+              <p class="nav-items-desc">교류 테마</p>
+            </a>
+          </div>
+          <div class="divs">
+            <a href="{% url 'home' %}" class="nav-links">
+              <i class="fa fa-home fa-2x nav-items"></i>
+              <p class="nav-items-desc">HOME</p>
+            </a>
+          </div>
+          <div class="divs">
+            <a href="#" class="nav-links">
+              <i class="fa-solid fa-message fa-2x nav-items"></i>
+              <p class="nav-items-desc">채팅 목록</p>
+            </a>
+          </div>
+          <div class="divs">
+            <a href="#" class="nav-links">
+              <i class="fa-solid fa-users fa-2x nav-items"></i>
+              <p class="nav-items-desc">만남 내역</p>
+            </a>
+          </div>
+        </nav>
       </div>
     </div>
     <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
