@@ -86,9 +86,13 @@
     <script src="{% static 'assets/js/table.js' %}"></script>
 </head>
 <body style="background-color: #1C3BD5; width: 100%;">
-    <div class='header'>
-        <i class="fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
-        <span >오늘의 테마</span>
+    <div class="container header">
+        <div class="row">
+            <i class="col-4 fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
+            <div class='col'>
+                <span >오늘의 테마</span>
+            </div>
+        </div>
     </div>
     <div class="profile">
         <div class="card">
@@ -202,35 +206,13 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div id="chat-body">
-                                        <!-- 설정바(최소화, 닫기 버튼 등) -->
-                                        <div class="setting_bar">
-                                            <i class="icon-window-minimize" alt="최소화버튼" title="최소화"></i>
-                                            <i class="icon-window-maximize" alt="최대화버튼" title="최대화"></i>
-                                            <i class="icon-cancel" alt="닫기버튼" title="닫기"></i>
-                                        </div>
-                                        <!-- 알림, 메뉴 기능 -->
-                                        <div class="main-menu">
-                                            <i class="icon-bell" title="알림"></i>
-                                            <i class="icon-ellipsis" title="메뉴"></i>
-                                        </div>
-                                        <!-- 프로필 사진, 프로필명 -->
-                                        <header>
-                                            <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
-                                            <div class="profile-col">
-                                                <span class="profile-name">Tommy</span>
-                                                <div class="sub-menu">
-                                                    <i class="icon-box" title="채팅방 서랍"></i>
-                                                    <i class="icon-search" title="검색"></i>
-                                                </div>
+                                        <div class="row">
+                                            <img class="col-1" src="{% static 'assets/img/Tommy.png' %}" style="width: 40%;">
+                                            <div class="col profile-col">
+                                                <span style="color: black; font-size:20px; font-weight: bold;">Tommy</span>
                                             </div>
-                                        </header>
+                                        </div>
                                         <main>
-                                            <!-- 고정된 공지사항 영역 -->
-                                            <div class="notice-bar">
-                                                <i class="icon-bullhorn"></i>
-                                                <span>멘트를 고정해놓는 곳입니다.</span>
-                                                <i class="icon-down-open-big"></i>
-                                            </div>
                                             <!-- 채팅 내용 시작 -->
                                             <div class="chat-content">
                                                 <!-- 메시지 시작 날짜 -->
@@ -240,32 +222,27 @@
                                                 <!-- 채팅 내용 -->
                                                 <div class="main-chat">
                                                     <div class="me-chat">
-                                                        <div class="me-chat-col">
-                                                            <span class="balloon">Hello! I'm 유준호!</span>
+                                                        <div class="me-chat-col" >
+                                                            <span class="balloon" id="blodblod">in my case</span>
                                                         </div>
                                                         <time datetime="07:32:00+09:00">오전 7:32</time>
                                                     </div>
                                                     <div class="friend-chat">
-                                                        <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
                                                         <div class="friend-chat-col">
-                                                            <span class="profile-name">Tommy</span>
-                                                            <span class="balloon">안녕하세요 저는 토미입니다!</span>
+                                                            <span class="balloon" id="blodblod">립밥을발라요</span>
                                                         </div>
                                                         <time datetime="07:35:00+09:00">오전 7:35</time>
                                                     </div>
                                                     <div class="me-chat">
                                                         <div class="me-chat-col">
-                                                            <span class="balloon">Nice to meet you!</span>
-                                                            <span class="balloon">I also really like cats</span>
+                                                            <span class="balloon"id="blodblod" >*립밤을 바르다</span>
                                                         </div>
                                                         <time datetime="07:36:00+09:00">오전 7:36</time>
                                                     </div>
                                                     <div class="friend-chat">
-                                                        <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
                                                         <div class="friend-chat-col">
-                                                            <span class="profile-name">Tommy</span>
-                                                            <span class="balloon">Oh that sounds goood</span>
-                                                            <span class="balloon">then how about going to cafe in Dongseongro and talking about that??</span>
+                                                            <span class="balloon" >Oh that sounds goood</span>
+                                                            <span class="balloon" >then how about going to cafe in Dongseongro and talking about that??</span>
                                                         </div>
                                                         <time datetime="09:00:00+09:00">오전 9:00</time>
                                                     </div>
@@ -276,10 +253,8 @@
                                                         <time datetime="09:30:00+09:00">오전 9:30</time>
                                                     </div>
                                                     <div class="friend-chat">
-                                                        <img class="profile-img" src="{% static 'assets/img/Tommy.png' %}" alt="쀼프로필사진">
                                                         <div class="friend-chat-col">
-                                                            <span class="profile-name">Tommy</span>
-                                                            <span class="balloon">Good! And let’s meet at 2:00</span>
+                                                            <span class="balloon" >Good! And let’s meet at 2:00</span>
                                                         </div>
                                                         <time datetime="10:15:00+09:00">오전 10:15</time>
                                                     </div>
@@ -287,17 +262,17 @@
                                             </div>
                                             <!-- 채팅 입력창 -->
                                             <div class="insert-content">
-                                                <form name="chatform" action="#" method="post">
-                                                    <textarea name="chat-insert" required></textarea>
-                                                    <input type="submit" class="chat-submit" value="전송">
-                                                </form>
-                                                <!-- 채팅 입력 관련 기능(파일 첨부, 캡쳐 등) -->
-                                                <div class="insert-menu">
-                                                    <i class="icon-smile"></i>
-                                                    <i class="icon-attach"></i>
-                                                    <i class="icon-phone"></i>
-                                                    <i class="icon-calendar-empty"></i>
-                                                    <i class="icon-camera"></i>
+                                                <div class="row">                                                 
+                                                        <img class="col-1" style="padding-left: 1px; padding-right: 1px; " src="{% static 'assets/img/meet/채팅번역.png' %}">
+                                                    
+                                                        <img class="col-1" style="padding-left: 5px; padding-right: 1px; " src="{% static 'assets/img/meet/이모티콘.png' %}">
+                                                    
+                                                    <div class="col-10" style="padding-left: 8px; padding-right: 1px;">
+                                                        <form  name="chatform" action="#" method="post">
+                                                            <textarea name="chat-insert" required></textarea>
+                                                            <input type="submit" class="chat-submit" value="전송">
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </main>
@@ -555,14 +530,31 @@
 
     <!-- Main JS -->
     <script src="{% static 'assets/js/main.js' %}"></script>
-    <script src="{% static 'assets/js/meet.js' %}">
+    <script src="{% static 'assets/js/meet.js' %}"></script>
 
-    // Page JS
     <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
     <script src="{% static 'js/location_select.js' %}"></script>
 
-    // Place this tag in your head or just before your close body tag.
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script>
+        const mm = document.querySelector("#blodblod");
+        
+        function blodblodblod(){
+            const currentWeight = mm.style.fontWeight;
+            if(currentWeight === "900"){
+                mm.style.fontWeight = 400;
+                console.log(currentWeight);
+            }else{
+                mm.style.fontWeight = 900;
+                console.log(currentWeight);
+            }
+        }
+        function init(){
+            mm.style.fontWeight = 400;
+            mm.addEventListener("click",blodblodblod);
+        }
+        init();
+    </script>
 </body>
 </html>
 

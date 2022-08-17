@@ -58,17 +58,20 @@
     <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}" />
     <!-- Helpers -->
     <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
-
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="{% static 'assets/js/calendar.js' %}"></script>
     <script src="{% static 'assets/js/config.js' %}"></script>
     <script src="{% static 'assets/js/table.js' %}"></script>
 </head>
-<body style="background-color: #1C3BD5; width: 100%;">
-    <div class='header'>
-        <i class="fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
-        <span>표현 리마인드</span>
+<body style="background-color: #1C3BD5; width: 100%; ">
+    <div class="container header">
+        <div class="row">
+            <i class="col-4 fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
+            <div class='col'>
+                <span>표현 리마인드</span>
+            </div>
+        </div>
     </div>
     <div class="profile">
         <div class="container card">
@@ -164,5 +167,32 @@
 
     <!-- Place this tag in your head or just before your close body tag.-->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <button id="kk" style=" border-radius:3rem;">누리시오</button>
+    <script>
+        const kk = document.querySelector("#kk");
+ 
+        const BASE_COLOR = "white";
+        const OTHER_COLOR = "#1C3BD5";
+        
+        function handClick(){
+            const currentColor = kk.style.color;
+            if(currentColor === BASE_COLOR){
+                kk.style.color = OTHER_COLOR;
+                kk.style.backgroundColor=BASE_COLOR;
+            }else{
+                kk.style.color = BASE_COLOR;
+                kk.style.backgroundColor=OTHER_COLOR;
+            }
+        }
+        
+        function init(){
+            kk.style.color = OTHER_COLOR;
+            kk.style.backgroundColor=BASE_COLOR;
+            kk.addEventListener("click",handClick);
+        }
+        
+        init();
+
+    </script>
 </body>
 </html>
