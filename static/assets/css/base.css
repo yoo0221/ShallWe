@@ -46,6 +46,8 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
   height: 70px;
 }
 
@@ -68,6 +70,58 @@ a {
   height: 25px;
   line-height: 25px;
   padding: 0px;
+=======
+=======
+>>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
+  height: 40px;
+}
+
+.input-divs {
+  border-radius: 20px 20px 20px 20px/ 20px 20px 20px 20px;
+  border: 1px gray solid;
+  justify-content: start;
+  float: left;
+  width: 78%;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 0;
+  background-color: white;
+}
+
+.input-divs > input {
+  border-radius: 20px 0px 0px 20px/ 20px 0px 0px 20px;
+  border: 0;
+  justify-content: start;
+  float: left;
+  width: 90%;
+  height: 100%;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 8px;
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* .chat-input {
+  width: 95%;
+  border-radius: 20px 20px 20px 20px/ 20px 20px 20px 20px;
+  border: 0px;
+} */
+
+.submit-divs {
+  justify-content: start;
+  float: left;
+  padding-bottom: 2px;
+  width: 10%;
+  border-radius: 0px 20px 20px 0px/ 0px 20px 20px 0px;
+  border: 0px;
+  padding: 0;
+  background-color: white;
+<<<<<<< HEAD
+>>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
+=======
+>>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
 }
 
 .tool-divs {

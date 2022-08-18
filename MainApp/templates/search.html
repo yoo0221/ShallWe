@@ -51,12 +51,50 @@
                   </label>
                 </div>
 
-                <div class="card-body">
+                <div class="card-body filter-location">
                   <h5 class="card-title">동네 범위</h5>
-                  <select class="p-2 mx-1" name="addressDo" id="addressDo" style="border-color: #1c3bd5; color: #1c3bd5"></select>
-                  <select class="selectpicker p-2 mx-1" name="addressSiGunGu" id="addressSiGunGu" style="border-color: #1c3bd5; color: #1c3bd5"></select>
-                  <select class="selectpicker p-2 mx-1" name="addressEMD" id="addressEMD" style="border-color: #1c3bd5; color: #1c3bd5"></select>
+                  <button type="button" class="btn btn-outline-primary" id="open-select-location-modal" data-bs-toggle="modal" data-bs-target="#select-location-modal">
+                    지역을 선택해 주세요.
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal fade" id="select-location-modal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                      <div class="modal-content overflow-overlay">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">동네 범위</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                          </button>
+                        </div>
+                        <div class="modal-body container select-address">
+                          <div class="row">
+                            <div class="col-2 px-0 text-center">시/도</div>
+                            <div class="col-5 px-0 text-center">시/군/구</div>
+                            <div class="col-5 px-0 text-center">동/읍/면</div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                            <ul class="list-group px-0 col-2 text-center rounded-0 border-end overflow-overlay h-100">
+                            </ul>
+                            <ul class="list-group px-0 col-5 text-center rounded-0 border-end overflow-overlay h-100 d-none">
+                            </ul>
+                            <ul class="list-group px-0 col-5 text-center rounded-0 border-0 overflow-overlay h-100 d-none">
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                          <button type="button" class="btn btn-primary" id="finishSelectLocation">확인</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+                
+                <script>
+
+                </script>
+
 
                 <div class="card-body filter-selected">
                   <button type="submit" class="btn btn-primary">검색</button>

@@ -5,11 +5,11 @@
 }
 
 body {
-    background-color: #1C3BD5;
     width: 100%;
 }
 
 .header {
+    background-color: #1C3BD5;
     padding: 1rem;
     font-weight: bold;
     color: #FFF;
@@ -91,7 +91,7 @@ body {
     border-radius: 50%;
 }
 
-.sexIcon {
+.sexIcon, .Temparature {
     width: 0.5rem;
 }
 
