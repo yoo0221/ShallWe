@@ -1,209 +1,134 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block mainbody %}
 
-  <div class="container-xxl flex-grow-1 container-p-y">
-    <div class="row">
-      <div class="col-lg-6 mb-4 order-0">
-        <div class="card accordion-item">
-          <h2 class="accordion-header p-2" id="headingOne">
-            <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="true" aria-controls="accordionOne">
-              <strong>필터 설정</strong>
-            </button>
-          </h2>
-          <div id="accordionOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div class="card-body accordion-body">
-              <form action="{% url 'filtered' %}" method="post">
-                {% csrf_token %}
-                <div class="card-body filter-age">
-                  <h5 class="card-title">연령대</h5>
-                  <div role="group">
-                    <input type="hidden" name="filter-age20" value="0"/>
-                    <input type="checkbox" name="filter-age20" value="20" class="btn-check" id="filter-age20" autocomplete="off"/>
-                    <label class="btn btn-outline-primary" for="filter-age20">
-                      20대
-                    </label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}" />
+  <link
+    rel="stylesheet"
+    href="{% static 'assets/vendor/css/core.css' %}"
+    class="template-customizer-core-css"
+  />
+  <link
+    rel="stylesheet"
+    href="{% static 'assets/vendor/css/theme-default.css' %}"
+    class="template-customizer-theme-css"
+  />
+  <link
+    rel="icon"
+    type="image/x-icon"
+    href="{% static 'assets/img/logo.png' %}"
+  />
+    
+  <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}"/>
+  <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}"/>
+</head>
 
-                    <input type="hidden" name="filter-age30" value="0"/>
-                    <input type="checkbox" name="filter-age30" value="30" class="btn-check" id="filter-age30" autocomplete="off"/>
-                    <label class="btn btn-outline-primary" for="filter-age30">
-                      30대
-                    </label>
+<body>
+  <div class="themaCard">
+    <!-- <div class="searchHeader">
+      <i class="fa-solid fa-angle-left angleLeft"></i>
+      serach box
+    </div> -->
 
-                    <input type="hidden" name="filter-age40" value="0"/>
-                    <input type="checkbox" name="filter-age40" value="40" class="btn-check" id="filter-age40" autocomplete="off"/>
-                    <label class="btn btn-outline-primary" for="filter-age40">
-                      40대 이상
-                    </label>
-                  </div>
+    <hr>
+
+    <p class="searchTitle">메이트 필터</p>
+    
+    <form action="{% url 'filtered' %}" method="post">
+      <div class="filter-sex">
+        <p class="searchDes">성별</p>
+        <input type="hidden" name="filter-sex" value="x"/>
+        <label class="radio-btn">
+          <input type="radio" name="filter-sex" value="남"/>
+          <span>남자</span>
+        </label>
+        <label class="radio-btn">
+          <input type="radio" name="filter-sex" value="여"/>
+          <span>여자</span>
+        </label>
+      </div>
+
+      <div class="filter-age">
+        <p class="searchDes">나이</p>
+        {% csrf_token %}
+        <div role="group">
+          <input type="hidden" name="filter-age20" value="0"/>
+          <input type="checkbox" name="filter-age20" value="20" class="btn-check" id="filter-age20" autocomplete="off"/>
+          <label class="btn btn-outline-primary" for="filter-age20">
+            20대
+          </label>
+
+          <input type="hidden" name="filter-age30" value="0"/>
+          <input type="checkbox" name="filter-age30" value="30" class="btn-check" id="filter-age30" autocomplete="off"/>
+          <label class="btn btn-outline-primary" for="filter-age30">
+            30대
+          </label>
+
+          <input type="hidden" name="filter-age40" value="0"/>
+          <input type="checkbox" name="filter-age40" value="40" class="btn-check" id="filter-age40" autocomplete="off"/>
+          <label class="btn btn-outline-primary" for="filter-age40">
+            40대 이상
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-location">
+        <p class="searchDes">동네 범위</p>
+        <button type="button" class="locationButton" id="open-select-location-modal" data-bs-toggle="modal" data-bs-target="#select-location-modal">
+          지역을 선택해 주세요.
+          <i class="fa-solid fa-caret-down downIcon"></i>
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="select-location-modal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content overflow-overlay">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">동네 범위</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                </button>
+              </div>
+              <div class="modal-body container select-address">
+                <div class="row">
+                  <div class="col-2 px-0 text-center">시/도</div>
+                  <div class="col-5 px-0 text-center">시/군/구</div>
+                  <div class="col-5 px-0 text-center">동/읍/면</div>
                 </div>
-
-                <div class="card-body filter-sex">
-                  <h5 class="card-title">성별</h5>
-                  <input type="hidden" name="filter-sex" value="x"/>
-                  <label class="radio-btn">
-                    <input type="radio" name="filter-sex" value="남"/>
-                    <span>남</span>
-                  </label>
-                  <label class="radio-btn">
-                    <input type="radio" name="filter-sex" value="여"/>
-                    <span>여</span>
-                  </label>
-                </div>
-
-                <div class="card-body filter-location">
-                  <h5 class="card-title">동네 범위</h5>
-                  <button type="button" class="btn btn-outline-primary" id="open-select-location-modal" data-bs-toggle="modal" data-bs-target="#select-location-modal">
-                    지역을 선택해 주세요.
-                  </button>
-                  
-                  <!-- Modal -->
-                  <div class="modal fade" id="select-location-modal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-                      <div class="modal-content overflow-overlay">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">동네 범위</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                          </button>
-                        </div>
-                        <div class="modal-body container select-address">
-                          <div class="row">
-                            <div class="col-2 px-0 text-center">시/도</div>
-                            <div class="col-5 px-0 text-center">시/군/구</div>
-                            <div class="col-5 px-0 text-center">동/읍/면</div>
-                          </div>
-                          <hr>
-                          <div class="row">
-                            <ul class="list-group px-0 col-2 text-center rounded-0 border-end overflow-overlay h-100">
-                            </ul>
-                            <ul class="list-group px-0 col-5 text-center rounded-0 border-end overflow-overlay h-100 d-none">
-                            </ul>
-                            <ul class="list-group px-0 col-5 text-center rounded-0 border-0 overflow-overlay h-100 d-none">
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                          <button type="button" class="btn btn-primary" id="finishSelectLocation">확인</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <script>
-
-                </script>
-
-
-                <div class="card-body filter-selected">
-                  <button type="submit" class="btn btn-primary">검색</button>
+                <hr>
+                <div class="row">
+                  <ul class="list-group px-0 col-2 text-center rounded-0 border-end overflow-overlay h-100">
+                  </ul>
+                  <ul class="list-group px-0 col-5 text-center rounded-0 border-end overflow-overlay h-100 d-none">
+                  </ul>
+                  <ul class="list-group px-0 col-5 text-center rounded-0 border-0 overflow-overlay h-100 d-none">
+                  </ul>
                 </div>
               </div>
-            </form>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                <button type="button" class="btn btn-primary" id="finishSelectLocation">확인</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-6 order-1">
-        <div class="card col">
-          <!-- <h5 class="card-header"><strong>새 친구를 찾아보세요!</strong></h5> -->
-          {% if count %}
-            <h4 class="card-header">
-              총
-              {{ count }}명의 친구를 찾았어요!
-            </h4>
-          {% endif %}
-          <div class="table-responsive text-nowrap">
-            <table class="table table-hover">
-              <tbody class="table-border-bottom-0">
-                {% for user in result %}
-                  <tr>
-                    <td>
-                      {% if user.userprofile.get_photo_home_url %}
-                        <div class="container">
-                          <a href="{% url 'detail_profile' user.id %}">
-                            <div class="row">
-                              <div class="col-sm-3">
-                                <label for="photo_img" class="avatar" tabindex="0">
-                                  <div class="avatar">
-                                    <img src="{{ user.userprofile.get_photo_home_url }}" alt="alt" class="w-px-40 h-auto rounded-circle"/>
-                                  </div>
-                                </label>
-                              </div>
-                              <div class="col-sm-9">
-                                <div class="row">
-                                  <div class="col-4 col-sm-4">
-                                    <img src="{% static 'assets/img/미국 1.png' %}" alt="">
-                                    <strong>{{user.name}}</strong>
-                                  </div>
-                                  <div class="col-4 col-sm-4">
-                                    <img src="{% static 'assets/img/mothertongue.png'%}">
-                                    <strong>{{user.mother_tongue}}</strong>
-                                  </div>
-                                  <div class="col-4 col-sm-4">
-                                    <img src="{% static 'assets/img/location.png'%}">
-                                    <strong>{{user.address_emd}}</strong>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-4 col-sm-12">
-                                    {% if user.userprofile.introduction %}
-                                      {{user.userprofile.introduction}}
-                                    {% endif %}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-
-                      {% else %}
-                        <div class="container">
-                          <a href="{% url 'detail_profile' user.id %}">
-                            <div class="row">
-                              <div class="col-sm-3">
-                                <label for="photo_img" class="avatar" tabindex="0">
-                                  <div class="avatar">
-                                    <img src="{% static 'assets/img/ordinary_profile_photo.png' %}" alt="alt" class="w-px-40 h-auto rounded-circle"/>
-                                  </div>
-                                </label>
-                              </div>
-                              <div class="col-sm-9">
-                                <div class="row">
-                                  <div class="col-4 col-sm-4">
-                                    <img src="{% static 'assets/img/미국 1.png' %}" alt="">
-                                    <strong>{{user.name}}</strong>
-                                  </div>
-                                  <div class="col-4 col-sm-4">
-                                    <img src="{% static 'assets/img/mothertongue.png'%}">
-                                    <strong>{{user.mother_tongue}}</strong>
-                                  </div>
-                                  <div class="col-4 col-sm-4">
-                                    <img src="{% static 'assets/img/location.png'%}">
-                                    <strong>{{user.address_emd}}</strong>
-                                  </div>
-                                </div>
-                                <div class="row">
-                                  <div class="col-4 col-sm-12">
-                                    {% if user.userprofile.introduction %}
-                                      {{user.userprofile.introduction}}
-                                    {% endif %}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      {% endif %}
-                    </td>
-                  </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="filter-selected">
+        <button type="submit" class="serachButton">검색</button>
       </div>
-    </div>
+    </form>
   </div>
-{% endblock %}
+
+
+  <!-- js -->
+  <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+  <script src="{% static 'js/location_select.js' %}"></script>
+  <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+</body>
+</html>
