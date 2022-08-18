@@ -40,12 +40,54 @@ a {
   padding-top: 5px;
 }
 
+.sender-wrapper {
+  background: lightgray;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+}
+
+.input-divs {
+  border-radius: 70%;
+  text-align: center;
+  justify-content: center;
+  float: left;
+  width: 60%;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 15px;
+}
+
+.submit-divs {
+  text-align: center;
+  justify-content: center;
+  float: left;
+  width: 10%;
+  height: 25px;
+  line-height: 25px;
+  padding: 0px;
+}
+
+.tool-divs {
+  text-align: center;
+  justify-content: center;
+  float: left;
+  width: 10%;
+  height: 25px;
+  line-height: 25px;
+  padding: 0px;
+}
+
 .divs {
   text-align: center;
+  justify-content: center;
   float: left;
   width: 20%;
   height: 25px;
   line-height: 25px;
+  padding: 0px;
 }
 
 .nav-links {

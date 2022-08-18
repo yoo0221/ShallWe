@@ -12,7 +12,8 @@
 </head>
 <body>
     <div class='header specialThemaHeader'>
-        <a href="{% url 'thema' %}"><i class="fa-solid fa-angle-left angleLeft"></i></a>
+        {% comment %} <a href="{% url 'thema' %}"><i class="fa-solid fa-angle-left angleLeft"></i></a> {% endcomment %}
+        <a href="javascript:history.go(-1);"><i class="fa-solid fa-angle-left angleLeft"></i></a>
         <span>미리 보기</span>
     </div>
 

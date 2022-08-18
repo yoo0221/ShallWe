@@ -1,149 +1,115 @@
 {% load static %}
 <!DOCTYPE html>
 
-<html
-    lang="en"
-    class="light-style layout-menu-fixed"
-    dir="ltr"
-    data-theme="theme-default"
-    data-assets-path="{% static 'assets/' %}"
-    data-template="vertical-menu-template-free"
->
-<head>
-    <meta charset="utf-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="{% static 'assets/' %}" data-template="vertical-menu-template-free">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
 
     <title>Shall We?</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content=""/>
 
     <!--fontAwesome-->
-    <link 
-        rel="stylesheet" 
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-        rel="stylesheet"
-        href="{% static 'assets/vendor/fonts/boxicons.css' %}"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}"/>
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/chat-room.css' %}">
     <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
-    <link
-        rel="stylesheet"
-        href="{% static 'assets/vendor/css/core.css' %}"
-        class="template-customizer-core-css"
-    />
-    <link
-        rel="stylesheet"
-        href="{% static 'assets/vendor/css/theme-default.css' %}"
-        class="template-customizer-theme-css"
-    />
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css"/>
     <!-- Vendors CSS -->
-    <link
-        rel="stylesheet"
-        href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"
-    />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"/>
 
-    <link
-        rel="stylesheet"
-        href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"
-    />
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"/>
+    <style>
+      #inmycase:focus{
+       outline-color: white;
+      }
+    </style>
     <!-- Page CSS -->
-    
-    <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}"/>
     <!-- Helpers -->
     <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <!--? Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
     <script src="{% static 'assets/js/calendar.js' %}"></script>
     <script src="{% static 'assets/js/config.js' %}"></script>
     <script src="{% static 'assets/js/table.js' %}"></script>
-</head>
-<body style="background-color: #1C3BD5; width: 100%; ">
-    <div class="container header">
-        <div class="row">
-            <i class="col-4 fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
-            <div class='col'>
-                <span>표현 리마인드</span>
-            </div>
-        </div>
+  </head>
+
+  <body style="background-color: #1C3BD5; width: 100%; ">
+    <div style="padding: 1rem; font-weight: bold; color: #FFF; overflow: hidden; text-align: center;">
+      <i class="fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
+      <span>표현 리마인드</span>
     </div>
+  <div>
     <div class="profile">
-        <div class="container card">
-            <div class="row mt-3" style="color:black;">
-                <p class="col">◀ 8월 20일 ▶</p>
-                <p class="col-2"></p>
-                <div class="col">
-                    <button
-                        type="button"
-                        style="border: 0px; background-color: white;"
-                        data-bs-toggle="popover"
-                        data-bs-offset="0,14"
-                        data-bs-placement="bottom"
-                        data-bs-html="true"
-                        data-bs-content="<p style='font-size:13px;'>친구와의 채팅에서 내가 <span style='font-weight:bold;'>더블 클릭한 메시지</span>들을 모아서 기록할 수 있어요.</p>"
-                    >
-                    <img style="width: 15px;" src="{% static 'assets/img/meet/툴팁.png' %}">
-                    <span style="font-size: 13px;">표현 리마인드</span>
-                    </button>
-                </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-4">
-                    <img style="width: 100px; height: 100px; border-radius: 50%;" src="{% static 'assets/img/Tommy.jpg' %}">
-                </div>
-                <div class="col">
-                    <p class="mt-1" style="font-size: 25px;font-weight: bold; color: black;">Tommy</p>
-                    <a href="{% url 'promise' %}">
-                        <img style="width: 70%;" src="{% static 'assets/img/meet/만남 내역 보기.png' %}" >
-                    </a>
-                </div>
-                <div class="col-2">
-                    <a href="{% url 'chat' %}">
-                    <img  src="{% static 'assets/img/meet/채팅 hover.png' %}">
-                    </a>
-                </div>
-            </div>
-            <div class="row mt-3 mx-1">
-                <button class="col-2" style="width:60px; border: 1px solid #3250E9; color:#3250E9; background-color:white; border-radius:0.5rem">유행</button>
-                <span class="col" style="color: black;">Q1. 깻잎 논쟁을 아시나요?</span>
-            </div>
-            <div class="row mt-3" >
-                <div class="col" style="border: 1px solid gray; color: black;  border-left: 0px; border-right: 0px;">
-                    <p class="mt-2" style="font-size: 20px;">let me see</p>
-                </div>
-                <div class="col-7" style="border: 1px solid gray; border-right: 0px;">
-                    <input class="mt-2" type="text" name="title" style="width: 150px; border: 0px;">
-                    <img class="mt-3" style="float: right;" src="{% static 'assets/img/meet/pencil 1.png' %}">
-                </div>
-            </div>
-            <div class="row" >
-                <div class="col" style="border: 1px solid gray; color: black; border-left: 0px; border-right: 0px; border-top: 0px;">
-                    <p class="mt-2" style="font-size: 20px;">in my case</p>
-                </div>
-                <div class="col-7" style="border: 1px solid gray; border-right: 0px; border-top: 0px;">
-                    <input class="mt-2" type="text" name="title" style="width: 150px; border: 0px;">
-                    <img class="mt-3" style="float: right;" src="{% static 'assets/img/meet/pencil 1.png' %}">
-                </div>
-            </div>
-            <div class="row mt-3">
-                <p style="font-weight: bold; font-size: 20px; color: black;">메모장</p>
-            </div>
-            <div class="row mb-3">
-                <form name="chatform" action="#" method="post">
-                    <textarea
-                    name="chat-insert" 
-                    required 
-                    style="height: 250px; border: 1px solid gray; color: gray; border-radius: 0.3rem;"
-                    placeholder="기억하고 싶은 내용, 배운 표현 등을 자유롭게 기록해 보세요."></textarea>
-                </form>
-            </div>
-        </div> 
+      <div class="container card">
+        <div class="row mt-3" style="color:black;">
+          <p class="col">
+            <span style='color: #1C3BD5; display: inline;'>◀</span>
+            8월 20일
+            <span style='color: #1C3BD5; display: inline;'>▶</span>
+          </p>
+          <p class="col-2"></p>
+          <div class="col">
+            <button type="button" style="border: 0px; background-color: white;" data-bs-toggle="popover" data-bs-offset="0,14" data-bs-placement="bottom" data-bs-html="true" data-bs-content="<p style='font-size:13px;' class='mb-0 mr-4'>친구와의 채팅에서 내가 <span style='font-weight:bold;'>더블 클릭한 메시지</span>들을 모아서 기록할 수 있어요.</p>">
+              <img style="width: 15px;" src="{% static 'assets/img/meet/툴팁.png' %}">
+              <span style="font-size: 13px;">표현 리마인드</span>
+            </button>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-4">
+            <img style="width: 100px; height: 100px; border-radius: 50%;" src="{% static 'assets/img/Tommy.jpg' %}">
+          </div>
+          <div class="col">
+            <p class="mt-1" style="font-size: 25px;font-weight: bold; color: black;">Tommy</p>
+            <a href="{% url 'promise' %}">
+              <img style="width: 70%;" src="{% static 'assets/img/meet/만남 내역 보기.png' %}">
+            </a>
+          </div>
+          <div class="col-2">
+            <a href="{% url 'chat' %}">
+              <img src="{% static 'assets/img/meet/채팅 hover.png' %}">
+            </a>
+          </div>
+        </div>
+        <div class="row mt-3 mx-1">
+          <button class="col-2" style="width:60px; border: 1px solid #3250E9; color:#3250E9; background-color:white; border-radius:0.5rem">유행</button>
+          <span class="col" style="color: black;">Q1. 깻잎 논쟁을 아시나요?</span>
+        </div>
+        <div class="row mt-3">
+          <div class="col" style="border: 1px solid gray; color: black;  border-left: 0px; border-right: 0px;">
+            <p class="mt-2" style="font-size: 20px;">let me see</p>
+          </div>
+          <div class="col-7" style="border: 1px solid gray; border-right: 0px;">
+            <input id="inmycase" class="mt-2" type="text" name="title" style="width: 150px; border: 0px;  font-size: 20px;">
+            <img class="mt-3" style="float: right;" src="{% static 'assets/img/meet/pencil 1.png' %}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col" style="border: 1px solid gray; color: black; border-left: 0px; border-right: 0px; border-top: 0px;">
+            <p class="mt-2" style="font-size: 20px;">in my case</p>
+          </div>
+          <div class="col-7" style="border: 1px solid gray; border-right: 0px; border-top: 0px;">
+            <input id="inmycase" class="mt-2" type="text" name="title" style="width: 150px; border: 0px;  font-size: 20px;">
+            <img class="mt-3" style="float: right;" src="{% static 'assets/img/meet/pencil 1.png' %}">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <p style="font-weight: bold; font-size: 20px; color: black;">메모장</p>
+        </div>
+        <div class="row mb-3">
+          <form name="chatform" action="#" method="post">
+            <textarea name="chat-insert" required="required" style="height: 250px; border: 1px solid gray; color: gray; border-radius: 0.3rem;" placeholder="기억하고 싶은 내용, 배운 표현 등을 자유롭게 기록해 보세요."></textarea>
+          </form>
+        </div>
+      </div>
     </div>
     <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
     <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
@@ -160,39 +126,38 @@
     <script src="{% static 'assets/js/main.js' %}"></script>
     <script src="{% static 'assets/js/meet.js' %}"></script>
 
-    <!-- Page JS  -->
+    <!-- Page JS -->
     <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
     <script src="{% static 'js/location_select.js' %}"></script>
     <script src="{% static 'assets/js/ui-popover.js' %}"></script>
 
     <!-- Place this tag in your head or just before your close body tag.-->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <button id="kk" style=" border-radius:3rem;">누리시오</button>
+    <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
     <script>
-        const kk = document.querySelector("#kk");
- 
-        const BASE_COLOR = "white";
-        const OTHER_COLOR = "#1C3BD5";
-        
-        function handClick(){
-            const currentColor = kk.style.color;
-            if(currentColor === BASE_COLOR){
-                kk.style.color = OTHER_COLOR;
-                kk.style.backgroundColor=BASE_COLOR;
-            }else{
-                kk.style.color = BASE_COLOR;
-                kk.style.backgroundColor=OTHER_COLOR;
-            }
-        }
-        
-        function init(){
-            kk.style.color = OTHER_COLOR;
-            kk.style.backgroundColor=BASE_COLOR;
-            kk.addEventListener("click",handClick);
-        }
-        
-        init();
+      const kk = document.querySelector("#kk");
 
+      const BASE_COLOR = "white";
+      const OTHER_COLOR = "#1C3BD5";
+
+      function handClick() {
+        const currentColor = kk.style.color;
+        if (currentColor === BASE_COLOR) {
+          kk.style.color = OTHER_COLOR;
+          kk.style.backgroundColor = BASE_COLOR;
+        } else {
+          kk.style.color = BASE_COLOR;
+          kk.style.backgroundColor = OTHER_COLOR;
+        }
+      }
+
+      function init() {
+        kk.style.color = OTHER_COLOR;
+        kk.style.backgroundColor = BASE_COLOR;
+        kk.addEventListener("click", handClick);
+      }
+
+      init();
     </script>
-</body>
+  </body>
+
 </html>
