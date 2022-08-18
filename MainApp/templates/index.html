@@ -65,7 +65,8 @@
             <div class="address-text col-9 d-flex flex-row-reverse">
               서울 전체
             </div>
-            <span class="col-3">∨</span>
+            <i class='pt-1 col-3 fa-solid fa-angle-down'></i>
+            {% comment %} <span class="col-3">∨</span> {% endcomment %}
           </div>
         </div>
         <div class="col-1">
@@ -173,7 +174,7 @@
       </div>
       <div class="divs">
         <a href="{% url 'home' %}" class="nav-links">
-          <i class="fa fa-home fa-2x nav-items"></i>
+          <i class="fa fa-home fa-2x nav-items" style='color: #1C3BD5;'></i>
           <p class="nav-items-desc" style="font-size: 12px">HOME</p>
         </a>
       </div>
@@ -184,7 +185,7 @@
         </a>
       </div>
       <div class="divs">
-        <a href="#" class="nav-links">
+        <a href="{% url 'themaselect' %}" class="nav-links">
           <i class="fa-solid fa-users fa-2x nav-items"></i>
           <p class="nav-items-desc" style="font-size: 12px">만남 내역</p>
         </a>
