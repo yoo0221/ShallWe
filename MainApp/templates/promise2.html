@@ -31,10 +31,11 @@
             <div id="tab1" class="tabContent current">
                 <p class="themaDes">예정 약속 1건</p>
                 <hr style="width:100%; height:2px; border:none;background-color:rgba(108, 108, 108, 0.3);">
-                <div class="col-2">
-                    <a href="{% url 'chat' %}">
+                
+            <div class="col-2">
+                <a href="{% url 'home' %}">
                     <img  style="float:right; margin-right:15px; margin-top:10px;" src="{% static 'assets/img/채팅파랑.png' %}">
-                    </a>
+                </a>
                 </div>
                 <br>
 
@@ -62,7 +63,7 @@
                             
                         </div>
                         <div class="row mt-3 mx-1"> 
-                                <a href="{% url 'chat' %}">
+                                <a href="{% url 'home' %}">
                                     <b class="col" style="color: #3250E9; font-size: 20px; ">테마 보기</b>
                                     <img  style="float:center; margin-left:5px; margin-top:10px;" src="{% static 'assets/img/검색.png' %}">
                                 </a>
@@ -85,57 +86,74 @@
             </div>
 
             <div id="tab2" class="tabContent">
-                    <button class="col-2" style="width:60px; border: 1px solid #3250E9; color:#3250E9; background-color:white; border-radius:0.5rem">유행</button>
-                    <span class="col" style="color: black;">Q1. 깻잎 논쟁을 아시나요?</span>
+                <button class="themaDes" style="width:60px; border: 1px solid #3250E9; color:#3250E9; background-color:white; border-radius:0.5rem">유행</button>
+                <span class="themaDes" style="color: black;">Q1. 깻잎 논쟁을 아시나요?</span>
             </div>
                     
-                        <div class="bottom_menu">
-                            <div>
-                                <img src="{% static 'assets/img/프로필.png' %}">
-                                <div style="line-height:20%;">
-                                    <br>
-                                </div> 
-                                <p style="font-size: 12px; ">마이페이지</p>
-                            </div>
-                            <div>
-                                <img src="{% static 'assets/img/교류테마.png' %}">
-                                <div style="line-height:20%;">
-                                    <br>
-                                </div> 
-                                <p style="font-size: 12px; ">교류 테마</p>
-                            </div>
-                            <div>
-                                <div style="line-height:25%;">
-                                    <br>
-                                </div> 
-                                <img src="{% static 'assets/img/home.png' %}">
-                                <div style="line-height:39%;">
-                                    <br>
-                                </div> 
-                                <p style="font-size: 12px; ">HOME</p>
-                            </div>
-                            <div>
-                                <div style="line-height:25%;">
-                                    <br>
-                                </div> 
-                                <img src="{% static 'assets/img/채팅회색.png' %}">
-                                <div style="line-height:15%;">
-                                    <br>
-                                </div> 
-                                <p style="font-size: 12px; ">채팅 목록</p>
-                            </div>
-                            <div>
-                                <div style="line-height:45%;">
-                                    <br>
-                                </div> 
-                                <img src="{% static 'assets/img/만남내역파랑.png' %}">
-                                <div style="line-height:50%;">
-                                    <br>
-                                </div> 
-                                <p style="font-size: 12px; ">만남 내역</p>
-                            </div>
-                        </div>
-                      
-                    
+            <div class="bottom_menu">
+                <div>
+                    <img src="{% static 'assets/img/프로필.png' %}">
+                    <div style="line-height:20%;">
+                        <br>
+                    </div> 
+                    <p style="font-size: 12px; ">마이페이지</p>
+                </div>
+                <div>
+                    <img src="{% static 'assets/img/교류테마.png' %}">
+                    <div style="line-height:20%;">
+                        <br>
+                    </div> 
+                    <p style="font-size: 12px; ">교류 테마</p>
+                </div>
+                <div>
+                    <div style="line-height:25%;">
+                        <br>
+                    </div> 
+                    <img src="{% static 'assets/img/home.png' %}">
+                    <div style="line-height:39%;">
+                        <br>
+                    </div> 
+                    <p style="font-size: 12px; ">HOME</p>
+                </div>
+                <div>
+                    <div style="line-height:25%;">
+                        <br>
+                </div> 
+                <img src="{% static 'assets/img/채팅회색.png' %}">
+                <div style="line-height:15%;">
+                    <br>
+                </div> 
+                <p style="font-size: 12px; ">채팅 목록</p>
+            </div>
+            <div>
+                <div style="line-height:45%;">
+                    <br>
+                </div> 
+                <img src="{% static 'assets/img/만남내역파랑.png' %}">
+                <div style="line-height:50%;">
+                    <br>
+                </div> 
+                <p style="font-size: 12px; ">만남 내역</p>
+            </div>
+        </div>
 </body>
+
+<script>
+    var previewFlag = false;
+    $(function () {
+    $('ul.tabs li').click(function () {})
+    });
+    
+    $(function () {
+    $('ul.tabs li').click(function () {
+      var tabId = $(this).attr('data-tab');
+    
+      $('ul.tabs li').removeClass('current');
+      $('.tabContent').removeClass('current');
+    
+      $(this).addClass('current');
+      $("#" + tabId).addClass('current');
+    })
+    });
+</script>
 </html>
