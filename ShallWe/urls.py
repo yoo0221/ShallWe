@@ -31,7 +31,7 @@ urlpatterns = [
     path('setprofile/', views.setprofile, name='setprofile'),    
     path('themaselect/', views.themaselect, name='themaselect'),   
     path('logout/',accviews.logout, name='logout'),
-    path('thema/', views.thema, name='thema'),   
+    path('thema/<int:user_id>/', views.thema, name='thema'),   
     path('promise/', views.promise, name='promise'),
     path('meet/', views.meet, name="meet"), 
     path('register/complete', accviews.register_complete, name="register_complete"),
@@ -45,6 +45,8 @@ urlpatterns = [
     path('preview/', views.preview, name="preview"), 
     path('index/', views.index, name="index"),
     path('chatlist/', views.chatlist, name='chatlist'),
+    path('themaafter/<int:user_id>', views.themaafter, name='themaafter'),
+    path('confirm/', views.confirm, name="confirm"),
 ]
 
 if settings.DEBUG:

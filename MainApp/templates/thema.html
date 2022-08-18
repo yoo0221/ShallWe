@@ -2,112 +2,135 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
-        <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}" />
-        <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}" />
 
-        <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
-    </head>
-    <body>
-        <div class="header">
-            <i class="fa-solid fa-angle-left angleLeft"></i>
-            <span>교류 테마 선택</span>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}"/>
+    <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}"/>
 
-        <div class="themaCard">
-            <ul class="tabs">
-                <li class="tab current" data-tab="tab1">일반</li>
-                <li class="tab" data-tab="tab2">스페셜</li>
-            </ul>
-            
-            <div id="tab1" class="tabContent current">
-                <p class="themaDes">다양한 대화 주제 중 하나를 선택하여</br> 
-                    메이트와 만남 시에 이야기를 나눠보세요!</p>
-                <div class="buttonDiv"><button class="randomButton chatButton">랜덤</button></div>
-                
-                <ul class="detailTabs">
-                    <li class="detailTab detailCurrent">감정</li>
-                    <li class="detailTab">성격</li>
-                    <li class="detailTab">연애</li>
-                    <li class="detailTab">일상</li>
-                </ul>
+    <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+  </head>
 
-                <div class="detailTabContent">
-                    <table><tbody class="detailThema">
-                        <tr><td>Q1. 내 생에 가장 부끄러운 일은?</td></tr>
-                        <tr><td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td></tr>
-                        <tr><td>Q3. 슬픈 감정을 어떻게 해소하나요?</td></tr>
-                        <tr><td>Q4. 웃다가 울어본 적이 있나요?</td></tr>
-                    </tbody></table>
-                </div>
+  <body>
+    <div class="header">
+      <i class="fa-solid fa-angle-left angleLeft"></i>
+      <span>교류 테마 선택</span>
+    </div>
 
-                <ul class="detailTabs">
-                    <li class="detailTab detailCurrent">유행</li>
-                    <li class="detailTab">문화</li>
-                    <li class="detailTab">동물</li>
-                    <li class="detailTab">추억</li>
-                </ul>
+    <div class="themaCard">
+      <ul class="tabs">
+        <li class="tab current" data-tab="tab1">일반</li>
+        <li class="tab" data-tab="tab2">스페셜</li>
+      </ul>
 
-                <div class="detailTabContent">
-                    <table><tbody class="detailThema">
-                        <tr><td onclick="location.href ='{% url 'preview' %}'">
-                            <span>Q1. 깻잎 논쟁을 아시나요?</span>
-                            <span class="detailThemaBadge">+2</span>
-                        </td></tr>
-                        <tr><td>Q2. 토마토맛 토 vs 토맛 토마토</td></tr>
-                        <tr><td>Q3. 최근 가장 킹받았던 순간은?</td></tr>
-                        <tr><td>Q4. 세계관 이해에만 100시간이 걸리는 </br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K-걸그룹</td></tr>
-                    </tbody></table>
-                </div>
-                
-                <a href="{% url 'chat' %}">
-                    <div class="completeButton">
-                        <span>상세 테마 제안하기</span>
-                    </div>
-                </a>
-            </div>
-            
-            <div id="tab2" class="tabContent">
-                <p class="themaDes">전시회, 소극장, 원데이클래스, 액티비티 활동 등 </br>
-                    다양한 야외 활동들을 메이트와 함께 즐겨요!</p>
-                <img src="{% static 'assets/img/advertisement/banner1.png' %}"
-                    class="AdBanner">
-                <img src="{% static 'assets/img/advertisement/banner2.png' %}"
-                    class="AdBanner">
-                <a href="{% url 'special_thema' %}">
-                    <img src="{% static 'assets/img/advertisement/banner4.png' %}"
-                    class="AdBanner">
-                </a>
-                <img src="{% static 'assets/img/advertisement/banner3.png' %}"
-                    class="AdBanner">
-            </div>
-        </div>
-    </body>
-    
-    <script>
-        var previewFlag = false;
-        $(function() {
-            $('ul.tabs li').click(function(){
-                
-            })
-        });
+      <div id="tab1" class="tabContent current">
+        <p class="themaDes">다양한 대화 주제 중 하나를 선택하여</br>
+        메이트와 만남 시에 이야기를 나눠보세요!</p>
+      <div class="buttonDiv">
+        <button class="randomButton chatButton">랜덤</button>
+      </div>
 
-       $(function() {
-            $('ul.tabs li').click(function(){
-                var tabId = $(this).attr('data-tab');
-        
-                $('ul.tabs li').removeClass('current');
-                $('.tabContent').removeClass('current');		
-        
-                $(this).addClass('current');
-                $("#" + tabId).addClass('current');
-            })
-        });
-    </script>
+      <ul class="detailTabs">
+        <li class="detailTab detailCurrent">감정</li>
+        <li class="detailTab">성격</li>
+        <li class="detailTab">연애</li>
+        <li class="detailTab">일상</li>
+      </ul>
+
+      <div class="detailTabContent">
+        <table>
+          <tbody class="detailThema">
+            <tr>
+              <td>Q1. 내 생에 가장 부끄러운 일은?</td>
+            </tr>
+            <tr>
+              <td>Q2. 나를 행복하게 만드는 작은 습관이 있다면?</td>
+            </tr>
+            <tr>
+              <td>Q3. 슬픈 감정을 어떻게 해소하나요?</td>
+            </tr>
+            <tr>
+              <td>Q4. 웃다가 울어본 적이 있나요?</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="detailTabs">
+        <li class="detailTab detailCurrent">유행</li>
+        <li class="detailTab">문화</li>
+        <li class="detailTab">동물</li>
+        <li class="detailTab">추억</li>
+      </ul>
+
+      <div class="detailTabContent">
+        <table>
+          <tbody class="detailThema">
+            <tr>
+              <td onclick="location.href ='{% url 'preview' %}'">
+                <span>Q1. 깻잎 논쟁을 아시나요?</span>
+                <span class="detailThemaBadge">+2</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Q2. 토마토맛 토 vs 토맛 토마토</td>
+            </tr>
+            <tr>
+              <td>Q3. 최근 가장 킹받았던 순간은?</td>
+            </tr>
+            <tr>
+              <td>Q4. 세계관 이해에만 100시간이 걸리는
+              </br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K-걸그룹</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <form action="{% url 'room' room.id %}" method="post">
+      {% csrf_token %}
+      <input type="submit" class="completeButton" value="상세 테마 제안하기">
+        {% comment %} <div class="completeButton">
+          <span>상세 테마 제안하기</span>
+        </div> {% endcomment %}
+    </form>
+
+  </div>
+
+  <div id="tab2" class="tabContent">
+    <p class="themaDes">전시회, 소극장, 원데이클래스, 액티비티 활동 등
+    </br>
+    다양한 야외 활동들을 메이트와 함께 즐겨요!</p>
+  <img src="{% static 'assets/img/advertisement/banner1.png' %}" class="AdBanner">
+  <img src="{% static 'assets/img/advertisement/banner2.png' %}" class="AdBanner">
+  <a href="{% url 'special_thema' %}">
+    <img src="{% static 'assets/img/advertisement/banner4.png' %}" class="AdBanner">
+  </a>
+  <img src="{% static 'assets/img/advertisement/banner3.png' %}" class="AdBanner">
+</div>
+</div>
+</body>
+
+<script>
+var previewFlag = false;
+$(function () {
+$('ul.tabs li').click(function () {})
+});
+
+$(function () {
+$('ul.tabs li').click(function () {
+  var tabId = $(this).attr('data-tab');
+
+  $('ul.tabs li').removeClass('current');
+  $('.tabContent').removeClass('current');
+
+  $(this).addClass('current');
+  $("#" + tabId).addClass('current');
+})
+});
+</script>
+
 </html>
