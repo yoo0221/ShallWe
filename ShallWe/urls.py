@@ -44,6 +44,8 @@ urlpatterns = [
     path('chatfront/', views.chat, name='chat'),
     path('preview/', views.preview, name="preview"), 
     path('index/', views.index, name="index"),
+    path('promise2/', views.promise2, name='promise2'),
+
     path('chatlist/', views.chatlist, name='chatlist'),
     path('themaafter/<int:user_id>', views.themaafter, name='themaafter'),
     path('confirm/', views.confirm, name="confirm"),
