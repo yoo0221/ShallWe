@@ -8,7 +8,7 @@ class Room(models.Model):
 # Create your models here.
 class Message(models.Model):
     message = models.CharField(max_length=500)
-    author = models.CharField(max_length=100)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user', db_column='user', null=True, max_length=100)
     created_time = models.DateTimeField(auto_now_add=True)
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='room', db_column='room', null=True)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name='messages', db_column='room', null=True)
 

@@ -57,81 +57,33 @@
   <body>
     <!-- bottom nav -->
     <!-- <div class="upper-bottom-navs"> -->
-    <div class="double-nav">
-      <div class="container row d-flex justify-content-center">
-        <div class="address col-10" id="">
-          <div class="row">
-            <!-- <div class="address-text col-9 d-flex flex-row-reverse"> {{user.address_do}} {{user.address_sgg}} {{user.address_emd}} </div> -->
-            <div class="address-text col-9 d-flex flex-row-reverse">
-              서울 전체
-            </div>
-            <i class='pt-1 col-3 fa-solid fa-angle-down'></i>
-            {% comment %} <span class="col-3">∨</span> {% endcomment %}
-          </div>
-        </div>
-        <div class="col-1">
-          <span id="calendar" ref="{props.carRef}">
-            <img src="{% static 'assets/img/calendar.png' %}"/>
-          </span>
-        </div>
+    <div class="chat-top-nav">
+      <div class="container d-flex justify-content-between align-items-center">
+        <i class="fa-solid fa-angle-left angleLeft"></i>
+        <div>교류 중인 메이트</div>
+        <i class='fa-solid fa-ellipsis-vertical'></i>
       </div>
-      <!-- navbar-->
-      <nav class="layout-navbar container-xxl navbar-expand-xl navbar-detached align-items-center bg-navbar-theme px-2" id="layout-navbar" style='height: 40px'>
-        <div class="d-flex flex-row align-items-center" id="navbar-collapse">
-          <a href="{% url 'search' %}" class="container align-items-center" style="color: #6c7d8f">
-            <!-- <a href="/search" class="container"> -->
-            <div class="nav-item d-flex flex-row-reverse align-items-center row pt-2">
-              <i class="bx bx-search fs-2 lh-0 search col-1"></i>
-              <input type="text" class="border-0 invisible-color col-12 mr-2" placeholder="" aria-label="" size="{75}"/>
-            </div>
-          </a>
-        </div>
-      </nav>
     </div>
     <!-- <div class="container justify-content-center mb-4"> <div class="row pb-4"> <a href="#"> 광고 배너 외부 링크/이벤트 페이지 <div className="row d-flex justify-content-center"> <div className="col-12"> <img src="{% static 'assets/img/advertisement/banner1.png' %}" height="120px" width="100%" /> </div> </div> </a> </div> <div class="row pb-4"> <a href="#"> 광고 배너 외부 링크/이벤트 페이지 <div className="row d-flex justify-content-center"> <div className="col-12"> <img src="{% static 'assets/img/advertisement/banner2.png' %}" height="120px" width="100%" /> </div> </div> </a> </div> -->
     <div class="body">
       <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
-        <div class="row pb-3">
-          <a href="#">
-            <div classname="row d-flex justify-content-center">
-              <div classname="col-12">
-                <img src="{% static 'assets/img/advertisement/banner1.png' %}" height="115px" width="100%"/>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="row pb-3">
-          <a href="#">
-            <div classname="row d-flex justify-content-center">
-              <div classname="col-12">
-                <img src="{% static 'assets/img/advertisement/banner4.png' %}" height="115px" width="100%"/>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="row">
-          <div class="d-flex mb-1 p-2">
-            <div class="me-auto pt-2"><img src="{% static 'assets/img/filter.png' %}" alt="" style='width: 25px; height: 25px;'></div>
-            <div class="p-2">
-              <strong>동성필터 적용</strong>
-              <span><img src="{% static 'assets/img/sex-filter.png' %}" alt="" style='width: 60px; height: 25px;'></span></div>
-          </div>
-          {% for user in users %}
+        {% for room in rooms %}
+          {% if room.user1 == user %}
             <div class='container py-2 px-1' style="border-bottom: 1px solid gray;">
-              <a href="{% url 'detail_profile' user.id %}" class="row">
+              <a href="{% url 'room' room.id %}" class="row">
                 <div class='col-3 px-3'>
                   <div class='profile-box'>
                     <div class='profile-photo-box'>
-                      <img class='profile-photo' src="{{user.userprofile.get_photo_home_url}}"/>
+                      <img class='profile-photo' src="{{room.user2.userprofile.get_photo_home_url}}"/>
                     </div>
                     <div class='usernationality-box'>
-                      {% if user.nationality == "대한민국" %}
+                      {% if room.user2.nationality == "대한민국" %}
                         <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
-                      {% elif user.nationality == "USA" %}
+                      {% elif room.user2.nationality == "USA" %}
                         <img class='usernationality' src="{% static 'assets/img/미국.png' %}" alt="">
-                      {% elif user.nationality == "Australia" %}
+                      {% elif room.user2.nationality == "Australia" %}
                         <img class='usernationality' src="{% static 'assets/img/호주.png' %}" alt="">
-                      {% elif user.nationality == "UK" %}
+                      {% elif room.user2.nationality == "UK" %}
                         <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
                       {% endif %}
                     </div>
@@ -140,23 +92,62 @@
                 <div class='col-9 col-sm-9'>
                   <div class='row pb-2'>
                     <div class='col-3 p-0 username'>
-                      {{user.name}}
+                      {{room.user2.name}}
                     </div>
                     <div class='col-4 p-0 userinfo'><img style='width: 20px; height:18px;' src="{% static 'assets/img/mothertongue.png' %}" alt="">
-                      {{user.mother_tongue}}</div>
+                      {{room.user2.mother_tongue}}</div>
                     <div class='col-5 p-0 userinfo'><img style='width: 22px; height:22px;' src="{% static 'assets/img/location.png' %}" alt="">
-                      {{user.address_emd}}</div>
+                      {{room.user2.address_emd}}</div>
                   </div>
                   <div class='row'>
                     <div class='col p-0'>
-                      {{user.userprofile.introduction}}
+                      {{room.user2.userprofile.introduction}}
                     </div>
                   </div>
                 </div>
               </a>
             </div>
-          {% endfor %}
-        </div>
+          {% else %}
+            <div class='container py-2 px-1' style="border-bottom: 1px solid gray;">
+              <a href="{% url 'room' room.id %}" class="row">
+                <div class='col-3 px-3'>
+                  <div class='profile-box'>
+                    <div class='profile-photo-box'>
+                      <img class='profile-photo' src="{{room.user1.userprofile.get_photo_home_url}}"/>
+                    </div>
+                    <div class='usernationality-box'>
+                      {% if room.user1.nationality == "대한민국" %}
+                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                      {% elif room.user1.nationality == "USA" %}
+                        <img class='usernationality' src="{% static 'assets/img/미국.png' %}" alt="">
+                      {% elif room.user1.nationality == "Australia" %}
+                        <img class='usernationality' src="{% static 'assets/img/호주.png' %}" alt="">
+                      {% elif room.user1.nationality == "UK" %}
+                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+                <div class='col-9 col-sm-9'>
+                  <div class='row pb-2'>
+                    <div class='col-3 p-0 username'>
+                      {{room.user1.name}}
+                    </div>
+                    <div class='col-4 p-0 userinfo'><img style='width: 20px; height:18px;' src="{% static 'assets/img/mothertongue.png' %}" alt="">
+                      {{room.user1.mother_tongue}}</div>
+                    <div class='col-5 p-0 userinfo'><img style='width: 22px; height:22px;' src="{% static 'assets/img/location.png' %}" alt="">
+                      {{room.user1.address_emd}}</div>
+                  </div>
+                  <div class='row'>
+                    <div class='col p-0'>
+                      {{room.user1.userprofile.introduction}}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
     <nav class="wrapper navs">
@@ -174,13 +165,13 @@
       </div>
       <div class="divs">
         <a href="{% url 'home' %}" class="nav-links">
-          <i class="fa fa-home fa-2x nav-items" style='color: #1C3BD5;'></i>
+          <i class="fa fa-home fa-2x nav-items"></i>
           <p class="nav-items-desc" style="font-size: 12px">HOME</p>
         </a>
       </div>
       <div class="divs">
         <a href="{% url 'chatlist' %}" class="nav-links">
-          <i class="fa-solid fa-message fa-2x nav-items"></i>
+          <i class="fa-solid fa-message fa-2x nav-items" style='color: #1C3BD5;'></i>
           <p class="nav-items-desc" style="font-size: 12px">채팅 목록</p>
         </a>
       </div>

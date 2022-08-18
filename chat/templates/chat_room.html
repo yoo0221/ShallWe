@@ -96,6 +96,29 @@
               <time datetime='07:35:00+09:00'>7:35</time> 
             </div>
           </div> {% endcomment %}
+          {% for message in messages %}
+            {% if message.author == user %}
+              <div class='d-flex flex-row-reverse'>
+                <div class='me-chat'>
+                  <div class='me-chat-col'>
+                    <span class='balloon'> {{ message.message }} </span>
+                  </div>
+                  <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
+                </div>
+              </div>
+            {% else %}
+              <div class='d-flex flex-row'>
+                <div class='friend-chat'>
+                  <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진'/>
+                  <div class='friend-chat-col'>
+                    <span class='profile-name'>{{ message.author.name }}</span>
+                    <span class='balloon'>{{ message.message }}</span>
+                  </div>
+                  <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
         </div>
       </div>
       <nav class="wrapper navs">
@@ -121,13 +144,17 @@
       const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + roomName + "/");
 
       chatSocket.onmessage = function (e) {
+        const time = new Date();
+        const hour = String(time.getHours());
+        const minute = String(time.getMinutes()).padStart(2,"0");
+        const timetext = `${hour}:${minute}`
         const data = JSON.parse(e.data);
         const cur_user = JSON.parse(document.getElementById("cur-user").textContent);
         if (data.username == cur_user) {
-          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime='07:32:00+09:00'>7:32</time></div></div>";
+          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime="+time+">"+timetext+"</time></div></div>";
           $("#chat-body").append(tag);
         } else {
-          let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime='07:35:00+09:00'>7:35</time></div> </div>";
+          let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime="+time+">"+hour+":"+minute+"</time></div> </div>";
           $("#chat-body").append(tag);
         }
         // document.querySelector("#chat-log").value +=

@@ -203,3 +203,9 @@ def chat_ready(request, user_id):
 
 def index(request):
     return render(request, 'index_temp.html')
+
+def chatlist(request):
+    rooms1 = Room.objects.filter(user1=request.user)
+    rooms2 = Room.objects.filter(user2=request.user)
+    rooms = rooms1.union(rooms2)
+    return render(request, 'chatlist.html', {"rooms":rooms, "user":request.user})

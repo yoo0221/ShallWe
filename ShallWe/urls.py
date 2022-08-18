@@ -44,6 +44,7 @@ urlpatterns = [
     path('chatfront/', views.chat, name='chat'),
     path('preview/', views.preview, name="preview"), 
     path('index/', views.index, name="index"),
+    path('chatlist/', views.chatlist, name='chatlist'),
 ]
 
 if settings.DEBUG:
