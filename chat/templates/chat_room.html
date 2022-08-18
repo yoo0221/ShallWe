@@ -126,6 +126,7 @@
                 <span class='balloon'> {{ tm.author }}님께서 제안하신 테마입니다. 유형 Q{{tm.number}}. 깻잎 논쟁을 아시나요? </span>
               </div>
               {% comment %} <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time> {% endcomment %}
+<<<<<<< HEAD
             </div>
           </div>
           {% endfor %}
@@ -150,6 +151,27 @@
             </div>
           </div> {% endcomment %}
         {% comment %} </div> {% endcomment %}
+=======
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <nav class="sender-wrapper navs">
+        {% comment %} <div class="insert-content"> {% endcomment %}
+          <div class="tool-divs">
+            <span><img src="{% static 'assets/img/번역_chat.png' %}" alt=""></span>
+          </div>
+          <div class="tool-divs">
+            <span><img src="{% static 'assets/img/이모티콘.png' %}" alt=""></span>
+          </div>
+          <div class="input-divs">
+            <input id="chat-message-input" type="text"/>
+            <button class="submit-divs" type="submit" id="chat-message-submit" value="전송">
+              <span><img src="{% static 'assets/img/전송.png' %}" style="width:22px; height:22px;"></span>
+            </button>
+          </div>
+>>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
       </nav>
     </div>
     {{ user.username|json_script:"cur-user"}}
@@ -201,9 +223,11 @@
         .onclick = function (e) {
           const messageInputDom = document.querySelector("#chat-message-input");
           const message = messageInputDom.value;
-          chatSocket.send(JSON.stringify({message: message}));
-          messageInputDom.value = "";
-        };
+          if (message != "") {
+            chatSocket.send(JSON.stringify({message: message}));
+            memessageInputDom.value = "";
+          };
+        }
     </script>
   </body>
 
