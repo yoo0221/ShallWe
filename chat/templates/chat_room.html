@@ -131,25 +131,20 @@
           {% endfor %}
         </div>
       </div>
-      <nav class="wrapper navs">
+      <nav class="sender-wrapper navs">
         {% comment %} <div class="insert-content"> {% endcomment %}
-          <div class="input-divs">
-            <input id="chat-message-input" class="" type="text"/>
+          <div class="tool-divs">
+            <span><img src="{% static 'assets/img/번역_chat.png' %}" alt=""></span>
           </div>
-          
-          <div class='sumbit-divs'>
-            <button type="submit" id="chat-message-submit submit" value="전송">
-              <span><img src="{% static 'assets/img/검색.png' %}"></span>
+          <div class="tool-divs">
+            <span><img src="{% static 'assets/img/이모티콘.png' %}" alt=""></span>
+          </div>
+          <div class="input-divs">
+            <input id="chat-message-input" type="text"/>
+            <button class="submit-divs" type="submit" id="chat-message-submit" value="전송">
+              <span><img src="{% static 'assets/img/검색.png' %}" style="width:22px; height:22px;"></span>
             </button>
           </div>
-          {% comment %} <div class="mt-2" style="border-top: 1px solid black; text-align: center;">
-            <div class="mb-2">
-              <a href="{% url 'thema' %}">
-                <span>만남 약속 잡기</span>
-              </a>
-            </div>
-          </div> {% endcomment %}
-        {% comment %} </div> {% endcomment %}
       </nav>
     </div>
     {{ user.username|json_script:"cur-user"}}
@@ -201,9 +196,11 @@
         .onclick = function (e) {
           const messageInputDom = document.querySelector("#chat-message-input");
           const message = messageInputDom.value;
-          chatSocket.send(JSON.stringify({message: message}));
-          messageInputDom.value = "";
-        };
+          if (message != "") {
+            chatSocket.send(JSON.stringify({message: message}));
+            memessageInputDom.value = "";
+          };
+        }
     </script>
   </body>
 
