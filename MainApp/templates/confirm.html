@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="{% static 'assets/' %}" data-template="vertical-menu-template-free">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+
+    <title>Shall We?</title>
+
+    <meta name="description" content=""/>
+
+    <!--fontAwesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}"/>
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/chat-room.css' %}">
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css"/>
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"/>
+    <!-- Page CSS -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}"/>
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
+    <script src="{% static 'assets/js/calendar.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+    <script src="{% static 'assets/js/table.js' %}"></script>
+  </head>
+
+  <body style="background-color: #1C3BD5; width: 100%; ">
+    <div style="padding: 1rem; font-weight: bold; color: #FFF; overflow: hidden; text-align: center;">
+      <i class="fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
+      <span>만남 내역</span>
+    </div>
+  <div>
+    <div class="profile">
+      <div class="container card" style="height: 685px;">
+        <div class="row mt-3" style="color:black; align-items: center;">
+            <div class="col" style="text-align:center">
+                <img src="{% static 'assets/img/Tommy.jpg' %}" style="border-radius: 50%; width:100px; height: 100px;">
+            </div>
+            <p class="rows mt-3 "
+                style="font-weight: bold; text-align: center; font-size: 16px; border-bottom: 1px solid gray; padding-bottom: 20px;">
+                Tommy님과의 약속이 확정되었어요!
+            </p>
+            <p class="col-12">약속 확정일 2022-08-19</p>
+            
+            <p class="col-4" style="color: #1C3BD5; font-weight: bold; margin-bottom: 5px;">약속 일자</p>
+            <p class="col-8" style="margin-bottom: 5px;">2022-08-19 오후 02:00</p>
+            
+            <p class="col-4" style="color: #1C3BD5; font-weight: bold; margin-bottom: 5px;">약속 장소</p>
+            <p class="col-8" style="margin-bottom: 5px;">그린빈 카페 복현점</p>
+            
+            <p class="col-4" style="color: #1C3BD5; font-weight: bold; margin-bottom: 5px;">교류 주제</p>
+            <p class="col" style="margin-bottom: 5px;">
+                깻잎논쟁을 아시나요?&nbsp;&nbsp;
+                <button class="" style="background-color: white; border-radius: 30%; font-size: 13px;">+2</button>
+            </p>
+
+            <p class="col-8"></p>
+            <div class="col-4" >
+                <p  style="text-decoration: underline; color: gray;">테마 바꾸기</p>
+            </div>
+            <div class="btn-group col" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-secondary">수정하기</button>
+                <button type="button" class="btn btn-outline-secondary">취소하기</button>
+            </div>
+            <div>
+                <button type="button" class="col-12 btn btn-outline-secondary mt-3" style="color: #1C3BD5; border: 1px solid #1C3BD5;">
+                    <img src="{% static 'assets/img/clock.png' %}" >&nbsp;&nbsp;
+                    약속 리마인드 알람 설정
+                </button>
+            </div>
+            <button type="button" class="btn btn-primary" style="background-color: #1C3BD5; position: fixed; bottom: 0; height: 55px; width: 355px;" onclick="location.href='{% url 'index' %}'">메인페이지로 이동</button>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/meet.js' %}"></script>
+
+    <!-- Page JS -->
+    <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
+    <script src="{% static 'js/location_select.js' %}"></script>
+    <script src="{% static 'assets/js/ui-popover.js' %}"></script>
+
+    <!-- Place this tag in your head or just before your close body tag.-->
+    <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+  </body>
+
+</html>
