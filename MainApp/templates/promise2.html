@@ -43,14 +43,14 @@
 
                 <div class="profile">
                     <div class="row mt-3">
-<<<<<<< HEAD
+<!--<<<<<<< HEAD-->
                         <div class="col-4">
                             <img style="width: 90px; height: 90px; border-radius: 50%; float:left; margin-right:15px; margin-left:20px; margin-bottom:10px; filter: drop-shadow(0px 3px 3px rgb(105, 103, 103)) " src="{% static 'assets/img/Tommy.jpg' %}">
 
-=======
->>>>>>> 3f8d0fa54c1882cccadf10ac4db2d9ffb59b8d36
+<!--=======
+>>>>>>> 3f8d0fa54c1882cccadf10ac4db2d9ffb59b8d36-->
                             <div class="col-4">
-                                <img style="width: 90px; height: 90px; border-radius: 50%; float:left; margin-right:15px; margin-left:20px; margin-bottom:10px; filter: drop-shadow(0px 3px 3px rgb(105, 103, 103)) " src="{% static 'assets/img/Tommy.jpg' %}">
+
                             </div>
 
                             <div class="col">
@@ -69,21 +69,7 @@
                         
                             <hr style="width:100%; height:1px; border:none;background-color:rgba(127, 123, 123, 0.3);">
                             
-                        </div>
-
-                        <div class="col">
-                            <p class="mt-1" style="font-size: 25px;font-weight: bolder; color: black; text-align: left;">Tommy</p>
-                            <p style="text-align:left">2022-08-20 오후 02:00</p>
-                            <p style="text-align:left">그린빈 카페 냉천점</p>
-                            <p style="text-align:left">깻잎 논쟁을 아시나요?
-                                <button class="col-2" style="float:right; margin-top: 2.5px; margin-right: 15px; width:35px; border: 1px solid black; color:black; background-color:white; border-radius:0.5rem">+2</button>
-                            </p>
-                            <p style="float:right; margin-right:15px; margin-top: 5px; font-size: 12px; text-decoration: underline;">약속 수정하기</p>
-                        </div>
-                        <br>
-                        <div style="line-height:50%;"> <!-- 하위 줄높이를 50%만큼 적게 설정 -->
-                            <br>
-                        </div>                
+                        </div>          
                     
                         <hr style="width:100%; height:1px; border:none;background-color:rgba(127, 123, 123, 0.3);">
                     </div>
@@ -91,7 +77,7 @@
                     <div class="row mt-3 mx-1"> 
                         <a href="{% url 'home' %}">
                             <b class="col" style="color: #3250E9; font-size: 20px; ">테마 보기</b>
-                            <img  style="float:center; margin-left:5px; margin-top:10px;" src="{% static 'assets/img/검색.png' %}">
+                            <img  style="float:center; margin-left:5px; margin-top:10px; margin-bottom: -5px; width:20px; height:25px;" src="{% static 'assets/img/테마검색.png' %}">
                         </a>
 
                         <div style="line-height:70%;">
@@ -108,8 +94,29 @@
             </div>
 
             <div id="tab2" class="tabContent">
-                <button class="themaDes" style="width:60px; border: 1px solid #3250E9; color:#3250E9; background-color:white; border-radius:0.5rem">유행</button>
-                <span class="themaDes" style="color: black;">Q1. 깻잎 논쟁을 아시나요?</span>
+                <br>
+                <p class="col-2" style="float: left; margin-left:15px; margin-right:10px; text-align:center; width:45px; height: 25px; border: 1px solid #3250E9; color:#3250E9; background-color:white; border-radius:0.5rem">유행</p>
+                <p style="color: black; text-align:left;">Q1. 깻잎 논쟁을 아시나요?
+                    <a href="{% url 'remind' %}">
+                        <img style="float:right; margin-top:-1.5px; margin-right:20px; width:20px; height:20px;" src="{% static 'assets/img/note1 1.png' %}">
+                    </a>
+                </p>
+                <div style="line-height:90%;">
+                    <br>
+                </div> 
+                <hr style="width:100%; height:1px; border:none;background-color:rgba(127, 123, 123, 0.3);">
+                <br>
+                <p class="col-2" style="float: left; margin-left:15px; margin-right:10px; text-align:center; width:45px; height: 25px; border: 1px solid #3250E9; color:#3250E9; background-color:white; border-radius:0.5rem">감정</p>
+                <p style="color: black; text-align:left;">Q3. 슬픈 감정을 어떻게 해소⋯
+                    <a href="{% url 'remind' %}">
+                        <img style="float:right; margin-top:-1.5px; margin-right:20px; width:20px; height:20px;" src="{% static 'assets/img/note1 1.png' %}">
+                    </a>
+                </p>
+                <div style="line-height:90%;">
+                    <br>
+                </div> 
+                <hr style="width:100%; height:1px; border:none;background-color:rgba(127, 123, 123, 0.3);">
+
             </div>
         
             <div class="bottom_menu">
