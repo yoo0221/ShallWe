@@ -288,88 +288,91 @@
               <img src="{% static 'assets/img/사전.png' %}">
               <br>사전
             </div>
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="사전" aria-labelledby="offcanvasBottomLabel" style="height: 50%;">
-              <div class="container">
-                <div class="row mt-3 ">
-                  <h1 style="border-bottom: 2px solid gray; padding-bottom: 10px;">
+            <div class="offcanvas offcanvas-bottom px-0" tabindex="-1" id="사전" aria-labelledby="offcanvasBottomLabel" style="height: 50%;">
+              <div class="container mt-3">
+                <div class="row mt-3">
+                  <h1 style="padding-bottom: 10px;">
                     <span style="color: green; font-weight: bolder;">NAVER</span>
                     사전</h1>
                 </div>
-                <div class="row mb-3 mx-2">
-                  <form name="chatform" action="#" method="post" style="border: 0px; border-bottom:2px solid gray; padding-bottom: 6px;">
-                    단어, 문장을 검색하세요.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="row mb-4 mx-2">
+                  <form class="d-flex" name="chatform" action="#" method="post" style="border: 0px; border-bottom:2px solid gray; padding-bottom: 6px;">
+                    {% comment %} <div class=''>단어, 문장을 검색하세요.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div> {% endcomment %}
+                    <input class="me-auto" type="text" placeholder='단어, 문장을 검색하세요.' style='width:250px; border: 0px'>
                     <i class="bx bx-search fs-4 lh-0"></i>
                   </form>
 
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <button style="border-radius: 50%;
+                <div class='mt-4'>
+                  <div class="row">
+                    <div class="col">
+                      <button style="border-radius: 50%;
                                         width: 60px;
                                         height: 60px;
                                         border: 0px;
                                         background-color: white;
                                         box-shadow: 2px 2px 4px gray;">
-                      <img src="{% static 'assets/img/meet/지구본.png' %}">
-                    </button>
-                    <p>전체</p>
+                        <img src="{% static 'assets/img/meet/지구본.png' %}">
+                      </button>
+                      <p>전체</p>
+                    </div>
+                    <div class="col">
+                      <button style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                        <span style="font-size: 30px; ">A</span><span style="font-size: 15px;">가</span>
+                      </button>
+                      <p>영어</p>
+                    </div>
+                    <div class="col">
+                      <button style="border-radius: 50%;
+                                        width: 60px;
+                                        height: 60px;
+                                        border: 0px;
+                                        background-color: white;
+                                        box-shadow: 2px 2px 4px gray;">
+                        <span style="font-size: 30px; ">A</span><span style="font-size: 20px;">a</span>
+                      </button>
+                      <p>English</p>
+                    </div>
                   </div>
-                  <div class="col">
-                    <button style="border-radius: 50%;
+                  <div class="row">
+                    <div class="col">
+                      <button style="border-radius: 50%;
                                         width: 60px;
                                         height: 60px;
                                         border: 0px;
                                         background-color: white;
                                         box-shadow: 2px 2px 4px gray;">
-                      <span style="font-size: 30px; ">A</span><span style="font-size: 15px;">가</span>
-                    </button>
-                    <p>영어</p>
-                  </div>
-                  <div class="col">
-                    <button style="border-radius: 50%;
+                        <span style="font-size: 30px; ">가</span>
+                      </button>
+                      <p>한국어</p>
+                    </div>
+                    <div class="col">
+                      <button style="border-radius: 50%;
                                         width: 60px;
                                         height: 60px;
                                         border: 0px;
                                         background-color: white;
                                         box-shadow: 2px 2px 4px gray;">
-                      <span style="font-size: 30px; ">A</span><span style="font-size: 20px;">a</span>
-                    </button>
-                    <p>English</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <button style="border-radius: 50%;
+                        <span style="font-size: 30px; ">가</span><span style="font-size: 15px;">A</span>
+                      </button>
+                      <p>Korean</p>
+                    </div>
+                    <div class="col">
+                      <button style="border-radius: 50%;
                                         width: 60px;
                                         height: 60px;
                                         border: 0px;
                                         background-color: white;
                                         box-shadow: 2px 2px 4px gray;">
-                      <span style="font-size: 30px; ">가</span>
-                    </button>
-                    <p>한국어</p>
-                  </div>
-                  <div class="col">
-                    <button style="border-radius: 50%;
-                                        width: 60px;
-                                        height: 60px;
-                                        border: 0px;
-                                        background-color: white;
-                                        box-shadow: 2px 2px 4px gray;">
-                      <span style="font-size: 30px; ">가</span><span style="font-size: 15px;">A</span>
-                    </button>
-                    <p>Korean</p>
-                  </div>
-                  <div class="col">
-                    <button style="border-radius: 50%;
-                                        width: 60px;
-                                        height: 60px;
-                                        border: 0px;
-                                        background-color: white;
-                                        box-shadow: 2px 2px 4px gray;">
-                      <span style="font-size: 30px; ">漢</span>
-                    </button>
-                    <p>한자</p>
+                        <span style="font-size: 30px; ">漢</span>
+                      </button>
+                      <p>한자</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -409,7 +412,7 @@
                           <h5 class="modal-title">온도가 1°C 올라갔어요!</h5>
                         </div>
                         <div class="d-grid gap-2 col-10 mx-auto">
-                          <button type="button" id="kkkk" class="col btn btn-outline-primary mb-2" data-bs-dismiss="modal">
+                          <button type="button" id="kkkk" class="col btn btn-primary mb-2" data-bs-dismiss="modal">
                             오늘 배운 표현 기록하기
                           </button>
                           <button type="button" id="kkkk" class="col btn btn-outline-primary mb-3" data-bs-dismiss="modal">
