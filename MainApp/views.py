@@ -5,7 +5,7 @@ from MainApp.models import UserProfile
 from django.db.models import Q
 from MainApp.forms import SetProfileForm, SetScheduleForm
 from django.contrib.auth.decorators import login_required
-from chat.models import Room, Message
+from chat.models import Room, Message, Thema, ThemaMessage
 
 # Create your views here.
 
@@ -143,13 +143,54 @@ def themaselect(request):
         form = SetScheduleForm()
     return render(request, 'themaselect.html', {"form":form})
 
+def hasRoom(user1, user2):
+    room = Room.objects.filter(user1=User.objects.get(pk=user1))
+    room = room.filter(user2=User.objects.get(pk=user2))
+    room2 = Room.objects.filter(user2=User.objects.get(pk=user1))
+    room2 = room.filter(user1=User.objects.get(pk=user2))
+    room = room.union(room2)
+    return room
+
 @login_required
-def thema(request):
-    return render(request, 'thema.html')
+def thema(request, user_id):
+    room = hasRoom(user_id, request.user.id)
+    opponent = User.objects.get(pk=user_id)
+    messages = room[0].messages.all()
+    if request.method == 'POST':
+        message="깻잎 논쟁을 아시나요?"
+        author=request.user
+        room=room[0]
+        sort="thema"
+        thema_sort="유행"
+        number=1
+        confirmed=False
+        thema_msg=ThemaMessage.objects.create(
+            message=message, author=author, room=room, sort=sort, thema_sort=thema_sort, number=number, confirmed=confirmed
+        )
+        return render(request, 'room.html', {"room":room[0], "messages":messages, 'user': request.user, 'opponent': opponent })
+    else:
+        return render(request, 'thema.html',{"room":room[0], "opponent":opponent})
+
+
+
+@login_required
+def themaafter(request, user_id):
+    # print(request.user.id)
+    room = hasRoom(user_id, request.user.id)
+    if room.count() == 0:
+        newroom = Room.objects.create(user1=User.objects.get(pk=user_id), user2=User.objects.get(pk=request.user.id))
+        room_id = newroom.id
+    else:
+        room_id = room[0].id
+    return redirect('room', str(room_id))
 
 @login_required
 def promise(request):
     return render(request, 'promise.html')
+
+@login_required
+def promise2(request):
+    return render(request, 'promise2.html')
 
 @login_required
 def meet(request):
@@ -183,10 +224,6 @@ def preview(request):
 
 @login_required
 def chat_ready(request, user_id):
-    def hasRoom(user1, user2):
-        room = Room.objects.filter(user1=User.objects.get(pk=user1))
-        room = room.filter(user2=User.objects.get(pk=user2))
-        return room
     # print(request.user.id)
     room = hasRoom(user_id, request.user.id)
     if room.count() == 0:
@@ -203,3 +240,12 @@ def chat_ready(request, user_id):
 
 def index(request):
     return render(request, 'index_temp.html')
+
+def chatlist(request):
+    rooms1 = Room.objects.filter(user1=request.user)
+    rooms2 = Room.objects.filter(user2=request.user)
+    rooms = rooms1.union(rooms2)
+    return render(request, 'chatlist.html', {"rooms":rooms, "user":request.user})
+
+def confirm(request):
+    return render(request, 'confirm.html')

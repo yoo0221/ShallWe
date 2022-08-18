@@ -65,7 +65,8 @@
             <div class="address-text col-9 d-flex flex-row-reverse">
               서울 전체
             </div>
-            <span class="col-3">∨</span>
+            <i class='pt-1 col-3 fa-solid fa-angle-down'></i>
+            {% comment %} <span class="col-3">∨</span> {% endcomment %}
           </div>
         </div>
         <div class="col-1">
@@ -128,10 +129,10 @@
                         <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
                       {% elif user.nationality == "USA" %}
                         <img class='usernationality' src="{% static 'assets/img/미국.png' %}" alt="">
-                      {% elif user.nationality == "Austrailia" %}
-                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
-                      {% elif user.nationality == "UK" %}
+                      {% elif user.nationality == "Australia" %}
                         <img class='usernationality' src="{% static 'assets/img/호주.png' %}" alt="">
+                      {% elif user.nationality == "UK" %}
+                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
                       {% endif %}
                     </div>
                   </div>
@@ -161,31 +162,36 @@
     <nav class="wrapper navs">
       <div class="divs">
         <a href="{% url 'setprofile' %}" class="nav-links">
-          <i class="fa-solid fa-circle-user fa-2x nav-items"></i>
+          {% comment %} <i class="fa-solid fa-circle-user fa-2x nav-items"></i> {% endcomment %}
+          <img class="nav-items p-0" src="{% static 'assets/img/프로필.png' %}" alt="" style="width:35px; height:35px;">
           <p class="nav-items-desc" style="font-size: 12px">마이페이지</p>
         </a>
       </div>
       <div class="divs">
         <a href="{% url 'home' %}" class="nav-links">
-          <i class="fa-solid fa-face-smile fa-2x nav-items"></i>
+          {% comment %} <i class="fa-solid fa-face-smile fa-2x nav-items"></i> {% endcomment %}
+          <img class="nav-items p-0" src="{% static 'assets/img/교류테마.png' %}" alt="" style="width:35px; height:35px;">
           <p class="nav-items-desc" style="font-size: 12px">교류 테마</p>
         </a>
       </div>
       <div class="divs">
         <a href="{% url 'home' %}" class="nav-links">
-          <i class="fa fa-home fa-2x nav-items"></i>
+          {% comment %} <i class="fa fa-home fa-2x nav-items" style='color: #1C3BD5;'></i> {% endcomment %}
+          <img class="nav-items p-0" src="{% static 'assets/img/home파랑.png' %}" alt="" style="width:35px; height:35px;">
           <p class="nav-items-desc" style="font-size: 12px">HOME</p>
         </a>
       </div>
       <div class="divs">
-        <a href="#" class="nav-links">
-          <i class="fa-solid fa-message fa-2x nav-items"></i>
+        <a href="{% url 'chatlist' %}" class="nav-links">
+          {% comment %} <i class="fa-solid fa-message fa-2x nav-items"></i> {% endcomment %}
+          <img class="nav-items p-0" src="{% static 'assets/img/채팅.png' %}" alt="" style="width:35px; height:35px;">
           <p class="nav-items-desc" style="font-size: 12px">채팅 목록</p>
         </a>
       </div>
       <div class="divs">
-        <a href="#" class="nav-links">
-          <i class="fa-solid fa-users fa-2x nav-items"></i>
+        <a href="{% url 'themaselect' %}" class="nav-links">
+          {% comment %} <i class="fa-solid fa-users fa-2x nav-items"></i> {% endcomment %}
+          <img class="nav-items p-0" src="{% static 'assets/img/만남내역.png' %}" alt="" style="width:40px; height:25px; margin-bottom: 10px;">
           <p class="nav-items-desc" style="font-size: 12px">만남 내역</p>
         </a>
       </div>

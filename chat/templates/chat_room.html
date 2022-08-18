@@ -60,6 +60,7 @@
         <div>채팅</div>
         <i class='fa-solid fa-ellipsis-vertical'></i>
       </div>
+<<<<<<< HEAD
     </div>
     <div class="body">
       <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
@@ -111,6 +112,127 @@
           </div>
         </div>
       </nav>
+=======
+>>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
+    </div>
+    <div class="body">
+      <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
+        <div class='row justify-content-center'>
+          <div class='row justify-content-center'>
+            <div class="col d-flex justify-content-center">
+              <span class="row">새로운 메이트와 연결되었어요!</span>
+            </div>
+          </div>
+          <div class='row justify-content-center'>
+            <div class="col d-flex justify-content-center">
+              <span class="row">대화를 통해 교류할 테마부터 결정해요 :D</span>
+            </div>
+          </div>
+            <a href="{% url 'thema' opponent.id %}" class='row'>
+              <button class='btn btn-outline-primary col d-flex justify-content-between align-items-center'><i></i><div>교류 테마 선택</div><i class="fa-solid fa-angle-right angleRight"></i></button>
+            </a>
+        </div>
+        <div class='chat-body d-flex flex-column' id='chat-body'>
+          {% comment %} <div class='d-flex flex-row-reverse'>
+            <div class='me-chat'> 
+              <div class='me-chat-col'>
+                <span class='balloon'>this is message toooooooooooooooooooooooo long</span>
+              </div>
+              <time datetime='07:32:00+09:00'>7:32</time>
+            </div>
+          </div>
+          <div class='d-flex flex-row'>
+            <div class='friend-chat'> 
+              <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' />
+              <div class='friend-chat-col'> 
+                <span class='profile-name'>Tommy</span> <span class='balloon' >message too</span >
+              </div>
+              <time datetime='07:35:00+09:00'>7:35</time> 
+            </div>
+          </div> {% endcomment %}
+          {% for message in messages %}
+            {% if message.author == user %}
+              <div class='d-flex flex-row-reverse'>
+                <div class='me-chat'>
+                  <div class='me-chat-col'>
+                    <span class='balloon'> {{ message.message }} </span>
+                  </div>
+                  <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
+                </div>
+              </div>
+            {% else %}
+              <div class='d-flex flex-row'>
+                <div class='friend-chat'>
+                  <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진'/>
+                  <div class='friend-chat-col'>
+                    <span class='profile-name'>{{ message.author.name }}</span>
+                    <span class='balloon'>{{ message.message }}</span>
+                  </div>
+                  <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% for tm in thema_msg %}
+          <div class='d-flex flex-row-reverse'>
+            <div class='me-chat'>
+              <div class='me-chat-col'>
+                <span class='balloon'> {{ tm.author }}님께서 제안하신 테마입니다. 유형 Q{{tm.number}}. 깻잎 논쟁을 아시나요? </span>
+              </div>
+              {% comment %} <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time> {% endcomment %}
+<<<<<<< HEAD
+<<<<<<< HEAD
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <nav class="wrapper navs">
+        {% comment %} <div class="insert-content"> {% endcomment %}
+          <div class="input-divs">
+            <input id="chat-message-input" class="" type="text"/>
+          </div>
+          
+          <div class='sumbit-divs'>
+            <button type="submit" id="chat-message-submit submit" value="전송">
+              <span><img src="{% static 'assets/img/검색.png' %}"></span>
+            </button>
+          </div>
+          {% comment %} <div class="mt-2" style="border-top: 1px solid black; text-align: center;">
+            <div class="mb-2">
+              <a href="{% url 'thema' %}">
+                <span>만남 약속 잡기</span>
+              </a>
+=======
+>>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
+            </div>
+          </div> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+=======
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <nav class="sender-wrapper navs">
+        {% comment %} <div class="insert-content"> {% endcomment %}
+          <div class="tool-divs">
+            <span><img src="{% static 'assets/img/번역_chat.png' %}" alt=""></span>
+          </div>
+          <div class="tool-divs">
+            <span><img src="{% static 'assets/img/이모티콘.png' %}" alt=""></span>
+          </div>
+          <div class="input-divs">
+            <input id="chat-message-input" type="text"/>
+            <button class="submit-divs" type="submit" id="chat-message-submit" value="전송">
+              <span><img src="{% static 'assets/img/전송.png' %}" style="width:22px; height:22px;"></span>
+            </button>
+          </div>
+<<<<<<< HEAD
+>>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
+=======
+>>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
+      </nav>
     </div>
     {{ user.username|json_script:"cur-user"}}
     {{ room.id|json_script:"room-name" }}
@@ -121,13 +243,24 @@
       const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + roomName + "/");
 
       chatSocket.onmessage = function (e) {
+        const time = new Date();
+        const hour = String(time.getHours());
+        const minute = String(time.getMinutes()).padStart(2,"0");
+        const timetext = `${hour}:${minute}`
         const data = JSON.parse(e.data);
         const cur_user = JSON.parse(document.getElementById("cur-user").textContent);
         if (data.username == cur_user) {
+<<<<<<< HEAD
           let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime='07:32:00+09:00'>7:32</time></div></div>";
           $("#chat-body").append(tag);
         } else {
           let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime='07:35:00+09:00'>7:35</time></div> </div>";
+=======
+          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime="+time+">"+timetext+"</time></div></div>";
+          $("#chat-body").append(tag);
+        } else {
+          let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime="+time+">"+hour+":"+minute+"</time></div> </div>";
+>>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
           $("#chat-body").append(tag);
         }
         // document.querySelector("#chat-log").value +=
@@ -157,9 +290,17 @@
         .onclick = function (e) {
           const messageInputDom = document.querySelector("#chat-message-input");
           const message = messageInputDom.value;
+<<<<<<< HEAD
           chatSocket.send(JSON.stringify({message: message}));
           messageInputDom.value = "";
         };
+=======
+          if (message != "") {
+            chatSocket.send(JSON.stringify({message: message}));
+            memessageInputDom.value = "";
+          };
+        }
+>>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
     </script>
   </body>
 
