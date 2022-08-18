@@ -145,12 +145,13 @@
 
       chatSocket.onmessage = function (e) {
         const time = new Date();
-        const hour = time.getHours();
-        const minute = time.getMinutes();
+        const hour = String(time.getHours());
+        const minute = String(time.getMinutes()).padStart(2,"0");
+        const timetext = `${hour}:${minute}`
         const data = JSON.parse(e.data);
         const cur_user = JSON.parse(document.getElementById("cur-user").textContent);
         if (data.username == cur_user) {
-          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime="+time+">"+hour+":"+minute+"</time></div></div>";
+          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime="+time+">"+timetext+"</time></div></div>";
           $("#chat-body").append(tag);
         } else {
           let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime="+time+">"+hour+":"+minute+"</time></div> </div>";
