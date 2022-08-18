@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'assets/css/detailProfile.css' %}" />
+        <link rel="stylesheet" href="{% static 'assets/css/thema.css' %}" />
+        <style>
+            .bottom_menu { position: fixed; bottom: 40px; left: 0px; width: 100%; height: 50px; z-index:100; border-top: 1px solid black; background-color: white; }
+            .bottom_menu > div { float: left; width: 20%; height: 100%; text-align: center; padding-top: 13px; }
+        </style>
+        <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <i class="fa-solid fa-angle-left angleLeft"></i>
+            <span>만남 내역</span>
+        </div>
+
+        <div class="themaCard">
+            <ul class="tabs">
+                <li class="tab current" data-tab="tab1">약속 모아보기</li>
+                <li class="tab" data-tab="tab2">교류한 테마</li>
+            </ul>
+
+            <div id="tab1" class="tabContent current">
+                <p class="themaDes">예정 약속 1건</p>
+                <hr style="width:100%; height:2px; border:none;background-color:rgba(108, 108, 108, 0.3);">
+                <div class="col-2">
+                    <a href="{% url 'chat' %}">
+                    <img  style="float:right; margin-right:15px; margin-top:10px;" src="{% static 'assets/img/채팅파랑.png' %}">
+                    </a>
+                </div>
+                <br>
+
+                <div class="profile">
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <img style="width: 90px; height: 90px; border-radius: 50%; float:left; margin-right:15px; margin-left:20px; margin-bottom:10px; filter: drop-shadow(0px 3px 3px rgb(105, 103, 103)) " src="{% static 'assets/img/Tommy.jpg' %}">
+                            </div>
+
+                            <div class="col">
+                                <p class="mt-1" style="font-size: 25px;font-weight: bolder; color: black; text-align: left;">Tommy</p>
+                                <p style="text-align:left">2022-08-20 오후 02:00</p>
+                                <p style="text-align:left">그린빈 카페 냉천점</p>
+                                <p style="text-align:left">깻잎 논쟁을 아시나요?
+                                    <button class="col-2" style="float:right; margin-top: 2.5px; margin-right: 15px; width:35px; border: 1px solid black; color:black; background-color:white; border-radius:0.5rem">+2</button>
+                                </p>
+                                <p style="float:right; margin-right:15px; margin-top: 5px; font-size: 12px; text-decoration: underline;">약속 수정하기</p>
+                            </div>
+                            <br>
+                            <div style="line-height:50%;"> <!-- 하위 줄높이를 50%만큼 적게 설정 -->
+                                <br>
+                            </div>                
+                        
+                            <hr style="width:100%; height:1px; border:none;background-color:rgba(127, 123, 123, 0.3);">
+                            
+                        </div>
+                        <div class="row mt-3 mx-1"> 
+                                <a href="{% url 'thema' %}">
+                                    <b class="col" style="color: #3250E9; font-size: 20px; ">테마 보기</b>
+                                    <img  style="float:center; margin-left:5px; margin-top:10px;" src="{% static 'assets/img/검색.png' %}">
+                                </a>
+
+                            <div style="line-height:70%;">
+                                <br>
+                            </div> 
+                        </div>
+                        <hr style="width:100%; height:1.5px; border:none;background-color:rgba(127, 123, 123, 0.3);">
+
+                        <br>
+                        <div style="line-height:80%;">
+                            <br>
+                        </div> 
+                        <p style="text-align: left; margin-left:15px; color:rgba(126, 126, 126, 0.9); font-weight: bold;">지난 약속 0건</p>
+                        <div style="line-height:70%;">
+                            <br>
+                        </div>
+                        <hr style="width:100%; height:2px; border:none;background-color:rgba(108, 108, 108, 0.3);">
+
+                    
+                        <div class="bottom_menu">
+                            <div>
+                                <img src="{% static 'assets/img/프로필.png' %}">
+                                <div style="line-height:20%;">
+                                    <br>
+                                </div> 
+                                <p style="font-size: 12px; ">마이페이지</p>
+                            </div>
+                            <div>
+                                <img src="{% static 'assets/img/교류테마.png' %}">
+                                <div style="line-height:20%;">
+                                    <br>
+                                </div> 
+                                <p style="font-size: 12px; ">교류 테마</p>
+                            </div>
+                            <div>
+                                <div style="line-height:25%;">
+                                    <br>
+                                </div> 
+                                <img src="{% static 'assets/img/home.png' %}">
+                                <div style="line-height:39%;">
+                                    <br>
+                                </div> 
+                                <p style="font-size: 12px; ">HOME</p>
+                            </div>
+                            <div>
+                                <div style="line-height:25%;">
+                                    <br>
+                                </div> 
+                                <img src="{% static 'assets/img/채팅회색.png' %}">
+                                <div style="line-height:15%;">
+                                    <br>
+                                </div> 
+                                <p style="font-size: 12px; ">채팅 목록</p>
+                            </div>
+                            <div>
+                                <div style="line-height:45%;">
+                                    <br>
+                                </div> 
+                                <img src="{% static 'assets/img/만남내역파랑.png' %}">
+                                <div style="line-height:50%;">
+                                    <br>
+                                </div> 
+                                <p style="font-size: 12px; ">만남 내역</p>
+                            </div>
+                        </div>
+                      
+                    
+</body>
+</html>

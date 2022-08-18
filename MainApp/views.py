@@ -152,6 +152,10 @@ def promise(request):
     return render(request, 'promise.html')
 
 @login_required
+def promise2(request):
+    return render(request, 'promise2.html')
+
+@login_required
 def meet(request):
     return render(request, 'meet.html')
 
