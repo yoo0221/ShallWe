@@ -30,16 +30,17 @@
 </head>
 
 <body>
-  <div class="themaCard">
-    <div class="searchHeader">
-      <i class="fa-solid fa-angle-left angleLeft"></i>
-      <div class="searchBox">
-        <i class="fa-solid fa-magnifying-glass magnifyingGlass"></i>
-      </div>
+  <div class="searchHeader">
+    <i class="fa-solid fa-angle-left angleLeft"></i>
+    <div class="searchBox">
+      <i class="fa-solid fa-magnifying-glass magnifyingGlass"></i>
     </div>
-    <hr style="margin-top: 0.25rem;">
+  </div>
+
+  <hr style="margin-top: 0.25rem;">
+
+  <div class="themaCard" style="height: 475px;">
     <p class="searchTitle">메이트 필터</p>
-    
     <form action="{% url 'filtered' %}" method="post">
       {% csrf_token %}
       <div class="filter-sex">
@@ -120,6 +121,9 @@
         <button type="submit" class="searchButton">검색</button>
       </div>
     </form>
+  </div>
+  <div class="themaCard" style="border-top: 3px solid #CCC; height: auto;">
+    
   </div>
 
 
