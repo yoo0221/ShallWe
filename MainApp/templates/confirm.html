@@ -71,13 +71,14 @@
                 <p  style="text-decoration: underline; color: gray;">테마 바꾸기</p>
             </div>
             <div class="btn-group col" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-secondary" style="border:1px solid #3E3E3E; color:#3E3E3E; background-color:white">수정하기</button>
-                <button type="button" class="btn btn-outline-secondary" style="border:1px solid #3E3E3E; color:#3E3E3E; background-color:white">취소하기</button>
+                <button type="button" class="btn btn-outline-secondary" style="border:2px solid #3E3E3E; color:#3E3E3E; background-color:white; font-weight: bold;">수정하기</button>
+                <button type="button" class="btn btn-outline-secondary" style="border:2px solid #3E3E3E; color:#3E3E3E; background-color:white; font-weight: bold;">취소하기</button>
             </div>
             <div>
-                <button type="button" class="col-12 btn btn-outline-secondary mt-3" style="color: #1C3BD5; border: 1px solid #1C3BD5; background-color:white"">
-                    <img src="{% static 'assets/img/clock.png' %}" >&nbsp;&nbsp;
-                    약속 리마인드 알람 설정
+                <button type="button" class="col-12 btn btn-outline-secondary mt-3" style="color: #1C3BD5; border: 2px solid #1C3BD5; background-color:white; font-weight: bold;"
+                    onclick="location.href='{% url 'meet' %}'">
+                    테마보기 &nbsp;
+                    <img src="{% static 'assets/img/meet/종이비행기.png' %}" >
                 </button>
             </div>
             <button type="button" class="btn btn-primary" style="background-color: #1C3BD5; position: fixed; bottom: 0; height: 55px; width: 355px;" onclick="location.href='{% url 'index' %}'">메인페이지로 이동</button>
