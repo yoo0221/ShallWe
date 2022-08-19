@@ -225,17 +225,6 @@ ul {
     padding-top: 0.5rem;
 }
 
-/* .badge {
-    font-size: 0.8rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-bottom: 0.1rem;
-    border-radius: 15px;
-    background-color: #FFF;
-    border: 1px solid #1C3BD5;
-    color: #1C3BD5;
-} */
-
 .referIcon {
     padding-top: 1.25rem;
     padding-left: 0.75rem;
@@ -244,6 +233,120 @@ ul {
 .referDesBright {
     color: #8c8c8c;
 }
+
+/* search.html */
+.searchHeade {
+    color: #CCC;
+    overflow: hidden;
+}
+
+.searchHeader > .angleLeft {
+    float: left;
+    margin-left: 0.5rem;
+}
+
+.searchTitle {
+    font-size: 1.25rem;
+}
+
+.searchTitle, .searchDes {
+    color: #000;
+    text-align: left;
+    padding-left: 1rem;
+    font-weight: bold;
+}
+
+.searchDes {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.locationButton {
+    border: 2px solid #1C3BD5;
+    color: #1C3BD5;
+    width: 85%;
+    text-align: left;
+    overflow: hidden;
+    padding: 0.5rem;
+    border-radius: 7.5px;
+    background-color: #FFF;
+}
+
+.downIcon {
+    float: right;
+    margin-top: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.locationButton:focus {
+    border: 2px solid #CCC;
+    color: #000;
+    background-color: #FFF;
+}
+
+.filter-sex, .filter-age {
+    text-align: left;
+}
+
+.radio-btn input[type="radio"] {
+    display: none;
+}
+
+.radio-btn input[type="radio"] + span {
+    display: inline-block;
+    padding: 0.3rem 1.5rem 0.3rem 1.5rem;
+    border: 1px solid #CCC;
+    background-color: #FFF;
+    text-align: center;
+    color: #CCC;
+    border-radius: 10px;
+    margin-left: 1rem;
+}
+
+.radio-btn input[type="radio"]:checked + span {
+    color: #1C3BD5;    
+    border-color: #1C3BD5;
+}
+
+.serachButton {
+    background-color: #1C3BD5;
+    color: #FFF;
+    width: 85%;
+    text-align: center;
+    border-radius: 7.5px;
+    padding: 0.75rem;
+    margin-top: 5rem;
+}
+
+.ageCheckbox input[type="checkbox"]{
+    display: none;
+}
+
+.ageCheckbox input[type="checkbox"] + label{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border:3px solid #707070;
+    position: relative;
+}
+
+.ageCheckbox input[id="check1"]:checked + label::after{
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+/* 
+.thema-select-place-group > .radio-btn input[type="radio"] + span {
+    width: 4.5rem;
+    margin-right: 0.5rem !important;
+}
+
+.thema-select-group > .radio-btn input[type="radio"] + span {
+    width: 4.5rem;
+    margin-right: 0.5rem;
+} */
 
 /* {
     font-family: 'Noto Sans', sans-serif;
