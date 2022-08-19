@@ -8,6 +8,7 @@ def index(request):
 def room(request, room_name):
     room = Room.objects.get(id=room_name)
     messages = room.messages.all()
+    print(messages)
     if request.user != room.user1 and request.user != room.user2:
         return render(request, 'error.html')
     else:    

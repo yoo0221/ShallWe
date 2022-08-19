@@ -115,7 +115,8 @@
       <button type="button" class="chatButton" onclick="location.href ='{% url 'chat_ready' user.id %}'">
         채팅
       </button>
-      <button type="button" class="promiseButton" onclick="location.href='{% url 'thema' %}'">
+      {% comment %} {% url 'thema' %} {% endcomment %}
+      <button type="button" class="promiseButton" onclick="location.href=''">
         약속 잡기
       </button>
     </div>
