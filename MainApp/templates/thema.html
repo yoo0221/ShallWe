@@ -90,14 +90,7 @@
         </tbody>
       </table>
     </div>
-    <form action="{% url 'room' room.id %}" method="post">
-      {% csrf_token %}
-      <input type="submit" class="completeButton" value="상세 테마 제안하기">
-        {% comment %} <div class="completeButton">
-          <span>상세 테마 제안하기</span>
-        </div> {% endcomment %}
-    </form>
-
+    <a href="{% url 'room' room.id %}"><input type="submit" class="completeButton" id="chat-message-submit" value="상세 테마 제안하기"></a>
   </div>
 
   <div id="tab2" class="tabContent">
@@ -112,6 +105,48 @@
   <img src="{% static 'assets/img/advertisement/banner3.png' %}" class="AdBanner">
 </div>
 </div>
+{{ user.username|json_script:"cur-user"}}
+{{ room.id|json_script:"room-name" }}
+<script>
+// let canvas = document.getElementById('chat-body')
+const roomName = JSON.parse(document.getElementById("room-name").textContent);
+
+const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + roomName + "/");
+
+chatSocket.onmessage = function (e) {
+  /* const time = new Date();
+                                const hour = String(time.getHours());
+                                const minute = String(time.getMinutes()).padStart(2, "0");
+                                const timetext = `${hour}:${minute}`
+                                const data = JSON.parse(e.data);
+                                const cur_user = JSON.parse(document.getElementById("cur-user").textContent);
+                                if (data.username == cur_user) {
+                                  let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime=" + time + ">" + timetext + "</time></div></div>";
+                                  $("#chat-body").append(tag);
+                                } else {
+                                  let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime=" + time + ">" + timetext + "</time></div> </div>";
+                                  $("#chat-body").append(tag);
+                                }*/
+  // document.querySelector("#chat-log").value +=
+  //   data.username + ": " + data.message + "\n";
+};
+
+chatSocket.onclose = function (e) {
+  console.error("Chat socket closed unexpectedly");
+};
+
+document
+  .querySelector("#chat-message-submit")
+  .onclick = function (e) {
+    const messageInputDom = document.querySelector("#chat-message-input");
+    const message = "깻잎 논쟁을 아시나요?";
+    const sort = "thema";
+    if (message != "") {
+      chatSocket.send(JSON.stringify({message: message, sort: sort}));
+      messageInputDom.value = "";
+    };
+  }
+</script>
 </body>
 
 <script>

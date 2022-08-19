@@ -5,7 +5,7 @@ from MainApp.models import UserProfile
 from django.db.models import Q
 from MainApp.forms import SetProfileForm, SetScheduleForm
 from django.contrib.auth.decorators import login_required
-from chat.models import Room, Message, Thema, ThemaMessage
+from chat.models import Room, Message, Thema
 
 # Create your views here.
 
@@ -147,29 +147,30 @@ def hasRoom(user1, user2):
     room = Room.objects.filter(user1=User.objects.get(pk=user1))
     room = room.filter(user2=User.objects.get(pk=user2))
     room2 = Room.objects.filter(user2=User.objects.get(pk=user1))
-    room2 = room.filter(user1=User.objects.get(pk=user2))
+    room2 = room2.filter(user1=User.objects.get(pk=user2))
     room = room.union(room2)
     return room
 
 @login_required
 def thema(request, user_id):
     room = hasRoom(user_id, request.user.id)
+    print(room)
     opponent = User.objects.get(pk=user_id)
-    messages = room[0].messages.all()
-    if request.method == 'POST':
-        message="깻잎 논쟁을 아시나요?"
-        author=request.user
-        room=room[0]
-        sort="thema"
-        thema_sort="유행"
-        number=1
-        confirmed=False
-        thema_msg=ThemaMessage.objects.create(
-            message=message, author=author, room=room, sort=sort, thema_sort=thema_sort, number=number, confirmed=confirmed
-        )
-        return render(request, 'room.html', {"room":room[0], "messages":messages, 'user': request.user, 'opponent': opponent })
-    else:
-        return render(request, 'thema.html',{"room":room[0], "opponent":opponent})
+    # messages = room[0].messages.all()
+    # if request.method == 'POST':
+    #     message="깻잎 논쟁을 아시나요?"
+    #     author=request.user
+    #     room=room[0]
+    #     sort="thema"
+    #     thema_sort="유행"
+    #     number=1
+    #     confirmed=False
+    #     thema_msg=Message.objects.create(
+    #         message=message, author=author, room=room, sort=sort, thema_sort=thema_sort, number=number, confirmed=confirmed
+    #     )
+    #     return render(request, 'room.html', {"room":room[0], "messages":messages, 'user': request.user, 'opponent': opponent })
+    # else:
+    return render(request, 'thema.html',{"room":room[0], "opponent":opponent})
 
 
 

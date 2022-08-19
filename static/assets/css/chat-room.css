@@ -296,3 +296,60 @@ form[name="chatform"] > textarea {
   padding: 16px;
   color: white;
 }
+
+.thema-message-container {
+  text-align: center;
+  color: gray;
+}
+
+.thema-message-me {
+  align-items: center;
+  text-align: center;
+  border: 3px solid #1c3bd5;
+  border-radius: 20px 0px 20px 20px / 20px 0px 20px 20px;
+}
+
+.thema-message-friend {
+  align-items: center;
+  text-align: center;
+  border: 3px solid #1c3bd5;
+  border-radius: 0px 20px 20px 20px / 0px 20px 20px 20px;
+}
+
+.thema-author {
+  border-bottom: 0.5px lightgray solid;
+  padding-bottom: 2px;
+}
+
+.thema-content {
+  padding-top: 10px;
+}
+
+.thema-sort {
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border: 1px solid #1c3bd5;
+  border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+  color: #1c3bd5;
+}
+
+.thema-message {
+  margin-left: 10px;
+  font-weight: bold;
+  color: #1c3bd5;
+  font-size: 17px;
+}
+
+.thema-modify {
+  align-items: center;
+  justify-content: center;
+  border: solid 0.5px lightgray;
+  border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+}
+
+.thema-confirmed {
+  align-items: center;
+  justify-content: center;
+}
