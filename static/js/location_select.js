@@ -4,10 +4,11 @@ $(function(){
 
 $("#finishSelectLocation").on("click", function(){
     $('#select-location-modal').modal('hide');
-    $('#open-select-location-modal').text($("input[name='addressDo']:checked").val()+
+    $('#open-select-location-modal').html($("input[name='addressDo']:checked").val()+
     " "+
     $("input[name='addressSiGunGu']:checked").val()+
-    ($("input[name='dong-eub-myeon']:checked").val()!="all"?" "+$("input[name='dong-eub-myeon']:checked").val():""));
+    ($("input[name='dong-eub-myeon']:checked").val()!="all"?" "+$("input[name='dong-eub-myeon']:checked").val():"")+
+    `<i class="fa-solid fa-caret-down downIcon"></i>`);
     $('#open-select-location-modal').removeClass("btn-outline-primary");
     $('#open-select-location-modal').addClass("btn-primary");
 });
