@@ -333,11 +333,14 @@ ul {
     color: #1C3BD5;
 }
 
-.modalFooter {
-    border-top: 1.5px solid #CCC;
+.modalHeader {
+    text-align: left;
+    padding-left: 1rem;
+    padding-top: 1rem;
 }
 
-.modal-footer {
+.modalFooter {
+    border-top: 1.5px solid #CCC;
     overflow: hidden;
 }
 
@@ -345,6 +348,7 @@ ul {
     padding: 1rem;
     width: 50%;
     background-color: #FFF;
+    border-top-left-radius: ;
 }
 
 .modalClose {
@@ -355,6 +359,14 @@ ul {
 .modalCheck {
     float: right;
     color: #1C3BD5;
+}
+
+.modalTitle {
+    margin-bottom: 0.5rem;
+}
+
+.modal-content {
+    border-radius: 0.5rem !important;
 }
 
 /* 

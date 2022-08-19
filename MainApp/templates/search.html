@@ -86,23 +86,23 @@
         
         <div class="modal fade" id="select-location-modal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content overflow-overlay">
-              <div class="modal-header">
-                <h5 class="modal-title fw-bold" id="exampleModalLongTitle">동네 범위</h5>
+            <div class="modal-content overflow-overlay" style="border-radius: 1rem !important;">
+              <div class="modalHeader" style="padding-top: 1rem;">
+                <h5 class="modalTitle fw-bold" id="exampleModalLongTitle">동네 범위</h5>
               </div>
-              <div class="modal-body container select-address">
+              <div class="modal-body container select-address" style="height: 570px; padding-top: 0.5rem;">
                 <div class="row" style="padding-bottom: 0.5rem; border-bottom: 1.5px solid #CCC;">
-                  <div class="col-2 px-0 text-center">시/도</div>
+                  <div class="col-3 px-0 text-center">시/도</div>
                   <div class="col-5 px-0 text-center">시/군/구</div>
-                  <div class="col-5 px-0 text-center">동/읍/면</div>
+                  <div class="col-4 px-0 text-center">동/읍/면</div>
                 </div>
                 
-                <div class="row">
-                  <ul class="list-group px-0 col-2 text-center rounded-0 border-end overflow-overlay h-100">
+                <div class="row" style="height: 500px;">
+                  <ul class="list-group px-0 col-3 text-center rounded-0 border-end overflow-scroll h-100">
                   </ul>
-                  <ul class="list-group px-0 col-5 text-center rounded-0 border-end overflow-overlay h-100 d-none">
+                  <ul class="list-group px-0 col-5 text-center rounded-0 border-end overflow-scroll h-100 d-none">
                   </ul>
-                  <ul class="list-group px-0 col-5 text-center rounded-0 border-0 overflow-overlay h-100 d-none">
+                  <ul class="list-group px-0 col-4 text-center rounded-0 border-0 overflow-scroll h-100 d-none">
                   </ul>
                 </div>
               </div>
