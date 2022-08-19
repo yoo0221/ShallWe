@@ -80,6 +80,7 @@
   <body style="background-color: #1C3BD5; width: 100%;">
     <i class="fa-solid fa-angle-left angleLeft" onclick="history.back()" style="float: left;"></i>
     <div style="padding: 1rem; font-weight: bold; color: #FFF; overflow: hidden; text-align: center;">
+        
         <span>오늘의 테마</span>
     </div>
     <div class="card" style="height: 685px; border-radius: 0%; width: 360px;">
@@ -106,8 +107,8 @@
             <div class="text-center">
               <img src="{% static 'assets/img/깻잎.png' %}" class="rounded ">
             </div>
-            <h5 class="card-title mt-3" style="font-weight: bold; font-size: 15px; color: #1C3BD5;">
-              Q1. 깻잎 논쟁을 아시나요?<br>
+            <h5 class="card-title mt-3" style="font-weight: bold; font-size: 14px; color: #1C3BD5;">
+              Q1. 깻잎 논쟁을 아시나요?<br><br>
               Do you know the Perilla leaf Debate?
             </h5>
             <img src="{% static 'assets/img/meet/참고표현1.png' %}" class="mt-4">
@@ -128,8 +129,8 @@
             <div class="text-center">
               <img src="{% static 'assets/img/새우.png' %}" class="rounded mt-3">
             </div>
-            <h5 class="card-title mt-5" style="font-weight: bold; font-size: 15px; color: #1C3BD5;">
-              Q2. 내 절친의 새우를 까주는 나의 연인, 이때 나의 반응은?<br>
+            <h5 class="card-title mt-5" style="font-weight: bold; font-size: 12px; color: #1C3BD5;">
+              Q2. 내 절친의 새우를 까주는 나의 연인, 이때 나의 반응은?<br><br>
               If your lover peels shrimp for my best friend,
               will you be jealous or not?
             </h5>
@@ -146,8 +147,8 @@
             <div class="text-center">
               <img src="{% static 'assets/img/연인.png' %}" class="rounded m-2 ">
             </div>
-            <h5 class="card-title mt-4" style="font-weight: bold; font-size: 15px; color: #1C3BD5;">
-              Q3. 집착하는 연인 VS 무관심한 연인<br>
+            <h5 class="card-title mt-4" style="font-weight: bold; font-size: 14px; color: #1C3BD5;">
+              Q3. 집착하는 연인 VS 무관심한 연인<br><br>
               A lover obsessed with me VS a lover indifferent to me
             </h5>
             <img src="{% static 'assets/img/meet/참고표현1.png' %}" class="mt-4">
@@ -163,85 +164,63 @@
           <div class="row">
             <!-- 채팅방 시작 -->
             <div class="col" data-bs-toggle="offcanvas" data-bs-target="#chat" aria-controls="offcanvasBottom">
-              <img src="{% static 'assets/img/채팅.png' %}">
+              <img src="{% static 'assets/img/meet/채팅.png' %}">
               <br>채팅방
             </div>
-            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="chat" aria-labelledby="offcanvasBottomLabel" style="height: 50%; overflow:scroll;">
-              <div class="container offcanvas-header">
-                <div class="row">
-                  <div class="col-12">
-                      <div id="chat-body">
-                          <div class="row" >
-                              <img class="col-1" src="{% static 'assets/img/Tommy.png' %}" style="width: 40%;">
-                              <div class="col profile-col">
-                                  <span style="color: black; font-size:20px; font-weight: bold;">Tommy</span>
-                              </div>
-                          </div>
-                          <main style="background-color: #EFF0F3;">
-                              <!-- 채팅 내용 시작 -->
-                              <div class="chat-content" >
-                                  <!-- 채팅 내용 -->
-                                  <div class="main-chat">
-                                      <div class="me-chat">
-                                          <div class="me-chat-col" >
-                                              <span class="balloon" id="blodblod">in my case</span>
-                                          </div>
-                                          <time datetime="07:32:00+09:00">오전 7:32</time>
-                                      </div>
-                                      <div class="friend-chat">
-                                          <div class="friend-chat-col">
-                                              <span class="balloon" id="blodblod">립밥을발라요</span>
-                                          </div>
-                                          <time datetime="07:35:00+09:00">오전 7:35</time>
-                                      </div>
-                                      <div class="me-chat">
-                                          <div class="me-chat-col">
-                                              <span class="balloon"id="blodblod" >*립밤을 바르다</span>
-                                          </div>
-                                          <time datetime="07:36:00+09:00">오전 7:36</time>
-                                      </div>
-                                      <div class="friend-chat">
-                                          <div class="friend-chat-col">
-                                              <span class="balloon" >Oh that sounds goood</span>
-                                              <span class="balloon" >then how about going to cafe in Dongseongro and talking about that??</span>
-                                          </div>
-                                          <time datetime="09:00:00+09:00">오전 9:00</time>
-                                      </div>
-                                      <div class="me-chat">        
-                                          <div class="me-chat-col">
-                                              <span class="balloon">GREAT! How about tomorrow?</span>
-                                          </div>
-                                          <time datetime="09:30:00+09:00">오전 9:30</time>
-                                      </div>
-                                      <div class="friend-chat">
-                                          <div class="friend-chat-col">
-                                              <span class="balloon" >Good! And let’s meet at 2:00</span>
-                                          </div>
-                                          <time datetime="10:15:00+09:00">오전 10:15</time>
-                                      </div>
-                                  </div>
-                              </div>
-                              <!-- 채팅 입력창 -->
-                              <div class="insert-content">
-                                  <div class="row">                                                 
-                                          <img class="col-1" style="padding-left: 1px; padding-right: 1px; " src="{% static 'assets/img/meet/채팅번역.png' %}">
-                                      
-                                          <img class="col-1" style="padding-left: 5px; padding-right: 1px; " src="{% static 'assets/img/meet/이모티콘.png' %}">
-                                      
-                                      <div class="col-10" style="padding-left: 8px; padding-right: 1px;">
-                                          <form  name="chatform" action="#" method="post">
-                                              <textarea name="chat-insert" required></textarea>
-                                              <input type="submit" class="chat-submit" value="전송">
-                                          </form>
-                                      </div>
-                                  </div>
-                              </div>
-                          </main>
-                      </div>
+            <div class="offcanvas offcanvas-bottom" tabindex="-1" id="chat" aria-labelledby="offcanvasBottomLabel" style="height: 50%; overflow:scroll; padding: 0px;">
+              <div class="row mt-2 mb-2">
+                  <img class="col-1 mx-2" src="{% static 'assets/img/Tommy.png' %}" style="width: 20%;">
+                  <div class="col" style="text-align: left;">
+                      <span style="color: black; font-size:20px; font-weight: bold; line-height: 50px; ">Tommy</span>
                   </div>
               </div>
-            </div> 
-          </div>  
+              <main style="background-color: #EFF0F3;">
+                  <!-- 채팅 내용 시작 -->
+                  <div class="chat-content" >
+                      <!-- 채팅 내용 -->
+                      <div class="main-chat">
+                          <div class="me-chat">
+                              <div class="me-chat-col" >
+                                  <span class="balloon" id="blodblod">in my case</span>
+                              </div>
+                              <time datetime="07:32:00+09:00">오전 7:32</time>
+                          </div>
+                          <div class="friend-chat">
+                              <div class="friend-chat-col">
+                                  <span class="balloon" id="blodblod">립밥을발라요</span>
+                              </div>
+                              <time datetime="07:35:00+09:00">오전 7:35</time>
+                          </div>
+                          <div class="me-chat">
+                              <div class="me-chat-col">
+                                  <span class="balloon"id="blodblod" >*립밤을 바르다</span>
+                              </div>
+                              <time datetime="07:36:00+09:00">오전 7:36</time>
+                          </div>
+                          <div class="friend-chat">
+                              <div class="friend-chat-col">
+                                  <span class="balloon" >Oh that sounds goood</span>
+                                  <span class="balloon" >then how about going to cafe in Dongseongro and talking about that??</span>
+                              </div>
+                              <time datetime="09:00:00+09:00">오전 9:00</time>
+                          </div>
+                          <div class="me-chat">        
+                              <div class="me-chat-col">
+                                  <span class="balloon">GREAT! How about tomorrow?</span>
+                              </div>
+                              <time datetime="09:30:00+09:00">오전 9:30</time>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- 채팅 입력창 -->
+                  <div class="insert-content" style="height: 60px; background-color: #E9E7E7; line-height: 60px;">                                      
+                      <img style="margin-bottom: 10px;width: 30px; height: 30px; margin-bottom: 20px;" src="{% static 'assets/img/meet/채팅번역.png' %}">
+                      <img style="margin-bottom: 10px;width: 30px; height: 30px; margin-bottom: 20px;" src="{% static 'assets/img/meet/이모티콘.png' %}">
+                        <textarea name="chat-insert" required style="border-radius: 5rem; width: 220px; margin-top: 7px;"></textarea>
+                        <img style="width: 30px; height: 30px; margin-bottom: 10px; margin-bottom: 20px;" src="{% static 'assets/img/전송.png' %}">
+                  </div>
+              </main>
+            </div>  
             <!-- 채팅방마무리 -->
             <!-- 번역 시작 -->
             <div class="col" data-bs-toggle="offcanvas" data-bs-target="#translate" aria-controls="offcanvasBottom">
@@ -425,11 +404,11 @@
                     <div class="continer">
                       <div class="row">
                         <div class="text-center">
-                          <img class="mt-4 mb-3" src="{% static 'assets/img/meet/온도계.png' %}" style="width: 65%; height:65%">
-                          <h5 class="modal-title">온도가 1°C 올라갔어요!</h5>
+                          <img class="mt-4 mb-3" src="{% static 'assets/img/meet/온도계.png' %}" style="width: 55%; height:75%">
+                          <h5 class="modal-title ">온도가 1°C 올라갔어요!</h5>
                         </div>
                         <div class="d-grid gap-2 col-10 mx-auto">
-                          <button type="button" id="kkkk" class="col btn btn-primary mb-2" data-bs-dismiss="modal" onclick="location.href='{% url 'remind' %}'">
+                          <button type="button" id="kkkk" class="col btn btn-primary mt-3 mb-2" data-bs-dismiss="modal" onclick="location.href='{% url 'remind' %}'">
                             오늘 배운 표현 기록하기
                           </button>
                           <button type="button" id="kkkk" class="col btn btn-outline-primary mb-3" data-bs-dismiss="modal" onclick="location.href='{% url 'index' %}'">
