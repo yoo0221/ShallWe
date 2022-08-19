@@ -236,14 +236,34 @@ ul {
 
 
 /* search.html */
-.searchHeade {
+.searchHeader {
+    margin: 1rem;
+    margin-bottom: 0.75rem;
     color: #CCC;
     overflow: hidden;
 }
 
 .searchHeader > .angleLeft {
-    float: left;
-    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    color: #000;
+}
+
+.searchBox > .magnifyingGlass {
+    margin-top: 0.5rem;
+    margin-right: 0.3rem;
+    font-size: 1.25rem;
+    float: right;
+    border-left: 1px solid #CCC;
+    padding-left: 0.3rem;
+}
+
+.searchBox {
+    border: 2px solid #CCC;
+    border-radius: 7.5px;
+    height: 40px;
+    width: 90%;
+    float: right;
+    overflow: hidden;
 }
 
 .searchTitle {
@@ -286,7 +306,7 @@ ul {
     border-color: #1C3BD5;
 }
 
-.serachButton {
+.searchButton {
     background-color: #1C3BD5;
     color: #FFF;
     width: 85%;

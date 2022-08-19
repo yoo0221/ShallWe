@@ -33,10 +33,11 @@
   <div class="themaCard">
     <div class="searchHeader">
       <i class="fa-solid fa-angle-left angleLeft"></i>
+      <div class="searchBox">
+        <i class="fa-solid fa-magnifying-glass magnifyingGlass"></i>
+      </div>
     </div>
-
-    <hr>
-
+    <hr style="margin-top: 0.25rem;">
     <p class="searchTitle">메이트 필터</p>
     
     <form action="{% url 'filtered' %}" method="post">
@@ -116,7 +117,7 @@
       </div>
 
       <div class="filter-selected">
-        <button type="submit" class="serachButton">검색</button>
+        <button type="submit" class="searchButton">검색</button>
       </div>
     </form>
   </div>
