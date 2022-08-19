@@ -60,60 +60,6 @@
         <div>채팅</div>
         <i class='fa-solid fa-ellipsis-vertical'></i>
       </div>
-<<<<<<< HEAD
-    </div>
-    <div class="body">
-      <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
-        <div class='row justify-content-center'>
-          <div class='row justify-content-center'>
-            <div class="col d-flex justify-content-center">
-              <span class="row">새로운 메이트와 연결되었어요!</span>
-            </div>
-          </div>
-          <div class='row justify-content-center'>
-            <div class="col d-flex justify-content-center">
-              <span class="row">대화를 통해 교류할 테마부터 결정해요 :D</span>
-            </div>
-          </div>
-            <div class='row'>
-              <button class='btn btn-outline-primary col d-flex justify-content-between align-items-center'><i></i><div>교류 테마 선택</div><i class="fa-solid fa-angle-right angleRight"></i></button>
-            </div>
-        </div>
-        <div class='chat-body d-flex flex-column' id='chat-body'>
-          {% comment %} <div class='d-flex flex-row-reverse'>
-            <div class='me-chat'> 
-              <div class='me-chat-col'>
-                <span class='balloon'>this is message toooooooooooooooooooooooo long</span>
-              </div>
-              <time datetime='07:32:00+09:00'>7:32</time>
-            </div>
-          </div>
-          <div class='d-flex flex-row'>
-            <div class='friend-chat'> 
-              <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' />
-              <div class='friend-chat-col'> 
-                <span class='profile-name'>Tommy</span> <span class='balloon' >message too</span >
-              </div>
-              <time datetime='07:35:00+09:00'>7:35</time> 
-            </div>
-          </div> {% endcomment %}
-        </div>
-      </div>
-      <nav class="wrapper navs">
-        <div class="insert-content row">
-          <input id="chat-message-input" class="form-control col-10" type="text" size="100"/><br/>
-          <input type="submit" id="chat-message-submit" class="btn btn-primary col-2" value="전송"/>
-          <div class="mt-2" style="border-top: 1px solid black; text-align: center;">
-            <div class="mb-2">
-              <a href="{% url 'thema' %}">
-                <span>만남 약속 잡기</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-=======
->>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
     </div>
     <div class="body">
       <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
@@ -133,84 +79,71 @@
             </a>
         </div>
         <div class='chat-body d-flex flex-column' id='chat-body'>
-          {% comment %} <div class='d-flex flex-row-reverse'>
-            <div class='me-chat'> 
-              <div class='me-chat-col'>
-                <span class='balloon'>this is message toooooooooooooooooooooooo long</span>
-              </div>
-              <time datetime='07:32:00+09:00'>7:32</time>
-            </div>
-          </div>
-          <div class='d-flex flex-row'>
-            <div class='friend-chat'> 
-              <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' />
-              <div class='friend-chat-col'> 
-                <span class='profile-name'>Tommy</span> <span class='balloon' >message too</span >
-              </div>
-              <time datetime='07:35:00+09:00'>7:35</time> 
-            </div>
-          </div> {% endcomment %}
           {% for message in messages %}
-            {% if message.author == user %}
-              <div class='d-flex flex-row-reverse'>
-                <div class='me-chat'>
-                  <div class='me-chat-col'>
-                    <span class='balloon'> {{ message.message }} </span>
+            {% if message.sort == "ordinary" %}
+              {% if message.author == user %}
+                <div class='d-flex flex-row-reverse'>
+                  <div class='me-chat'>
+                    <div class='me-chat-col'>
+                      <span class='balloon'> {{ message.message }} </span>
+                    </div>
+                    <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
                   </div>
-                  <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
+                </div>
+              {% else %}
+                <div class='d-flex flex-row'>
+                  <div class='friend-chat'>
+                    <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진'/>
+                    <div class='friend-chat-col'>
+                      <span class='profile-name'>{{ message.author.name }}</span>
+                      <span class='balloon'>{{ message.message }}</span>
+                    </div>
+                    <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
+                  </div>
+                </div>
+              {% endif %}
+            {% elif message.sort == "thema"%}
+              {% if message.author == user %}
+              <div class='thema-message-container'>
+                <a href="#">
+                <div class='d-flex justify-content-center'>
+                  <div class='thema-message-me px-3 pt-2'>
+                    <span class="thema-author">{{message.author.name}}님께서 제안하신 테마입니다.</span>
+                    <div class="thema-content"><span class='thema-sort'>{{message.thema_sort}}</span> <span class="thema-message"> Q{{message.thema_num}}. {{message.message}} </span> </div>
+                    <div class="thema-modify my-2"><span>테마 수정하기</span></div>
+                  </div>
+                </div>
+                </a>
+                <div class='thema-confirmed'>
+                  {% if message.thema_confirmed %}
+                  <p style='color: #1c3bd5;'>테마가 확정되었습니다!</p>
+                  {% else %}
+                  <p>확정 대기중</p>
+                  {% endif %}
                 </div>
               </div>
-            {% else %}
-              <div class='d-flex flex-row'>
-                <div class='friend-chat'>
-                  <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진'/>
-                  <div class='friend-chat-col'>
-                    <span class='profile-name'>{{ message.author.name }}</span>
-                    <span class='balloon'>{{ message.message }}</span>
+              {% else %}
+                <div class='thema-message-container'>
+                  <a href="#">
+                  <div class='d-flex justify-content-center'>
+                    <div class='thema-message-friend px-3 pt-2'>
+                      <span class="thema-author">{{message.author.name}}님께서 제안하신 테마입니다.</span>
+                      <div class="thema-content"><span class='thema-sort'>{{message.thema_sort}}</span> <span class="thema-message"> Q{{message.thema_num}}. {{message.message}} </span> </div>
+                      <div class="thema-modify my-2"><span>테마 수정하기</span></div>
+                    </div>
                   </div>
-                  <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time>
+                  </a>
+                  <div class='thema-confirmed'>
+                    {% if message.thema_confirmed %}
+                    <p style='color: #1c3bd5;'>테마가 확정되었습니다!</p>
+                    {% else %}
+                    <p>확정 대기중</p>
+                    {% endif %}
+                  </div>
                 </div>
-              </div>
+              {% endif %}
+            {% elif message.sort == "promise"%}
             {% endif %}
-          {% endfor %}
-          {% for tm in thema_msg %}
-          <div class='d-flex flex-row-reverse'>
-            <div class='me-chat'>
-              <div class='me-chat-col'>
-                <span class='balloon'> {{ tm.author }}님께서 제안하신 테마입니다. 유형 Q{{tm.number}}. 깻잎 논쟁을 아시나요? </span>
-              </div>
-              {% comment %} <time datetime='{{ message.created_time }}'>{{ message.created_time|date:"G:i" }}</time> {% endcomment %}
-<<<<<<< HEAD
-<<<<<<< HEAD
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-      <nav class="wrapper navs">
-        {% comment %} <div class="insert-content"> {% endcomment %}
-          <div class="input-divs">
-            <input id="chat-message-input" class="" type="text"/>
-          </div>
-          
-          <div class='sumbit-divs'>
-            <button type="submit" id="chat-message-submit submit" value="전송">
-              <span><img src="{% static 'assets/img/검색.png' %}"></span>
-            </button>
-          </div>
-          {% comment %} <div class="mt-2" style="border-top: 1px solid black; text-align: center;">
-            <div class="mb-2">
-              <a href="{% url 'thema' %}">
-                <span>만남 약속 잡기</span>
-              </a>
-=======
->>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
-            </div>
-          </div> {% endcomment %}
-        {% comment %} </div> {% endcomment %}
-=======
-            </div>
-          </div>
           {% endfor %}
         </div>
       </div>
@@ -228,10 +161,6 @@
               <span><img src="{% static 'assets/img/전송.png' %}" style="width:22px; height:22px;"></span>
             </button>
           </div>
-<<<<<<< HEAD
->>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
-=======
->>>>>>> 5665b006710c2af99e6d758bb0620b60e184b466
       </nav>
     </div>
     {{ user.username|json_script:"cur-user"}}
@@ -250,22 +179,51 @@
         const data = JSON.parse(e.data);
         const cur_user = JSON.parse(document.getElementById("cur-user").textContent);
         if (data.username == cur_user) {
-<<<<<<< HEAD
-          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime='07:32:00+09:00'>7:32</time></div></div>";
-          $("#chat-body").append(tag);
-        } else {
-          let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime='07:35:00+09:00'>7:35</time></div> </div>";
-=======
-          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime="+time+">"+timetext+"</time></div></div>";
-          $("#chat-body").append(tag);
-        } else {
-          let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime="+time+">"+hour+":"+minute+"</time></div> </div>";
->>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
-          $("#chat-body").append(tag);
-        }
+          if (data.sort == "ordinary"){
+            let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime="+time+">"+timetext+"</time></div></div>";
+            $("#chat-body").append(tag);
+          }
+          else if (data.sort == "thema"){
+            //let tag = "<div class='d-flex flex-row-reverse'> <p>"+data.name+"님께서 제안하신 테마입니다.</p> <p>"+data.thema_sort+"Q"+data.thema_num+". 깻잎 논쟁을 아시나요?</p><p>확정 대기중</p> </div>"
+            let tag = "<a href='#'> <div class='d-flex justify-content-center'> <div class='thema-message-me px-3 pt-2'> <span class='thema-author'>"+data.name+"님께서 제안하신 테마입니다.</span> <div class='thema-content'><span class='thema-sort'>"+data.thema_sort+"</span> <span class='thema-message'> Q"+ data.thema_num+". "+ data.message +" </span> </div> <div class='thema-modify my-2'><span>테마 수정하기</span></div> </div> </div> </a>";
+            if (data.thema_confirmed){
+              tag += "<div class='thema-confirmed' ><p style='color: #1c3bd5;'>테마가 확정되었습니다!</p></div>";
+            }
+            else{
+              tag += "<div class='thema-confirmed'><p>확정 대기중</p></div>";
+            }
+            tag = "<div class='thema-message-container'>"+ tag +"</div>";
+            $("#chat-body").append(tag);
+          }
+          else if (data.sort == "promise"){
+            let tag = "<div class='d-flex flex-row-reverse'> <p>"+data.name+"님께서 제안하신 만남입니다.</p> <p>"+data.promise_place+"위치보기</p><p>"+ data.promise_time +"</p><p>확정 대기중</p> </div>"
+            $("#chat-body").append(tag);
+          }
+        } 
+        else {
+          if (data.sort == "ordinary"){
+            let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime="+time+">"+ timetext +"</time></div> </div>";
+            $("#chat-body").append(tag);
+          }
+          else if (data.sort == "thema"){
+            let tag = "<a href='#'> <div class='d-flex justify-content-center'> <div class='thema-message-friend px-3 pt-2'> <span class='thema-author'>"+data.name+"님께서 제안하신 테마입니다.</span> <div class='thema-content'><span class='thema-sort'>"+data.thema_sort+"</span> <span class='thema-message'> Q"+ data.thema_num+". "+ data.message +" </span> </div> <div class='thema-modify my-2'><span>테마 수정하기</span></div> </div> </div> </a>";
+            if (data.thema_confirmed){
+              tag += "<div class='thema-confirmed' ><p style='color: #1c3bd5;'>테마가 확정되었습니다!</p></div>";
+            }
+            else{
+              tag += "<div class='thema-confirmed'><p>확정 대기중</p></div>";
+            }
+            tag = "<div class='thema-message-container'>"+ tag +"</div>";
+            $("#chat-body").append(tag);
+          }
+          else if (data.sort == "promise"){
+            let tag = "<div class='d-flex flex-row'> <p>"+data.name+"님께서 제안하신 만남입니다.</p> <p>"+data.promise_place+"위치보기</p><p>"+ data.promise_time +"</p><p>확정 대기중</p> </div>"
+            $("#chat-body").append(tag);
+          }
         // document.querySelector("#chat-log").value +=
         //   data.username + ": " + data.message + "\n";
-      };
+        };
+      }
 
       chatSocket.onclose = function (e) {
         console.error("Chat socket closed unexpectedly");
@@ -290,17 +248,11 @@
         .onclick = function (e) {
           const messageInputDom = document.querySelector("#chat-message-input");
           const message = messageInputDom.value;
-<<<<<<< HEAD
-          chatSocket.send(JSON.stringify({message: message}));
-          messageInputDom.value = "";
-        };
-=======
           if (message != "") {
-            chatSocket.send(JSON.stringify({message: message}));
-            memessageInputDom.value = "";
+            chatSocket.send(JSON.stringify({message: message, sort:"ordinary"}));
+            messageInputDom.value = "";
           };
         }
->>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
     </script>
   </body>
 
