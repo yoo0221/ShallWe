@@ -1,17 +1,60 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block mainbody %}
-  <div class="container-xxl flex-grow-1 container-p-y">
+
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-menu-fixed" dir="ltr" data-theme="theme-default" data-assets-path="{% static 'assets/' %}" data-template="vertical-menu-template-free">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+
+    <title>Shall We?</title>
+
+    <meta name="description" content=""/>
+
+    <!--fontAwesome-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/fonts/boxicons.css' %}"/>
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/chat-room.css' %}">
+    <link href="{% static 'assets/fontawesome/css/all.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/core.css' %}" class="template-customizer-core-css"/>
+    <link rel="stylesheet" href="{% static 'assets/vendor/css/theme-default.css' %}" class="template-customizer-theme-css"/>
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"/>
+    
+    <style>
+      #inmycase:focus{
+       outline-color: white;
+      }
+    </style>
+    <!-- Page CSS -->
+
+    <link rel="stylesheet" href="{% static 'assets/css/meet.css' %}"/>
+    <!-- Helpers -->
+    <script src="{% static 'assets/vendor/js/helpers.js' %}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
+    <script src="{% static 'assets/js/calendar.js' %}"></script>
+    <script src="{% static 'assets/js/config.js' %}"></script>
+    <script src="{% static 'assets/js/table.js' %}"></script>
+  </head>
+
+  <body style="background-color: #FFF; width: 100%; height:0%">
+    <div style="background-color: #1C3BD5; padding: 1rem; font-weight: bold; color: #FFF; overflow: hidden; text-align: center;">
+      <i class="fa-solid fa-angle-left angleLeft" onclick="history.back()"></i>
+      <span>만남 약속 잡기</span>
+    </div>
+
+  <div style="background-color:white; height:100%">
     <div class="row">
       <div class="container">
-        <div class="row">
-          <h4 class="fw-bold py-1 mb-3">
-            <span class="fw-light">약속 정하기</span>
-          </h4>
-        </div>
         <!-- </div> </div> -->
         <div class="row">
-          <div class="card mb-4">
+          <div>
             <!-- <h5 class="card-header pb-0 mb-0">약속 정하기</h5> -->
             <form action="{% url 'promise' %}" method="post">
               {% csrf_token %}
@@ -22,13 +65,13 @@
                 <div class="thema-select-place-group">
                   <!-- <button class="btn btn-primary me-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > 카페 </button> -->
                   <div class="thema-select-place-group my-3">
-                    <label for="place" class="radio-btn col">
-                      <input type="radio" name="place" class="btn btn-primary me-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="place" value="카페"/>
-                      <span>카페</span>
+                    <label for="place" class="radio-btn col"></label>
+                      <input style="display:none;" type="radio" name="place" class="btn btn-primary me-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" id="place" value="카페"/>
+                      <span style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem;">카페</span>
                     </label>
                     <label for="place" class="radio-btn col">
-                      <input type="radio" name="place" value="음식점"/>
-                      <span>음식점</span>
+                      <input style="display:none;" type="radio" name="place" value="식당"/>
+                      <span style="margin-left:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem">식당</span>
                     </label>
                     <div class="collapse" id="collapseExample">
                       <div class="table-responsive text-nowrap">
@@ -169,31 +212,25 @@
             </div>
           </div>
         </div>
-        {% endblock%}
 
-        <div class="row">
-          <div class="col-sm-3">
-            <label for="photo_img" class="avatar" tabindex="0">
-              <img src="{% static 'assets/img/cafe2.jpg' %}" class="d-block rounded" alt="">
-            </label>
-          </div>
-          <div class="col-sm-9">
-            <div class="row">
-              <div class="col-4 col-sm-4">
-                <strong>아라비카 카페</strong>
-              </div>
-              <div class="col-4 col-sm-4">
-                <img src="{% static 'assets/img/location.png'%}">
-                <strong>대현동</strong>
-              </div>
-              <div class="col-4 col-sm-4">
-                <strong>10:00 ~ 21:00</strong>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-4 col-sm-12 mt-1 mb-2">
-                다양하고 맛있는 디저트
-              </div>
-            </div>
-          </div>
-        </div>
+        <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+        <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+        <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+        <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    
+        <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+        <!-- endbuild -->
+    
+        <!-- Vendors JS -->
+        <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
+    
+        <!-- Main JS -->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+    
+        <!-- Page JS -->
+        <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
+        <script src="{% static 'js/location_select.js' %}"></script>
+    
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      </body>

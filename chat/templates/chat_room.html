@@ -60,6 +60,60 @@
         <div>채팅</div>
         <i class='fa-solid fa-ellipsis-vertical'></i>
       </div>
+<<<<<<< HEAD
+    </div>
+    <div class="body">
+      <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
+        <div class='row justify-content-center'>
+          <div class='row justify-content-center'>
+            <div class="col d-flex justify-content-center">
+              <span class="row">새로운 메이트와 연결되었어요!</span>
+            </div>
+          </div>
+          <div class='row justify-content-center'>
+            <div class="col d-flex justify-content-center">
+              <span class="row">대화를 통해 교류할 테마부터 결정해요 :D</span>
+            </div>
+          </div>
+            <div class='row'>
+              <button class='btn btn-outline-primary col d-flex justify-content-between align-items-center'><i></i><div>교류 테마 선택</div><i class="fa-solid fa-angle-right angleRight"></i></button>
+            </div>
+        </div>
+        <div class='chat-body d-flex flex-column' id='chat-body'>
+          {% comment %} <div class='d-flex flex-row-reverse'>
+            <div class='me-chat'> 
+              <div class='me-chat-col'>
+                <span class='balloon'>this is message toooooooooooooooooooooooo long</span>
+              </div>
+              <time datetime='07:32:00+09:00'>7:32</time>
+            </div>
+          </div>
+          <div class='d-flex flex-row'>
+            <div class='friend-chat'> 
+              <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' />
+              <div class='friend-chat-col'> 
+                <span class='profile-name'>Tommy</span> <span class='balloon' >message too</span >
+              </div>
+              <time datetime='07:35:00+09:00'>7:35</time> 
+            </div>
+          </div> {% endcomment %}
+        </div>
+      </div>
+      <nav class="wrapper navs">
+        <div class="insert-content row">
+          <input id="chat-message-input" class="form-control col-10" type="text" size="100"/><br/>
+          <input type="submit" id="chat-message-submit" class="btn btn-primary col-2" value="전송"/>
+          <div class="mt-2" style="border-top: 1px solid black; text-align: center;">
+            <div class="mb-2">
+              <a href="{% url 'thema' %}">
+                <span>만남 약속 잡기</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+=======
+>>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
     </div>
     <div class="body">
       <div class="container-xxl flex-grow-1 container-p-y justify-content-center pt-3">
@@ -196,10 +250,17 @@
         const data = JSON.parse(e.data);
         const cur_user = JSON.parse(document.getElementById("cur-user").textContent);
         if (data.username == cur_user) {
+<<<<<<< HEAD
+          let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime='07:32:00+09:00'>7:32</time></div></div>";
+          $("#chat-body").append(tag);
+        } else {
+          let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime='07:35:00+09:00'>7:35</time></div> </div>";
+=======
           let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime="+time+">"+timetext+"</time></div></div>";
           $("#chat-body").append(tag);
         } else {
           let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime="+time+">"+hour+":"+minute+"</time></div> </div>";
+>>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
           $("#chat-body").append(tag);
         }
         // document.querySelector("#chat-log").value +=
@@ -229,11 +290,17 @@
         .onclick = function (e) {
           const messageInputDom = document.querySelector("#chat-message-input");
           const message = messageInputDom.value;
+<<<<<<< HEAD
+          chatSocket.send(JSON.stringify({message: message}));
+          messageInputDom.value = "";
+        };
+=======
           if (message != "") {
             chatSocket.send(JSON.stringify({message: message}));
             memessageInputDom.value = "";
           };
         }
+>>>>>>> 24567aca12810d1217a90e9f2a0d563b60dd1f7a
     </script>
   </body>
 

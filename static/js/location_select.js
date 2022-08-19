@@ -1,6 +1,17 @@
 $(function(){
-    areaSelectMaker("select[name=addressDo]");
+    areaSelectMaker(".select-address");
 });
+
+$("#finishSelectLocation").on("click", function(){
+    $('#select-location-modal').modal('hide');
+    $('#open-select-location-modal').text($("input[name='addressDo']:checked").val()+
+    " "+
+    $("input[name='addressSiGunGu']:checked").val()+
+    ($("input[name='dong-eub-myeon']:checked").val()!="all"?" "+$("input[name='dong-eub-myeon']:checked").val():""));
+    $('#open-select-location-modal').removeClass("btn-outline-primary");
+    $('#open-select-location-modal').addClass("btn-primary");
+});
+
 
 var areaSelectMaker = function(target){
     if(target == null || $(target).length == 0){
@@ -9,7 +20,7 @@ var areaSelectMaker = function(target){
     }
 
     var area = {
-        "서울특별시": {
+        "서울": {
             "강남구": [
                 "신사동",
                 "논현1동",
@@ -488,7 +499,7 @@ var areaSelectMaker = function(target){
             ]
         },
 
-        "부산광역시": {
+        "부산": {
             "강서구": [
                 "대저1동",
                 "대저2동",
@@ -728,7 +739,7 @@ var areaSelectMaker = function(target){
             ]
         },
 
-        "대구광역시": {
+        "대구": {
             "남구": [
                 "이천동",
                 "봉덕1동",
@@ -889,7 +900,7 @@ var areaSelectMaker = function(target){
             ]
         },		
 
-        "인천광역시": {
+        "인천": {
             "계양구": [
                 "효성1동",
                 "효성2동",
@@ -1067,7 +1078,7 @@ var areaSelectMaker = function(target){
             ]
         },
 
-        "광주광역시": {
+        "광주": {
             "광산구": [
                 "송정1동",
                 "송정2동",
@@ -1177,7 +1188,7 @@ var areaSelectMaker = function(target){
             ]
         },
 
-        "대전광역시": {
+        "대전": {
             "대덕구": [
                 "오정동",
                 "대화동",
@@ -1272,7 +1283,7 @@ var areaSelectMaker = function(target){
             ],
         },
 
-        "울산광역시": {
+        "울산": {
             "남구": [
                 "신정1동",
                 "신정2동",
@@ -1341,7 +1352,7 @@ var areaSelectMaker = function(target){
             ],
         },
 
-        "세종특별자치시": {
+        "세종": {
             "세종특별자치시": [
                 "조치원읍",
                 "연기면",
@@ -1368,7 +1379,7 @@ var areaSelectMaker = function(target){
             ],
         },
 
-        "경기도": {
+        "경기": {
             "수원시 장안구": [
                 "파장동",
                 "율천동",
@@ -2016,7 +2027,7 @@ var areaSelectMaker = function(target){
             ]
         },
 
-        "강원도": {
+        "강원": {
             "춘천시": [
                 "신북읍",
                 "동면",
@@ -2248,7 +2259,7 @@ var areaSelectMaker = function(target){
             ]
         },
         
-        "충청북도": {
+        "충북": {
             "청주시 상당구": [
                 "낭성면",
                 "미원면",
@@ -2432,7 +2443,7 @@ var areaSelectMaker = function(target){
             ]
         },
 
-        "충청남도": {
+        "충남": {
             "천안시 동남구": [
                 "목천읍",
                 "풍세면",
@@ -2675,7 +2686,7 @@ var areaSelectMaker = function(target){
             ]
         },	
 
-        "전라북도": {
+        "전북": {
             "전주시 완산구": [
                 "중앙동",
                 "풍남동",
@@ -2951,7 +2962,7 @@ var areaSelectMaker = function(target){
             ]
         },	
 
-        "전라남도": {
+        "전남": {
             "목포시": [
                 "용당1동",
                 "용당2동",
@@ -3295,7 +3306,7 @@ var areaSelectMaker = function(target){
             ]
         },
 
-        "경상북도": {
+        "경북": {
             "포항시 남구": [
                 "구룡포읍",
                 "연일읍",
@@ -3676,7 +3687,7 @@ var areaSelectMaker = function(target){
             ]
         },
         
-        "경상남도": {
+        "경남": {
             "창원시 의창구": [
                 "동읍",
                 "북면",
@@ -4028,7 +4039,7 @@ var areaSelectMaker = function(target){
             ]
         },	
 
-        "제주특별자치도": {
+        "제주": {
             "서귀포시": [
                 "대정읍",
                 "남원읍",
@@ -4079,46 +4090,75 @@ var areaSelectMaker = function(target){
         }
     };
 
-    for(i=0; i<$(target).length; i++){
-        (function(z){
-            var a1 = $(target).eq(z);
-            var a2 = a1.next();
-            var a3 = a2.next();
+    var a1 = $(target+" ul").first();
+    var a2 = a1.next();
+    var a3 = a2.next();
 
-            //초기화
-            init(a1, true);
+    var areaKeys1 = Object.keys(area);
+    var index = 0;
+    areaKeys1.forEach(function(Do){
+        a1.append(`<li class="list-group-item px-0 border-0">
+        <input class="btn-check" type="radio" name="addressDo" id="addressDo${index}" value="${Do}">
+        <label class="p-1" for="addressDo${index}">${Do}</label>
+        </li>`);
+        index++;
+    });
 
-            //시/도 기본 생성
-            var areaKeys1 = Object.keys(area);
-            areaKeys1.forEach(function(Do){
-                a1.append("<option value="+Do+">"+Do+"</option>");
+    $("input[name='addressDo']").change(function(){
+        a2.empty();
+        a3.empty();
+        a3.addClass("d-none");
+        activeChekedList("input[name='addressDo']");
+        var Do = $("input[name='addressDo']:checked").val();
+        var keys = Object.keys(area[Do]);
+        var index = 0;
+        keys.forEach(function(SiGunGu){
+            a2.append(`<li class="list-group-item px-0 border-0">
+            <input class="btn-check" type="radio" name="addressSiGunGu" id="addressSiGunGu${index}" value="${SiGunGu}">
+            <label for="addressSiGunGu${index}">${SiGunGu}</label>
+            </li>`);
+            index++;
+        });
+        addChangeEventForSiGunGu();
+        a2.removeClass("d-none");
+    });
+
+    function addChangeEventForSiGunGu(){
+        $("input[name='addressSiGunGu']").change(function(){
+            a3.empty().append(`<li class="list-group-item px-0 border-0 text-primary fw-bold">
+            <input class="btn-check" type="radio" name="dong-eub-myeon" value="all" id="dong-eub-myeon0" checked>
+            <label for="dong-eub-myeon0">전체</label>
+            </li>`);
+            textChekedList("input[name='addressSiGunGu']");
+            var Do = $("input[name='addressDo']:checked").val();
+            var SiGunGu = $("input[name='addressSiGunGu']:checked").val();
+            var keys = Object.keys(area[Do][SiGunGu]);
+            var index = 1;
+            keys.forEach(function(DEM){
+                a3.append(`<li class="list-group-item px-0 border-0">
+                <input class="btn-check" type="radio" name="dong-eub-myeon" id="dong-eub-myeon${index}" value="${area[Do][SiGunGu][DEM]}">
+                <label for="dong-eub-myeon${index}">${area[Do][SiGunGu][DEM]}</label>
+                </li>`);
+                index++;
             });
+            addChangeEventForDEM();
+            a3.removeClass("d-none");
+        });
+    }
 
-            //변경 이벤트
-            $(a1).on("change", function(){
-                init($(this), false);
-                var Do = $(this).val();
-                var keys = Object.keys(area[Do]);
-                keys.forEach(function(SiGunGu){
-                    a2.append("<option value="+SiGunGu+">"+SiGunGu+"</option>");    
-                });
-            });
+    function addChangeEventForDEM() {
+        $("input[name='dong-eub-myeon']").change(function(){
+            textChekedList("input[name='dong-eub-myeon']");
+        });
+    }
 
-            $(a2).on("change", function(){
-                a3.empty().append("<option value='none'>선택</option>");
-                var Do = a1.val();
-                var SiGunGu = $(this).val();
-                var keys = Object.keys(area[Do][SiGunGu]);
-                keys.forEach(function(EMD){
-                    a3.append("<option value="+area[Do][SiGunGu][EMD]+">"+area[Do][SiGunGu][EMD]+"</option>");    
-                });
-            });
-        })(i);        
+    function activeChekedList(target){
+        $(target).next().removeClass("bg-primary rounded-pill text-white");
+        $(target+":checked").next().addClass("bg-primary rounded-pill text-white");
+    }
 
-        function init(t, first){
-            first ? t.empty().append("<option value='none'>시/도</option>") : "";
-            t.next().empty().append("<option value='none'>시/군/구</option>");
-            t.next().next().empty().append("<option value='none'>읍/면/동</option>");
-        }
+    function textChekedList(target){
+        $(target).parent().removeClass("text-primary").removeClass("fw-bold");
+        $(target+":checked").parent().addClass("text-primary").addClass("fw-bold");
     }
 }

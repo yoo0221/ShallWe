@@ -108,7 +108,7 @@ class SetScheduleForm(forms.ModelForm):
             # 'my_date_time_field' : DateTimePickerInput(),
         }
         labels = {
-            'place' : '직접 입력해보세요!',
+            'place' : '직접 입력할게요!',
             'my_date_field':"날짜",
             'my_time_field':"시간",
             # 'my_date_time_field':"날짜 및 시간",
@@ -128,6 +128,6 @@ class SetScheduleForm(forms.ModelForm):
         self.fields['place'].widget.attrs = {
             'id' : 'place',
             'class' : 'form-control',
-            'placeholder' : '나와 메이트가 이번에 갈 장소는?'
+            'placeholder' : '나와 메이트가 이번에 만날 장소는?'
         }
         
