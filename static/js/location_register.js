@@ -9,7 +9,7 @@ var areaSelectMaker = function (target) {
   }
 
   var area = {
-    서울특별시: {
+    서울: {
       강남구: [
         "신사동",
         "논현1동",
@@ -488,7 +488,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    부산광역시: {
+    부산: {
       강서구: [
         "대저1동",
         "대저2동",
@@ -722,7 +722,7 @@ var areaSelectMaker = function (target) {
       기장군: ["기장읍", "장안읍", "정관읍", "일광읍", "철마면"],
     },
 
-    대구광역시: {
+    대구: {
       남구: [
         "이천동",
         "봉덕1동",
@@ -883,7 +883,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    인천광역시: {
+    인천: {
       계양구: [
         "효성1동",
         "효성2동",
@@ -1061,7 +1061,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    광주광역시: {
+    광주: {
       광산구: [
         "송정1동",
         "송정2동",
@@ -1171,7 +1171,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    대전광역시: {
+    대전: {
       대덕구: [
         "오정동",
         "대화동",
@@ -1266,7 +1266,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    울산광역시: {
+    울산: {
       남구: [
         "신정1동",
         "신정2동",
@@ -1335,7 +1335,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    세종특별자치시: {
+    세종: {
       세종특별자치시: [
         "조치원읍",
         "연기면",
@@ -1362,7 +1362,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    경기도: {
+    경기: {
       "수원시 장안구": [
         "파장동",
         "율천동",
@@ -1982,7 +1982,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    강원도: {
+    강원: {
       춘천시: [
         "신북읍",
         "동면",
@@ -2181,7 +2181,7 @@ var areaSelectMaker = function (target) {
       양양군: ["양양읍", "서면", "손양면", "현북면", "현남면", "강현면"],
     },
 
-    충청북도: {
+    충북: {
       "청주시 상당구": [
         "낭성면",
         "미원면",
@@ -2362,7 +2362,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    충청남도: {
+    충남: {
       "천안시 동남구": [
         "목천읍",
         "풍세면",
@@ -2600,7 +2600,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    전라북도: {
+    전북: {
       "전주시 완산구": [
         "중앙동",
         "풍남동",
@@ -2869,7 +2869,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    전라남도: {
+    전남: {
       목포시: [
         "용당1동",
         "용당2동",
@@ -3213,7 +3213,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    경상북도: {
+    경북: {
       "포항시 남구": [
         "구룡포읍",
         "연일읍",
@@ -3583,7 +3583,7 @@ var areaSelectMaker = function (target) {
       울릉군: ["울릉읍", "서면", "북면"],
     },
 
-    경상남도: {
+    경남: {
       "창원시 의창구": [
         "동읍",
         "북면",
@@ -3935,7 +3935,7 @@ var areaSelectMaker = function (target) {
       ],
     },
 
-    제주특별자치도: {
+    제주: {
       서귀포시: [
         "대정읍",
         "남원읍",

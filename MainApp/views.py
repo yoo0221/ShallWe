@@ -132,17 +132,6 @@ def setprofile(request):
         form = SetProfileForm()
     return render(request, 'setprofile.html', {"form":form})
 
-@login_required
-def themaselect(request):
-    if request.method == "POST":
-        form = SetScheduleForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return render(request, 'promise.html')
-    else:
-        form = SetScheduleForm()
-    return render(request, 'themaselect.html', {"form":form})
-
 def hasRoom(user1, user2):
     room = Room.objects.filter(user1=User.objects.get(pk=user1))
     room = room.filter(user2=User.objects.get(pk=user2))
@@ -152,9 +141,20 @@ def hasRoom(user1, user2):
     return room
 
 @login_required
+def themaselect(request, user_id):
+    room = hasRoom(user_id, request.user.id)
+    # if request.method == "POST":
+    #     form = SetScheduleForm(request.POST)
+    #     if form.is_valid():
+    #         form.save()
+    #         return render(request, 'promise.html')
+    # else:
+    form = SetScheduleForm()
+    return render(request, 'themaselect.html', {"form":form, "room":room[0]})
+
+@login_required
 def thema(request, user_id):
     room = hasRoom(user_id, request.user.id)
-    print(room)
     opponent = User.objects.get(pk=user_id)
     # messages = room[0].messages.all()
     # if request.method == 'POST':

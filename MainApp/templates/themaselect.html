@@ -25,12 +25,13 @@
     <link rel="stylesheet" href="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css' %}"/>
 
     <link rel="stylesheet" href="{% static 'assets/vendor/libs/apex-charts/apex-charts.css' %}"/>
-    
+
     <style>
-      #inmycase:focus{
-       outline-color: white;
+      #inmycase:focus {
+        outline-color: white;
       }
-      #begray:hover{
+
+      #begray:hover {
         background-color: rgb(186, 183, 183);
       }
     </style>
@@ -52,42 +53,45 @@
       <span>만남 약속 잡기</span>
     </div>
 
-  <div style="background-color:white; height:100%">
-    <div class="row">
-      <div class="container">
-        <!-- </div> </div> -->
-        <div class="row">
-          <div>
-            <!-- <h5 class="card-header pb-0 mb-0">약속 정하기</h5> -->
-            <form action="{% url 'promise' %}" method="post">
-              {% csrf_token %}
-              <div class="card-body">
-                <h6 class="card-title"><img src="{% static 'assets/img/profile_order.png' %}" alt="">
-                  <strong>장소</strong>
-                </h6>
-                <div class="thema-select-place-group">
-                  <!-- <button class="btn btn-primary me-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > 카페 </button> -->
-                  <div class="thema-select-place-group my-3">
-                    <button 
-                      style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;"
-                      data-bs-toggle="collapse" onclick="fillFollow()"
-                      href="#collapseExample1" role="button" aria-expanded="false" 
-                      aria-controls="collapseExample" id="place" value="카페">
-                      카페
-                    </button>
-                    <button 
-                      style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;"
-                      data-bs-toggle="collapse" onclick="fillFollow1()"
-                      href="#collapseExample2" role="button" aria-expanded="false" 
-                      aria-controls="collapseExample" id="place1" value="식당">
-                      식당
-                    </button>
-                    <div class="collapse" id="collapseExample1">
-                      <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row mt-2" style="border-top: 2px solid gray;"  id="begray">
-                          <div class="col-2 mt-2 " >
-                          <img src="{% static 'assets/img/new cafe1.jpg' %}"  style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+    <div style="background-color:white; height:100%">
+      <div class="row">
+        <div class="container">
+          <!-- </div> </div> -->
+          <div class="row">
+            <div>
+              <!-- <h5 class="card-header pb-0 mb-0">약속 정하기</h5> -->
+              <form action="{% url 'room' room.id %}" method="post">
+                {% csrf_token %}
+                <div class="card-body">
+                  <h6 class="card-title"><img src="{% static 'assets/img/profile_order.png' %}" alt="">
+                    <strong>장소</strong>
+                  </h6>
+                  <div class="thema-select-place-group">
+                    <!-- <button class="btn btn-primary me-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" > 카페 </button> -->
+                    <div class="thema-select-place-group my-3">
+                      <button style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;" data-bs-toggle="collapse" onclick="fillFollow()" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample" id="place" value="카페">
+                        카페
+                      </button>
+                      <button style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;" data-bs-toggle="collapse" onclick="fillFollow1()" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample" id="place1" value="식당">
+                        식당
+                      </button>
+                      <div class="collapse" id="collapseExample1">
+                        <tr onclick="questionSelected(this, '#708090')">
+                          <div class="row mt-2" style="border-top: 2px solid gray;" id="begray">
+                            <div class="col-2 mt-2 ">
+                              <img src="{% static 'assets/img/new cafe1.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+                            </div>
+                            <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
+                              <span style="font-size: 12px;color: black;">그린빈 카페 복현점</span>
+                              <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
+                              <span style="font-size: 12px; color: black;">냉천동</span>
+                              <span style="font-size: 12px; color: black;">09:00 ~ 22:00</span>
+                              <br>
+                              <span style="font-size: 12px; color: black;">음료 한 잔 가격에 두 잔 구매 가능</span>
+                              <img src="{% static 'assets/img/화살표 (2).png' %}" style="float: right;">
+                            </div>
                           </div>
+<<<<<<< HEAD
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">그린빈 카페 복현점</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
@@ -95,14 +99,41 @@
                             <span style="font-size: 12px; color: black;">09:00 ~ 22:00</span> <br>
                             <span style="font-size: 12px; color: black;">음료 한 잔 가격에 두 잔 구매 가능</span>
                             <img src="{% static 'assets/img/arrow2.png' %}" style="float: right;">
+=======
+                        </tr>
+                        <tr onclick="questionSelected(this, '#708090')">
+                          <div class="row" style="border-top: 2px solid gray; border-bottom: 2px solid gray;" id="begray">
+                            <div class="col-2 mt-2">
+                              <img src="{% static 'assets/img/cafe2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+                            </div>
+                            <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
+                              <span style="font-size: 12px;color: black;">아라비카 카페</span>
+                              <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
+                              <span style="font-size: 12px; color: black;">대신동</span>
+                              <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span>
+                              <br>
+                              <span style="font-size: 12px; color: black;">다양하고 맛있는 디저트</span>
+                              <img src="{% static 'assets/img/화살표 (2).png' %}" style="float: right;">
+                            </div>
+>>>>>>> 9bf4d12ae30513087adf61aea671ff18cba70221
                           </div>
-                        </div>
-                      </tr>
-                      <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row" style="border-top: 2px solid gray; border-bottom: 2px solid gray;" id="begray">
-                          <div class="col-2 mt-2" >
-                          <img src="{% static 'assets/img/cafe2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+                        </tr>
+                        <tr onclick="questionSelected(this, '#708090')">
+                          <div class="row mb-3" style=" border-bottom: 2px solid gray; " id="begray">
+                            <div class="col-2 mt-2">
+                              <img src="{% static 'assets/img/cafe3.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+                            </div>
+                            <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
+                              <span style="font-size: 12px;color: black;">커피빈 대현점</span>
+                              <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
+                              <span style="font-size: 12px; color: black;">대현동</span>
+                              <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span>
+                              <br>
+                              <span style="font-size: 12px; color: black;">딸기라떼가 맛있는 집</span>
+                              <img src="{% static 'assets/img/화살표 (2).png' %}" style="float: right;">
+                            </div>
                           </div>
+<<<<<<< HEAD
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">아라비카 카페</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
@@ -128,19 +159,29 @@
                           </div>
                         </div>
                       </tr>
+=======
+                        </tr>
+                      </div>
+>>>>>>> 9bf4d12ae30513087adf61aea671ff18cba70221
                     </div>
-                  </div>
                     <div class="collapse" id="collapseExample2">
                       <tr onclick="questionSelected(this, '#708090')">
+<<<<<<< HEAD
                         <div class="row mt-2" style="border-top: 2px solid gray;"  id="begray">
                           <div class="col-2 mt-2 " >
                           <img src="{% static 'assets/img/cafeteria1.jpg' %}"  style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+=======
+                        <div class="row mt-2" style="border-top: 2px solid gray;" id="begray">
+                          <div class="col-2 mt-2 ">
+                            <img src="{% static 'assets/img/식당1.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+>>>>>>> 9bf4d12ae30513087adf61aea671ff18cba70221
                           </div>
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">올데이 POKE</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
                             <span style="font-size: 12px; color: black;">미근동</span>
-                            <span style="font-size: 12px; color: black;">09:00 ~ 22:00</span> <br>
+                            <span style="font-size: 12px; color: black;">09:00 ~ 22:00</span>
+                            <br>
                             <span style="font-size: 12px; color: black;">리뷰 수 500 돌파한 포케집</span>
                             <img src="{% static 'assets/img/arrow2.png' %}" style="float: right;">
                           </div>
@@ -148,14 +189,20 @@
                       </tr>
                       <tr onclick="questionSelected(this, '#708090')">
                         <div class="row" style="border-top: 2px solid gray; border-bottom: 2px solid gray;" id="begray">
+<<<<<<< HEAD
                           <div class="col-2 mt-2" >
                           <img src="{% static 'assets/img/cafeteria2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+=======
+                          <div class="col-2 mt-2">
+                            <img src="{% static 'assets/img/식당2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+>>>>>>> 9bf4d12ae30513087adf61aea671ff18cba70221
                           </div>
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">봉골레 파스타</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
                             <span style="font-size: 12px; color: black;">신천동</span>
-                            <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span> <br>
+                            <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span>
+                            <br>
                             <span style="font-size: 12px; color: black;">호주 유학 출신 셰프가 직접하는 요리</span>
                             <img src="{% static 'assets/img/arrow2.png' %}" style="float: right;">
                           </div>
@@ -163,14 +210,20 @@
                       </tr>
                       <tr onclick="questionSelected(this, '#708090')">
                         <div class="row mb-3" style=" border-bottom: 2px solid gray; " id="begray">
+<<<<<<< HEAD
                           <div class="col-2 mt-2" >
                           <img src="{% static 'assets/img/cafeteria3.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+=======
+                          <div class="col-2 mt-2">
+                            <img src="{% static 'assets/img/식당3.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+>>>>>>> 9bf4d12ae30513087adf61aea671ff18cba70221
                           </div>
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">신라 떡볶이 연희점</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
                             <span style="font-size: 12px; color: black;">연희동</span>
-                            <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span> <br>
+                            <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span>
+                            <br>
                             <span style="font-size: 12px; color: black;">떡볶이 + 튀김세트 할인중</span>
                             <img src="{% static 'assets/img/arrow2.png' %}" style="float: right;">
                           </div>
@@ -179,16 +232,16 @@
                     </div>
                   </div>
                   {{form}}
-                  <div style="overflow:hidden;">
-                    <div class="form-group">
-                       <div class="row">
+                    <div style="overflow:hidden;">
+                      <div class="form-group">
+                        <div class="row">
                           <div class="col-md-8">
-                             <div id="datetimepicker12"></div>
+                            <div id="datetimepicker12"></div>
                           </div>
-                       </div>
+                        </div>
+                      </div>
                     </div>
-                </div>
-                </div>
+                  </div>
                   <input type="button" class="btn btn-primary btn-lg mb-3" value="만남 약속 제안하기" data-bs-toggle="modal" data-bs-target="#modalCenter" style="background-color: #1C3BD5; position: fixed; bottom: 0; width: 352px;"/>
                   <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -200,83 +253,129 @@
                           <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
                             아니요
                           </button>
-                          <input type="submit" class="btn btn-primary" value="예" style="background-color: #1C3BD5;"/>
-                          <!-- <button type="button" class="btn btn-primary" onclick="location.href='{% url 'promise' %}'">예</button> -->
+                          <a href="{% url 'room' room.id %}">
+                            <input type="submit" class="btn btn-primary" value="예" id="chat-message-submit" style="background-color: #1C3BD5;"/>
+                            {% comment %} <button class='btn btn-primary' id='chat-message-submit' style="background-color: #1C3BD5;">예</button> {% endcomment %}
+                          </a>
                         </div>
                       </div>
                     </div>
                   </div>
-                      <!-- <button class="btn btn-secondary btn-lg" type="button">Button</button> -->
-                    </div>
-                  </div>
-                </form>
+                  <!-- <button class="btn btn-secondary btn-lg" type="button">Button</button> -->
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
+      </div>
+    </div>
 
-        <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
-        <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
-        <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
-        <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
-    
-        <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
-        <!-- endbuild -->
-    
-        <!-- Vendors JS -->
-        <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
-    
-        <script>
+    <script src="{% static 'assets/vendor/libs/jquery/jquery.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/popper/popper.js' %}"></script>
+    <script src="{% static 'assets/vendor/js/bootstrap.js' %}"></script>
+    <script src="{% static 'assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
 
-          var isFollow = false;
-          function fillFollow() {
-            if (isFollow == false) {
-              document
-                .querySelector("#place")
-                .style.backgroundColor = "#1C3BD5";
-              isFollow = true;
-            } else {
-              document
-                .querySelector("#place")
-                .style.backgroundColor = "#9f9f9fcc";
-              isFollow = false;
-            }
-          }
-          var isFollow1 = false;
-          function fillFollow1() {
-            if (isFollow1 == false) {
-              document
-                .querySelector("#place1")
-                .style.backgroundColor = "#1C3BD5";
-              isFollow1 = true;
-            } else {
-              document
-                .querySelector("#place1")
-                .style.backgroundColor = "#9f9f9fcc";
-              isFollow1 = false;
-            }
-          }
-        </script>
+    <script src="{% static 'assets/vendor/js/menu.js' %}"></script>
+    <!-- endbuild -->
 
+    <!-- Vendors JS -->
+    <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
 
-        <!-- Main JS -->
-        <script src="{% static 'assets/js/main.js' %}"></script>
-    
-        <!-- Page JS -->
-        <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
-        <script src="{% static 'js/location_select.js' %}"></script>
-    
-        <!-- Place this tag in your head or just before your close body tag. -->
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        
-        <script type="text/javascript">
-             $(function () {
-                 $('#datetimepicker12').datetimepicker({
-                     inline: true,
-                     sideBySide: true
-                 });
-             });
-        </script>
-       </div>
-      </body>
+    <script>
+      var isFollow = false;
+
+      function fillFollow() {
+        if (isFollow == false) {
+          document
+            .querySelector("#place")
+            .style
+            .backgroundColor = "#1C3BD5";
+          isFollow = true;
+        } else {
+          document
+            .querySelector("#place")
+            .style
+            .backgroundColor = "#9f9f9fcc";
+          isFollow = false;
+        }
+      }
+      var isFollow1 = false;
+
+      function fillFollow1() {
+        if (isFollow1 == false) {
+          document
+            .querySelector("#place1")
+            .style
+            .backgroundColor = "#1C3BD5";
+          isFollow1 = true;
+        } else {
+          document
+            .querySelector("#place1")
+            .style
+            .backgroundColor = "#9f9f9fcc";
+          isFollow1 = false;
+        }
+      }
+    </script>
+
+    <!-- Main JS -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <!-- Page JS -->
+    <script src="{% static 'assets/js/dashboards-analytics.js' %}"></script>
+    <script src="{% static 'js/location_select.js' %}"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker12').datetimepicker({inline: true, sideBySide: true});
+      });
+    </script>
+  </div>
+  {{ user.username|json_script:"cur-user"}}
+  {{ room.id|json_script:"room-name" }}
+  <script>
+    // let canvas = document.getElementById('chat-body')
+    const roomName = JSON.parse(document.getElementById("room-name").textContent);
+
+    const chatSocket = new WebSocket("ws://" + window.location.host + "/ws/chat/" + roomName + "/");
+
+    chatSocket.onmessage = function (e) {
+      /* const time = new Date();
+                                                                  const hour = String(time.getHours());
+                                                                  const minute = String(time.getMinutes()).padStart(2, "0");
+                                                                  const timetext = `${hour}:${minute}`
+                                                                  const data = JSON.parse(e.data);
+                                                                  const cur_user = JSON.parse(document.getElementById("cur-user").textContent);
+                                                                  if (data.username == cur_user) {
+                                                                    let tag = "<div class='d-flex flex-row-reverse'><div class='me-chat'> <div class='me-chat-col'><span class='balloon'>" + data.message + "</span></div><time datetime=" + time + ">" + timetext + "</time></div></div>";
+                                                                    $("#chat-body").append(tag);
+                                                                  } else {
+                                                                    let tag = "<div class='d-flex flex-row'><div class='friend-chat'> <img class='profile-img' src='{{ room.user1.userprofile.get_photo_home_url }}' alt='쀼프로필사진' /> <div class='friend-chat-col'> <span class='profile-name'>" + data.name + "</span> <span class='balloon' >" + data.message + "</span > </div> <time datetime=" + time + ">" + timetext + "</time></div> </div>";
+                                                                    $("#chat-body").append(tag);
+                                                                  }*/
+      // document.querySelector("#chat-log").value +=
+      //   data.username + ": " + data.message + "\n";
+    };
+
+    chatSocket.onclose = function (e) {
+      console.error("Chat socket closed unexpectedly");
+    };
+
+    document
+      .querySelector("#chat-message-submit")
+      .onclick = function (e) {
+        const messageInputDom = document.querySelector("#chat-message-input");
+        const message = "그린빈 카페 냉천점";
+        const sort = "promise";
+        if (message != "") {
+          chatSocket.send(JSON.stringify({message: message, sort: sort}));
+          messageInputDom.value = "";
+        };
+      }
+  </script>
+</body>
+
 </html>

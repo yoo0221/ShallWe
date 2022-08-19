@@ -59,9 +59,9 @@ class ChatConsumer(WebsocketConsumer):
                 author=author,
                 room=room,
                 sort=sort,
-                promise_place="그린빈 카페",
-                promise_address="서울특별시",
-                promise_time=datetime.datetime.now(),
+                promise_place="그린빈 카페 냉천점",
+                promise_address="서울특별시 서대문구 냉천동",
+                promise_time="2022-08-20 토요일   오후 02:00",
                 promise_confirmed=False
             )
 
@@ -95,7 +95,8 @@ class ChatConsumer(WebsocketConsumer):
                 'thema_num':1,
                 'thema_confirmed':False,
                 'promise_place':'그린빈 카페 냉천점',
-                'promise_time':"2022-08-20 토요일  오후 2:00",
+                'promise_time':"2022-08-20 토요일   오후 02:00",
+                'promise_confirmed':False
             }
         )
     # Receive message from room group
@@ -109,6 +110,7 @@ class ChatConsumer(WebsocketConsumer):
         thema_confirmed = event['thema_confirmed']
         promise_place = event['promise_place']
         promise_time = event['promise_time']
+        promise_confirmed = event['promise_confirmed']
 
         # Send message to WebSocket
         self.send(text_data=json.dumps({
@@ -121,4 +123,5 @@ class ChatConsumer(WebsocketConsumer):
             'thema_confirmed': thema_confirmed,
             'promise_place': promise_place,
             'promise_time': promise_time,
+            'promise_confirmed': promise_confirmed
         }))
