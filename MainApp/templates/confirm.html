@@ -55,10 +55,10 @@
             <p class="col-12">약속 확정일 2022-08-19</p>
             
             <p class="col-4" style="color: #1C3BD5; font-weight: bold; margin-bottom: 5px;">약속 일자</p>
-            <p class="col-8" style="margin-bottom: 5px;">2022-08-19 오후 02:00</p>
+            <p class="col-8" style="margin-bottom: 5px;">2022-08-20 오후 02:00</p>
             
             <p class="col-4" style="color: #1C3BD5; font-weight: bold; margin-bottom: 5px;">약속 장소</p>
-            <p class="col-8" style="margin-bottom: 5px;">그린빈 카페 복현점</p>
+            <p class="col-8" style="margin-bottom: 5px;">그린빈 카페 냉천점</p>
             
             <p class="col-4" style="color: #1C3BD5; font-weight: bold; margin-bottom: 5px;">교류 주제</p>
             <p class="col" style="margin-bottom: 5px;">
@@ -71,13 +71,14 @@
                 <p  style="text-decoration: underline; color: gray;">테마 바꾸기</p>
             </div>
             <div class="btn-group col" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-outline-secondary">수정하기</button>
-                <button type="button" class="btn btn-outline-secondary">취소하기</button>
+                <button type="button" class="btn btn-outline-secondary" style="border:2px solid #3E3E3E; color:#3E3E3E; background-color:white; font-weight: bold;">수정하기</button>
+                <button type="button" class="btn btn-outline-secondary" style="border:2px solid #3E3E3E; color:#3E3E3E; background-color:white; font-weight: bold;">취소하기</button>
             </div>
             <div>
-                <button type="button" class="col-12 btn btn-outline-secondary mt-3" style="color: #1C3BD5; border: 1px solid #1C3BD5;">
-                    <img src="{% static 'assets/img/clock.png' %}" >&nbsp;&nbsp;
-                    약속 리마인드 알람 설정
+                <button type="button" class="col-12 btn btn-outline-secondary mt-3" style="color: #1C3BD5; border: 2px solid #1C3BD5; background-color:white; font-weight: bold;"
+                    onclick="location.href='{% url 'meet' %}'">
+                    테마보기 &nbsp;
+                    <img src="{% static 'assets/img/meet/종이비행기.png' %}" >
                 </button>
             </div>
             <button type="button" class="btn btn-primary" style="background-color: #1C3BD5; position: fixed; bottom: 0; height: 55px; width: 355px;" onclick="location.href='{% url 'index' %}'">메인페이지로 이동</button>
