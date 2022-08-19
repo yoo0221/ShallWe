@@ -121,39 +121,47 @@
         
             <div class="bottom_menu">
                 <div>
-                    <img src="{% static 'assets/img/프로필.png' %}">
-                    <div style="line-height:20%;">
-                        <br>
-                    </div> 
-                    <p style="font-size: 12px; ">마이페이지</p>
+                    <a href="{% url 'setprofile' %}">
+                        <img src="{% static 'assets/img/프로필.png' %}">
+                        <div style="line-height:20%;">
+                            <br>
+                        </div> 
+                        <p style="font-size: 12px; ">마이페이지</p>
+                    </a>
                 </div>
                 <div>
-                    <img src="{% static 'assets/img/교류테마.png' %}">
-                    <div style="line-height:20%;">
-                        <br>
-                    </div> 
-                    <p style="font-size: 12px; ">교류 테마</p>
+                    <a href="#">
+                        <img src="{% static 'assets/img/교류테마.png' %}">
+                        <div style="line-height:20%;">
+                            <br>
+                        </div> 
+                        <p style="font-size: 12px; ">교류 테마</p>
+                    </a>
                 </div>
                 <div>
-                    <div style="line-height:25%;">
-                        <br>
-                    </div> 
-                    <img src="{% static 'assets/img/home.png' %}">
-                    <div style="line-height:39%;">
-                        <br>
-                    </div> 
-                    <p style="font-size: 12px; ">HOME</p>
+                    <a href="{% url 'home' %}">
+                        <div style="line-height:25%;">
+                            <br>
+                        </div> 
+                        <img src="{% static 'assets/img/home.png' %}">
+                        <div style="line-height:39%;">
+                            <br>
+                        </div> 
+                        <p style="font-size: 12px; ">HOME</p>
+                    </a>
                 </div>
                 <div>
-                    <div style="line-height:25%;">
-                        <br>
-                </div> 
-                <img src="{% static 'assets/img/채팅회색.png' %}">
-                <div style="line-height:15%;">
-                    <br>
-                </div> 
-                <p style="font-size: 12px; ">채팅 목록</p>
-            </div>
+                    <a href="{% url 'home' %}">
+                        <div style="line-height:25%;">
+                            <br>
+                        </div> 
+                        <img src="{% static 'assets/img/채팅회색.png' %}">
+                        <div style="line-height:15%;">
+                            <br>
+                        </div> 
+                        <p style="font-size: 12px; ">채팅 목록</p>
+                    </a>
+                </div>
             <div>
                 <div style="line-height:45%;">
                     <br>
