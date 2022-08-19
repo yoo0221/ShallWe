@@ -4,10 +4,11 @@ $(function(){
 
 $("#finishSelectLocation").on("click", function(){
     $('#select-location-modal').modal('hide');
-    $('#open-select-location-modal').text($("input[name='addressDo']:checked").val()+
+    $('#open-select-location-modal').html($("input[name='addressDo']:checked").val()+
     " "+
     $("input[name='addressSiGunGu']:checked").val()+
-    ($("input[name='dong-eub-myeon']:checked").val()!="all"?" "+$("input[name='dong-eub-myeon']:checked").val():""));
+    ($("input[name='addressEMD']:checked").val()!="all"?" "+$("input[name='addressEMD']:checked").val():"")+
+    `<i class="fa-solid fa-caret-down downIcon"></i>`);
     $('#open-select-location-modal').removeClass("btn-outline-primary");
     $('#open-select-location-modal').addClass("btn-primary");
 });
@@ -4126,8 +4127,8 @@ var areaSelectMaker = function(target){
     function addChangeEventForSiGunGu(){
         $("input[name='addressSiGunGu']").change(function(){
             a3.empty().append(`<li class="list-group-item px-0 border-0 blue-text fw-bold">
-            <input class="btn-check" type="radio" name="dong-eub-myeon" value="all" id="dong-eub-myeon0" checked>
-            <label for="dong-eub-myeon0">전체</label>
+            <input class="btn-check" type="radio" name="addressEMD" value="all" id="addressEMD0" checked>
+            <label for="addressEMD0">전체</label>
             </li>`);
             textChekedList("input[name='addressSiGunGu']");
             var Do = $("input[name='addressDo']:checked").val();
@@ -4136,8 +4137,8 @@ var areaSelectMaker = function(target){
             var index = 1;
             keys.forEach(function(DEM){
                 a3.append(`<li class="list-group-item px-0 border-0">
-                <input class="btn-check" type="radio" name="dong-eub-myeon" id="dong-eub-myeon${index}" value="${area[Do][SiGunGu][DEM]}">
-                <label for="dong-eub-myeon${index}">${area[Do][SiGunGu][DEM]}</label>
+                <input class="btn-check" type="radio" name="addressEMD" id="addressEMD${index}" value="${area[Do][SiGunGu][DEM]}">
+                <label for="addressEMD${index}">${area[Do][SiGunGu][DEM]}</label>
                 </li>`);
                 index++;
             });
@@ -4147,8 +4148,8 @@ var areaSelectMaker = function(target){
     }
 
     function addChangeEventForDEM() {
-        $("input[name='dong-eub-myeon']").change(function(){
-            textChekedList("input[name='dong-eub-myeon']");
+        $("input[name='addressEMD']").change(function(){
+            textChekedList("input[name='addressEMD']");
         });
     }
 
