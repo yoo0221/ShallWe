@@ -17,7 +17,8 @@ class Message(models.Model):
     thema_confirmed = models.BooleanField(null=True, blank=True)
     promise_place = models.CharField(max_length=100, null=True, blank=True)
     promise_address = models.CharField(max_length=100, null=True, blank=True)
-    promise_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    # promise_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    promise_time = models.CharField(max_length=200, null=True, blank=True)
     promise_confirmed = models.BooleanField(null=True, blank=True)
 
 class Thema(models.Model):

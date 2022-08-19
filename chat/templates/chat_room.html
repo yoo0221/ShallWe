@@ -151,6 +151,47 @@
                 </div>
               {% endif %}
             {% elif message.sort == "promise"%}
+              {% if message.author == user %}
+              <div class='thema-message-container'>
+                <a href="#">
+                <div class='d-flex justify-content-center'>
+                  <div class='thema-message-me px-3 pt-2'>
+                    <span class="thema-author">{{message.author.name}}님께서 제안하신 만남입니다.</span>
+                    <div class="thema-content"> <span class="thema-message">{{message.promise_place}} </span> <img src="{% static 'assets/img/location.png' %}" alt=""><span>위치보기</span></div>
+                    <div class="thema-content"> <span class="thema-message">{{message.promise_time}} </span> </div>
+                    <div class="thema-modify my-2"><span>만남 수정하기</span></div>
+                  </div>
+                </div>
+                </a>
+                <div class='thema-confirmed'>
+                  {% if message.promise_confirmed %}
+                  <p style='color: #1c3bd5; margin-bottom: 2px;'>만남이 확정되었습니다!</p>
+                  {% else %}
+                  <p>확정 대기중</p>
+                  {% endif %}
+                </div>
+              </div>
+              {% else %}
+                <div class='thema-message-container'>
+                <a href="#">
+                <div class='d-flex justify-content-center'>
+                  <div class='thema-message-friend px-3 pt-2'>
+                    <span class="thema-author">{{message.author.name}}님께서 제안하신 만남입니다.</span>
+                    <div class="thema-content"> <span class="thema-message">{{message.promise_place}} </span> <img src="{% static 'assets/img/location.png' %}" alt=""><span>위치보기</span></div>
+                    <div class="thema-content"> <span class="thema-message">{{message.promise_time}} </span> </div>
+                    <div class="thema-modify my-2"><span>만남 수정하기</span></div>
+                  </div>
+                </div>
+                </a>
+                <div class='thema-confirmed'>
+                  {% if message.promise_confirmed %}
+                  <p style='color: #1c3bd5; margin-bottom: 2px;'>만남이 확정되었습니다!</p>
+                  {% else %}
+                  <p>확정 대기중</p>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
             {% endif %}
           {% endfor %}
         </div>
