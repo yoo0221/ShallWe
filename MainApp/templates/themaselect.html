@@ -68,22 +68,22 @@
                     <button 
                       style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;"
                       type="radio" name="place"  data-bs-toggle="collapse" 
-                      href="#collapseExample" role="button" aria-expanded="false" 
+                      href="#collapseExample1" role="button" aria-expanded="false" 
                       aria-controls="collapseExample" id="place" value="카페">
                       카페
                     </button>
                     <button 
                       style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;"
-                      type="radio" name="place"  data-bs-toggle="collapse" 
-                      href="#collapseExample" role="button" aria-expanded="false" 
-                      aria-controls="collapseExample" id="place" value="카페">
+                      type="radio" name="place"  data-bs-toggle="collapse"
+                      href="#collapseExample2" role="button" aria-expanded="false" 
+                      aria-controls="collapseExample" id="place" value="식당">
                       식당
                     </button>
-                    <div class="collapse" id="collapseExample">
+                    <div class="collapse" id="collapseExample1">
                       <tr onclick="questionSelected(this, '#708090')">
                         <div class="row mt-2" style="border-top: 2px solid gray;">
                           <div class="col-2 mt-2 mt-1" >
-                          <img src="{% static 'assets/img/cafe1.png' %}" class="d-block rounded"  style="width: 40px; height:40px; margin-top: 3px;">
+                          <img src="{% static 'assets/img/new cafe1.jpg' %}"  style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
                           <div class="col-10 " style="margin-top: 6px;">
                             <span style="font-size: 12px;color: black;">그린빈 카페 복현점</span>
@@ -98,7 +98,7 @@
                       <tr onclick="questionSelected(this, '#708090')">
                         <div class="row mt-2" style="border-top: 2px solid gray;">
                           <div class="col-2 mt-2 mt-1" >
-                          <img src="{% static 'assets/img/cafe2.jpg' %}" class="d-block rounded"  style="width: 40px; height:40px; margin-top: 3px;">
+                          <img src="{% static 'assets/img/cafe2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
                           <div class="col-10 " style="margin-top: 6px;">
                             <span style="font-size: 12px;color: black;">아라비카 카페</span>
@@ -113,7 +113,7 @@
                       <tr onclick="questionSelected(this, '#708090')">
                         <div class="row mt-2 mb-3" style="border-top: 2px solid gray; border-bottom: 2px solid gray;">
                           <div class="col-2 mt-2 mt-1" >
-                          <img src="{% static 'assets/img/cafe3.jpg' %}" class="d-block rounded"  style="width: 40px; height:40px; margin-top: 3px;">
+                          <img src="{% static 'assets/img/cafe3.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">커피빈 동성로점</span>
@@ -127,8 +127,66 @@
                       </tr>
                     </div>
                   </div>
-                  {{form}}
+                  
+                    <div class="collapse" id="collapseExample2">
+                      <tr onclick="questionSelected(this, '#708090')">
+                        <div class="row mt-2" style="border-top: 2px solid gray;">
+                          <div class="col-2 mt-2 mt-1" >
+                          <img src="{% static 'assets/img/식당1.jpg' %}"  style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+                          </div>
+                          <div class="col-10 " style="margin-top: 6px;">
+                            <span style="font-size: 12px;color: black;">올데이 POKE</span>
+                            <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
+                            <span style="font-size: 12px; color: black;">미근동</span>
+                            <span style="font-size: 12px; color: black;">09:00 ~ 22:00</span> <br>
+                            <span style="font-size: 12px; color: black;">리뷰 수 500 돌파한 포케집</span>
+                            <img src="{% static 'assets/img/화살표 (2).png' %}" style="float: right;">
+                          </div>
+                        </div>
+                      </tr>
+                      <tr onclick="questionSelected(this, '#708090')">
+                        <div class="row mt-2" style="border-top: 2px solid gray;">
+                          <div class="col-2 mt-2 mt-1" >
+                          <img src="{% static 'assets/img/식당2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+                          </div>
+                          <div class="col-10 " style="margin-top: 6px;">
+                            <span style="font-size: 12px;color: black;">봉골레 파스타</span>
+                            <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
+                            <span style="font-size: 12px; color: black;">신천동</span>
+                            <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span> <br>
+                            <span style="font-size: 12px; color: black;">호주 유학 출신 셰프가 직접하는 요리</span>
+                            <img src="{% static 'assets/img/화살표 (2).png' %}" style="float: right;">
+                          </div>
+                        </div>
+                      </tr>
+                      <tr onclick="questionSelected(this, '#708090')">
+                        <div class="row mt-2 mb-3" style="border-top: 2px solid gray; border-bottom: 2px solid gray;">
+                          <div class="col-2 mt-2 mt-1" >
+                          <img src="{% static 'assets/img/식당3.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
+                          </div>
+                          <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
+                            <span style="font-size: 12px;color: black;">신라 떡볶이 연희점</span>
+                            <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
+                            <span style="font-size: 12px; color: black;">연희동</span>
+                            <span style="font-size: 12px; color: black;">10:00 ~ 21:00</span> <br>
+                            <span style="font-size: 12px; color: black;">떡볶이 + 튀김세트 할인중</span>
+                            <img src="{% static 'assets/img/화살표 (2).png' %}" style="float: right;">
+                          </div>
+                        </div>
+                      </tr>
+                    </div>
                   </div>
+                  {{form}}
+                  <div style="overflow:hidden;">
+                    <div class="form-group">
+                       <div class="row">
+                          <div class="col-md-8">
+                             <div id="datetimepicker12"></div>
+                          </div>
+                       </div>
+                    </div>
+                </div>
+                </div>
                   <input type="button" class="btn btn-primary btn-lg mb-3" value="만남 약속 제안하기" data-bs-toggle="modal" data-bs-target="#modalCenter" style="background-color: #1C3BD5; position: fixed; bottom: 0; width: 300px;"/>
                   <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -165,6 +223,7 @@
     
         <!-- Vendors JS -->
         <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
+    
         <script>
           const kk = document.querySelector("#place");
           var cafe = false;
@@ -185,6 +244,7 @@
           init();
         </script>
 
+
         <!-- Main JS -->
         <script src="{% static 'assets/js/main.js' %}"></script>
     
@@ -194,4 +254,15 @@
     
         <!-- Place this tag in your head or just before your close body tag. -->
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+        
+        <script type="text/javascript">
+             $(function () {
+                 $('#datetimepicker12').datetimepicker({
+                     inline: true,
+                     sideBySide: true
+                 });
+             });
+        </script>
+       </div>
       </body>
+</html>
