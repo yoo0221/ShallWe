@@ -30,6 +30,9 @@
       #inmycase:focus{
        outline-color: white;
       }
+      #begray:hover{
+        background-color: rgb(186, 183, 183);
+      }
     </style>
     <!-- Page CSS -->
 
@@ -67,25 +70,25 @@
                   <div class="thema-select-place-group my-3">
                     <button 
                       style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;"
-                      type="radio" name="place"  data-bs-toggle="collapse" 
+                      data-bs-toggle="collapse" onclick="fillFollow()"
                       href="#collapseExample1" role="button" aria-expanded="false" 
                       aria-controls="collapseExample" id="place" value="카페">
                       카페
                     </button>
                     <button 
                       style="margin-right:7px; width:100px; padding: 7px 25px; border: none; color:white; background-color:#9f9f9fcc; border-radius:0.7rem; width: 80px;"
-                      type="radio" name="place"  data-bs-toggle="collapse"
+                      data-bs-toggle="collapse" onclick="fillFollow1()"
                       href="#collapseExample2" role="button" aria-expanded="false" 
-                      aria-controls="collapseExample" id="place" value="식당">
+                      aria-controls="collapseExample" id="place1" value="식당">
                       식당
                     </button>
                     <div class="collapse" id="collapseExample1">
                       <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row mt-2" style="border-top: 2px solid gray;">
-                          <div class="col-2 mt-2 mt-1" >
+                        <div class="row mt-2" style="border-top: 2px solid gray;"  id="begray">
+                          <div class="col-2 mt-2 " >
                           <img src="{% static 'assets/img/new cafe1.jpg' %}"  style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
-                          <div class="col-10 " style="margin-top: 6px;">
+                          <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">그린빈 카페 복현점</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
                             <span style="font-size: 12px; color: black;">복현동</span>
@@ -96,11 +99,11 @@
                         </div>
                       </tr>
                       <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row mt-2" style="border-top: 2px solid gray;">
-                          <div class="col-2 mt-2 mt-1" >
+                        <div class="row" style="border-top: 2px solid gray; border-bottom: 2px solid gray;" id="begray">
+                          <div class="col-2 mt-2" >
                           <img src="{% static 'assets/img/cafe2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
-                          <div class="col-10 " style="margin-top: 6px;">
+                          <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">아라비카 카페</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
                             <span style="font-size: 12px; color: black;">대현동</span>
@@ -111,8 +114,8 @@
                         </div>
                       </tr>
                       <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row mt-2 mb-3" style="border-top: 2px solid gray; border-bottom: 2px solid gray;">
-                          <div class="col-2 mt-2 mt-1" >
+                        <div class="row mb-3" style=" border-bottom: 2px solid gray; " id="begray">
+                          <div class="col-2 mt-2" >
                           <img src="{% static 'assets/img/cafe3.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
@@ -127,14 +130,13 @@
                       </tr>
                     </div>
                   </div>
-                  
                     <div class="collapse" id="collapseExample2">
                       <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row mt-2" style="border-top: 2px solid gray;">
-                          <div class="col-2 mt-2 mt-1" >
+                        <div class="row mt-2" style="border-top: 2px solid gray;"  id="begray">
+                          <div class="col-2 mt-2 " >
                           <img src="{% static 'assets/img/식당1.jpg' %}"  style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
-                          <div class="col-10 " style="margin-top: 6px;">
+                          <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">올데이 POKE</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
                             <span style="font-size: 12px; color: black;">미근동</span>
@@ -145,11 +147,11 @@
                         </div>
                       </tr>
                       <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row mt-2" style="border-top: 2px solid gray;">
-                          <div class="col-2 mt-2 mt-1" >
+                        <div class="row" style="border-top: 2px solid gray; border-bottom: 2px solid gray;" id="begray">
+                          <div class="col-2 mt-2" >
                           <img src="{% static 'assets/img/식당2.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
-                          <div class="col-10 " style="margin-top: 6px;">
+                          <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
                             <span style="font-size: 12px;color: black;">봉골레 파스타</span>
                             <img src="{% static 'assets/img/location.png'%}" style="width: 12px;">
                             <span style="font-size: 12px; color: black;">신천동</span>
@@ -160,8 +162,8 @@
                         </div>
                       </tr>
                       <tr onclick="questionSelected(this, '#708090')">
-                        <div class="row mt-2 mb-3" style="border-top: 2px solid gray; border-bottom: 2px solid gray;">
-                          <div class="col-2 mt-2 mt-1" >
+                        <div class="row mb-3" style=" border-bottom: 2px solid gray; " id="begray">
+                          <div class="col-2 mt-2" >
                           <img src="{% static 'assets/img/식당3.jpg' %}" style="border-radius: 50%; width: 40px; height:40px; margin-top: 3px;">
                           </div>
                           <div class="col-10 " style="margin-top: 6px; margin-bottom: 6px;">
@@ -187,7 +189,7 @@
                     </div>
                 </div>
                 </div>
-                  <input type="button" class="btn btn-primary btn-lg mb-3" value="만남 약속 제안하기" data-bs-toggle="modal" data-bs-target="#modalCenter" style="background-color: #1C3BD5; position: fixed; bottom: 0; width: 300px;"/>
+                  <input type="button" class="btn btn-primary btn-lg mb-3" value="만남 약속 제안하기" data-bs-toggle="modal" data-bs-target="#modalCenter" style="background-color: #1C3BD5; position: fixed; bottom: 0; width: 352px;"/>
                   <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                       <div class="modal-content">
@@ -225,23 +227,35 @@
         <script src="{% static 'assets/vendor/libs/apex-charts/apexcharts.js' %}"></script>
     
         <script>
-          const kk = document.querySelector("#place");
-          var cafe = false;
-          function handClick() {
-            const currentColor = kk.style.backgroundColor;
-            if (cafe==false) {
-              kk.style.backgroundColor = "#1C3BD5";
-              cafe=true;
+
+          var isFollow = false;
+          function fillFollow() {
+            if (isFollow == false) {
+              document
+                .querySelector("#place")
+                .style.backgroundColor = "#1C3BD5";
+              isFollow = true;
             } else {
-              kk.style.backgroundColor = "#9f9f9fcc";
-              cafe=false
+              document
+                .querySelector("#place")
+                .style.backgroundColor = "#9f9f9fcc";
+              isFollow = false;
             }
           }
-          function init() {
-            kk.style.backgroundColor = "#9f9f9fcc";
-            kk.addEventListener("click", handClick);
+          var isFollow1 = false;
+          function fillFollow1() {
+            if (isFollow1 == false) {
+              document
+                .querySelector("#place1")
+                .style.backgroundColor = "#1C3BD5";
+              isFollow1 = true;
+            } else {
+              document
+                .querySelector("#place1")
+                .style.backgroundColor = "#9f9f9fcc";
+              isFollow1 = false;
+            }
           }
-          init();
         </script>
 
 
