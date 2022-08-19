@@ -4099,7 +4099,7 @@ var areaSelectMaker = function(target){
     areaKeys1.forEach(function(Do){
         a1.append(`<li class="list-group-item px-0 border-0">
         <input class="btn-check" type="radio" name="addressDo" id="addressDo${index}" value="${Do}">
-        <label class="p-1" for="addressDo${index}">${Do}</label>
+        <label for="addressDo${index}">${Do}</label>
         </li>`);
         index++;
     });
@@ -4125,7 +4125,7 @@ var areaSelectMaker = function(target){
 
     function addChangeEventForSiGunGu(){
         $("input[name='addressSiGunGu']").change(function(){
-            a3.empty().append(`<li class="list-group-item px-0 border-0 text-primary fw-bold">
+            a3.empty().append(`<li class="list-group-item px-0 border-0 blue-text fw-bold">
             <input class="btn-check" type="radio" name="dong-eub-myeon" value="all" id="dong-eub-myeon0" checked>
             <label for="dong-eub-myeon0">전체</label>
             </li>`);
@@ -4153,12 +4153,12 @@ var areaSelectMaker = function(target){
     }
 
     function activeChekedList(target){
-        $(target).next().removeClass("bg-primary rounded-pill text-white");
-        $(target+":checked").next().addClass("bg-primary rounded-pill text-white");
+        $(target).next().css({ "background-color": "#FFF", "color": "#000"});
+        $(target+":checked").next().css({ "background-color": "#1C3BD5", "color": "#FFF", "border-radius": "15px", "padding": "0.2rem 0.5rem 0.2rem 0.5rem"});
     }
 
     function textChekedList(target){
-        $(target).parent().removeClass("text-primary").removeClass("fw-bold");
-        $(target+":checked").parent().addClass("text-primary").addClass("fw-bold");
+        $(target).parent().removeClass("blue-text").removeClass("fw-bold");
+        $(target+":checked").parent().addClass("blue-text").addClass("fw-bold");
     }
 }

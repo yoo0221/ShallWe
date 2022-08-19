@@ -234,6 +234,7 @@ ul {
     color: #8c8c8c;
 }
 
+
 /* search.html */
 .searchHeade {
     color: #CCC;
@@ -261,41 +262,18 @@ ul {
     margin-top: 1rem;
 }
 
-.locationButton {
-    border: 2px solid #1C3BD5;
-    color: #1C3BD5;
-    width: 85%;
-    text-align: left;
-    overflow: hidden;
-    padding: 0.5rem;
-    border-radius: 7.5px;
-    background-color: #FFF;
-}
-
-.downIcon {
-    float: right;
-    margin-top: 0.25rem;
-    margin-right: 0.25rem;
-}
-
-.locationButton:focus {
-    border: 2px solid #CCC;
-    color: #000;
-    background-color: #FFF;
-}
-
 .filter-sex, .filter-age {
     text-align: left;
 }
 
-.radio-btn input[type="radio"] {
+.radio-btn input[type="radio"], input[class="checkBox"] {
     display: none;
 }
 
-.radio-btn input[type="radio"] + span {
+.radio-btn input[type="radio"] + span, input[class="checkBox"] + label {
     display: inline-block;
     padding: 0.3rem 1.5rem 0.3rem 1.5rem;
-    border: 1px solid #CCC;
+    border: 2px solid #CCC;
     background-color: #FFF;
     text-align: center;
     color: #CCC;
@@ -303,7 +281,7 @@ ul {
     margin-left: 1rem;
 }
 
-.radio-btn input[type="radio"]:checked + span {
+.radio-btn input[type="radio"]:checked + span, input[class="checkBox"]:checked + label {
     color: #1C3BD5;    
     border-color: #1C3BD5;
 }
@@ -318,23 +296,65 @@ ul {
     margin-top: 5rem;
 }
 
-.ageCheckbox input[type="checkbox"]{
-    display: none;
+.locationButton {
+    all: unset;
+    border: 1px solid #CCC;
+    color: #000;
+    background-color: #FFF;
+    width: 85%;
+    text-align: left;
+    overflow: hidden;
+    padding: 0.5rem;
+    border-radius: 7.5px;
 }
 
-.ageCheckbox input[type="checkbox"] + label{
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    border:3px solid #707070;
-    position: relative;
+.downIcon {
+    float: right;
+    margin-top: 0.25rem;
+    margin-right: 0.25rem;
+    color: #CCC;
 }
 
-.ageCheckbox input[id="check1"]:checked + label::after{
-    font-size: 25px;
-    width: 30px;
-    height: 30px;
-    text-align: center;
+.locationButton:active {
+    border: 2px solid #1C3BD5;
+    color: #1C3BD5;
+    background-color: #FFF;
+    box-shadow: none;
+}
+
+.locationButton:focus {
+    border: 2px solid #CCC;
+    color: #000;
+    background-color: #FFF;
+    box-shadow: none;
+}
+
+.blue-text {
+    color: #1C3BD5;
+}
+
+.modalFooter {
+    border-top: 1.5px solid #CCC;
+}
+
+.modal-footer {
+    overflow: hidden;
+}
+
+.modalClose, .modalCheck {
+    padding: 1rem;
+    width: 50%;
+    background-color: #FFF;
+}
+
+.modalClose {
+    float: left;
+    color: #000;
+}
+
+.modalCheck {
+    float: right;
+    color: #1C3BD5;
 }
 
 /* 
