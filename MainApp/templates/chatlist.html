@@ -78,13 +78,13 @@
                     </div>
                     <div class='usernationality-box'>
                       {% if room.user2.nationality == "대한민국" %}
-                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/uk.png' %}" alt="">
                       {% elif room.user2.nationality == "USA" %}
-                        <img class='usernationality' src="{% static 'assets/img/미국.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/usa.png' %}" alt="">
                       {% elif room.user2.nationality == "Australia" %}
-                        <img class='usernationality' src="{% static 'assets/img/호주.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/ast.png' %}" alt="">
                       {% elif room.user2.nationality == "UK" %}
-                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/uk.png' %}" alt="">
                       {% endif %}
                     </div>
                   </div>
@@ -117,13 +117,13 @@
                     </div>
                     <div class='usernationality-box'>
                       {% if room.user1.nationality == "대한민국" %}
-                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/uk.png' %}" alt="">
                       {% elif room.user1.nationality == "USA" %}
-                        <img class='usernationality' src="{% static 'assets/img/미국.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/usa.png' %}" alt="">
                       {% elif room.user1.nationality == "Australia" %}
-                        <img class='usernationality' src="{% static 'assets/img/호주.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/ast.png' %}" alt="">
                       {% elif room.user1.nationality == "UK" %}
-                        <img class='usernationality' src="{% static 'assets/img/영국.png' %}" alt="">
+                        <img class='usernationality' src="{% static 'assets/img/uk.png' %}" alt="">
                       {% endif %}
                     </div>
                   </div>
@@ -154,14 +154,14 @@
       <div class="divs">
         <a href="{% url 'setprofile' %}" class="nav-links">
           {% comment %} <i class="fa-solid fa-circle-user fa-2x nav-items"></i> {% endcomment %}
-          <img class="nav-items p-0" src="{% static 'assets/img/프로필.png' %}" alt="" style="width:35px; height:35px;">
+          <img class="nav-items p-0" src="{% static 'assets/img/profile.png' %}" alt="" style="width:35px; height:35px;">
           <p class="nav-items-desc" style="font-size: 12px">마이페이지</p>
         </a>
       </div>
       <div class="divs">
         <a href="{% url 'home' %}" class="nav-links">
           {% comment %} <i class="fa-solid fa-face-smile fa-2x nav-items"></i> {% endcomment %}
-          <img class="nav-items p-0" src="{% static 'assets/img/교류테마.png' %}" alt="" style="width:35px; height:35px;">
+          <img class="nav-items p-0" src="{% static 'assets/img/thema.png' %}" alt="" style="width:35px; height:35px;">
           <p class="nav-items-desc" style="font-size: 12px">교류 테마</p>
         </a>
       </div>
@@ -175,14 +175,14 @@
       <div class="divs">
         <a href="{% url 'chatlist' %}" class="nav-links">
           {% comment %} <i class="fa-solid fa-message fa-2x nav-items"></i> {% endcomment %}
-          <img class="nav-items p-0" src="{% static 'assets/img/채팅파랑.png' %}" alt="" style="width:35px; height:35px;">
+          <img class="nav-items p-0" src="{% static 'assets/img/chatblue.png' %}" alt="" style="width:35px; height:35px;">
           <p class="nav-items-desc" style="font-size: 12px">채팅 목록</p>
         </a>
       </div>
       <div class="divs">
         <a href="{% url 'themaselect' %}" class="nav-links">
           {% comment %} <i class="fa-solid fa-users fa-2x nav-items"></i> {% endcomment %}
-          <img class="nav-items p-0" src="{% static 'assets/img/만남내역.png' %}" alt="" style="width:40px; height:25px; margin-bottom: 10px;">
+          <img class="nav-items p-0" src="{% static 'assets/img/meethistory.png' %}" alt="" style="width:40px; height:25px; margin-bottom: 10px;">
           <p class="nav-items-desc" style="font-size: 12px">만남 내역</p>
         </a>
       </div>

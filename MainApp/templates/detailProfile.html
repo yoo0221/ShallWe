@@ -27,11 +27,11 @@
         <div class="iconWrapper-left">
           <!-- <i class="fa-solid fa-mars"></i><span></span> <i class="fa-solid fa-temperature-half"></i><span>30°C</span> -->
           {% if user.sex is "남" %}
-            <img src="{% static 'assets/img/성별.png' %}" class="sexIcon"/>
+            <img src="{% static 'assets/img/sex.png' %}" class="sexIcon"/>
           {% else %}
-            <img src="{% static 'assets/img/성별.png' %}" class="sexIcon"/>
+            <img src="{% static 'assets/img/sex.png' %}" class="sexIcon"/>
           {% endif %}
-          <img src="{% static 'assets/img/온도계.png' %}" class="Temparature" style="width: 10px; height: 14.22;"/>
+          <img src="{% static 'assets/img/temparature.png' %}" class="Temparature" style="width: 10px; height: 14.22;"/>
           <span>
             30°C</span>
         </div>
@@ -46,7 +46,7 @@
       <div class="iconWrapper-inform">
         <img src="{% static 'assets/img/USA.jpg' %}" class="infromIcon"/>
         <span>{{user.nationality}}</span>
-        <img src="{% static 'assets/img/말하는사람.png' %}" class="infromIcon"/>
+        <img src="{% static 'assets/img/mothertongue.png' %}" class="infromIcon"/>
         <span>{{user.mother_tongue}}</span>
         <i class="fa-solid fa-location-crosshairs"></i>
         <span>{{user.address_emd}}</span>
