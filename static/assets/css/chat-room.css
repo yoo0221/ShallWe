@@ -298,6 +298,7 @@ form[name="chatform"] > textarea {
 }
 
 .thema-message-container {
+  margin-top: 10px;
   text-align: center;
   color: gray;
 }
@@ -352,4 +353,5 @@ form[name="chatform"] > textarea {
 .thema-confirmed {
   align-items: center;
   justify-content: center;
+  margin-bottom: 2px;
 }
