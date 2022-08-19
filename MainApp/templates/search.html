@@ -30,17 +30,19 @@
 </head>
 
 <body>
-  <div class="themaCard">
-    <!-- <div class="searchHeader">
-      <i class="fa-solid fa-angle-left angleLeft"></i>
-      serach box
-    </div> -->
+  <div class="searchHeader">
+    <i class="fa-solid fa-angle-left angleLeft"></i>
+    <div class="searchBox">
+      <i class="fa-solid fa-magnifying-glass magnifyingGlass"></i>
+    </div>
+  </div>
 
-    <hr>
+  <hr style="margin-top: 0.25rem;">
 
+  <div class="themaCard" style="height: 475px;">
     <p class="searchTitle">메이트 필터</p>
-    
     <form action="{% url 'filtered' %}" method="post">
+      {% csrf_token %}
       <div class="filter-sex">
         <p class="searchDes">성별</p>
         <input type="hidden" name="filter-sex" value="x"/>
@@ -56,23 +58,22 @@
 
       <div class="filter-age">
         <p class="searchDes">나이</p>
-        {% csrf_token %}
         <div role="group">
           <input type="hidden" name="filter-age20" value="0"/>
-          <input type="checkbox" name="filter-age20" value="20" class="btn-check" id="filter-age20" autocomplete="off"/>
-          <label class="btn btn-outline-primary" for="filter-age20">
+          <input type="checkbox" name="filter-age20" value="20" class="checkBox" id="filter-age20" autocomplete="off"/>
+          <label class="ageCheckbox" for="filter-age20">
             20대
           </label>
 
           <input type="hidden" name="filter-age30" value="0"/>
-          <input type="checkbox" name="filter-age30" value="30" class="btn-check" id="filter-age30" autocomplete="off"/>
-          <label class="btn btn-outline-primary" for="filter-age30">
+          <input type="checkbox" name="filter-age30" value="30" class="checkBox" id="filter-age30" autocomplete="off"/>
+          <label class="ageCheckbox" for="filter-age30">
             30대
           </label>
 
           <input type="hidden" name="filter-age40" value="0"/>
-          <input type="checkbox" name="filter-age40" value="40" class="btn-check" id="filter-age40" autocomplete="off"/>
-          <label class="btn btn-outline-primary" for="filter-age40">
+          <input type="checkbox" name="filter-age40" value="40" class="checkBox" id="filter-age40" autocomplete="off"/>
+          <label class="ageCheckbox" for="filter-age40">
             40대 이상
           </label>
         </div>
@@ -85,34 +86,31 @@
           <i class="fa-solid fa-caret-down downIcon"></i>
         </button>
         
-        <!-- Modal -->
         <div class="modal fade" id="select-location-modal" tabindex="-1" data-bs-backdrop="static" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-            <div class="modal-content overflow-overlay">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">동네 범위</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                </button>
+            <div class="modal-content overflow-scroll" style="border-radius: 1rem !important;">
+              <div class="modalHeader" style="padding-top: 1rem;">
+                <h5 class="modalTitle fw-bold" id="exampleModalLongTitle">동네 범위</h5>
               </div>
-              <div class="modal-body container select-address">
-                <div class="row">
-                  <div class="col-2 px-0 text-center">시/도</div>
+              <div class="modal-body container select-address" style="height: 550px; padding-top: 0.5rem; padding-bottom: 0;">
+                <div class="row" style="padding-bottom: 0.5rem; border-bottom: 1.5px solid #CCC;">
+                  <div class="col-3 px-0 text-center">시/도</div>
                   <div class="col-5 px-0 text-center">시/군/구</div>
-                  <div class="col-5 px-0 text-center">동/읍/면</div>
+                  <div class="col-4 px-0 text-center">동/읍/면</div>
                 </div>
-                <hr>
-                <div class="row">
-                  <ul class="list-group px-0 col-2 text-center rounded-0 border-end overflow-overlay h-100">
+                
+                <div class="row" style="height: 500px;">
+                  <ul class="list-group px-0 col-3 text-center rounded-0 border-end overflow-scroll h-100">
                   </ul>
-                  <ul class="list-group px-0 col-5 text-center rounded-0 border-end overflow-overlay h-100 d-none">
+                  <ul class="list-group px-0 col-5 text-center rounded-0 border-end overflow-scroll h-100 d-none">
                   </ul>
-                  <ul class="list-group px-0 col-5 text-center rounded-0 border-0 overflow-overlay h-100 d-none">
+                  <ul class="list-group px-0 col-4 text-center rounded-0 border-0 overflow-scroll h-100 d-none">
                   </ul>
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                <button type="button" class="btn btn-primary" id="finishSelectLocation" style="background-color: #1C3BD5;">확인</button>
+              <div class="modalFooter">
+                <button type="button" class="modalClose" data-bs-dismiss="modal">닫기</button>
+                <button type="button" class="modalCheck" id="finishSelectLocation">확인</button>
               </div>
             </div>
           </div>
@@ -120,9 +118,12 @@
       </div>
 
       <div class="filter-selected">
-        <button type="submit" class="serachButton">검색</button>
+        <button type="submit" class="searchButton">검색</button>
       </div>
     </form>
+  </div>
+  <div class="themaCard" style="border-top: 3px solid #CCC; height: auto;">
+    
   </div>
 
 
